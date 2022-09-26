@@ -1,5 +1,4 @@
 import { Box, Container, IconButton } from '@chakra-ui/react';
-import { Global } from '@emotion/react';
 import { useWindowScroll } from '@mantine/hooks';
 import Head from 'next/head';
 import { ReactNode } from 'react';

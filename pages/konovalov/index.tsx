@@ -1,7 +1,6 @@
 import { Box, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 import { BlogGridItem } from 'components/GridItem';
 import { allKonovalovs, Konovalov } from 'contentlayer/generated';
-import Avatar from 'public/konovalov/avatar.jpg';
 import Layout from 'layouts/Article';
 
 const Konovalov = () => {
