@@ -9,7 +9,7 @@ export default function Page({ blog }: InferGetStaticPropsType<typeof getStaticP
   const Component = useMDXComponent(blog.body.code);
 
   return (
-    <BlogLayout frontmatter={blog.frontMatter} thumbnail={blog.thumbnail}>
+    <BlogLayout frontmatter={blog.frontMatter}>
       <Component components={MDXComponents} />
     </BlogLayout>
   );

@@ -23,11 +23,10 @@ interface BlogLayoutProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   frontmatter: any;
   children: ReactNode;
-  thumbnail: string;
 }
 
 export default function BlogLayout(props: BlogLayoutProps) {
-  const { frontmatter, thumbnail, children } = props;
+  const { frontmatter, children } = props;
 
   if (!frontmatter) return <></>;
 
@@ -82,10 +81,10 @@ export default function BlogLayout(props: BlogLayoutProps) {
           </Text>
         </Box>
       </HStack>
-      {thumbnail && (
+      {frontmatter.thumbnail && (
         <Box my={4}>
           <Image
-            src={thumbnail}
+            src={frontmatter.thumbnail}
             alt={frontmatter.title}
             className='grid-item-thumbnail'
             height={350}
