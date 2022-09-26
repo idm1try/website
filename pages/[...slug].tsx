@@ -1,35 +1,15 @@
-import { Box, Divider, Heading, Text } from '@chakra-ui/react';
 import { MDXComponents } from 'components/mdxComponents';
 import { allBlogs } from 'contentlayer/generated';
 import BlogLayout from 'layouts/Blog';
 import { getMember } from 'lib/getAllMembers';
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import Image from 'next/image';
 
 export default function Page({ blog }: InferGetStaticPropsType<typeof getStaticProps>) {
   const Component = useMDXComponent(blog.body.code);
 
   return (
-    <BlogLayout frontmatter={blog.frontMatter}>
-      {blog.thumbnail && (
-        <Box my={4}>
-          <Image
-            src={blog.thumbnail}
-            alt={blog.title}
-            className='grid-item-thumbnail'
-            height={350}
-            width={750}
-            objectFit='cover'
-          />
-        </Box>
-      )}
-      <Heading fontSize='3xl' my={1}>
-        {blog.title}
-      </Heading>
-      <Text color='gray.500'>{blog.description}</Text>
-      <Divider my={4} />
-
+    <BlogLayout frontmatter={blog.frontMatter} thumbnail={blog.thumbnail}>
       <Component components={MDXComponents} />
     </BlogLayout>
   );
