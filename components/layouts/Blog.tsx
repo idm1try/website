@@ -12,10 +12,8 @@ import {
   PopoverTrigger,
   Stack,
   Text,
-  useDisclosure,
 } from '@chakra-ui/react';
 import SocialLink from 'components/SocialLink';
-import { url } from 'inspector';
 import Image from 'next/image';
 import { ReactNode } from 'react';
 import { TbBrandGithub, TbGlobe } from 'react-icons/tb';
