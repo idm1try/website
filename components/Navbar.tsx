@@ -28,6 +28,7 @@ interface LinkItemProps {
 const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => {
   const active = path === href;
   const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900');
+
   return (
     <NextLink href={href} passHref scroll={false}>
       <Link
@@ -79,6 +80,9 @@ const Navbar = (props: { path: string }) => {
           <LinkItem href='/konovalov' path={path}>
             Konovalov
           </LinkItem>
+          <LinkItem href='/members' path={path}>
+            Members
+          </LinkItem>
         </Stack>
 
         <Box flex={1} textAlign='right' mr={3}>
@@ -98,6 +102,9 @@ const Navbar = (props: { path: string }) => {
             <MenuList>
               <NextLink href='/konovalov' passHref>
                 <MenuItem as={Link}>Konovalov</MenuItem>
+              </NextLink>
+              <NextLink href='/members' passHref>
+                <MenuItem as={Link}>Members</MenuItem>
               </NextLink>
               <MenuItem as='a' href='https://github.com/idm1try/idm1try-blog'>
                 Source Code

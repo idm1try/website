@@ -1,6 +1,24 @@
-import { Avatar, Box, Divider, Heading, HStack, Text } from '@chakra-ui/react';
+import {
+  Avatar,
+  Box,
+  Divider,
+  Heading,
+  HStack,
+  Popover,
+  PopoverArrow,
+  PopoverBody,
+  PopoverCloseButton,
+  PopoverContent,
+  PopoverTrigger,
+  Stack,
+  Text,
+  useDisclosure,
+} from '@chakra-ui/react';
+import SocialLink from 'components/SocialLink';
+import { url } from 'inspector';
 import Image from 'next/image';
 import { ReactNode } from 'react';
+import { TbBrandGithub, TbGlobe } from 'react-icons/tb';
 import Layout from './Article';
 
 interface BlogLayoutProps {
@@ -20,10 +38,46 @@ export default function BlogLayout(props: BlogLayoutProps) {
   return (
     <Layout title={frontmatter.title}>
       <HStack mt={8} mb={4}>
-        <Avatar size='md' src={data.avatar_url} />
+        <Box>
+          <Popover isLazy trigger='hover'>
+            <PopoverTrigger>
+              <Avatar size='md' src={data.avatar_url} />
+            </PopoverTrigger>
+            <PopoverContent>
+              <PopoverArrow />
+              <PopoverCloseButton />
+              <PopoverBody>
+                <Stack direction='row' spacing={6} align='flex-start'>
+                  <Avatar src={data.avatar_url} size='xl' />
+                  <Stack spacing={3} maxW='320px'>
+                    <Text fontWeight='bold'>{data.name}</Text>
+
+                    <Stack isInline align='center' spacing={2}>
+                      <SocialLink
+                        href={`https://github.com/${data.name}`}
+                        icon={TbBrandGithub}
+                        label={`View ${data.name}'s Github`}
+                      />
+                      {data.url && data.url != `https://github.com/${data.name}` && (
+                        <SocialLink
+                          href={data.url}
+                          icon={TbGlobe}
+                          label={`View ${data.name}'s website`}
+                        />
+                      )}
+                    </Stack>
+                    <Text fontSize='sm' color='gray.500'>
+                      {data.bio}
+                    </Text>
+                  </Stack>
+                </Stack>
+              </PopoverBody>
+            </PopoverContent>
+          </Popover>
+        </Box>
         <Box>
           <Text fontWeight='bold' fontSize='sm'>
-            <a href={data.url}>{data.name}</a>
+            {data.name}
           </Text>
           <Text fontSize='xs' color='gray.500'>
             {publishedDate.text}
@@ -48,7 +102,7 @@ export default function BlogLayout(props: BlogLayoutProps) {
       <Text color='gray.500'>{frontmatter.description}</Text>
       <Divider my={4} />
 
-      <Box>{children}</Box>
+      {children}
     </Layout>
   );
 }
