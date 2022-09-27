@@ -16,7 +16,7 @@ import {
 import SocialLink from 'components/SocialLink';
 import Image from 'next/image';
 import { ReactNode } from 'react';
-import { TbBrandGithub, TbGlobe } from 'react-icons/tb';
+import { TbBrandGithub, TbGlobe, TbWorld } from 'react-icons/tb';
 import Layout from './Article';
 
 interface BlogLayoutProps {
@@ -58,7 +58,7 @@ export default function BlogLayout(props: BlogLayoutProps) {
                       {data.url && data.url != `https://github.com/${data.name}` && (
                         <SocialLink
                           href={data.url}
-                          icon={TbGlobe}
+                          icon={TbWorld}
                           label={`View ${data.name}'s website`}
                         />
                       )}

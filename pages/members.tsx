@@ -2,7 +2,7 @@ import { Avatar, SimpleGrid, Stack, Text } from '@chakra-ui/react';
 import Layout from 'components/layouts/Article';
 import SocialLink from 'components/SocialLink';
 import fs from 'fs';
-import { TbBrandGithub, TbGlobe } from 'react-icons/tb';
+import { TbBrandGithub, TbWorld } from 'react-icons/tb';
 
 interface IMember {
   avatar_url: string;
@@ -30,7 +30,7 @@ function Member(props: { member: IMember }) {
             label={`View ${name}'s Github`}
           />
           {url && url != `https://github.com/${name}` && (
-            <SocialLink href={url} icon={TbGlobe} label={`View ${name}'s website`} />
+            <SocialLink href={url} icon={TbWorld} label={`View ${name}'s website`} />
           )}
         </Stack>
         <Text fontSize='sm' color='gray.500'>
