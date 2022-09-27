@@ -1,12 +1,44 @@
-import { extendTheme, type ThemeConfig } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
 
-const config: ThemeConfig = {
-  initialColorMode: 'dark',
-  useSystemColorMode: true,
-};
+const customTheme = extendTheme({
+  config: {
+    initialColorMode: 'dark',
+    useSystemColorMode: true,
+  },
+  semanticTokens: {
+    colors: {
+      accent: { default: 'teal.500', _dark: 'teal.200' },
+      grassTeal: '#88ccca',
+    },
+  },
+  breakpoints: {
+    sm: '330px',
+  },
+  styles: {
+    global: {
+      body: {
+        WebkitFontSmoothing: 'antialiased',
+        MozOsxFontSmoothing: 'grayscale',
+        color: 'fg',
+        '.deleted': {
+          color: '#ff8383 !important',
+          fontStyle: 'normal !important',
+        },
+        '.inserted': {
+          color: '#b5f4a5 !important',
+          fontStyle: 'normal !important',
+        },
+      },
+    },
+  },
+  components: {
+    Link: {
+      baseStyle: {
+        color: 'accent',
+        textUnderlineOffset: 3,
+      },
+    },
+  },
+});
 
-const breakpoints = { sm: '330px' };
-
-const theme = extendTheme({ config, breakpoints });
-
-export default theme;
+export default customTheme;

@@ -1,4 +1,4 @@
-import { VisuallyHidden, Icon, useColorModeValue, Link } from '@chakra-ui/react';
+import { VisuallyHidden, Icon, Link } from '@chakra-ui/react';
 import { ElementType } from 'react';
 
 function SocialLink({ icon, href, label }: { icon: ElementType; href: string; label: string }) {
@@ -12,7 +12,7 @@ function SocialLink({ icon, href, label }: { icon: ElementType; href: string; la
       isExternal
     >
       <VisuallyHidden>{label}</VisuallyHidden>
-      <Icon as={icon} fontSize='xl' color={useColorModeValue('teal.500', 'teal.200')} />
+      <Icon as={icon} fontSize='xl' color='accent' />
     </Link>
   );
 }
