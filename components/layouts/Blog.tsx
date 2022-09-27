@@ -40,13 +40,13 @@ export default function BlogLayout(props: BlogLayoutProps) {
             <PopoverTrigger>
               <Avatar size='md' src={data.avatar_url} />
             </PopoverTrigger>
-            <PopoverContent>
+            <PopoverContent maxW={{ base: 240, sm: 320 }}>
               <PopoverArrow />
               <PopoverCloseButton />
               <PopoverBody>
                 <Stack direction='row' spacing={6} align='flex-start'>
                   <Avatar src={data.avatar_url} size='xl' />
-                  <Stack spacing={3} maxW='320px'>
+                  <Stack spacing={3}>
                     <Text fontWeight='bold'>{data.name}</Text>
 
                     <Stack isInline align='center' spacing={2}>
