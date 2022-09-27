@@ -16,7 +16,7 @@ import {
 import SocialLink from 'components/SocialLink';
 import Image from 'next/image';
 import { ReactNode } from 'react';
-import { TbBrandGithub, TbGlobe, TbWorld } from 'react-icons/tb';
+import { TbBrandGithub, TbWorld } from 'react-icons/tb';
 import Layout from './Article';
 
 interface BlogLayoutProps {
