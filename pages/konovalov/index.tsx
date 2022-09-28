@@ -8,7 +8,7 @@ const Konovalov = () => {
     <Layout
       title='Aleksey Konovalov'
       description='Alexey konovalovich - самый донный хайпатошный канал, будьте в курсе волный хайпатоша'
-      image='https://idm1try-blog.vercel.app/posts/konovalov/avatar.jpg'
+      image='https://raw.githubusercontent.com/idm1try/idm1try-blog/main/public/posts/konovalov/avatar.jpg'
     >
       <Box my={100} textAlign='center'>
         <Heading>Aleksey Konovalov</Heading>
