@@ -1,5 +1,7 @@
 import { Box, Container } from '@chakra-ui/react';
 import GoToTopButton from 'components/GoToTopButton';
+import { getSeo } from 'lib/seo';
+import { DefaultSeo } from 'next-seo';
 import Head from 'next/head';
 import { ReactNode } from 'react';
 import Footer from '../Footer';
@@ -13,25 +15,17 @@ interface Props {
 }
 
 const Main = ({ children, router }: Props) => {
+  const seo = getSeo();
+
   return (
     <Box as='main' pb={8}>
       <Head>
-        <title>idm1try blog</title>
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
-        <meta name='description' content='idm1try blog' />
-        <meta name='author' content='idm1try' />
-
-        <meta name='twitter:title' content='idm1try-blog' />
-        <meta name='twitter:site' content='@idm1try' />
-        <meta name='twitter:creator' content='@idm1try' />
-        <meta name='twitter:card' content='summary_large_image' />
-        <meta name='twitter:image' content='https://idm1try-blog.vercel.app/card.png' />
-
-        <meta property='og:site_name' content='idm1try-blog' />
-        <meta name='og:title' content='idm1try-blog' />
-        <meta property='og:type' content='website' />
-        <meta property='og:image' content='https://idm1try.vercel.app/card.png' />
+        <meta content='IE=edge' httpEquiv='X-UA-Compatible' />
+        <meta content='width=device-width, initial-scale=1' name='viewport' />
+        <meta name='theme-color' content='#319795' />
       </Head>
+
+      <DefaultSeo {...seo} />
 
       <Navbar path={router.asPath} />
 
