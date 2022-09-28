@@ -7,6 +7,6 @@ module.exports = withContentlayer({
   productionBrowserSourceMaps: true,
   reactStrictMode: true,
   images: {
-    domains: ['pbs.twimg.com'],
+    domains: ['pbs.twimg.com', 'raw.githubusercontent.com', 'avatars.githubusercontent.com'],
   },
 });
