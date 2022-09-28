@@ -36,7 +36,7 @@ export default function BlogLayout(props: BlogLayoutProps) {
     <Layout
       title={frontmatter.title}
       description={frontmatter.description}
-      image={frontmatter.thumbnail}
+      image={frontmatter.thumbnail.url}
     >
       <HStack mt={8} mb={4}>
         <Box>
@@ -88,7 +88,7 @@ export default function BlogLayout(props: BlogLayoutProps) {
       {frontmatter.thumbnail && (
         <Box my={4}>
           <Image
-            src={frontmatter.thumbnail}
+            src={frontmatter.thumbnail.raw}
             alt={frontmatter.title}
             className='grid-item-thumbnail'
             height={350}
