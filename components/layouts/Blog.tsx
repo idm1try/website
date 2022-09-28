@@ -33,7 +33,11 @@ export default function BlogLayout(props: BlogLayoutProps) {
   const { publishedDate = {}, authorData: data = {} } = frontmatter;
 
   return (
-    <Layout title={frontmatter.title}>
+    <Layout
+      title={frontmatter.title}
+      description={frontmatter.description}
+      thumbnail={frontmatter.thumbnail}
+    >
       <HStack mt={8} mb={4}>
         <Box>
           <Popover isLazy trigger='hover'>

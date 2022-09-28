@@ -20,12 +20,17 @@ const Main = ({ children, router }: Props) => {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='description' content='idm1try blog' />
         <meta name='author' content='idm1try' />
+
         <meta name='twitter:title' content='idm1try-blog' />
         <meta name='twitter:site' content='@idm1try' />
         <meta name='twitter:creator' content='@idm1try' />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:image' content='https://idm1try-blog.vercel.app/card.png' />
+
         <meta property='og:site_name' content='idm1try-blog' />
         <meta name='og:title' content='idm1try-blog' />
         <meta property='og:type' content='website' />
+        <meta property='og:image' content='https://idm1try.vercel.app/card.png' />
       </Head>
 
       <Navbar path={router.asPath} />

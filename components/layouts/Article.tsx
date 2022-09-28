@@ -5,6 +5,8 @@ import { GridItemStyle } from '../GridItem';
 
 interface Props {
   title?: string;
+  description?: string;
+  thumbnail?: string;
   children: ReactNode;
 }
 
@@ -14,7 +16,7 @@ const variants = {
   exit: { opacity: 0, x: -0, y: 20 },
 };
 
-const Layout = ({ children, title }: Props) => {
+const Layout = ({ children, title, description, thumbnail }: Props) => {
   const t = `${title} - idm1try blog`;
   return (
     <motion.article
@@ -29,8 +31,15 @@ const Layout = ({ children, title }: Props) => {
         {title && (
           <Head>
             <title>{t}</title>
+            <meta name='description' content={description} />
+
             <meta name='twitter:title' content={t} />
+            <meta property='twitter:description' content={description} />
+            <meta name='twitter:image' content={thumbnail} />
+
             <meta property='og:title' content={t} />
+            <meta property='og:description' content={description} />
+            <meta property='og:image' content={thumbnail} />
           </Head>
         )}
         {children}
