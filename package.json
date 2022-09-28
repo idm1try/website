@@ -1,7 +1,8 @@
 {
   "name": "idm1try-blog",
   "version": "0.1.0",
-  "private": true,
+  "author": "idm1try",
+  "license": "MIT",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
