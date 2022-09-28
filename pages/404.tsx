@@ -5,7 +5,7 @@ import Layout from 'layouts/Article';
 
 const NotFound = () => {
   return (
-    <Layout>
+    <Layout title='404: Not found' description='Page not found'>
       <Box textAlign='center' mt={5}>
         <Heading display='inline-block' as='h2' size='2xl' color='accent'>
           404

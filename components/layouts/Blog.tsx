@@ -36,11 +36,11 @@ export default function BlogLayout(props: BlogLayoutProps) {
     <Layout
       title={frontmatter.title}
       description={frontmatter.description}
-      thumbnail={frontmatter.thumbnail}
+      image={frontmatter.thumbnail}
     >
       <HStack mt={8} mb={4}>
         <Box>
-          <Popover isLazy trigger='hover'>
+          <Popover isLazy trigger='hover' id='author-info'>
             <PopoverTrigger>
               <Avatar size='md' src={data.avatar_url} />
             </PopoverTrigger>

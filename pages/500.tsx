@@ -3,7 +3,7 @@ import Layout from 'layouts/Article';
 
 const NotFound = () => {
   return (
-    <Layout>
+    <Layout title='500: Internal Server Error'>
       <Box textAlign='center' mt={5}>
         <Heading display='inline-block' as='h2' size='2xl' color='accent'>
           500

@@ -1,13 +1,12 @@
 import SEO from 'components/seo';
 import { motion } from 'framer-motion';
-import Head from 'next/head';
 import { ReactNode } from 'react';
 import { GridItemStyle } from '../GridItem';
 
 interface Props {
   title?: string;
   description?: string;
-  thumbnail?: string;
+  image?: string;
   children: ReactNode;
 }
 
@@ -17,7 +16,7 @@ const variants = {
   exit: { opacity: 0, x: -0, y: 20 },
 };
 
-const Layout = ({ children, title, description, thumbnail }: Props) => {
+const Layout = ({ children, title, description, image }: Props) => {
   return (
     <motion.article
       initial='hidden'
@@ -27,7 +26,7 @@ const Layout = ({ children, title, description, thumbnail }: Props) => {
       transition={{ duration: 0.4, type: 'easeInOut' }}
       style={{ position: 'relative' }}
     >
-      <SEO title={title} description={description} />
+      <SEO title={title} description={description} image={image} />
       {children}
 
       <GridItemStyle />
