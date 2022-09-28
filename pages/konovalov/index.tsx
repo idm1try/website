@@ -5,7 +5,11 @@ import Layout from 'layouts/Article';
 
 const Konovalov = () => {
   return (
-    <Layout title='Aleksey Konovalov'>
+    <Layout
+      title='Aleksey Konovalov'
+      description='Alexey konovalovich - самый донный хайпатошный канал, будьте в курсе волный хайпатоша'
+      image='https://idm1try-blog.vercel.app/posts/konovalov/avatar.jpg'
+    >
       <Box my={100} textAlign='center'>
         <Heading>Aleksey Konovalov</Heading>
         <Text color='gray.500' mt={2}>
