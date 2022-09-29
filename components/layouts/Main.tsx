@@ -22,7 +22,7 @@ const Main = ({ children, router }: Props) => {
       <Head>
         <meta content='IE=edge' httpEquiv='X-UA-Compatible' />
         <meta content='width=device-width, initial-scale=1' name='viewport' />
-        <meta name='theme-color' content='#319795' />
+        <meta name='theme-color' content='#1A202C' />
       </Head>
 
       <DefaultSeo {...seo} />
