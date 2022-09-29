@@ -15,7 +15,6 @@ import {
 } from '@chakra-ui/react';
 import ChakraNextImage from 'components/ChakraNextImage';
 import SocialLink from 'components/SocialLink';
-import Image from 'next/image';
 import { ReactNode } from 'react';
 import { TbBrandGithub, TbWorld } from 'react-icons/tb';
 import Layout from './Article';

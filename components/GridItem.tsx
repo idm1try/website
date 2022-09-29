@@ -2,7 +2,6 @@ import NextLink from 'next/link';
 import { StaticImageData } from 'next/image';
 import { Box, Text, LinkBox, LinkOverlay } from '@chakra-ui/react';
 import { ReactNode } from 'react';
-import Card from 'public/card.png';
 import ChakraNextImage from './ChakraNextImage';
 
 interface BlogGridItemProps {
@@ -24,25 +23,14 @@ export const BlogGridItem = ({ children, slug, title, thumbnail }: BlogGridItemP
           shadow: 'outline',
         }}
       >
-        {thumbnail ? (
-          <ChakraNextImage
-            src={thumbnail}
-            alt={title}
-            height={320}
-            width={720}
-            objectFit='cover'
-            borderRadius='lg'
-          />
-        ) : (
-          <ChakraNextImage
-            src={Card}
-            alt={title}
-            height={320}
-            width={720}
-            objectFit='cover'
-            borderRadius='lg'
-          />
-        )}
+        <ChakraNextImage
+          src={thumbnail}
+          alt={title}
+          height={320}
+          width={720}
+          objectFit='cover'
+          borderRadius='lg'
+        />
         <LinkOverlay href={`/${slug}`}>
           <Text mt={2} fontSize={20} fontWeight='bold'>
             {title}
