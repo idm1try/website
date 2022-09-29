@@ -13,6 +13,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react';
+import ChakraNextImage from 'components/ChakraNextImage';
 import SocialLink from 'components/SocialLink';
 import Image from 'next/image';
 import { ReactNode } from 'react';
@@ -85,18 +86,16 @@ export default function BlogLayout(props: BlogLayoutProps) {
           </Text>
         </Box>
       </HStack>
-      {frontmatter.thumbnail && (
-        <Box my={4}>
-          <Image
-            src={frontmatter.thumbnail.raw}
-            alt={frontmatter.title}
-            className='grid-item-thumbnail'
-            height={350}
-            width={750}
-            objectFit='cover'
-          />
-        </Box>
-      )}
+      <ChakraNextImage
+        src={frontmatter.thumbnail.raw}
+        alt={frontmatter.title}
+        className='grid-item-thumbnail'
+        height={350}
+        width={750}
+        objectFit='cover'
+        borderRadius='lg'
+        my={4}
+      />
       <Heading fontSize='3xl' my={1}>
         {frontmatter.title}
       </Heading>

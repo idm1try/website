@@ -1,9 +1,9 @@
 import NextLink from 'next/link';
-import Image, { StaticImageData } from 'next/image';
+import { StaticImageData } from 'next/image';
 import { Box, Text, LinkBox, LinkOverlay } from '@chakra-ui/react';
-import { Global } from '@emotion/react';
 import { ReactNode } from 'react';
-import emplyThumbnail from 'public/emplyThumbnail.webp';
+import Card from 'public/card.png';
+import ChakraNextImage from './ChakraNextImage';
 
 interface BlogGridItemProps {
   children: ReactNode;
@@ -15,24 +15,32 @@ interface BlogGridItemProps {
 export const BlogGridItem = ({ children, slug, title, thumbnail }: BlogGridItemProps) => (
   <Box w='100%' textAlign='center'>
     <NextLink href={`${slug}`} passHref scroll={false}>
-      <LinkBox cursor='pointer'>
+      <LinkBox
+        cursor='pointer'
+        transition='0.25s transform ease-out, 0.25s color ease-out'
+        _hover={{ transform: 'translateY(-10px)', color: 'teal.500' }}
+        _focus={{
+          transform: 'translateY(-10px)',
+          shadow: 'outline',
+        }}
+      >
         {thumbnail ? (
-          <Image
+          <ChakraNextImage
             src={thumbnail}
             alt={title}
-            className='grid-item-thumbnail'
             height={320}
             width={720}
             objectFit='cover'
+            borderRadius='lg'
           />
         ) : (
-          <Image
-            src={emplyThumbnail}
+          <ChakraNextImage
+            src={Card}
             alt={title}
-            className='grid-item-thumbnail'
             height={320}
             width={720}
             objectFit='cover'
+            borderRadius='lg'
           />
         )}
         <LinkOverlay href={`/${slug}`}>
@@ -46,14 +54,4 @@ export const BlogGridItem = ({ children, slug, title, thumbnail }: BlogGridItemP
       </LinkBox>
     </NextLink>
   </Box>
-);
-
-export const GridItemStyle = () => (
-  <Global
-    styles={`
-      .grid-item-thumbnail {
-        border-radius: 0.5rem;
-      }
-    `}
-  />
 );

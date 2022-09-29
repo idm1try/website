@@ -1,7 +1,6 @@
 import SEO from 'components/seo';
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
-import { GridItemStyle } from '../GridItem';
 
 interface Props {
   title?: string;
@@ -28,8 +27,6 @@ const Layout = ({ children, title, description, image }: Props) => {
     >
       <SEO title={title} description={description} image={image} />
       {children}
-
-      <GridItemStyle />
     </motion.article>
   );
 };

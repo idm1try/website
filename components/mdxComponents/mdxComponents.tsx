@@ -12,8 +12,8 @@ import {
   Text,
   UnorderedList,
 } from '@chakra-ui/react';
-import { useElementSize } from '@mantine/hooks';
-import NextImage, { ImageProps } from 'next/image';
+import ChakraNextImage from 'components/ChakraNextImage';
+import { ImageProps } from 'next/image';
 import CodeBlock from './codeblock';
 import { InlineCode } from './InlineCode';
 import { LinkedHeading } from './LinkedHeading';
@@ -22,23 +22,18 @@ import { Table, TData, THead } from './Table';
 import { VideoPlayer } from './VideoPlayer';
 
 export const MDXComponents = {
-  Image: (props: ImageProps) => {
-    const { ref, width, height } = useElementSize();
-
-    return (
-      <Box my={8} ref={ref}>
-        <NextImage
-          className='grid-item-thumbnail'
-          layout='responsive'
-          width={width}
-          height={height}
-          objectFit='cover'
-          objectPosition='center'
-          {...props}
-        />
-      </Box>
-    );
-  },
+  Image: (props: ImageProps) => (
+    <ChakraNextImage
+      layout='responsive'
+      width={750}
+      height={350}
+      objectFit='contain'
+      borderRadius='lg'
+      my={8}
+      alt='image'
+      {...props}
+    />
+  ),
   LinkedImage: ({ href, src, ...props }: { href: string; src: string }) => (
     <Link display='block' my={8} href={href} isExternal>
       <MDXComponents.Image src={src} {...props} />

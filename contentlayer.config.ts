@@ -32,10 +32,7 @@ const Blogs = defineDocumentType(() => ({
         },
         thumbnail: {
           raw: doc.thumbnail,
-          url: doc.thumbnail.replace(
-            /^\/posts/,
-            'https://raw.githubusercontent.com/idm1try/idm1try-blog/main/public/posts'
-          ),
+          url: doc.thumbnail.replace(/^\/posts/, 'https://idm1try-blog.vercel.app/posts'),
         },
         author: doc.author,
         title: doc.title,
@@ -68,10 +65,7 @@ const Konovalov = defineDocumentType(() => ({
         },
         thumbnail: {
           raw: doc.thumbnail,
-          url: doc.thumbnail.replace(
-            /^\/posts/,
-            'https://raw.githubusercontent.com/idm1try/idm1try-blog/main/public/posts'
-          ),
+          url: doc.thumbnail.replace(/^\/posts/, 'https://idm1try-blog.vercel.app/posts'),
         },
         author: doc.author,
         title: doc.title,

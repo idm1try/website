@@ -7,7 +7,7 @@ const customTheme = extendTheme({
   },
   semanticTokens: {
     colors: {
-      accent: { default: 'teal.500', _dark: 'teal.200' },
+      accent: { default: 'teal.500', _dark: 'teal.300' },
       grassTeal: '#88ccca',
     },
   },
