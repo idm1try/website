@@ -23,6 +23,12 @@ export function getSeo() {
           height: 320,
           alt: 'idm1try blog website',
         },
+        {
+          url: 'https://idm1try-blog.vercel.app/apple-touch-icon.png',
+          width: 180,
+          height: 180,
+          alt: 'idm1try blog website',
+        },
       ],
     },
   };
