@@ -1,6 +1,7 @@
 import {
   Alert,
   AspectRatio,
+  Badge,
   Box,
   chakra,
   ChakraProps,
@@ -74,6 +75,7 @@ export const MDXComponents = {
       {...props}
     />
   ),
+  Badge: (props: ChakraProps) => <Badge colorScheme='teal' {...props} />,
   VideoPlayer,
   AspectRatio,
 };
