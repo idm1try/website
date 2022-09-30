@@ -23,14 +23,25 @@ export const BlogGridItem = ({ children, slug, title, thumbnail }: BlogGridItemP
           shadow: 'outline',
         }}
       >
-        <ChakraNextImage
-          src={thumbnail}
-          alt={title}
-          height={320}
-          width={720}
-          objectFit='cover'
-          borderRadius='lg'
-        />
+        {thumbnail ? (
+          <ChakraNextImage
+            src={thumbnail}
+            alt={title}
+            height={320}
+            width={720}
+            objectFit='cover'
+            borderRadius='lg'
+          />
+        ) : (
+          <ChakraNextImage
+            src='/card.png'
+            alt={title}
+            height={320}
+            width={720}
+            objectFit='cover'
+            borderRadius='lg'
+          />
+        )}
         <LinkOverlay href={`/${slug}`}>
           <Text mt={2} fontSize={20} fontWeight='bold'>
             {title}

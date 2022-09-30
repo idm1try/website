@@ -14,7 +14,7 @@ const ArticleList = ({ data }: { data: Blog[] | Konovalov[] }) => {
         .map(item => (
           <Box key={item._id} mb={6}>
             <BlogGridItem slug={item.slug} title={item.title} thumbnail={item.thumbnail}>
-              {item.description} &bull; <b>{item.author}</b> &bull;{' '}
+              {item.description && item.description + ' \u2022'} <b>{item.author}</b> &bull;{' '}
               {item.frontMatter.publishedDate.text}
             </BlogGridItem>
           </Box>

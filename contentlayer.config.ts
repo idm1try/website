@@ -16,9 +16,9 @@ const Blogs = defineDocumentType(() => ({
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
-    description: { type: 'string', required: true },
     publishedDate: { type: 'string', required: true },
     author: { type: 'string', required: true },
+    description: { type: 'string' },
     thumbnail: { type: 'string' },
   },
   computedFields: {
@@ -32,7 +32,7 @@ const Blogs = defineDocumentType(() => ({
         },
         thumbnail: {
           raw: doc.thumbnail,
-          url: doc.thumbnail.replace(/^\/posts/, 'https://idm1try-blog.vercel.app/posts'),
+          url: doc.thumbnail?.replace(/^\/posts/, 'https://idm1try-blog.vercel.app/posts'),
         },
         author: doc.author,
         title: doc.title,
@@ -65,7 +65,7 @@ const Konovalov = defineDocumentType(() => ({
         },
         thumbnail: {
           raw: doc.thumbnail,
-          url: doc.thumbnail.replace(/^\/posts/, 'https://idm1try-blog.vercel.app/posts'),
+          url: doc.thumbnail?.replace(/^\/posts/, 'https://idm1try-blog.vercel.app/posts'),
         },
         author: doc.author,
         title: doc.title,

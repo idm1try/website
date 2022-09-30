@@ -85,16 +85,18 @@ export default function BlogLayout(props: BlogLayoutProps) {
           </Text>
         </Box>
       </HStack>
-      <ChakraNextImage
-        src={frontmatter.thumbnail.raw}
-        alt={frontmatter.title}
-        className='grid-item-thumbnail'
-        height={350}
-        width={750}
-        objectFit='cover'
-        borderRadius='lg'
-        my={4}
-      />
+      {frontmatter.thumbnail.raw && (
+        <ChakraNextImage
+          src={frontmatter.thumbnail.raw}
+          alt={frontmatter.title}
+          className='grid-item-thumbnail'
+          height={350}
+          width={750}
+          objectFit='cover'
+          borderRadius='lg'
+          my={4}
+        />
+      )}
       <Heading fontSize='3xl' my={1}>
         {frontmatter.title}
       </Heading>
