@@ -18,7 +18,7 @@ export function getSeo() {
       site_name: 'idm1try blog website',
       images: [
         {
-          url: 'https://idm1try-blog.vercel.app/card.png',
+          url: 'https://idm1try-blog.vercel.app/og-image.png',
           width: 720,
           height: 320,
           alt: 'idm1try blog website',
