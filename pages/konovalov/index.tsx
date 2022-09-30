@@ -1,37 +1,26 @@
-import { Box, Heading, SimpleGrid, Text } from '@chakra-ui/react';
-import { BlogGridItem } from 'components/GridItem';
-import { allKonovalovs, Konovalov } from 'contentlayer/generated';
+import { Box, Heading, Text } from '@chakra-ui/react';
+import ArticleList from 'components/ArticleList';
+import { allKonovalovs } from 'contentlayer/generated';
 import Layout from 'layouts/Article';
 
 const Konovalov = () => {
+  const title = 'Aleksey Konovalov';
+  const description =
+    'Alexey konovalovich - самый донный хайпатошный канал, будьте в курсе волный хайпатоша';
+
   return (
     <Layout
-      title='Aleksey Konovalov'
-      description='Alexey konovalovich - самый донный хайпатошный канал, будьте в курсе волный хайпатоша'
+      title={title}
+      description={description}
       image='https://idm1try-blog.vercel.app/posts/konovalov/avatar.jpg'
     >
       <Box my={100} textAlign='center'>
-        <Heading>Aleksey Konovalov</Heading>
+        <Heading>{title}</Heading>
         <Text color='gray.500' mt={2}>
-          Alexey konovalovich - самый донный хайпатошный канал, будьте в курсе волный хайпатоша
+          {description}
         </Text>
       </Box>
-      <SimpleGrid columns={[1, 1, 2]} gap={6} mt={6}>
-        {allKonovalovs
-          .sort(
-            (a: Konovalov, b: Konovalov) =>
-              new Date(b.frontMatter.publishedDate.raw).valueOf() -
-              new Date(a.frontMatter.publishedDate.raw).valueOf()
-          )
-          .map(item => (
-            <Box key={item._id} mb={6}>
-              <BlogGridItem slug={item.slug} title={item.title} thumbnail={item.thumbnail}>
-                {item.description} &bull; <b>{item.author}</b> &bull;{' '}
-                {item.frontMatter.publishedDate.text}
-              </BlogGridItem>
-            </Box>
-          ))}
-      </SimpleGrid>
+      <ArticleList data={allKonovalovs} />
     </Layout>
   );
 };
