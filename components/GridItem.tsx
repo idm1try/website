@@ -12,12 +12,12 @@ interface BlogGridItemProps {
 }
 
 export const BlogGridItem = ({ children, slug, title, thumbnail }: BlogGridItemProps) => (
-  <Box w='100%' textAlign='center'>
+  <Box w='100%'>
     <NextLink href={`${slug}`} passHref scroll={false}>
       <LinkBox
         cursor='pointer'
         transition='0.25s transform ease-out, 0.25s color ease-out'
-        _hover={{ transform: 'translateY(-10px)', color: 'teal.500' }}
+        _hover={{ transform: 'translateY(-10px)', color: 'accent' }}
         _focus={{
           transform: 'translateY(-10px)',
           shadow: 'outline',
