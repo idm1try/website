@@ -29,7 +29,6 @@ export const MDXComponents = {
       width={750}
       height={350}
       objectFit='contain'
-      borderRadius='lg'
       my={8}
       alt='image'
       {...props}
