@@ -1,18 +1,14 @@
 import { Avatar, SimpleGrid, Stack, Text } from '@chakra-ui/react';
+import { getMembers } from 'allMembers';
 import Layout from 'components/layouts/Article';
 import SocialLink from 'components/SocialLink';
-import fs from 'fs';
 import { TbBrandGithub, TbWorld } from 'react-icons/tb';
 
 interface IMember {
-  avatar_url: string;
-  bio: string;
-  blog: string;
-  location: string;
-  login: string;
+  avatar_url?: string;
+  bio?: string;
   name: string;
-  twitter_username: string;
-  url: string;
+  url?: string;
 }
 
 function Member(props: { member: IMember }) {
@@ -41,7 +37,9 @@ function Member(props: { member: IMember }) {
   );
 }
 
-function Team({ members }: { members: IMember[] }) {
+function Team() {
+  const members: IMember[] = getMembers();
+
   return (
     <Layout title='Members'>
       <Stack spacing={8} mt={6}>
@@ -53,16 +51,6 @@ function Team({ members }: { members: IMember[] }) {
       </Stack>
     </Layout>
   );
-}
-
-export async function getStaticProps() {
-  const { members } = JSON.parse(fs.readFileSync('.all-membersrc.json', 'utf-8'));
-
-  return {
-    props: {
-      members,
-    },
-  };
 }
 
 export default Team;
