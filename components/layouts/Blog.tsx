@@ -42,7 +42,7 @@ export default function BlogLayout(props: BlogLayoutProps) {
         <Box>
           <Popover isLazy trigger='hover' id='author-info'>
             <PopoverTrigger>
-              <Avatar size='md' src={data.avatar_url} />
+              <Avatar size='md' src={data.avatarUrl} />
             </PopoverTrigger>
             <PopoverContent maxW={{ base: 240, sm: 320 }}>
               <PopoverArrow />
