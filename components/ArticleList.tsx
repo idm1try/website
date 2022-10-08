@@ -1,4 +1,4 @@
-import { Badge, Box, SimpleGrid } from '@chakra-ui/react';
+import { Box, SimpleGrid, Tag } from '@chakra-ui/react';
 import { BlogGridItem } from 'components/GridItem';
 import { Blog, Konovalov } from 'contentlayer/generated';
 
@@ -19,9 +19,9 @@ const ArticleList = ({ data }: { data: Blog[] | Konovalov[] }) => {
               </Box>
               <Box>{item.description}</Box>
               {item.tags?.map(tag => (
-                <Badge mt={2} colorScheme='teal' key={tag} mr={1}>
+                <Tag fontWeight='bold' mt={2} colorScheme='teal' key={tag} mr={1}>
                   {tag}
-                </Badge>
+                </Tag>
               ))}
             </BlogGridItem>
           </Box>
