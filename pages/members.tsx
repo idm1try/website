@@ -5,14 +5,15 @@ import SocialLink from 'components/SocialLink';
 import { TbBrandGithub, TbWorld } from 'react-icons/tb';
 
 interface IMember {
-  avatar_url?: string;
-  bio?: string;
   name: string;
   url?: string;
+  bio?: string;
+  avatarUrl?: string;
 }
 
 function Member(props: { member: IMember }) {
-  const { avatar_url: avatarUrl, bio, name, url } = props.member;
+  const { avatarUrl, bio, name, url } = props.member;
+
   return (
     <Stack direction='row' spacing={6} align='flex-start'>
       <Avatar src={avatarUrl} size='xl' />
