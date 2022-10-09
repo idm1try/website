@@ -13,7 +13,7 @@ interface BlogGridItemProps {
 
 export const BlogGridItem = ({ children, slug, title, thumbnail }: BlogGridItemProps) => (
   <Box w='100%'>
-    <NextLink href={`${slug}`} passHref scroll={false}>
+    <NextLink href={slug} passHref scroll={false}>
       <LinkBox
         cursor='pointer'
         transition='0.25s transform ease-out, 0.25s color ease-out'
@@ -28,7 +28,7 @@ export const BlogGridItem = ({ children, slug, title, thumbnail }: BlogGridItemP
         ) : (
           <ChakraNextImage src='/card.png' alt={title} height={320} width={720} objectFit='cover' />
         )}
-        <LinkOverlay href={`/${slug}`}>
+        <LinkOverlay href={slug}>
           <Text mt={2} fontSize={20} fontWeight='bold'>
             {title}
           </Text>
