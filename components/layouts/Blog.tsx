@@ -12,7 +12,9 @@ import {
   PopoverTrigger,
   Stack,
   Text,
+  useColorModeValue,
 } from '@chakra-ui/react';
+import Giscus from '@giscus/react';
 import ChakraNextImage from 'components/ChakraNextImage';
 import SocialLink from 'components/SocialLink';
 import { ReactNode } from 'react';
@@ -27,6 +29,7 @@ interface BlogLayoutProps {
 
 export default function BlogLayout(props: BlogLayoutProps) {
   const { frontmatter, children } = props;
+  const commentsTheme = useColorModeValue('light', 'dark');
 
   if (!frontmatter) return <></>;
 
@@ -104,6 +107,23 @@ export default function BlogLayout(props: BlogLayoutProps) {
       <Divider my={4} />
 
       {children}
+
+      <Box mt={8}>
+        <Giscus
+          id='comments'
+          repo='idm1try/idm1try-blog'
+          repoId='R_kgDOIEagqg'
+          category='General'
+          categoryId='DIC_kwDOIEagqs4CR4PJ'
+          mapping='title'
+          reactionsEnabled='1'
+          emitMetadata='0'
+          inputPosition='bottom'
+          theme={commentsTheme}
+          lang='en'
+          loading='lazy'
+        />
+      </Box>
     </Layout>
   );
 }
