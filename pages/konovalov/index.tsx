@@ -12,7 +12,7 @@ const Konovalov = () => {
     <Layout
       title={title}
       description={description}
-      image='https://idm1try-blog.vercel.app/posts/konovalov/avatar.jpg'
+      image='https://blog.idm1try.ru/posts/konovalov/avatar.jpg'
     >
       <Box my={100} textAlign='center'>
         <Heading>{title}</Heading>

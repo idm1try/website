@@ -2,11 +2,7 @@ import { NextSeo, NextSeoProps } from 'next-seo';
 
 export type SEOProps = Pick<NextSeoProps, 'title' | 'description'> & { image: string };
 
-const SEO = ({
-  title,
-  description,
-  image = 'https://idm1try-blog.vercel.app/card.png',
-}: SEOProps) => (
+const SEO = ({ title, description, image = 'https://blog.idm1try.ru/card.png' }: SEOProps) => (
   <NextSeo
     title={title}
     description={description}

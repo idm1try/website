@@ -3,7 +3,7 @@ export function getSeo() {
     title: 'idm1try blog',
     titleTemplate: '%s - idm1try blog',
     description: 'idm1try blog website',
-    siteUrl: 'https://idm1try-blog.vercel.app',
+    siteUrl: 'https://blog.idm1try.ru',
     twitter: {
       handle: '@idm1try',
       site: '@idm1try',
@@ -12,13 +12,13 @@ export function getSeo() {
     openGraph: {
       type: 'website',
       locale: 'en_US',
-      url: 'https://idm1try-blog.vercel.app',
+      url: 'https://blog.idm1try.ru',
       title: 'idm1try blog',
       description: 'idm1try blog website',
       site_name: 'idm1try blog website',
       images: [
         {
-          url: 'https://idm1try-blog.vercel.app/card.png',
+          url: 'https://blog.idm1try.ru/card.png',
           width: 720,
           height: 320,
           alt: 'idm1try blog website',
