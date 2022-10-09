@@ -15,19 +15,17 @@ const LogoBox = styled.span`
   }
 `;
 
-const Logo = () => {
-  return (
-    <Link href='/' scroll={false}>
-      <a>
-        <Box transition='0.25s color ease-out' _hover={{ color: 'gray.300' }}>
-          <LogoBox>
-            <Icon as={TbRadar} mt={1} />
-            <Text fontWeight='bold'>Blog</Text>
-          </LogoBox>
-        </Box>
-      </a>
-    </Link>
-  );
-};
+const Logo = () => (
+  <Link href='/' scroll={false}>
+    <a>
+      <Box transition='0.25s color ease-out' _hover={{ color: 'gray.300' }}>
+        <LogoBox>
+          <Icon as={TbRadar} mt={1} />
+          <Text fontWeight='bold'>Blog</Text>
+        </LogoBox>
+      </Box>
+    </a>
+  </Link>
+);
 
 export default Logo;
