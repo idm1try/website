@@ -3,7 +3,7 @@ export function getMembers() {
     {
       name: 'idm1try',
       avatarUrl: 'https://avatars.githubusercontent.com/u/93399072?v=4',
-      url: 'https://idm1try.github.io',
+      url: 'https://idm1try.ru',
       bio: 'Frontend Developer',
     },
     {

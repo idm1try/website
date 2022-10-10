@@ -10,11 +10,12 @@ const NotFound = () => (
       <ChakraNextImage
         alignItems='center'
         justifyContent='center'
-        src='/travolta.webp'
-        height='500'
-        width='500'
-        alt='Travola Lost'
-        filter='brightness(1.25) contrast(1.25) grayscale(100%)'
+        src='/404.webp'
+        height={300}
+        width={500}
+        objectFit='cover'
+        w='100%'
+        alt='Meme'
       />
       <Text color='gray.500' my={6}>
         Whoops, it looks like the page you were looking for doesn&apos;t exist!

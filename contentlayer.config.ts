@@ -1,7 +1,8 @@
 import { ComputedFields, defineDocumentType, makeSource } from 'contentlayer/source-files';
+import rehypeSlug from 'rehype-slug';
 import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
-import rehypeSlug from 'rehype-slug';
+import { getTableOfContents } from './lib/getTableOfContents';
 
 const computedFields: ComputedFields = {
   slug: {
@@ -40,6 +41,7 @@ const Blogs = defineDocumentType(() => ({
         description: doc.description,
         tags: doc.tags,
         slug: `/${doc._raw.flattenedPath}`,
+        headings: getTableOfContents(doc.body.raw),
       }),
     },
   },
@@ -75,6 +77,7 @@ const Konovalov = defineDocumentType(() => ({
         description: doc.description,
         tags: doc.tags,
         slug: `/${doc._raw.flattenedPath}`,
+        headings: getTableOfContents(doc.body.raw),
       }),
     },
   },

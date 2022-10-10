@@ -10,6 +10,7 @@ specifiers:
   '@emotion/styled': ^11.10.4
   '@giscus/react': ^2.2.0
   '@mantine/hooks': ^5.5.4
+  '@types/github-slugger': ^1.3.0
   '@types/node': 18.7.9
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
@@ -24,6 +25,7 @@ specifiers:
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.2.1
   framer-motion: ^7.5.3
+  github-slugger: ^1.4.0
   husky: ^8.0.1
   mdx-bundler: ^9.0.1
   next: 12.3.1
@@ -51,6 +53,7 @@ dependencies:
   '@mantine/hooks': 5.5.4_react@18.2.0
   contentlayer: 0.2.8_esbuild@0.14.0
   framer-motion: 7.5.3_biqbaboplfbrettd7655fr4n2y
+  github-slugger: 1.4.0
   mdx-bundler: 9.0.1_esbuild@0.14.0
   next: 12.3.1_6tziyx3dehkoeijunclpkpolha
   next-contentlayer: 0.2.8_bzthecgyp7pdvrju7ihwqrt5re
@@ -70,6 +73,7 @@ devDependencies:
   '@chakra-ui/styled-system': 2.3.4
   '@commitlint/config-conventional': 17.1.0
   '@commitlint/types': 17.0.0
+  '@types/github-slugger': 1.3.0
   '@types/node': 18.7.9
   '@types/react': 18.0.17
   '@types/react-dom': 18.0.6
@@ -2416,6 +2420,10 @@ packages:
   /@types/estree/1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: false
+
+  /@types/github-slugger/1.3.0:
+    resolution: {integrity: sha512-J/rMZa7RqiH/rT29TEVZO4nBoDP9XJOjnbbIofg7GQKs4JIduEO3WLpte+6WeUz/TcrXKlY+bM7FYrp8yFB+3g==}
+    dev: true
 
   /@types/hast/2.3.4:
     resolution: {integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g==}
