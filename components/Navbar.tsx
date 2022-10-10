@@ -1,5 +1,6 @@
 import {
   Box,
+  Button,
   Container,
   Flex,
   Heading,
@@ -21,26 +22,21 @@ import { ReactNode } from 'react';
 interface LinkItemProps {
   href: string;
   path: string;
-  target?: string;
   children: ReactNode;
 }
 
-const LinkItem = ({ href, path, target, children, ...props }: LinkItemProps) => {
+const LinkItem = ({ href, path, children, ...props }: LinkItemProps) => {
   const active = path === href;
-  const inactiveColor = useColorModeValue('gray200', 'whiteAlpha.900');
 
   return (
     <NextLink href={href} passHref scroll={false}>
-      <Link
-        p={2}
-        borderRadius='md'
-        bg={active ? 'grassTeal' : undefined}
-        color={active ? '#202023' : inactiveColor}
-        target={target}
+      <Button
+        colorScheme={active ? 'teal' : 'gray'}
+        variant={active ? 'solid' : 'ghost'}
         {...props}
       >
         {children}
-      </Link>
+      </Button>
     </NextLink>
   );
 };

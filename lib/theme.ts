@@ -38,6 +38,11 @@ const customTheme = extendTheme({
         textUnderlineOffset: 3,
       },
     },
+    Button: {
+      baseStyle: {
+        borderRadius: 'lg',
+      },
+    },
   },
 });
 
