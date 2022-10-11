@@ -19,6 +19,7 @@
     "paths": {
       "components/*": ["./components/*"],
       "lib/*": ["./lib/*"],
+      "hooks/*": ["./lib/hooks/*"],
       "public/*": ["./public/*"],
       "contentlayer/generated": ["./.contentlayer/generated"],
       "layouts/*": ["./components/layouts/*"]

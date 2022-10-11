@@ -1,5 +1,5 @@
 import { Box, IconButton } from '@chakra-ui/react';
-import { useWindowScroll } from '@mantine/hooks';
+import { useWindowScroll } from 'hooks/useWindowScroll';
 import { TbArrowUp } from 'react-icons/tb';
 
 const GoToTopButton = () => {

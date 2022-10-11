@@ -1,19 +1,10 @@
 import { Box, BoxProps, Center } from '@chakra-ui/react';
-import { useState, useEffect } from 'react';
-import ReactPlayer from 'react-player';
+import dynamic from 'next/dynamic';
 
-export const VideoPlayer = (props: BoxProps) => {
-  const [hasWindow, setHasWindow] = useState(false);
+const ReactPlayer = dynamic(() => import('react-player'), { ssr: false });
 
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      setHasWindow(true);
-    }
-  }, []);
-
-  return (
-    <Center my={8}>
-      {hasWindow && <Box as={ReactPlayer} maxH={{ base: 200, md: 400 }} {...props} />}
-    </Center>
-  );
-};
+export const VideoPlayer = (props: BoxProps) => (
+  <Center my={8}>
+    <Box as={ReactPlayer} maxH={{ base: 200, md: 400 }} {...props} />
+  </Center>
+);

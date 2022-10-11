@@ -1,12 +1,9 @@
 import { IconButton, useColorMode, useColorModeValue } from '@chakra-ui/react';
-import { useHotkeys } from '@mantine/hooks';
 import { AnimatePresence, motion } from 'framer-motion';
 import { TbMoon, TbSun } from 'react-icons/tb';
 
 const ThemeToggleButton = () => {
   const { toggleColorMode } = useColorMode();
-
-  useHotkeys([['t', toggleColorMode]]);
 
   return (
     <AnimatePresence mode='wait' initial={false}>
