@@ -1,4 +1,4 @@
-import SEO from 'components/seo';
+import SEO from 'components/Seo';
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
 
