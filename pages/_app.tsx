@@ -1,11 +1,12 @@
+import { ChakraProvider } from '@chakra-ui/react';
 import { AnimatePresence } from 'framer-motion';
-import type { AppProps } from 'next/app';
-import Chakra from 'components/Chakra';
 import Layout from 'layouts/Main';
+import theme from 'lib/theme';
+import { AppProps } from 'next/app';
 
 function Website({ Component, pageProps, router }: AppProps) {
   return (
-    <Chakra>
+    <ChakraProvider theme={theme}>
       <Layout router={router}>
         <AnimatePresence
           mode='wait'
@@ -19,7 +20,7 @@ function Website({ Component, pageProps, router }: AppProps) {
           <Component {...pageProps} key={router.route} />
         </AnimatePresence>
       </Layout>
-    </Chakra>
+    </ChakraProvider>
   );
 }
 
