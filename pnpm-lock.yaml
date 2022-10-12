@@ -1944,12 +1944,12 @@ packages:
     resolution: {integrity: sha512-qDv4851VFSaBWzpS02cXHclo40jsbAjRXnebNXpm0uVg32kCneZPo9RYVQtrTNICtZ+1wAYHu1ZtxWSWMbKrBw==}
     dev: false
 
-  /@mdx-js/esbuild/2.1.4_esbuild@0.14.0:
-    resolution: {integrity: sha512-1gT8vgW1HyidDzX+1VsPHQIQFRrjgAM1cW7wvmKPSuG7Nt7Em13damwjzufScUCUH3FoHYAe3lAyu1lsvgvrIA==}
+  /@mdx-js/esbuild/2.1.5_esbuild@0.14.0:
+    resolution: {integrity: sha512-9bfsKaD5ii4zcmy5WmERzQyDVXiQPHJk9FBQ3DLKzzmD56UIV1GFg16xVeg+vhWlO36U2VNiz5fYJIITZxUAJw==}
     peerDependencies:
       esbuild: '>=0.11.0'
     dependencies:
-      '@mdx-js/mdx': 2.1.4
+      '@mdx-js/mdx': 2.1.5
       esbuild: 0.14.0
       node-fetch: 3.2.10
       vfile: 5.3.5
@@ -1957,8 +1957,8 @@ packages:
       - supports-color
     dev: false
 
-  /@mdx-js/mdx/2.1.4:
-    resolution: {integrity: sha512-47drTDRr6QiMx1SXIoIyjTL8izoC+IBP5nmOLTUbuFJZYXdV9TPLuZJic0i96FGKfL7DpRN4WylpsxOVlpufMg==}
+  /@mdx-js/mdx/2.1.5:
+    resolution: {integrity: sha512-zEG0lt+Bl/r5U6e0TOS7qDbsXICtemfAPquxWFsMbdzrvlWaqMGemLl+sjVpqlyaaiCiGVQBSGdCk0t1qXjkQg==}
     dependencies:
       '@types/estree-jsx': 1.0.0
       '@types/mdx': 2.0.2
@@ -1969,7 +1969,7 @@ packages:
       hast-util-to-estree: 2.1.0
       markdown-extensions: 1.1.1
       periscopic: 3.0.4
-      remark-mdx: 2.1.4
+      remark-mdx: 2.1.5
       remark-parse: 10.0.1
       remark-rehype: 10.1.0
       unified: 10.1.2
@@ -2888,7 +2888,7 @@ packages:
     hasBin: true
     dependencies:
       caniuse-lite: 1.0.30001418
-      electron-to-chromium: 1.4.276
+      electron-to-chromium: 1.4.279
       node-releases: 2.0.6
       update-browserslist-db: 1.0.10_browserslist@4.21.4
     dev: false
@@ -3355,8 +3355,8 @@ packages:
       is-obj: 2.0.0
     dev: true
 
-  /electron-to-chromium/1.4.276:
-    resolution: {integrity: sha512-EpuHPqu8YhonqLBXHoU6hDJCD98FCe6KDoet3/gY1qsQ6usjJoHqBH2YIVs8FXaAtHwVL8Uqa/fsYao/vq9VWQ==}
+  /electron-to-chromium/1.4.279:
+    resolution: {integrity: sha512-xs7vEuSZ84+JsHSTFqqG0TE3i8EAivHomRQZhhcRvsmnjsh5C2KdhwNKf4ZRYtzq75wojpFyqb62m32Oam57wA==}
     dev: false
 
   /emoji-regex/8.0.0:
@@ -5111,7 +5111,7 @@ packages:
       '@babel/runtime': 7.19.4
       '@esbuild-plugins/node-resolve': 0.1.4_esbuild@0.14.0
       '@fal-works/esbuild-plugin-global-externals': 2.1.2
-      '@mdx-js/esbuild': 2.1.4_esbuild@0.14.0
+      '@mdx-js/esbuild': 2.1.5_esbuild@0.14.0
       esbuild: 0.14.0
       gray-matter: 4.0.3
       remark-frontmatter: 4.0.1
@@ -6298,8 +6298,8 @@ packages:
       toml: 3.0.0
     dev: false
 
-  /remark-mdx/2.1.4:
-    resolution: {integrity: sha512-zZxHdd0s8xfMmIKcxhFoUT4x54VOJTUJ+lPys7ZR2Vcgb4xwuAwxvUfkVrsCTdo/lBVxLQv43bXVNu3ZIbahnA==}
+  /remark-mdx/2.1.5:
+    resolution: {integrity: sha512-A8vw5s+BgOa968Irt8BO7DfWJTE0Fe7Ge3hX8zzDB1DnwMZTNdK6qF2IcFao+/7nzk1vSysKcFp+3ku4vhMpaQ==}
     dependencies:
       mdast-util-mdx: 2.0.0
       micromark-extension-mdxjs: 1.0.0

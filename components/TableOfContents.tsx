@@ -3,14 +3,14 @@ import * as React from 'react';
 import { useScrollSpy } from 'hooks/useScrollSpy';
 import TocNav from './TocNav';
 
-interface TableOfContentProps extends BoxProps {
-  headings: FrontmatterHeading[];
-}
-
-export interface FrontmatterHeading {
+interface FrontmatterHeading {
   level: string | number;
   text: string;
   id: string;
+}
+
+interface TableOfContentProps extends BoxProps {
+  headings: FrontmatterHeading[];
 }
 
 function TableOfContent(props: TableOfContentProps) {
@@ -23,8 +23,9 @@ function TableOfContent(props: TableOfContentProps) {
   );
   const linkColor = useColorModeValue('gray.600', 'gray.400');
   const linkHoverColor = useColorModeValue('gray.900', 'gray.600');
+
   return (
-    <TocNav title='On This Page' {...rest}>
+    <TocNav title='On this page' {...rest}>
       <OrderedList spacing={1} ml='0' mt='4' styleType='none'>
         {headings.map(({ id, text, level }) => (
           <ListItem key={id} title={text} ml={level === 'h3' ? '4' : undefined}>

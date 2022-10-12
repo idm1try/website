@@ -13,7 +13,7 @@ import {
   Text,
   UnorderedList,
 } from '@chakra-ui/react';
-import ChakraNextImage from 'components/ChakraNextImage';
+import Image from 'components/Image';
 import { ImageProps } from 'next/image';
 import CodeBlock from './codeblock';
 import { InlineCode } from './InlineCode';
@@ -24,7 +24,7 @@ import { VideoPlayer } from './VideoPlayer';
 
 export const MDXComponents = {
   Image: (props: ImageProps) => (
-    <ChakraNextImage
+    <Image
       layout='responsive'
       width={750}
       height={350}

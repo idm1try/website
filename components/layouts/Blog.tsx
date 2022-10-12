@@ -1,5 +1,4 @@
 import {
-  Avatar,
   Box,
   Divider,
   Heading,
@@ -10,16 +9,15 @@ import {
   PopoverCloseButton,
   PopoverContent,
   PopoverTrigger,
-  Stack,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
 import Giscus from '@giscus/react';
-import ChakraNextImage from 'components/ChakraNextImage';
-import SocialLink from 'components/SocialLink';
+import Avatar from 'components/Avatar';
+import Image from 'components/Image';
+import Member from 'components/Member';
 import TableOfContent from 'components/TableOfContents';
 import { ReactNode } from 'react';
-import { TbBrandGithub, TbWorld } from 'react-icons/tb';
 import Layout from './Article';
 
 interface BlogLayoutProps {
@@ -43,40 +41,19 @@ export default function BlogLayout(props: BlogLayoutProps) {
         description={frontmatter.description}
         image={frontmatter.thumbnail.url}
       >
-        <HStack mt={8} mb={4}>
+        <HStack my={6}>
           <Box>
             <Popover isLazy trigger='hover' id='author-info'>
               <PopoverTrigger>
-                <Avatar size='md' src={data.avatarUrl} />
+                <Box>
+                  <Avatar src={data.avatarUrl} size={48} alt={data.name} />
+                </Box>
               </PopoverTrigger>
               <PopoverContent maxW={{ base: 240, sm: 320 }}>
                 <PopoverArrow />
                 <PopoverCloseButton />
                 <PopoverBody>
-                  <Stack direction='row' spacing={6} align='flex-start'>
-                    <Avatar src={data.avatar_url} size='xl' />
-                    <Stack spacing={3}>
-                      <Text fontWeight='bold'>{data.name}</Text>
-
-                      <Stack isInline align='center' spacing={2}>
-                        <SocialLink
-                          href={`https://github.com/${data.name}`}
-                          icon={TbBrandGithub}
-                          label={`View ${data.name}'s Github`}
-                        />
-                        {data.url && data.url != `https://github.com/${data.name}` && (
-                          <SocialLink
-                            href={data.url}
-                            icon={TbWorld}
-                            label={`View ${data.name}'s website`}
-                          />
-                        )}
-                      </Stack>
-                      <Text fontSize='sm' color='gray.500'>
-                        {data.bio}
-                      </Text>
-                    </Stack>
-                  </Stack>
+                  <Member member={data} />
                 </PopoverBody>
               </PopoverContent>
             </Popover>
@@ -91,7 +68,7 @@ export default function BlogLayout(props: BlogLayoutProps) {
           </Box>
         </HStack>
         {frontmatter.thumbnail.raw && (
-          <ChakraNextImage
+          <Image
             src={frontmatter.thumbnail.raw}
             alt={frontmatter.title}
             className='grid-item-thumbnail'

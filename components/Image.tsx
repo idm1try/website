@@ -22,7 +22,7 @@ const myLoader = (resolverProps: ImageLoaderProps): string => {
   return `${resolverProps.src}?w=${resolverProps.width}&q=${resolverProps.quality}`;
 };
 
-const ChakraNextImage = (props: ImageProps & FlexProps) => {
+const Image = (props: ImageProps & FlexProps) => {
   const { src, width, height, alt, quality, objectFit, ...rest } = props;
 
   return (
@@ -46,4 +46,4 @@ const ChakraNextImage = (props: ImageProps & FlexProps) => {
   );
 };
 
-export default ChakraNextImage;
+export default Image;
