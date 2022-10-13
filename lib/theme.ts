@@ -40,7 +40,7 @@ const customTheme = extendTheme({
     },
     Button: {
       baseStyle: {
-        borderRadius: 'lg',
+        rounded: 'lg',
       },
     },
   },

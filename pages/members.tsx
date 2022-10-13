@@ -3,7 +3,7 @@ import { getMembers } from 'allMembers';
 import Layout from 'components/layouts/Article';
 import Member, { MemberProps } from 'components/Member';
 
-const Team = () => {
+const Members = () => {
   const members: MemberProps[] = getMembers();
 
   return (
@@ -19,4 +19,4 @@ const Team = () => {
   );
 };
 
-export default Team;
+export default Members;

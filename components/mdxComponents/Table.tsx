@@ -1,7 +1,7 @@
 import { chakra, useColorModeValue } from '@chakra-ui/react';
 
 export const Table = (props: object) => (
-  <chakra.div overflowX='auto' borderRadius='lg' my={8}>
+  <chakra.div overflowX='auto' rounded='lg' my={8}>
     <chakra.table textAlign='left' width='full' {...props} />
   </chakra.div>
 );

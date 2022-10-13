@@ -75,7 +75,7 @@ export default function BlogLayout(props: BlogLayoutProps) {
             height={350}
             width={750}
             objectFit='cover'
-            borderRadius='lg'
+            rounded='lg'
             my={4}
           />
         )}

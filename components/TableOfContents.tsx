@@ -1,5 +1,4 @@
 import { BoxProps, ListItem, OrderedList, chakra, useColorModeValue } from '@chakra-ui/react';
-import * as React from 'react';
 import { useScrollSpy } from 'hooks/useScrollSpy';
 import TocNav from './TocNav';
 

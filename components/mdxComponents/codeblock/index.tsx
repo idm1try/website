@@ -5,7 +5,7 @@ import CopyButton from './CopyButton';
 import Highlight from './Highlight';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-function CodeBlock(props: any) {
+const CodeBlock = (props: any) => {
   const { className, children, viewlines, ln } = props.children.props;
 
   const language = className?.replace(/language-/, '');
@@ -25,6 +25,6 @@ function CodeBlock(props: any) {
       <CopyButton top='4' code={rawCode} />
     </Box>
   );
-}
+};
 
 export default CodeBlock;

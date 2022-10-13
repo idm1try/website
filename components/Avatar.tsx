@@ -11,9 +11,9 @@ interface AvatarProps {
 const Avatar = ({ src, size, alt }: AvatarProps) => (
   <Box>
     {src ? (
-      <Image src={src} width={size} height={size} borderRadius='full' alt={alt} />
+      <Image src={src} width={size} height={size} rounded='full' alt={alt} />
     ) : (
-      <Box as={TbUser} size={size} bgColor='gray.500' color='white' borderRadius='full' p='10px' />
+      <Box as={TbUser} size={size} bgColor='gray.500' color='white' rounded='full' p='10px' />
     )}
   </Box>
 );

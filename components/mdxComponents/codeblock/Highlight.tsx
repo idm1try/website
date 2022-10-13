@@ -1,6 +1,5 @@
 import { chakra } from '@chakra-ui/react';
 import BaseHighlight, { defaultProps, Language, PrismTheme } from 'prism-react-renderer';
-import { liveEditorStyle } from './Styles';
 
 const RE = /{([\d,-]+)}/;
 
@@ -29,14 +28,18 @@ interface HighlightProps {
   showLines?: boolean;
 }
 
-function Highlight({ codeString, language, metastring, showLines, ...props }: HighlightProps) {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const shouldHighlightLine = calculateLinesToHighlight(metastring!);
+const Highlight = ({ codeString, language, metastring, showLines, ...props }: HighlightProps) => {
+  const shouldHighlightLine = calculateLinesToHighlight(metastring);
 
   return (
     <BaseHighlight {...defaultProps} code={codeString} language={language} {...props}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <div style={liveEditorStyle} data-language={language}>
+        <chakra.div
+          fontSize={14}
+          fontFamily='SF Mono, Menlo, monospace'
+          overflowX='auto'
+          data-language={language}
+        >
           <pre className={className} style={style}>
             {tokens.map((line, i) => {
               const lineProps = getLineProps({ line, key: i });
@@ -59,10 +62,10 @@ function Highlight({ codeString, language, metastring, showLines, ...props }: Hi
               );
             })}
           </pre>
-        </div>
+        </chakra.div>
       )}
     </BaseHighlight>
   );
-}
+};
 
 export default Highlight;

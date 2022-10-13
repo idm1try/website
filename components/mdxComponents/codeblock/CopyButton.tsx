@@ -4,7 +4,7 @@ interface CopyButtonProps extends ButtonProps {
   code: string;
 }
 
-function CopyButton({ code, ...props }: CopyButtonProps) {
+const CopyButton = ({ code, ...props }: CopyButtonProps) => {
   const { hasCopied, onCopy } = useClipboard(code);
 
   return (
@@ -24,6 +24,6 @@ function CopyButton({ code, ...props }: CopyButtonProps) {
       {hasCopied ? 'copied' : 'copy'}
     </Button>
   );
-}
+};
 
 export default CopyButton;

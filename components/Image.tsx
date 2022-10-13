@@ -30,7 +30,7 @@ const Image = (props: ImageProps & FlexProps) => {
       <ChakraNextUnwrappedImage
         w='auto'
         h='auto'
-        borderRadius='lg'
+        rounded='lg'
         loader={myLoader}
         width={width}
         quality={quality}
