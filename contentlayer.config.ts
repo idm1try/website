@@ -1,4 +1,5 @@
 import { ComputedFields, defineDocumentType, makeSource } from 'contentlayer/source-files';
+import readingTime from 'reading-time';
 import rehypeSlug from 'rehype-slug';
 import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
@@ -42,6 +43,7 @@ const Blogs = defineDocumentType(() => ({
         tags: doc.tags,
         slug: `/${doc._raw.flattenedPath}`,
         headings: getTableOfContents(doc.body.raw),
+        readingTime: readingTime(doc.body.raw, { wordsPerMinute: 300 }),
       }),
     },
   },
@@ -78,6 +80,7 @@ const Konovalov = defineDocumentType(() => ({
         tags: doc.tags,
         slug: `/${doc._raw.flattenedPath}`,
         headings: getTableOfContents(doc.body.raw),
+        readingTime: readingTime(doc.body.raw, { wordsPerMinute: 300 }),
       }),
     },
   },

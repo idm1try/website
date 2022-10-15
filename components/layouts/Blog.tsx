@@ -9,6 +9,7 @@ import {
   PopoverCloseButton,
   PopoverContent,
   PopoverTrigger,
+  Tag,
   Text,
   useColorModeValue,
 } from '@chakra-ui/react';
@@ -43,9 +44,13 @@ interface BlogLayoutProps {
       avatarUrl?: string;
       twitterUsername?: string;
     };
+    readingTime: {
+      text: string;
+    };
     author: string;
     description: string;
     title: string;
+    tags: string[];
     headings: FrontmatterHeading[];
   };
   children: ReactNode;
@@ -88,7 +93,7 @@ const BlogLayout = (props: BlogLayoutProps) => {
               {authorData.name}
             </Text>
             <Text fontSize='xs' color='gray.500'>
-              {publishedDate.text}
+              {publishedDate.text} &bull; {frontmatter.readingTime.text}
             </Text>
           </Box>
         </HStack>
@@ -108,6 +113,11 @@ const BlogLayout = (props: BlogLayoutProps) => {
           {frontmatter.title}
         </Heading>
         <Text color='gray.500'>{frontmatter.description}</Text>
+        {frontmatter.tags?.map(tag => (
+          <Tag fontWeight='bold' mt={2} colorScheme='teal' key={tag} mr={1}>
+            {tag}
+          </Tag>
+        ))}
         <Divider my={4} />
 
         {children}

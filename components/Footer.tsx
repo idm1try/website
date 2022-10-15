@@ -16,7 +16,7 @@ export const Footer = (props: StackProps) => (
     </Stack>
 
     <Box fontSize='sm' fontWeight='semibold' bg='black' color='white' px='4' py='2' rounded='lg'>
-      Deployed by nesteroff561
+      Deployed by <a href='https://nesteroff561.ru'>nesteroff561</a>
     </Box>
   </VStack>
 );

@@ -63,7 +63,7 @@ const ArticleList = ({ data }: { data: Blog[] | Konovalov[] }) => (
                     {item.author}
                   </Text>
                   <Text fontSize='xs' color='gray.500'>
-                    {item.frontMatter.publishedDate.text}
+                    {item.frontMatter.publishedDate.text} &bull; {item.frontMatter.readingTime.text}
                   </Text>
                 </Box>
               </HStack>
