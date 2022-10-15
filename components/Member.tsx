@@ -1,5 +1,5 @@
 import { Stack, Text } from '@chakra-ui/react';
-import { TbBrandGithub, TbBrandTwitter, TbWorld } from 'react-icons/tb';
+import { TbBrandGithub, TbBrandTwitter, TbMail, TbWorld } from 'react-icons/tb';
 import Avatar from './Avatar';
 import SocialLink from './SocialLink';
 
@@ -7,12 +7,13 @@ export interface MemberProps {
   name: string;
   url?: string;
   bio?: string;
+  mail?: string;
   avatarUrl?: string;
   twitterUsername?: string;
 }
 
 const Member = ({ member }: { member: MemberProps }) => {
-  const { avatarUrl, bio, name, url, twitterUsername } = member;
+  const { avatarUrl, bio, name, url, mail, twitterUsername } = member;
 
   return (
     <Stack direction='row' spacing={6} align='flex-start'>
@@ -34,6 +35,7 @@ const Member = ({ member }: { member: MemberProps }) => {
               label={`View ${name}'s Twitter`}
             />
           )}
+          {mail && <SocialLink href={`mailto:${mail}`} icon={TbMail} label={`${name}'s mail`} />}
         </Stack>
         <Text fontSize='sm' color='gray.500'>
           {bio}

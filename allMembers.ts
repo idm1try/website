@@ -6,6 +6,7 @@ export function getMembers() {
       url: 'https://idm1try.ru',
       twitterUsername: 'idm1try',
       bio: 'Frontend Developer',
+      mail: 'admin@idm1try.ru',
     },
     {
       name: 'Eternity5510',
