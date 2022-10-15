@@ -12,7 +12,7 @@ interface TableOfContentProps extends BoxProps {
   headings: FrontmatterHeading[];
 }
 
-function TableOfContent(props: TableOfContentProps) {
+const TableOfContent = (props: TableOfContentProps) => {
   const { headings, ...rest } = props;
   const activeId = useScrollSpy(
     headings.map(({ id }) => `[id="${id}"]`),
@@ -46,6 +46,6 @@ function TableOfContent(props: TableOfContentProps) {
       </OrderedList>
     </TocNav>
   );
-}
+};
 
 export default TableOfContent;

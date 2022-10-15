@@ -20,22 +20,47 @@ import TableOfContent from 'components/TableOfContents';
 import { ReactNode } from 'react';
 import Layout from './Article';
 
+interface FrontmatterHeading {
+  level: string | number;
+  text: string;
+  id: string;
+}
+
 interface BlogLayoutProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  frontmatter: any;
+  frontmatter: {
+    publishedDate: {
+      raw: Date;
+      text: string;
+    };
+    thumbnail: {
+      raw: string;
+      url: string;
+    };
+    authorData: {
+      name: string;
+      url?: string;
+      bio?: string;
+      avatarUrl?: string;
+      twitterUsername?: string;
+    };
+    author: string;
+    description: string;
+    title: string;
+    headings: FrontmatterHeading[];
+  };
   children: ReactNode;
 }
 
-export default function BlogLayout(props: BlogLayoutProps) {
+const BlogLayout = (props: BlogLayoutProps) => {
   const { frontmatter, children } = props;
   const commentsTheme = useColorModeValue('light', 'dark');
 
   if (!frontmatter) return <></>;
 
-  const { publishedDate = {}, authorData: data = {}, headings = [] } = frontmatter;
+  const { publishedDate, authorData, headings } = frontmatter;
 
   return (
-    <>
+    <Box>
       <Layout
         title={frontmatter.title}
         description={frontmatter.description}
@@ -46,21 +71,21 @@ export default function BlogLayout(props: BlogLayoutProps) {
             <Popover isLazy trigger='hover' id='author-info'>
               <PopoverTrigger>
                 <Box>
-                  <Avatar src={data.avatarUrl} size={48} alt={data.name} />
+                  <Avatar src={authorData.avatarUrl} size={48} alt={authorData.name} />
                 </Box>
               </PopoverTrigger>
               <PopoverContent maxW={{ base: 240, sm: 320 }}>
                 <PopoverArrow />
                 <PopoverCloseButton />
                 <PopoverBody>
-                  <Member member={data} />
+                  <Member member={authorData} />
                 </PopoverBody>
               </PopoverContent>
             </Popover>
           </Box>
           <Box>
             <Text fontWeight='bold' fontSize='sm'>
-              {data.name}
+              {authorData.name}
             </Text>
             <Text fontSize='xs' color='gray.500'>
               {publishedDate.text}
@@ -109,6 +134,8 @@ export default function BlogLayout(props: BlogLayoutProps) {
         visibility={headings.length === 0 ? 'hidden' : 'initial'}
         headings={headings}
       />
-    </>
+    </Box>
   );
-}
+};
+
+export default BlogLayout;

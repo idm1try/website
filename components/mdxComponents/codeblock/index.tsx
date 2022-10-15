@@ -1,5 +1,6 @@
-import { Box } from '@chakra-ui/react';
-import theme from 'prism-react-renderer/themes/nightOwl';
+import { Box, useColorModeValue } from '@chakra-ui/react';
+import darkTheme from 'prism-react-renderer/themes/nightOwl';
+import lightTheme from 'prism-react-renderer/themes/nightOwlLight';
 import CodeContainer from './CodeContainer';
 import CopyButton from './CopyButton';
 import Highlight from './Highlight';
@@ -17,7 +18,7 @@ const CodeBlock = (props: any) => {
         <Highlight
           codeString={rawCode}
           language={language}
-          theme={theme}
+          theme={useColorModeValue(lightTheme, darkTheme)}
           metastring={ln}
           showLines={viewlines}
         />

@@ -5,7 +5,7 @@ import { getMember } from 'lib/getAllMembers';
 import { GetStaticPaths, InferGetStaticPropsType } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
-export default function Page({ blog }: InferGetStaticPropsType<typeof getStaticProps>) {
+const Page = ({ blog }: InferGetStaticPropsType<typeof getStaticProps>) => {
   const Component = useMDXComponent(blog.body.code);
 
   return (
@@ -13,7 +13,7 @@ export default function Page({ blog }: InferGetStaticPropsType<typeof getStaticP
       <Component components={MDXComponents} />
     </BlogLayout>
   );
-}
+};
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const blogs = allKonovalovs
@@ -34,3 +34,5 @@ export const getStaticProps = async (ctx: any) => {
 
   return { props: { blog } };
 };
+
+export default Page;
