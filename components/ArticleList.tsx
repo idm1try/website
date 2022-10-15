@@ -30,12 +30,12 @@ const ArticleList = ({ data }: { data: Blog[] | Konovalov[] }) => (
 
         return (
           <Box key={item._id} mb={6}>
-            <BlogGridItem slug={item.slug} title={item.title} thumbnail={item.thumbnail}>
-              {item.description && (
-                <Box mt={1} color='gray.500'>
-                  {item.description}
-                </Box>
-              )}
+            <BlogGridItem
+              slug={item.slug}
+              title={item.title}
+              thumbnail={item.thumbnail}
+              description={item.description}
+            >
               {item.tags?.map(tag => (
                 <Tag fontWeight='bold' mt={2} colorScheme='teal' key={tag} mr={1}>
                   {tag}
@@ -58,7 +58,7 @@ const ArticleList = ({ data }: { data: Blog[] | Konovalov[] }) => (
                     </PopoverContent>
                   </Popover>
                 </Box>
-                <Box color='gray.500'>
+                <Box color='gray.500' cursor='pointer'>
                   <Text fontWeight='bold' fontSize='sm'>
                     {item.author}
                   </Text>
