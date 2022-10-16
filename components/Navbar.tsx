@@ -51,7 +51,7 @@ const Navbar = (props: { path: string }) => {
       w='100%'
       backdropFilter='blur(10px)'
       bg={useColorModeValue('#F7FAFC80', '#17192380')}
-      zIndex={2}
+      zIndex={10}
       {...props}
     >
       <Container
@@ -73,9 +73,6 @@ const Navbar = (props: { path: string }) => {
           alignItems='center'
           flexGrow={1}
         >
-          <LinkItem href='/konovalov' path={path}>
-            Konovalov
-          </LinkItem>
           <LinkItem href='/members' path={path}>
             Members
           </LinkItem>
@@ -96,9 +93,6 @@ const Navbar = (props: { path: string }) => {
           <Menu isLazy id='navbar-menu'>
             <MenuButton as={IconButton} icon={<TbMenu2 />} aria-label='Options' />
             <MenuList>
-              <NextLink href='/konovalov' passHref>
-                <MenuItem as={Link}>Konovalov</MenuItem>
-              </NextLink>
               <NextLink href='/members' passHref>
                 <MenuItem as={Link}>Members</MenuItem>
               </NextLink>

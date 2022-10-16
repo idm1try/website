@@ -23,6 +23,7 @@ specifiers:
   framer-motion: ^7.5.3
   github-slugger: ^1.4.0
   husky: ^8.0.1
+  match-sorter: ^6.3.1
   mdx-bundler: ^9.0.1
   next: 12.3.1
   next-contentlayer: ^0.2.8
@@ -49,6 +50,7 @@ dependencies:
   '@giscus/react': 2.2.0_biqbaboplfbrettd7655fr4n2y
   contentlayer: 0.2.8_esbuild@0.14.0
   framer-motion: 7.5.3_biqbaboplfbrettd7655fr4n2y
+  match-sorter: 6.3.1
   mdx-bundler: 9.0.1_esbuild@0.14.0
   next: 12.3.1_6tziyx3dehkoeijunclpkpolha
   next-contentlayer: 0.2.8_bzthecgyp7pdvrju7ihwqrt5re
@@ -4913,6 +4915,13 @@ packages:
     resolution: {integrity: sha512-y8j3a5/DkJCmS5x4dMCQL+OR0+2EAq3DOtio1COSHsmW2BGXnNCK3v12hJt1LrUz5iZH5g0LmuYOjDdI+czghA==}
     dev: true
 
+  /match-sorter/6.3.1:
+    resolution: {integrity: sha512-mxybbo3pPNuA+ZuCUhm5bwNkXrJTbsk5VWbR5wiwz/GC6LIiegBGn2w3O08UG/jdbYLinw51fSQ5xNU1U3MgBw==}
+    dependencies:
+      '@babel/runtime': 7.19.4
+      remove-accents: 0.4.2
+    dev: false
+
   /mdast-util-definitions/5.1.1:
     resolution: {integrity: sha512-rQ+Gv7mHttxHOBx2dkF4HWTg+EE+UR78ptQWDylzPKaQuVGdG4HIoY3SrS/pCp80nZ04greFvXbVFHT+uf0JVQ==}
     dependencies:
@@ -6309,6 +6318,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /remove-accents/0.4.2:
+    resolution: {integrity: sha512-7pXIJqJOq5tFgG1A2Zxti3Ht8jJF337m4sowbuHsW30ZnkQFnDzy9qBNhgzX8ZLW4+UBcXiiR7SwR6pokHsxiA==}
+    dev: false
 
   /repeat-string/1.6.1:
     resolution: {integrity: sha512-PV0dzCYDNfRi1jCDbJzpW7jNNDRuCOG/jI5ctQcGKt/clZD+YcPS3yIlWuTJMmESC8aevCFmWJy5wjAFgNqN6w==}
