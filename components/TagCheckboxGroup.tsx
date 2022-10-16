@@ -9,6 +9,7 @@ type TagCheckboxGroupProps<T> = Omit<WrapProps, 'onChange'> & {
 
 export default function TagCheckboxGroup<T extends string>(props: TagCheckboxGroupProps<T>) {
   const { data, isChecked, onChange, ...rest } = props;
+
   return (
     <Wrap spacing='3' {...rest}>
       {data.map(item => (

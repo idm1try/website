@@ -1,4 +1,4 @@
-import { Box, useCheckbox, UseCheckboxProps } from '@chakra-ui/react';
+import { Box, useCheckbox, UseCheckboxProps, useColorModeValue } from '@chakra-ui/react';
 
 type TagCheckboxProps = {
   value: string;
@@ -24,7 +24,7 @@ export default function TagCheckbox(props: TagCheckboxProps) {
         data-value={value}
         px='4'
         py='2'
-        bg='gray.700'
+        bg={useColorModeValue('gray.100', 'whiteAlpha.50')}
         rounded='lg'
         fontWeight='bold'
         cursor='pointer'
