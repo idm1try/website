@@ -26,8 +26,8 @@ export const MDXComponents = {
   Image: (props: ImageProps) => (
     <Image
       layout='responsive'
-      width={750}
-      height={350}
+      width={1000}
+      height={400}
       objectFit='contain'
       my={8}
       alt='image'

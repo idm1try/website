@@ -3,7 +3,7 @@ import { TbBrandGithub, TbBrandTwitter, TbHeart, TbMail, TbWorld } from 'react-i
 import SocialLink from './SocialLink';
 
 export const Footer = (props: StackProps) => (
-  <VStack as='footer' gap={2} my='20px' textAlign='center' {...props}>
+  <VStack as='footer' gap={2} my={12} textAlign='center' {...props}>
     <Text fontSize='sm'>
       Build with <Icon as={TbHeart} color='red.400' h={3} w={3} /> by idm1try
     </Text>
@@ -15,8 +15,18 @@ export const Footer = (props: StackProps) => (
       <SocialLink icon={TbMail} href='mailto:admin@idm1try.ru' label='Mail' />
     </Stack>
 
-    <Box fontSize='sm' fontWeight='semibold' bg='black' color='white' px='4' py='2' rounded='lg'>
-      Deployed by <a href='https://nesteroff561.ru'>nesteroff561</a>
+    <Box
+      as='a'
+      href='https://nesteroff561.ru'
+      fontSize='sm'
+      fontWeight='semibold'
+      bg='black'
+      color='white'
+      px='4'
+      py='2'
+      rounded='lg'
+    >
+      Deployed by nesteroff561
     </Box>
   </VStack>
 );

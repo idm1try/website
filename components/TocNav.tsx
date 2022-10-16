@@ -9,9 +9,10 @@ const TocNav = ({ children, title, ...rest }: BoxProps) => (
     display={{ base: 'none', '2xl': 'block' }}
     position='fixed'
     py='10'
-    pr='4'
+    pr='8'
+    pl='8'
     top='6rem'
-    right='20'
+    right='0'
     fontSize='sm'
     alignSelf='start'
     maxHeight='calc(100vh - 8rem)'

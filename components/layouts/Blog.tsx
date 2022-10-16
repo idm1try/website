@@ -79,7 +79,7 @@ const BlogLayout = (props: BlogLayoutProps) => {
                   <Avatar src={authorData.avatarUrl} size={48} alt={authorData.name} />
                 </Box>
               </PopoverTrigger>
-              <PopoverContent maxW={{ base: 240, sm: 320 }}>
+              <PopoverContent maxW={{ base: 240, sm: 320 }} rounded='lg' p={1}>
                 <PopoverArrow />
                 <PopoverCloseButton />
                 <PopoverBody>
@@ -102,8 +102,8 @@ const BlogLayout = (props: BlogLayoutProps) => {
             src={frontmatter.thumbnail.raw}
             alt={frontmatter.title}
             className='grid-item-thumbnail'
-            height={350}
-            width={750}
+            height={400}
+            width={1000}
             objectFit='cover'
             rounded='lg'
             my={4}

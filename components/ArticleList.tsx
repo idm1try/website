@@ -18,7 +18,7 @@ import Avatar from './Avatar';
 import Member from './Member';
 
 const ArticleList = ({ data }: { data: Blog[] | Konovalov[] }) => (
-  <SimpleGrid columns={{ base: 1, md: 2 }} gap={6} mt={6}>
+  <SimpleGrid columns={{ base: 1, md: 3 }} gap={6} mt={6}>
     {data
       .sort(
         (a: Blog | Konovalov, b: Blog | Konovalov) =>
@@ -49,7 +49,7 @@ const ArticleList = ({ data }: { data: Blog[] | Konovalov[] }) => (
                         <Avatar src={authorInfo.avatarUrl} size={36} alt={authorInfo.name} />
                       </Box>
                     </PopoverTrigger>
-                    <PopoverContent maxW={{ base: 240, sm: 320 }}>
+                    <PopoverContent maxW={{ base: 240, sm: 320 }} rounded='lg' p={1}>
                       <PopoverArrow />
                       <PopoverCloseButton />
                       <PopoverBody>
