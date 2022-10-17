@@ -1,20 +1,19 @@
 import {
   Alert,
-  AspectRatio,
   Badge,
-  Box,
-  chakra,
   ChakraProps,
+  Divider,
   Heading,
   Kbd,
   Link,
+  LinkProps,
   ListItem,
   OrderedList,
-  Text,
   UnorderedList,
 } from '@chakra-ui/react';
 import Image from 'components/Image';
 import { ImageProps } from 'next/image';
+import NextLink from 'next/link';
 import CodeBlock from './codeblock';
 import { InlineCode } from './InlineCode';
 import { LinkedHeading } from './LinkedHeading';
@@ -43,38 +42,44 @@ export const MDXComponents = {
   h2: (props: ChakraProps) => <LinkedHeading fontSize='3xl' {...props} />,
   h3: (props: ChakraProps) => <LinkedHeading fontSize='2xl' {...props} />,
   h4: (props: ChakraProps) => <LinkedHeading fontSize='xl' {...props} />,
-  hr: (props: ChakraProps) => <chakra.hr my='4rem' {...props} />,
-  strong: (props: ChakraProps) => <Box as='strong' fontWeight='semibold' {...props} />,
+  Divider: (props: ChakraProps) => <Divider my={8} {...props} />,
   code: InlineCode,
   pre: (props: { children: string }) => {
     if (typeof props.children === 'string') return <Pre {...props} />;
     return <CodeBlock {...props} />;
   },
   Kbd: (props: ChakraProps) => <Kbd {...props} />,
-  br: ({ reset, ...props }: { reset: string }) => (
-    <Box as={reset ? 'br' : undefined} height={reset ? undefined : '24px'} {...props} />
-  ),
   table: Table,
   th: THead,
   td: TData,
-  a: (props: ChakraProps) => <Link {...props} />,
-  p: (props: ChakraProps) => <Text {...props} />,
+  a: (props: LinkProps) => {
+    const href = props.href;
+    const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
+
+    if (isInternalLink) {
+      return (
+        <NextLink href={href} passHref>
+          <Link {...props} />
+        </NextLink>
+      );
+    }
+
+    return <Link {...props} />;
+  },
   ul: (props: ChakraProps) => <UnorderedList mt='0.5rem' ml='1.25rem' {...props} />,
   ol: (props: ChakraProps) => <OrderedList mt='0.5rem' ml='1.25rem' {...props} />,
   li: (props: ChakraProps) => <ListItem pb='4px' {...props} />,
   blockquote: (props: ChakraProps) => (
     <Alert
-      mt='4'
       role='none'
       status='warning'
       variant='left-accent'
       as='blockquote'
       rounded='lg'
-      my='1.5rem'
+      my={8}
       {...props}
     />
   ),
   Badge: (props: ChakraProps) => <Badge colorScheme='teal' {...props} />,
   VideoPlayer,
-  AspectRatio,
 };
