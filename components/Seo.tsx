@@ -1,15 +1,29 @@
-import { NextSeo, NextSeoProps } from 'next-seo';
+import { NextSeo } from 'next-seo';
 
-export type SEOProps = Pick<NextSeoProps, 'title' | 'description'> & { image: string };
+interface SEOProps {
+  title?: string;
+  description?: string;
+  image?: string;
+  post?: {
+    date?: string;
+    tags?: string[];
+  };
+}
 
-const SEO = ({ title, description, image = 'https://blog.idm1try.ru/card.png' }: SEOProps) => (
+const SEO = ({
+  title,
+  description,
+  image = 'https://blog.idm1try.ru/card.png',
+  post,
+}: SEOProps) => (
   <NextSeo
     title={title}
     description={description}
     openGraph={{
       title,
       description,
-      images: [{ url: image, width: 720, height: 320, alt: description }],
+      images: image && [{ url: image, width: 1200, height: 630, alt: title }],
+      article: post && { publishedTime: post.date, tags: post.tags },
     }}
     titleTemplate='%s - idm1try blog'
   />

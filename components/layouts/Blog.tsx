@@ -30,7 +30,8 @@ interface FrontmatterHeading {
 interface BlogLayoutProps {
   frontmatter: {
     publishedDate: {
-      raw: Date;
+      raw: string;
+      iso: string;
       text: string;
     };
     thumbnail: {
@@ -70,6 +71,7 @@ const BlogLayout = (props: BlogLayoutProps) => {
         title={frontmatter.title}
         description={frontmatter.description}
         image={frontmatter.thumbnail.url}
+        post={{ date: frontmatter.publishedDate.iso, tags: frontmatter.tags }}
       >
         <HStack my={6}>
           <Box>

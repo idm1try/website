@@ -1,16 +1,9 @@
-import { ComputedFields, defineDocumentType, makeSource } from 'contentlayer/source-files';
+import { defineDocumentType, makeSource } from 'contentlayer/source-files';
 import readingTime from 'reading-time';
 import rehypeSlug from 'rehype-slug';
 import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
 import { getTableOfContents } from './lib/getTableOfContents';
-
-const computedFields: ComputedFields = {
-  slug: {
-    type: 'string',
-    resolve: doc => `/${doc._raw.flattenedPath}`,
-  },
-};
 
 const Blogs = defineDocumentType(() => ({
   name: 'Blog',
@@ -25,12 +18,16 @@ const Blogs = defineDocumentType(() => ({
     thumbnail: { type: 'string' },
   },
   computedFields: {
-    ...computedFields,
+    slug: {
+      type: 'string',
+      resolve: doc => `/${doc._raw.flattenedPath}`,
+    },
     frontMatter: {
       type: 'json',
       resolve: doc => ({
         publishedDate: {
           raw: doc.publishedDate,
+          iso: new Date(doc.publishedDate).toISOString(),
           text: new Date(doc.publishedDate).toDateString(),
         },
         thumbnail: {

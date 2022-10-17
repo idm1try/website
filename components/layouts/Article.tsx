@@ -7,6 +7,10 @@ interface Props {
   description?: string;
   image?: string;
   children: ReactNode;
+  post?: {
+    date?: string;
+    tags?: string[];
+  };
 }
 
 const variants = {
@@ -15,7 +19,7 @@ const variants = {
   exit: { opacity: 0, x: -0, y: 20 },
 };
 
-const Layout = ({ children, title, description, image }: Props) => {
+const Layout = ({ children, title, description, image, post }: Props) => {
   return (
     <motion.article
       initial='hidden'
@@ -25,7 +29,7 @@ const Layout = ({ children, title, description, image }: Props) => {
       transition={{ duration: 0.4, ease: 'easeInOut' }}
       style={{ position: 'relative' }}
     >
-      <SEO title={title} description={description} image={image} />
+      <SEO title={title} description={description} image={image} post={post} />
       {children}
     </motion.article>
   );
