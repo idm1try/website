@@ -9,16 +9,10 @@ interface BlogGridItemProps {
   slug: string;
   title: string;
   description?: string;
-  thumbnail?: string | StaticImageData;
+  image?: string | StaticImageData;
 }
 
-export const BlogGridItem = ({
-  children,
-  slug,
-  title,
-  description,
-  thumbnail,
-}: BlogGridItemProps) => (
+export const BlogGridItem = ({ children, slug, title, description, image }: BlogGridItemProps) => (
   <Box
     w='100%'
     transition='0.25s transform ease-out'
@@ -30,10 +24,10 @@ export const BlogGridItem = ({
   >
     <NextLink href={slug} passHref scroll={false}>
       <LinkBox cursor='pointer'>
-        {thumbnail ? (
-          <Image src={thumbnail} alt={title} height={420} width={720} objectFit='cover' />
+        {image ? (
+          <Image src={image} alt={title} height={320} width={720} objectFit='cover' />
         ) : (
-          <Image src='/card.png' alt={title} height={420} width={720} objectFit='cover' />
+          <Image src='/card.png' alt={title} height={320} width={720} objectFit='cover' />
         )}
         <LinkOverlay href={slug} transition='0.25s color ease-out' _hover={{ color: 'accent' }}>
           <Text mt={2} fontSize={20} fontWeight='bold'>

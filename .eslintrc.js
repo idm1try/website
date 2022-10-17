@@ -13,6 +13,5 @@ module.exports = {
   ignorePatterns: ['.next/*', 'node_modules/*'],
   rules: {
     'prettier/prettier': 'error',
-    'react/no-children-prop': 'off',
   },
 };

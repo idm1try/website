@@ -34,7 +34,7 @@ interface BlogLayoutProps {
       iso: string;
       text: string;
     };
-    thumbnail: {
+    image: {
       raw: string;
       url: string;
     };
@@ -70,7 +70,7 @@ const BlogLayout = (props: BlogLayoutProps) => {
       <Layout
         title={frontmatter.title}
         description={frontmatter.description}
-        image={frontmatter.thumbnail.url}
+        image={frontmatter.image.url}
         post={{ date: frontmatter.publishedDate.iso, tags: frontmatter.tags }}
       >
         <HStack my={6}>
@@ -99,13 +99,12 @@ const BlogLayout = (props: BlogLayoutProps) => {
             </Text>
           </Box>
         </HStack>
-        {frontmatter.thumbnail.raw && (
+        {frontmatter.image.raw && (
           <Image
-            src={frontmatter.thumbnail.raw}
+            src={frontmatter.image.raw}
             alt={frontmatter.title}
-            className='grid-item-thumbnail'
-            height={630}
-            width={992}
+            height={350}
+            width={750}
             objectFit='cover'
             rounded='lg'
             my={4}

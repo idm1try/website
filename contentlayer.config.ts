@@ -15,7 +15,7 @@ const Blogs = defineDocumentType(() => ({
     author: { type: 'string', required: true },
     tags: { type: 'list', of: { type: 'string' } },
     description: { type: 'string' },
-    thumbnail: { type: 'string' },
+    image: { type: 'string' },
   },
   computedFields: {
     slug: {
@@ -30,9 +30,9 @@ const Blogs = defineDocumentType(() => ({
           iso: new Date(doc.publishedDate).toISOString(),
           text: new Date(doc.publishedDate).toDateString(),
         },
-        thumbnail: {
-          raw: doc.thumbnail,
-          url: doc.thumbnail?.replace(/^\/posts/, 'https://idm1try-blog.vercel.app/posts'),
+        image: {
+          raw: doc.image,
+          url: doc.image?.replace(/^\/posts/, 'https://idm1try-blog.vercel.app/posts'),
         },
         author: doc.author,
         title: doc.title,

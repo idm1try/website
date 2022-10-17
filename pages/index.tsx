@@ -45,7 +45,7 @@ const Blog = () => {
           }}
         />
       </Box>
-      <SimpleGrid columns={{ base: 1, md: 3 }} gap={6} mt={6}>
+      <SimpleGrid columns={{ base: 1, md: 2 }} gap={6} mt={6}>
         {search.results
           .sort(
             (a: Blog, b: Blog) =>
@@ -60,7 +60,7 @@ const Blog = () => {
                 <BlogGridItem
                   slug={item.slug}
                   title={item.title}
-                  thumbnail={item.thumbnail}
+                  image={item.image}
                   description={item.description}
                 >
                   {item.tags?.map(tag => (
