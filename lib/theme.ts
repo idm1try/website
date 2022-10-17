@@ -13,6 +13,7 @@ const customTheme = extendTheme({
   },
   breakpoints: {
     sm: '330px',
+    '8xl': '1700px',
   },
   styles: {
     global: {

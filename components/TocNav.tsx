@@ -12,7 +12,7 @@ const TocNav = ({ children, title, ...rest }: BoxProps) => (
     pr='8'
     pl='8'
     top='6rem'
-    right='0'
+    right={{ base: 0, '8xl': 90 }}
     fontSize='sm'
     alignSelf='start'
     maxHeight='calc(100vh - 8rem)'
