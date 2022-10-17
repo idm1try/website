@@ -14,8 +14,9 @@ export default function search<T extends Record<string, any>>(
   };
 
   const wordOptions: MatchSorterOptions = {
-    keys: options.keys.map(() => {
+    keys: options.keys.map((key: any) => {
       return {
+        ...key,
         maxRanking: matchSorter.rankings.CASE_SENSITIVE_EQUAL,
         threshold: matchSorter.rankings.WORD_STARTS_WITH,
       };

@@ -102,8 +102,8 @@ const BlogLayout = (props: BlogLayoutProps) => {
             src={frontmatter.thumbnail.raw}
             alt={frontmatter.title}
             className='grid-item-thumbnail'
-            height={400}
-            width={1000}
+            height={630}
+            width={992}
             objectFit='cover'
             rounded='lg'
             my={4}

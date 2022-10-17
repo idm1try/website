@@ -34,15 +34,17 @@ export default function SearchInput(props: SearchInputProps) {
   return (
     <Box>
       <InputGroup>
-        <InputLeftElement zIndex={1}>
-          <Icon as={TbSearch} fontSize='xl' mt={2} ml={1} color='gray.500' />
+        <InputLeftElement m={1}>
+          <Icon as={TbSearch} fontSize='xl' color='gray.500' />
         </InputLeftElement>
         <Input
           defaultValue={defaultValue}
           placeholder={placeholder}
+          aria-label='search-blog'
           onChange={event => {
             onChange(event.target.value);
           }}
+          type='text'
           ref={useMergeRefs(setInputRef, ref)}
           id='query'
           name='q'
