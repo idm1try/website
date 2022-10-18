@@ -13,7 +13,7 @@ const CodeBlock = (props: any) => {
   const rawCode = children.trim();
 
   return (
-    <Box position='relative' zIndex='0'>
+    <Box position='relative'>
       <CodeContainer px='0' overflow='hidden'>
         <Highlight
           codeString={rawCode}

@@ -2,7 +2,7 @@ import { MDXComponents } from 'components/mdxComponents';
 import { allBlogs } from 'contentlayer/generated';
 import BlogLayout from 'layouts/Blog';
 import { getMember } from 'lib/getAllMembers';
-import { GetStaticPaths, InferGetStaticPropsType } from 'next';
+import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
 const Page = ({ blog }: InferGetStaticPropsType<typeof getStaticProps>) => {
@@ -23,11 +23,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths: blogs, fallback: false };
 };
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const getStaticProps = async (ctx: any) => {
-  const params = Array.isArray(ctx.params.slug) ? ctx.params.slug : [ctx.params.slug];
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const param = Array.isArray(params.slug) ? params.slug : [params.slug];
 
-  const blog = allBlogs.find(blog => blog._id.includes(params.join('/')));
+  const blog = allBlogs.find(blog => blog._id.includes(param.join('/')));
   const authorData = getMember(blog.frontMatter.author);
   blog.frontMatter.authorData = authorData;
 

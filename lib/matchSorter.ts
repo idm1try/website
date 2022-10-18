@@ -1,8 +1,6 @@
-/* TODO: fix it */
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { matchSorter, MatchSorterOptions } from 'match-sorter';
 
-export default function search<T extends Record<string, any>>(
+export default function search<T extends Record<string, unknown>>(
   items: T[],
   keys: string[],
   searchString: string
@@ -14,9 +12,9 @@ export default function search<T extends Record<string, any>>(
   };
 
   const wordOptions: MatchSorterOptions = {
-    keys: options.keys.map((key: any) => {
+    keys: options.keys.map(key => {
       return {
-        ...key,
+        ...(key as Record<string, unknown>),
         maxRanking: matchSorter.rankings.CASE_SENSITIVE_EQUAL,
         threshold: matchSorter.rankings.WORD_STARTS_WITH,
       };
@@ -39,6 +37,7 @@ export default function search<T extends Record<string, any>>(
   }
 
   const results = [...allResults, ...wordResults].filter(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (item, index, self) => index === self.findIndex(t => (t as any).title === (item as any).title)
   );
 

@@ -27,7 +27,7 @@ const Blog = () => {
   return (
     <Layout>
       <Box>
-        <Box maxWidth='xl' mt={8} mb={6}>
+        <Box w='full' mt={8} mb={6}>
           <SearchInput
             placeholder='Search blog'
             defaultValue={search.defaultValue}
