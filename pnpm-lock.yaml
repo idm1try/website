@@ -1498,8 +1498,8 @@ packages:
     dependencies:
       '@contentlayer/core': 0.2.8_esbuild@0.14.0
       '@contentlayer/utils': 0.2.8
-      clipanion: 3.2.0-rc.12_typanion@3.12.0
-      typanion: 3.12.0
+      clipanion: 3.2.0-rc.13_typanion@3.12.1
+      typanion: 3.12.1
     transitivePeerDependencies:
       - '@effect-ts/otel-node'
       - esbuild
@@ -1584,7 +1584,7 @@ packages:
       '@effect-ts/otel': 0.14.1_6jitg3rhg4xzs4qw5ejtnu2ykq
       '@effect-ts/otel-exporter-trace-otlp-grpc': 0.14.1_tro3clpp2pzsuncp22okp4tg7q
       '@effect-ts/otel-sdk-trace-node': 0.14.1_nsdpo2kvpdkwp5gm2xyu4wtqti
-      '@js-temporal/polyfill': 0.4.2
+      '@js-temporal/polyfill': 0.4.3
       '@opentelemetry/api': 1.1.0
       '@opentelemetry/core': 1.5.0_@opentelemetry+api@1.1.0
       '@opentelemetry/exporter-trace-otlp-grpc': 0.31.0_@opentelemetry+api@1.1.0
@@ -1941,8 +1941,8 @@ packages:
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
 
-  /@js-temporal/polyfill/0.4.2:
-    resolution: {integrity: sha512-c85vRxyqnJaXKyf4tvYij8jwiVIZhNLYDI9C4LLuOwVEHf4HUqGg07BBn70Le71W193QT/vmKg3jPUyQxJRHKQ==}
+  /@js-temporal/polyfill/0.4.3:
+    resolution: {integrity: sha512-6Fmjo/HlkyVCmJzAPnvtEWlcbQUSRhi8qlN9EtJA/wP7FqXsevLLrlojR44kzNzrRkpf7eDJ+z7b4xQD/Ycypw==}
     engines: {node: '>=12'}
     dependencies:
       jsbi: 4.3.0
@@ -2703,7 +2703,7 @@ packages:
     resolution: {integrity: sha512-RZNwNclF7+MS/8bDg70amg32dyeZGZxiDuQmZxKLAlQjr3jGyLx+4Kkk58UO7D2QdgFIQCovuSuZESne6RG6XQ==}
     engines: {node: '>= 6.0.0'}
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2904,7 +2904,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001421
+      caniuse-lite: 1.0.30001422
       electron-to-chromium: 1.4.284
       node-releases: 2.0.6
       update-browserslist-db: 1.0.10_browserslist@4.21.4
@@ -2957,8 +2957,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite/1.0.30001421:
-    resolution: {integrity: sha512-Sw4eLbgUJAEhjLs1Fa+mk45sidp1wRn5y6GtDpHGBaNJ9OCDJaVh2tIaWWUnGfuXfKf1JCBaIarak3FkVAvEeA==}
+  /caniuse-lite/1.0.30001422:
+    resolution: {integrity: sha512-hSesn02u1QacQHhaxl/kNMZwqVG35Sz/8DgvmgedxSH8z9UUpcDYSPYgsj3x5dQNRcNp6BwpSfQfVzYUTm+fog==}
     dev: false
 
   /ccount/2.0.1:
@@ -3024,12 +3024,12 @@ packages:
       puppeteer-core: 10.4.0
     dev: true
 
-  /clipanion/3.2.0-rc.12_typanion@3.12.0:
-    resolution: {integrity: sha512-yhxjhyfuOtQW11CLgfqG3aWsVNu52CzQd18tgAn4P/AMaEvaLbB1x9qmKb5K5HPvjBzDG6JWSHdJOIfqQgOo7Q==}
+  /clipanion/3.2.0-rc.13_typanion@3.12.1:
+    resolution: {integrity: sha512-JYuPIaZZOl4nTUP4BMXmHGxYkAD2gc0m5GxZKr2eKEjquyFj/WBbkERDesnUsQKewUmWvBzzxdbf8WQ/GBDduQ==}
     peerDependencies:
       typanion: '*'
     dependencies:
-      typanion: 3.12.0
+      typanion: 3.12.1
     dev: false
 
   /cliui/7.0.4:
@@ -4029,7 +4029,7 @@ packages:
     engines: {node: '>= 10.17.0'}
     hasBin: true
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.1
       get-stream: 5.2.0
       yauzl: 2.10.0
     optionalDependencies:
@@ -4516,7 +4516,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       agent-base: 6.0.2
-      debug: 4.3.4
+      debug: 4.3.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5661,7 +5661,7 @@ packages:
     dependencies:
       '@next/env': 12.3.1
       '@swc/helpers': 0.4.11
-      caniuse-lite: 1.0.30001421
+      caniuse-lite: 1.0.30001422
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -5693,8 +5693,8 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /node-abi/3.26.0:
-    resolution: {integrity: sha512-jRVtMFTChbi2i/jqo/i2iP9634KMe+7K1v35mIdj3Mn59i5q27ZYhn+sW6npISM/PQg7HrP2kwtRBMmh5Uvzdg==}
+  /node-abi/3.28.0:
+    resolution: {integrity: sha512-fRlDb4I0eLcQeUvGq7IY3xHrSb0c9ummdvDSYWfT9+LKP+3jCKw/tKoqaM7r1BAoiAC6GtwyjaGnOz6B3OtF+A==}
     engines: {node: '>=10'}
     dependencies:
       semver: 7.3.8
@@ -6002,7 +6002,7 @@ packages:
       minimist: 1.2.7
       mkdirp-classic: 0.5.3
       napi-build-utils: 1.0.2
-      node-abi: 3.26.0
+      node-abi: 3.28.0
       pump: 3.0.0
       rc: 1.2.8
       simple-get: 4.0.1
@@ -7015,8 +7015,8 @@ packages:
       safe-buffer: 5.2.1
     dev: true
 
-  /typanion/3.12.0:
-    resolution: {integrity: sha512-o59ZobUBsG+2dHnGVI2shscqqzHdzCOixCU0t8YXLxM2Su42J2ha7hY9V5+6SIBjVsw6aLqrlYznCgQGJN4Kag==}
+  /typanion/3.12.1:
+    resolution: {integrity: sha512-3SJF/czpzqq6G3lprGFLa6ps12yb1uQ1EmitNnep2fDMNh1aO/Zbq9sWY+3lem0zYb2oHJnQWyabTGUZ+L1ScQ==}
     dev: false
 
   /type-check/0.4.0:

@@ -10,7 +10,7 @@ export const Footer = (props: StackProps) => (
 
     <Stack isInline spacing='12px' pb={2}>
       <SocialLink icon={TbBrandGithub} href='https://github.com/idm1try' label='Github' />
-      <SocialLink icon={TbWorld} href='https://github.com/idm1try' label='Github' />
+      <SocialLink icon={TbWorld} href='https://idm1try.ru' label='Website' />
       <SocialLink icon={TbBrandTwitter} href='https://twitter.com/idm1try' label='Twitter' />
       <SocialLink icon={TbMail} href='mailto:admin@idm1try.ru' label='Mail' />
     </Stack>

@@ -35,27 +35,14 @@ const Page = () => {
           size='4xl'
           w='15ch'
           mb={5}
-          textOverflow='ellipsis'
-          overflow='hidden'
           lineHeight='1.1em'
-          whiteSpace='normal'
-          display='-webkit-box'
-          sx={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}
+          noOfLines={2}
         >
           {title}
         </Heading>
 
         {description != 'undefined' && (
-          <Text
-            color='gray.500'
-            fontSize='2xl'
-            mb={5}
-            maxW='45ch'
-            overflow='hidden'
-            whiteSpace='normal'
-            display='-webkit-box'
-            sx={{ WebkitLineClamp: 2, WebkitBoxOrient: 'vertical' }}
-          >
+          <Text color='gray.500' fontSize='2xl' mb={5} maxW='45ch' noOfLines={2}>
             {description}
           </Text>
         )}
@@ -95,8 +82,8 @@ const Page = () => {
             width={300}
             height={200}
             pos='absolute'
-            right={10}
-            top={40}
+            right={20}
+            top={20}
             alt={title}
             objectFit='cover'
             rounded='2xl'
@@ -105,12 +92,13 @@ const Page = () => {
 
         <Box
           pos='absolute'
-          bottom='0'
-          right='0'
-          roundedTopLeft='2xl'
+          bottom='20'
+          right='20'
+          rounded='2xl'
           fontWeight='semibold'
           fontSize='3xl'
-          bg='gray.900'
+          bg='teal.300'
+          color='black'
           px='6'
           py='2'
         >

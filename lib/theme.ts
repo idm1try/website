@@ -4,6 +4,7 @@ const customTheme = extendTheme({
   config: {
     initialColorMode: 'dark',
     useSystemColorMode: true,
+    disableTransitionOnChange: false,
   },
   semanticTokens: {
     colors: {
