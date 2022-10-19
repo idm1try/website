@@ -5,8 +5,6 @@ import playwright from 'playwright-core';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const browser = await playwright.chromium.launch({
-    executablePath:
-      process.env.NODE_ENV !== 'development' ? await chromium.executablePath : undefined,
     args: [...chromium.args, '--hide-scrollbars', '--disable-web-security'],
     headless: process.env.NODE_ENV !== 'development' ? chromium.headless : true,
   });
