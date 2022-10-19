@@ -11,13 +11,13 @@ import {
   MenuItem,
   MenuList,
   Stack,
-  useColorModeValue,
 } from '@chakra-ui/react';
+import NextLink from 'next/link';
+import { useRouter } from 'next/router';
+import { ReactNode } from 'react';
 import { TbBrandGithub, TbMenu2 } from 'react-icons/tb';
 import Logo from './Logo';
 import ThemeToggleButton from './ThemeToggleButton';
-import NextLink from 'next/link';
-import { ReactNode } from 'react';
 
 interface LinkItemProps {
   href: string;
@@ -41,8 +41,8 @@ const LinkItem = ({ href, path, children, ...props }: LinkItemProps) => {
   );
 };
 
-const Navbar = (props: { path: string }) => {
-  const { path } = props;
+const Navbar = () => {
+  const path = useRouter().asPath;
 
   return (
     <Box
@@ -50,9 +50,9 @@ const Navbar = (props: { path: string }) => {
       as='nav'
       w='100%'
       backdropFilter='blur(10px)'
-      bg={useColorModeValue('#F7FAFC80', '#17192380')}
+      bg='#F7FAFC80'
+      _dark={{ bg: '#17192380' }}
       zIndex={10}
-      {...props}
     >
       <Container
         display='flex'

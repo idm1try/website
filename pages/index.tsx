@@ -19,13 +19,13 @@ import Avatar from 'components/Avatar';
 import Member from 'components/Member';
 import SearchInput from 'components/SearchInput';
 import TagCheckboxGroup from 'components/TagCheckboxGroup';
-import Layout from 'components/layouts/Article';
+import PageContainer from 'components/PageContainer';
 
 const Blog = () => {
   const search = useBlogSearch();
 
   return (
-    <Layout>
+    <PageContainer>
       <Box>
         <Box w='full' mt={8} mb={6}>
           <SearchInput
@@ -100,7 +100,7 @@ const Blog = () => {
             );
           })}
       </SimpleGrid>
-    </Layout>
+    </PageContainer>
   );
 };
 

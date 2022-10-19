@@ -1,23 +1,8 @@
 import { useUpdateEffect } from '@chakra-ui/react';
 import { useDebounce } from 'hooks/useDebounce';
-import { NextRouter, useRouter } from 'next/router';
+import { addQuery, removeQuery } from 'lib/routerUtils';
+import { useRouter } from 'next/router';
 import { useState } from 'react';
-
-export function addQuery(router: NextRouter, key: string, value: string | string[]) {
-  const { pathname, query } = router;
-  const newQuery = {
-    ...query,
-    [key]: value.toString(),
-  };
-  router.replace({ pathname, query: newQuery }, undefined, { scroll: false });
-}
-
-export function removeQuery(router: NextRouter, key: string) {
-  const { pathname, query } = router;
-  const newQuery = { ...query };
-  delete newQuery[key];
-  router.replace({ pathname, query: newQuery }, undefined, { scroll: false });
-}
 
 export default function useSearchParams() {
   const router = useRouter();

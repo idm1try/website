@@ -1,11 +1,11 @@
 import { Box, Button, Text } from '@chakra-ui/react';
 import Image from 'components/Image';
-import Layout from 'layouts/Article';
+import PageContainer from 'components/PageContainer';
 import NextLink from 'next/link';
 import { TbHome } from 'react-icons/tb';
 
 const NotFound = () => (
-  <Layout title='404: Not found' description='Page not found'>
+  <PageContainer title='404: Not found' description='Page not found'>
     <Box textAlign='center' mt={5}>
       <Image
         alignItems='center'
@@ -26,7 +26,7 @@ const NotFound = () => (
         </Button>
       </NextLink>
     </Box>
-  </Layout>
+  </PageContainer>
 );
 
 export default NotFound;
