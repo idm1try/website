@@ -8,9 +8,10 @@ import {
   Heading,
   Kbd,
   Link,
-  LinkProps,
 } from '@chakra-ui/react';
 import Image from 'components/Image';
+import { ScreenshotLinkProps } from 'components/ScreenshotLink';
+import dynamic from 'next/dynamic';
 import { ImageProps } from 'next/image';
 import NextLink from 'next/link';
 import CodeBlock from './codeblock';
@@ -19,6 +20,8 @@ import { LinkedHeading } from './LinkedHeading';
 import { Pre } from './Pre';
 import { Table, TData, THead } from './Table';
 import { VideoPlayer } from './VideoPlayer';
+
+const ScreenshotLink = dynamic(() => import('components/ScreenshotLink'), { ssr: false });
 
 export const MDXComponents = {
   Image: (props: ImageProps) => (
@@ -51,9 +54,10 @@ export const MDXComponents = {
   table: Table,
   th: THead,
   td: TData,
-  a: (props: LinkProps) => {
+  a: (props: ScreenshotLinkProps) => {
     const href = props.href;
     const isInternalLink = href && (href.startsWith('/') || href.startsWith('#'));
+    const isExternalLink = href && (href.startsWith('https') || href.startsWith('http'));
 
     if (isInternalLink) {
       return (
@@ -61,6 +65,10 @@ export const MDXComponents = {
           <Link {...props} />
         </NextLink>
       );
+    }
+
+    if (isExternalLink) {
+      return <ScreenshotLink {...props} />;
     }
 
     return <Link {...props} />;
