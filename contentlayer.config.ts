@@ -24,23 +24,14 @@ const Blogs = defineDocumentType(() => ({
     },
     frontMatter: {
       type: 'json',
-      resolve: doc => ({
+      resolve: blog => ({
         publishedDate: {
-          raw: doc.publishedDate,
-          iso: new Date(doc.publishedDate).toISOString(),
-          text: new Date(doc.publishedDate).toDateString(),
+          raw: blog.publishedDate,
+          iso: new Date(blog.publishedDate).toISOString(),
+          text: new Date(blog.publishedDate).toDateString(),
         },
-        image: {
-          raw: doc.image,
-          url: doc.image?.replace(/^\/posts/, 'https://idm1try-blog.vercel.app/posts'),
-        },
-        author: doc.author,
-        title: doc.title,
-        description: doc.description,
-        tags: doc.tags,
-        slug: `/${doc._raw.flattenedPath}`,
-        headings: getTableOfContents(doc.body.raw),
-        readingTime: readingTime(doc.body.raw, { wordsPerMinute: 300 }),
+        headings: getTableOfContents(blog.body.raw),
+        readingTime: readingTime(blog.body.raw, { wordsPerMinute: 300 }),
       }),
     },
   },

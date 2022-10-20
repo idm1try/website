@@ -1,15 +1,14 @@
 import {
   Alert,
+  AspectRatio,
   Badge,
+  chakra,
   ChakraProps,
   Divider,
   Heading,
   Kbd,
   Link,
   LinkProps,
-  ListItem,
-  OrderedList,
-  UnorderedList,
 } from '@chakra-ui/react';
 import Image from 'components/Image';
 import { ImageProps } from 'next/image';
@@ -39,8 +38,8 @@ export const MDXComponents = {
     </Link>
   ),
   h1: (props: ChakraProps) => <Heading my={8} fontSize='4xl' {...props} />,
-  h2: (props: ChakraProps) => <LinkedHeading fontSize='3xl' {...props} />,
-  h3: (props: ChakraProps) => <LinkedHeading fontSize='2xl' {...props} />,
+  h2: (props: ChakraProps) => <LinkedHeading fontSize='3xl' lineHeight='1.5em' {...props} />,
+  h3: (props: ChakraProps) => <LinkedHeading fontSize='2xl' lineHeight='1.5em' {...props} />,
   h4: (props: ChakraProps) => <LinkedHeading fontSize='xl' {...props} />,
   Divider: (props: ChakraProps) => <Divider my={8} {...props} />,
   code: InlineCode,
@@ -66,20 +65,23 @@ export const MDXComponents = {
 
     return <Link {...props} />;
   },
-  ul: (props: ChakraProps) => <UnorderedList mt='0.5rem' ml='1.25rem' {...props} />,
-  ol: (props: ChakraProps) => <OrderedList mt='0.5rem' ml='1.25rem' {...props} />,
-  li: (props: ChakraProps) => <ListItem pb='4px' {...props} />,
+  ul: (props: ChakraProps) => <chakra.ul ps={4} my={5} {...props} />,
+  ol: (props: ChakraProps) => <chakra.ol ps={4} my={5} {...props} />,
+  li: (props: ChakraProps) => (
+    <chakra.li my={2} sx={{ '&::marker': { color: 'accent' } }} {...props} />
+  ),
   blockquote: (props: ChakraProps) => (
     <Alert
+      as='blockquote'
+      my={8}
       role='none'
+      rounded='lg'
       status='warning'
       variant='left-accent'
-      as='blockquote'
-      rounded='lg'
-      my={8}
       {...props}
     />
   ),
   Badge: (props: ChakraProps) => <Badge colorScheme='teal' {...props} />,
+  AspectRatio,
   VideoPlayer,
 };

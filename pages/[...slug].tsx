@@ -62,29 +62,40 @@ const Page = ({ blog, ogImageUrl }: { blog: Blog; ogImageUrl: string }) => {
             </Text>
           </Box>
         </HStack>
-        {blog.frontMatter.image.raw && (
+        {blog.image && (
           <Image
-            src={blog.frontMatter.image.raw}
+            src={blog.image}
             alt={blog.title}
             height={350}
             width={750}
             objectFit='cover'
             rounded='lg'
-            my={4}
+            mb={4}
           />
         )}
-        <Heading fontSize='3xl' my={1}>
+        <Heading as='h1' my={3}>
           {blog.title}
         </Heading>
-        <Text color='gray.500'>{blog.description}</Text>
+        <Text color='gray.500' mb={2}>
+          {blog.description}
+        </Text>
         {blog.tags?.map(tag => (
-          <Tag fontWeight='bold' mt={2} colorScheme='teal' key={tag} mr={1}>
+          <Tag fontWeight='bold' mt={3} colorScheme='teal' key={tag} mr={1}>
             {tag}
           </Tag>
         ))}
         <Divider my={4} />
 
-        <Component components={MDXComponents} />
+        <Box
+          sx={{
+            lineHeight: 'taller',
+            'p + p': {
+              marginY: '5',
+            },
+          }}
+        >
+          <Component components={MDXComponents} />
+        </Box>
       </PageContainer>
 
       <TableOfContent
@@ -119,7 +130,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   searchParams.set('readingTime', blog.frontMatter.readingTime.text);
   searchParams.set('author', blog.author);
   searchParams.set('avatar', authorData.avatarUrl);
-  searchParams.set('image', blog.frontMatter.image.raw);
+  searchParams.set('image', blog.image);
 
   const ogImageUrl = getAbsoluteURL(`/api/open-graph-image?${searchParams.toString()}`);
 
