@@ -1,4 +1,4 @@
-import { HTMLChakraProps, chakra, Heading, Link } from '@chakra-ui/react';
+import { HTMLChakraProps, Heading, Link } from '@chakra-ui/react';
 
 export const LinkedHeading = (props: HTMLChakraProps<'h2'>) => (
   <Heading data-group='' css={{ scrollMarginBlock: '6.875rem' }} my={8} {...props}>

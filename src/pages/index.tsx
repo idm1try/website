@@ -14,7 +14,7 @@ import {
 import { BlogGridItem } from 'components/GridItem';
 import { Blog } from 'contentlayer/generated';
 import { getMember } from 'lib/getAllMembers';
-import useBlogSearch from 'lib/hooks/useBlogSearch';
+import useBlogSearch from 'hooks/useBlogSearch';
 import Avatar from 'components/Avatar';
 import Member from 'components/Member';
 import SearchInput from 'components/SearchInput';

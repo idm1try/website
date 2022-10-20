@@ -3,7 +3,7 @@ import readingTime from 'reading-time';
 import rehypeSlug from 'rehype-slug';
 import remarkEmoji from 'remark-emoji';
 import remarkGfm from 'remark-gfm';
-import { getTableOfContents } from './lib/getTableOfContents';
+import { getTableOfContents } from './src/lib/getTableOfContents';
 
 const Blogs = defineDocumentType(() => ({
   name: 'Blog',
