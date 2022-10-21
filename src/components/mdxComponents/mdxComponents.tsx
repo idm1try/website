@@ -2,6 +2,7 @@ import {
   Alert,
   AspectRatio,
   Badge,
+  Box,
   chakra,
   ChakraProps,
   Divider,
@@ -10,20 +11,17 @@ import {
   Link,
 } from '@chakra-ui/react';
 import Image from 'components/Image';
-import { ScreenshotLinkProps } from 'components/ScreenshotLink';
-import dynamic from 'next/dynamic';
+import ScreenshotLink, { ScreenshotLinkProps } from 'components/ScreenshotLink';
 import { ImageProps } from 'next/image';
 import NextLink from 'next/link';
 import CodeBlock from './codeblock';
 import { InlineCode } from './InlineCode';
 import { LinkedHeading } from './LinkedHeading';
-import { Pre } from './Pre';
 import { Table, TData, THead } from './Table';
 import { VideoPlayer } from './VideoPlayer';
 
-const ScreenshotLink = dynamic(() => import('components/ScreenshotLink'), { ssr: false });
-
 export const MDXComponents = {
+  p: (props: ChakraProps) => <Box {...props} />,
   Image: (props: ImageProps) => (
     <Image
       layout='responsive'
@@ -47,7 +45,7 @@ export const MDXComponents = {
   Divider: (props: ChakraProps) => <Divider my={8} {...props} />,
   code: InlineCode,
   pre: (props: { children: string }) => {
-    if (typeof props.children === 'string') return <Pre {...props} />;
+    if (typeof props.children === 'string') return <chakra.div my='2em' rounded='sm' {...props} />;
     return <CodeBlock {...props} />;
   },
   Kbd: (props: ChakraProps) => <Kbd {...props} />,
@@ -60,11 +58,7 @@ export const MDXComponents = {
     const isExternalLink = href && (href.startsWith('https') || href.startsWith('http'));
 
     if (isInternalLink) {
-      return (
-        <NextLink href={href} passHref>
-          <Link {...props} />
-        </NextLink>
-      );
+      return <Link as={NextLink} href={href} passHref {...props} />;
     }
 
     if (isExternalLink) {
