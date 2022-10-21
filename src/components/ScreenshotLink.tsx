@@ -53,6 +53,7 @@ const ScreenshotLink = ({ href, children }: ScreenshotLinkProps) => {
                   bottom='2.0rem'
                   zIndex={9}
                   display='block'
+                  h={124}
                   w={52}
                   shadow='lg'
                 />
@@ -70,7 +71,7 @@ const ScreenshotLink = ({ href, children }: ScreenshotLinkProps) => {
                   display='block'
                   zIndex={9}
                   bgColor={bgColor}
-                  height={130}
+                  height={124}
                   width={52}
                   shadow='lg'
                   bottom='2.0rem'
