@@ -12,7 +12,7 @@ interface BlogGridItemProps {
   image?: string | StaticImageData;
 }
 
-export const BlogGridItem = ({ children, slug, title, description, image }: BlogGridItemProps) => (
+const BlogGridItem = ({ children, slug, title, description, image }: BlogGridItemProps) => (
   <Box
     w='100%'
     transition='0.25s transform ease-out'
@@ -44,3 +44,5 @@ export const BlogGridItem = ({ children, slug, title, description, image }: Blog
     <Box fontSize={14}>{children}</Box>
   </Box>
 );
+
+export default BlogGridItem;

@@ -1,13 +1,14 @@
 import { Box, useCheckbox, UseCheckboxProps, useColorModeValue } from '@chakra-ui/react';
+import { ReactNode } from 'react';
 
-type TagCheckboxProps = {
+interface TagCheckboxProps {
   value: string;
-  children: React.ReactNode;
+  children: ReactNode;
   onChange?: UseCheckboxProps['onChange'];
   checked?: boolean;
-};
+}
 
-export default function TagCheckbox(props: TagCheckboxProps) {
+const TagCheckbox = (props: TagCheckboxProps) => {
   const { value, children, onChange, checked } = props;
 
   const { getInputProps, getRootProps, getLabelProps, getCheckboxProps } = useCheckbox({
@@ -37,4 +38,6 @@ export default function TagCheckbox(props: TagCheckboxProps) {
       <input {...getInputProps()} />
     </label>
   );
-}
+};
+
+export default TagCheckbox;

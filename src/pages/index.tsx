@@ -11,15 +11,15 @@ import {
   Tag,
   Text,
 } from '@chakra-ui/react';
-import { BlogGridItem } from 'components/GridItem';
-import { Blog } from 'contentlayer/generated';
-import { getMember } from 'lib/getAllMembers';
-import useBlogSearch from 'hooks/useBlogSearch';
 import Avatar from 'components/Avatar';
+import BlogGridItem from 'components/BlogGridItem';
 import Member from 'components/Member';
+import PageContainer from 'components/PageContainer';
 import SearchInput from 'components/SearchInput';
 import TagCheckboxGroup from 'components/TagCheckboxGroup';
-import PageContainer from 'components/PageContainer';
+import { Blog } from 'contentlayer/generated';
+import useBlogSearch from 'hooks/useBlogSearch';
+import { getMember } from 'lib/getAllMembers';
 
 const Blog = () => {
   const search = useBlogSearch();

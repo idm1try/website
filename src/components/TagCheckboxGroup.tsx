@@ -7,7 +7,7 @@ type TagCheckboxGroupProps<T> = Omit<WrapProps, 'onChange'> & {
   onChange(details: { checked: boolean; value: T }): void;
 };
 
-export default function TagCheckboxGroup<T extends string>(props: TagCheckboxGroupProps<T>) {
+function TagCheckboxGroup<T extends string>(props: TagCheckboxGroupProps<T>) {
   const { data, isChecked, onChange, ...rest } = props;
 
   return (
@@ -27,3 +27,5 @@ export default function TagCheckboxGroup<T extends string>(props: TagCheckboxGro
     </Wrap>
   );
 }
+
+export default TagCheckboxGroup;

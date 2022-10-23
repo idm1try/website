@@ -19,7 +19,7 @@ interface SearchInputProps {
   onChange?(value: string): void;
 }
 
-export default function SearchInput(props: SearchInputProps) {
+const SearchInput = (props: SearchInputProps) => {
   const { placeholder = 'Search articles', onChange, defaultValue } = props;
 
   const ref = useRef<HTMLInputElement>(null);
@@ -78,4 +78,6 @@ export default function SearchInput(props: SearchInputProps) {
       </InputGroup>
     </Box>
   );
-}
+};
+
+export default SearchInput;
