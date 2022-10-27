@@ -1,15 +1,5 @@
-import { useState, useEffect } from 'react';
-
-export function useWindowEvent(
-  type: string,
-  listener: () => void,
-  options?: boolean | AddEventListenerOptions
-) {
-  useEffect(() => {
-    window.addEventListener(type, listener, options);
-    return () => window.removeEventListener(type, listener, options);
-  });
-}
+import { useEffect, useState } from 'react';
+import { useWindowEvent } from './useWindowEvent';
 
 interface ScrollPosition {
   x: number;

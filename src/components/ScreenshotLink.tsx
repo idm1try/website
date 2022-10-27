@@ -33,6 +33,7 @@ const ScreenshotLink = ({ href, children }: ScreenshotLinkProps) => {
         display='inline-block'
         onMouseOver={() => fetchImage(href)}
         onMouseOut={() => setIsHovering(false)}
+        onFocus={() => fetchImage(href)}
         onBlur={() => setIsHovering(false)}
       >
         {isHovering && (
