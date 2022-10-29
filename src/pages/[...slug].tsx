@@ -23,6 +23,7 @@ import { getMember } from 'lib/getAllMembers';
 import { getAbsoluteURL } from 'lib/routerUtils';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
+import NextLink from 'next/link';
 
 const Page = ({ blog, ogImageUrl }: { blog: Blog; ogImageUrl: string }) => {
   const Component = useMDXComponent(blog.body.code);
@@ -80,9 +81,11 @@ const Page = ({ blog, ogImageUrl }: { blog: Blog; ogImageUrl: string }) => {
           {blog.description}
         </Text>
         {blog.tags?.map(tag => (
-          <Tag fontWeight='bold' mt={3} colorScheme='teal' key={tag} mr={1}>
-            {tag}
-          </Tag>
+          <NextLink href={`/?filter=${tag}`} key={tag}>
+            <Tag fontWeight='bold' mt={3} colorScheme='teal' mr={1} cursor='pointer'>
+              {tag}
+            </Tag>
+          </NextLink>
         ))}
         <Divider my={4} />
 

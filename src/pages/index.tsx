@@ -20,6 +20,7 @@ import TagCheckboxGroup from 'components/TagCheckboxGroup';
 import { Blog } from 'contentlayer/generated';
 import useBlogSearch from 'hooks/useBlogSearch';
 import { getMember } from 'lib/getAllMembers';
+import NextLink from 'next/link';
 
 const Blog = () => {
   const search = useBlogSearch();
@@ -64,9 +65,11 @@ const Blog = () => {
                   description={item.description}
                 >
                   {item.tags?.map(tag => (
-                    <Tag fontWeight='bold' mt={2} colorScheme='teal' key={tag} mr={1}>
-                      {tag}
-                    </Tag>
+                    <NextLink href={`/?filter=${tag}`} key={tag}>
+                      <Tag fontWeight='bold' mt={2} colorScheme='teal' mr={1} cursor='pointer'>
+                        {tag}
+                      </Tag>
+                    </NextLink>
                   ))}
                   <HStack mt={2}>
                     <Box>
