@@ -30,7 +30,7 @@ const TagCheckbox = (props: TagCheckboxProps) => {
         fontWeight='bold'
         cursor='pointer'
         _hover={{ color: 'accent' }}
-        _checked={{ bg: 'accent', color: 'black' }}
+        _checked={{ bg: 'accent', color: useColorModeValue('white', 'black') }}
         _disabled={{ opacity: 0.4, pointerEvents: 'none', cursor: 'unset' }}
       >
         <span {...getLabelProps()}>{children}</span>
