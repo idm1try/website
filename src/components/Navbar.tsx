@@ -2,10 +2,8 @@ import {
   Box,
   Button,
   Container,
-  Divider,
   Flex,
   Heading,
-  Icon,
   IconButton,
   Link,
   Menu,
@@ -17,7 +15,7 @@ import {
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { ReactNode } from 'react';
-import { TbBrandGithub, TbMenu2, TbUsers } from 'react-icons/tb';
+import { TbBrandGithub, TbMenu2 } from 'react-icons/tb';
 import Logo from './Logo';
 import ThemeToggleButton from './ThemeToggleButton';
 
@@ -82,26 +80,25 @@ const Navbar = () => {
 
         <Box flex={1} textAlign='right' mr={3}>
           <ThemeToggleButton />
+          <IconButton
+            as='a'
+            href='https://github.com/idm1try/idm1try-blog'
+            aria-label='Source Code'
+            icon={<TbBrandGithub />}
+            ml={3}
+            display={{ base: 'none', md: 'inline-flex' }}
+          />
         </Box>
-        <Box>
+        <Box display={{ base: 'inline-block', md: 'none' }}>
           <Menu isLazy id='navbar-menu'>
             <MenuButton as={IconButton} icon={<TbMenu2 />} aria-label='Options' />
             <MenuList>
-              <Box display={{ base: 'block', md: 'none' }}>
-                <NextLink href='/members' passHref>
-                  <MenuItem as={Link}>
-                    <Icon as={TbUsers} mr={1} fontSize='sm' />
-                    Members
-                  </MenuItem>
-                </NextLink>
-              </Box>
-              <Divider my={2} display={{ base: 'block', md: 'none' }} />
-              <Box>
-                <MenuItem as='a' href='https://github.com/idm1try/idm1try-blog'>
-                  <Icon as={TbBrandGithub} mr={1} fontSize='sm' />
-                  Source Code
-                </MenuItem>
-              </Box>
+              <NextLink href='/members' passHref>
+                <MenuItem as={Link}>Members</MenuItem>
+              </NextLink>
+              <MenuItem as='a' href='https://github.com/idm1try/idm1try-blog'>
+                Source Code
+              </MenuItem>
             </MenuList>
           </Menu>
         </Box>

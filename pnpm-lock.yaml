@@ -17,7 +17,7 @@ specifiers:
   commitlint: ^17.1.2
   contentlayer: ^0.2.8
   esbuild: 0.14.0
-  eslint-config-next: ^12.3.1
+  eslint-config-next: ^12.3.2
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.2.1
   framer-motion: ^7.6.2
@@ -27,7 +27,7 @@ specifiers:
   mdx-bundler: ^9.0.1
   next: 12.3.1
   next-contentlayer: ^0.2.8
-  next-seo: ^5.9.0
+  next-seo: ^5.11.1
   playwright-core: ^1.27.1
   prettier: ^2.7.1
   prism-react-renderer: ^1.3.5
@@ -36,7 +36,7 @@ specifiers:
   react-icons: ^4.6.0
   react-player: ^2.11.0
   reading-time: ^1.5.0
-  rehype-slug: ^5.0.1
+  rehype-slug: ^5.1.0
   remark: ^14.0.2
   remark-emoji: ^3.0.2
   remark-gfm: ^3.0.1
@@ -54,7 +54,7 @@ dependencies:
   mdx-bundler: 9.0.1_esbuild@0.14.0
   next: 12.3.1_qtpcxnaaarbm4ws7ughq6oxfve
   next-contentlayer: 0.2.8_bzthecgyp7pdvrju7ihwqrt5re
-  next-seo: 5.9.0_azq6kxkn3od7qdylwkyksrwopy
+  next-seo: 5.11.1_azq6kxkn3od7qdylwkyksrwopy
   prism-react-renderer: 1.3.5_react@18.2.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -74,7 +74,7 @@ devDependencies:
   chrome-aws-lambda: 10.1.0_puppeteer-core@10.4.0
   commitlint: 17.1.2
   esbuild: 0.14.0
-  eslint-config-next: 12.3.1_wyqvi574yv7oiwfeinomdzmc3m
+  eslint-config-next: 12.3.2_wyqvi574yv7oiwfeinomdzmc3m
   eslint-config-prettier: 8.5.0_eslint@8.26.0
   eslint-plugin-prettier: 4.2.1_aniwkeyvlpmwkidetuytnokvcm
   github-slugger: 1.5.0
@@ -82,7 +82,7 @@ devDependencies:
   playwright-core: 1.27.1
   prettier: 2.7.1
   reading-time: 1.5.0
-  rehype-slug: 5.0.1
+  rehype-slug: 5.1.0
   remark: 14.0.2
   remark-emoji: 3.0.2
   remark-gfm: 3.0.1
@@ -1416,7 +1416,7 @@ packages:
       '@types/node': 14.18.33
       chalk: 4.1.2
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 4.1.1_gbbg4brkmakf6m5nuj7scelzny
+      cosmiconfig-typescript-loader: 4.2.0_gbbg4brkmakf6m5nuj7scelzny
       lodash: 4.17.21
       resolve-from: 5.0.0
       ts-node: 10.9.1_yodorn5kzjgomblrsstrk2spaa
@@ -1878,8 +1878,8 @@ packages:
       yargs: 16.2.0
     dev: false
 
-  /@humanwhocodes/config-array/0.11.6:
-    resolution: {integrity: sha512-jJr+hPTJYKyDILJfhNSHsjiwXYf26Flsz8DvNndOsHs5pwSnpGUEy8yzF0JYhCEvTDdV2vuOK5tt8BVhwO5/hg==}
+  /@humanwhocodes/config-array/0.11.7:
+    resolution: {integrity: sha512-kBbPWzN8oVMLb0hOUYXhmxggL/1cJE6ydvjDIGi9EnAGUyA7cLVKQg+d/Dsm+KZwx2czGHrCmMVLiyg8s5JPKw==}
     engines: {node: '>=10.10.0'}
     dependencies:
       '@humanwhocodes/object-schema': 1.2.1
@@ -2037,8 +2037,8 @@ packages:
     resolution: {integrity: sha512-9P9THmRFVKGKt9DYqeC2aKIxm8rlvkK38V1P1sRE7qyoPBIs8l9oo79QoSdPtOWfzkbDAVUqvbQGgTMsb8BtJg==}
     dev: false
 
-  /@next/eslint-plugin-next/12.3.1:
-    resolution: {integrity: sha512-sw+lTf6r6P0j+g/n9y4qdWWI2syPqZx+uc0+B/fRENqfR3KpSid6MIKqc9gNwGhJASazEQ5b3w8h4cAET213jw==}
+  /@next/eslint-plugin-next/12.3.2:
+    resolution: {integrity: sha512-Jx0BIS9STamGSbA+vgTxPAi1mRcq4DoH/5kPMs0PFLFi542mmIKUUtYWB61bI+G6KPMTqejYmO3zi+SF6tzGYg==}
     dependencies:
       glob: 7.1.7
     dev: true
@@ -2904,7 +2904,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001426
+      caniuse-lite: 1.0.30001427
       electron-to-chromium: 1.4.284
       node-releases: 2.0.6
       update-browserslist-db: 1.0.10_browserslist@4.21.4
@@ -2957,8 +2957,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /caniuse-lite/1.0.30001426:
-    resolution: {integrity: sha512-n7cosrHLl8AWt0wwZw/PJZgUg3lV0gk9LMI7ikGJwhyhgsd2Nb65vKvmSexCqq/J7rbH3mFG6yZZiPR5dLPW5A==}
+  /caniuse-lite/1.0.30001427:
+    resolution: {integrity: sha512-lfXQ73oB9c8DP5Suxaszm+Ta2sr/4tf8+381GkIm1MLj/YdLf+rEDyDSRCzeltuyTVGm+/s18gdZ0q+Wmp8VsQ==}
     dev: false
 
   /ccount/2.0.1:
@@ -3190,8 +3190,8 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: false
 
-  /cosmiconfig-typescript-loader/4.1.1_gbbg4brkmakf6m5nuj7scelzny:
-    resolution: {integrity: sha512-9DHpa379Gp0o0Zefii35fcmuuin6q92FnLDffzdZ0l9tVd3nEobG3O+MZ06+kuBvFTSVScvNb/oHA13Nd4iipg==}
+  /cosmiconfig-typescript-loader/4.2.0_gbbg4brkmakf6m5nuj7scelzny:
+    resolution: {integrity: sha512-NkANeMnaHrlaSSlpKGyvn2R4rqUDeE/9E5YHx+b4nwo0R8dZyAqcih8/gxpCZvqWP9Vf6xuLpMSzSgdVEIM78g==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@types/node': '*'
@@ -3296,8 +3296,8 @@ packages:
     dependencies:
       ms: 2.1.2
 
-  /decamelize-keys/1.1.0:
-    resolution: {integrity: sha512-ocLWuYzRPoS9bfiSdDd3cxvrzovVMZnRDVEzAs+hWIVXGDbHxWMECij2OBuyB/An0FFW/nLuq6Kv1i/YC5Qfzg==}
+  /decamelize-keys/1.1.1:
+    resolution: {integrity: sha512-WiPxgEirIV0/eIOMcnFBA3/IJZAZqKnwAwWyvvdi4lsr1WCN22nhdf/3db3DoZcUjTV2SqfzIwNyp6y2xs3nmg==}
     engines: {node: '>=0.10.0'}
     dependencies:
       decamelize: 1.2.0
@@ -3627,8 +3627,8 @@ packages:
     engines: {node: '>=12'}
     dev: true
 
-  /eslint-config-next/12.3.1_wyqvi574yv7oiwfeinomdzmc3m:
-    resolution: {integrity: sha512-EN/xwKPU6jz1G0Qi6Bd/BqMnHLyRAL0VsaQaWA7F3KkjAgZHi4f1uL1JKGWNxdQpHTW/sdGONBd0bzxUka/DJg==}
+  /eslint-config-next/12.3.2_wyqvi574yv7oiwfeinomdzmc3m:
+    resolution: {integrity: sha512-ir8t3wRNexUMSKsMNh7J1EWwiBAr2dd015UAiCFvQ/01MRBPmFof1C6PFh/RqlupwamSZlv6j8gfaV1RxHuRoQ==}
     peerDependencies:
       eslint: ^7.23.0 || ^8.0.0
       typescript: '>=3.3.1'
@@ -3636,7 +3636,7 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@next/eslint-plugin-next': 12.3.1
+      '@next/eslint-plugin-next': 12.3.2
       '@rushstack/eslint-patch': 1.2.0
       '@typescript-eslint/parser': 5.41.0_wyqvi574yv7oiwfeinomdzmc3m
       eslint: 8.26.0
@@ -3861,7 +3861,7 @@ packages:
     hasBin: true
     dependencies:
       '@eslint/eslintrc': 1.3.3
-      '@humanwhocodes/config-array': 0.11.6
+      '@humanwhocodes/config-array': 0.11.7
       '@humanwhocodes/module-importer': 1.0.1
       '@nodelib/fs.walk': 1.2.8
       ajv: 6.12.6
@@ -4286,6 +4286,10 @@ packages:
 
   /github-slugger/1.5.0:
     resolution: {integrity: sha512-wIh+gKBI9Nshz2o46B0B3f5k/W+WI9ZAv6y5Dn5WJ5SK1t0TnDimB4WE5rmTD05ZAIn8HALCZVmCsvj0w0v0lw==}
+    dev: true
+
+  /github-slugger/2.0.0:
+    resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
     dev: true
 
   /glob-parent/5.1.2:
@@ -5197,7 +5201,7 @@ packages:
     dependencies:
       '@types/minimist': 1.2.2
       camelcase-keys: 6.2.2
-      decamelize-keys: 1.1.0
+      decamelize-keys: 1.1.1
       hard-rejection: 2.1.0
       minimist-options: 4.1.0
       normalize-package-data: 3.0.3
@@ -5635,8 +5639,8 @@ packages:
       - supports-color
     dev: false
 
-  /next-seo/5.9.0_azq6kxkn3od7qdylwkyksrwopy:
-    resolution: {integrity: sha512-GsPXIDC9EFoFM6pkigSGMzuD/PelL8TFPlD5rKQCZfwkDNhs0unkW8sOMZ2u4RnEfxb/BBpEjQxtEeYQcgQ8jQ==}
+  /next-seo/5.11.1_azq6kxkn3od7qdylwkyksrwopy:
+    resolution: {integrity: sha512-P18E5mDaUEvIK/hDlCLAl7w02Ew6a8m1E3KO3d+rIPKWPcBRMckcMzxkdFkafFqwHl4ygCLNCWlKWM9EKD3jIQ==}
     peerDependencies:
       next: ^8.1.1-canary.54 || >=9.0.0
       react: '>=16.0.0'
@@ -5667,7 +5671,7 @@ packages:
     dependencies:
       '@next/env': 12.3.1
       '@swc/helpers': 0.4.11
-      caniuse-lite: 1.0.30001426
+      caniuse-lite: 1.0.30001427
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -6347,11 +6351,11 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
-  /rehype-slug/5.0.1:
-    resolution: {integrity: sha512-X5v3wV/meuOX9NFcGhJvUpEjIvQl2gDvjg3z40RVprYFt7q3th4qMmYLULiu3gXvbNX1ppx+oaa6JyY1W67pTA==}
+  /rehype-slug/5.1.0:
+    resolution: {integrity: sha512-Gf91dJoXneiorNEnn+Phx97CO7oRMrpi+6r155tTxzGuLtm+QrI4cTwCa9e1rtePdL4i9tSO58PeSS6HWfgsiw==}
     dependencies:
       '@types/hast': 2.3.4
-      github-slugger: 1.5.0
+      github-slugger: 2.0.0
       hast-util-has-property: 2.0.0
       hast-util-heading-rank: 2.1.0
       hast-util-to-string: 2.0.0
