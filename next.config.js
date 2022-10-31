@@ -12,6 +12,7 @@ module.exports = withContentlayer({
       'raw.githubusercontent.com',
       'avatars.githubusercontent.com',
       'devblogs.microsoft.com',
+      's.gravatar.com',
     ],
   },
 });

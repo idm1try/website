@@ -13,6 +13,7 @@ import {
   Text,
 } from '@chakra-ui/react';
 import Avatar from 'components/Avatar';
+import Comment from 'components/comment';
 import Image from 'components/Image';
 import { MDXComponents } from 'components/mdxComponents';
 import Member from 'components/Member';
@@ -99,6 +100,8 @@ const Page = ({ blog, ogImageUrl }: { blog: Blog; ogImageUrl: string }) => {
         >
           <Component components={MDXComponents} />
         </Box>
+
+        <Comment />
       </PageContainer>
 
       <TableOfContent
