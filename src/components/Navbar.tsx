@@ -29,7 +29,7 @@ const LinkItem = ({ href, path, children, ...props }: LinkItemProps) => {
   const active = path === href;
 
   return (
-    <NextLink href={href} passHref scroll={false}>
+    <NextLink href={href} passHref scroll={false} legacyBehavior>
       <Button
         colorScheme={active ? 'teal' : 'gray'}
         variant={active ? 'solid' : 'ghost'}
@@ -93,7 +93,7 @@ const Navbar = () => {
           <Menu isLazy id='navbar-menu'>
             <MenuButton as={IconButton} icon={<TbMenu2 />} aria-label='Options' />
             <MenuList>
-              <NextLink href='/members' passHref>
+              <NextLink href='/members' passHref legacyBehavior>
                 <MenuItem as={Link}>Members</MenuItem>
               </NextLink>
               <MenuItem as='a' href='https://github.com/idm1try/idm1try-blog'>

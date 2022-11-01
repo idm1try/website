@@ -22,7 +22,7 @@ const BlogGridItem = ({ children, slug, title, description, image }: BlogGridIte
       shadow: 'outline',
     }}
   >
-    <NextLink href={slug} passHref scroll={false}>
+    <NextLink href={slug} passHref scroll={false} legacyBehavior>
       <LinkBox cursor='pointer'>
         {image ? (
           <Image src={image} alt={title} height={320} width={720} objectFit='cover' />

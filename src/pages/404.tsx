@@ -20,7 +20,7 @@ const NotFound = () => (
       <Text color='gray.500' my={6}>
         Whoops, it looks like the page you were looking for doesn&apos;t exist!
       </Text>
-      <NextLink href='/'>
+      <NextLink href='/' legacyBehavior>
         <Button colorScheme='teal' leftIcon={<TbHome />}>
           Go to Home
         </Button>

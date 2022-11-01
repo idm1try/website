@@ -82,7 +82,7 @@ const Page = ({ blog, ogImageUrl }: { blog: Blog; ogImageUrl: string }) => {
           {blog.description}
         </Text>
         {blog.tags?.map(tag => (
-          <NextLink href={`/?filter=${tag}`} key={tag}>
+          <NextLink href={`/?filter=${tag}`} key={tag} legacyBehavior>
             <Tag fontWeight='bold' mt={3} colorScheme='teal' mr={1} cursor='pointer'>
               {tag}
             </Tag>

@@ -1,14 +1,14 @@
 import { useAuth0 } from '@auth0/auth0-react';
 import { Box, Button, HStack, Textarea } from '@chakra-ui/react';
 
-type CommentFormProps = {
+interface CommentFormProps {
   text: string;
   setText: (event: string) => void;
   onSubmit: (e: React.FormEvent) => Promise<void>;
   isSending: boolean;
-};
+}
 
-export default function CommentForm({ text, setText, onSubmit, isSending }: CommentFormProps) {
+const CommentForm = ({ text, setText, onSubmit, isSending }: CommentFormProps) => {
   const { isLoading, isAuthenticated, logout, loginWithPopup } = useAuth0();
 
   return (
@@ -17,7 +17,7 @@ export default function CommentForm({ text, setText, onSubmit, isSending }: Comm
         placeholder={isAuthenticated ? 'Comment' : 'Please login to leave a comment'}
         onChange={e => setText(e.target.value)}
         value={text}
-        disabled={!isAuthenticated}
+        isDisabled={!isAuthenticated || isSending}
         variant='filled'
         rounded='lg'
       />
@@ -40,4 +40,6 @@ export default function CommentForm({ text, setText, onSubmit, isSending }: Comm
       </Box>
     </form>
   );
-}
+};
+
+export default CommentForm;

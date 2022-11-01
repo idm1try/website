@@ -13,6 +13,7 @@ module.exports = withContentlayer({
       'avatars.githubusercontent.com',
       'devblogs.microsoft.com',
       's.gravatar.com',
+      'lh3.googleusercontent.com',
     ],
   },
 });

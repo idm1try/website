@@ -65,7 +65,7 @@ const Blog = () => {
                   description={item.description}
                 >
                   {item.tags?.map(tag => (
-                    <NextLink href={`/?filter=${tag}`} key={tag}>
+                    <NextLink href={`/?filter=${tag}`} key={tag} legacyBehavior>
                       <Tag fontWeight='bold' mt={2} colorScheme='teal' mr={1} cursor='pointer'>
                         {tag}
                       </Tag>

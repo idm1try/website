@@ -10,7 +10,7 @@ interface CommentListProps {
   isDeleting: boolean;
 }
 
-export default function CommentList({ comments, onDelete, isDeleting }: CommentListProps) {
+const CommentList = ({ comments, onDelete, isDeleting }: CommentListProps) => {
   const { user } = useAuth0();
 
   return (
@@ -60,4 +60,6 @@ export default function CommentList({ comments, onDelete, isDeleting }: CommentL
         })}
     </Box>
   );
-}
+};
+
+export default CommentList;
