@@ -25,10 +25,13 @@ import { getAbsoluteURL } from 'lib/routerUtils';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 import NextLink from 'next/link';
+import ErrorPage from 'next/error';
 
 const Page = ({ blog, ogImageUrl }: { blog: Blog; ogImageUrl: string }) => {
   const Component = useMDXComponent(blog.body.code);
   const authorData = getMember(blog.author);
+
+  if (!blog.frontMatter) return <ErrorPage statusCode={404} />;
 
   return (
     <Box>

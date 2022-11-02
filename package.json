@@ -14,7 +14,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "contentlayer": "^0.2.8",
-    "framer-motion": "^7.6.2",
+    "framer-motion": "^7.6.4",
     "ioredis": "^5.2.3",
     "match-sorter": "^6.3.1",
     "mdx-bundler": "^9.0.1",

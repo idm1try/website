@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react';
 import Image from 'components/Image';
 import ScreenshotLink, { ScreenshotLinkProps } from 'components/ScreenshotLink';
-import { ImageProps } from 'next/image';
+import { ImageProps } from 'next/legacy/image';
 import NextLink from 'next/link';
 import CodeBlock from './codeblock';
 import { InlineCode } from './InlineCode';
@@ -22,7 +22,7 @@ import { VideoPlayer } from './VideoPlayer';
 
 export const MDXComponents = {
   p: (props: ChakraProps) => <Box {...props} />,
-  Image: (props: ImageProps) => (
+  img: (props: ImageProps) => (
     <Image
       layout='responsive'
       width={750}
@@ -32,11 +32,6 @@ export const MDXComponents = {
       alt='image'
       {...props}
     />
-  ),
-  LinkedImage: ({ href, src, ...props }: { href: string; src: string }) => (
-    <Link display='block' my={8} href={href} isExternal>
-      <MDXComponents.Image src={src} {...props} />
-    </Link>
   ),
   h1: (props: ChakraProps) => <Heading my={8} fontSize='4xl' {...props} />,
   h2: (props: ChakraProps) => <LinkedHeading fontSize='3xl' lineHeight='1.5em' {...props} />,

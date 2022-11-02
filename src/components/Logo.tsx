@@ -18,6 +18,7 @@ const LogoBox = styled.span`
 const Logo = () => (
   <Link href='/' scroll={false} legacyBehavior>
     <Box
+      cursor='pointer'
       transition='0.25s color ease-out'
       _hover={{ color: useColorModeValue('gray.600', 'gray.300') }}
     >
