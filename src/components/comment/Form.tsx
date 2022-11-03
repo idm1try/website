@@ -1,5 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import { Box, Button, HStack, Textarea } from '@chakra-ui/react';
+import { Box, Button, Textarea } from '@chakra-ui/react';
 
 interface CommentFormProps {
   text: string;
@@ -24,14 +24,16 @@ const CommentForm = ({ text, setText, onSubmit, isSending }: CommentFormProps) =
 
       <Box mt={3}>
         {isAuthenticated ? (
-          <HStack spacing={3}>
-            <Button isLoading={isSending} colorScheme='teal' type='submit'>
-              Send
-            </Button>
-            <Button onClick={() => logout()} variant='ghost' colorScheme='red'>
+          <Box>
+            {text.trim().length !== 0 && (
+              <Button isLoading={isSending} mr={3} colorScheme='teal' type='submit'>
+                Send
+              </Button>
+            )}
+            <Button onClick={() => logout()} variant='outline' colorScheme='red'>
               Log out
             </Button>
-          </HStack>
+          </Box>
         ) : (
           <Button isLoading={isLoading} onClick={() => loginWithPopup()} colorScheme='teal'>
             Log In

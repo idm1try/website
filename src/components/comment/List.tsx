@@ -15,48 +15,41 @@ const CommentList = ({ comments, onDelete, isDeleting }: CommentListProps) => {
 
   return (
     <Box mt={8}>
-      {comments?.map(comment => {
-        const isAuthor = user && user.sub === comment.user.sub;
-        const isAdmin = user && user.email === process.env.NEXT_PUBLIC_AUTH0_ADMIN_EMAIL;
-
-        return (
-          <Box mb={5} key={comment.created_at}>
-            <HStack mb={3}>
-              <Image
-                width={36}
-                height={36}
-                rounded='full'
-                src={comment.user.picture}
-                alt={comment.user.name}
-              />
-              <Box>
-                <Text fontSize='sm'>
-                  <b>{comment.user.name}</b>
-                </Text>
-                <Text fontSize='xs' color='gray.500'>
-                  {new Date(comment.created_at).toDateString()}
-                </Text>
-              </Box>
-              {(isAdmin || isAuthor) && (
-                <IconButton
-                  isLoading={isDeleting}
-                  icon={<TbTrash />}
-                  aria-label='Delete'
-                  variant='ghost'
-                  colorScheme='red'
-                  onClick={() => onDelete(comment)}
-                  size='sm'
-                  ml={1}
-                />
-              )}
-            </HStack>
-
+      {comments?.map(comment => (
+        <Box mb={5} key={comment.created_at}>
+          <HStack mb={3}>
+            <Image
+              width={36}
+              height={36}
+              rounded='full'
+              src={comment.user.picture}
+              alt={comment.user.name}
+            />
             <Box>
-              <Box>{comment.text}</Box>
+              <Text fontSize='sm'>
+                <b>{comment.user.name}</b>
+              </Text>
+              <Text fontSize='xs' color='gray.500'>
+                {new Date(comment.created_at).toDateString()}
+              </Text>
             </Box>
-          </Box>
-        );
-      })}
+            {user && user.sub === comment.user.sub && (
+              <IconButton
+                isLoading={isDeleting}
+                icon={<TbTrash />}
+                aria-label='Delete'
+                variant='ghost'
+                colorScheme='red'
+                onClick={() => onDelete(comment)}
+                size='sm'
+                ml={1}
+              />
+            )}
+          </HStack>
+
+          <Box>{comment.text}</Box>
+        </Box>
+      ))}
     </Box>
   );
 };

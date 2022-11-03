@@ -24,8 +24,8 @@ import { getMember } from 'lib/getAllMembers';
 import { getAbsoluteURL } from 'lib/routerUtils';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useMDXComponent } from 'next-contentlayer/hooks';
-import NextLink from 'next/link';
 import ErrorPage from 'next/error';
+import NextLink from 'next/link';
 
 const Page = ({ blog, ogImageUrl }: { blog: Blog; ogImageUrl: string }) => {
   const Component = useMDXComponent(blog.body.code);
