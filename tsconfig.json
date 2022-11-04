@@ -21,8 +21,7 @@
       "lib/*": ["./src/lib/*"],
       "hooks/*": ["./src/hooks/*"],
       "public/*": ["./public/*"],
-      "contentlayer/generated": ["./.contentlayer/generated"],
-      "layouts/*": ["./src/components/layouts/*"]
+      "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

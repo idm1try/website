@@ -27,7 +27,7 @@ import { useMDXComponent } from 'next-contentlayer/hooks';
 import ErrorPage from 'next/error';
 import NextLink from 'next/link';
 
-const Page = ({ blog, ogImageUrl }: { blog: Blog; ogImageUrl: string }) => {
+const BlogPage = ({ blog, ogImageUrl }: { blog: Blog; ogImageUrl: string }) => {
   const Component = useMDXComponent(blog.body.code);
   const authorData = getMember(blog.author);
 
@@ -86,7 +86,15 @@ const Page = ({ blog, ogImageUrl }: { blog: Blog; ogImageUrl: string }) => {
         </Text>
         {blog.tags?.map(tag => (
           <NextLink href={`/?filter=${tag}`} key={tag} legacyBehavior>
-            <Tag fontWeight='bold' mt={3} colorScheme='teal' mr={1} cursor='pointer'>
+            <Tag
+              size='lg'
+              fontWeight='bold'
+              mt={3}
+              colorScheme='teal'
+              mr={1}
+              cursor='pointer'
+              _hover={{ color: 'teal.500' }}
+            >
               {tag}
             </Tag>
           </NextLink>
@@ -146,4 +154,4 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return { props: { blog, ogImageUrl } };
 };
 
-export default Page;
+export default BlogPage;
