@@ -30,12 +30,12 @@ const BlogGridItem = ({ children, slug, title, description, image }: BlogGridIte
           <Image src='/card.png' alt={title} height={320} width={720} objectFit='cover' />
         )}
         <LinkOverlay href={slug} transition='0.25s color ease-out' _hover={{ color: 'accent' }}>
-          <Text mt={2} fontSize={20} fontWeight='bold'>
+          <Text mt={2} fontSize={20} fontWeight='bold' noOfLines={2}>
             {title}
           </Text>
         </LinkOverlay>
         {description && (
-          <Text fontSize={14} color='gray.500' mt={1}>
+          <Text fontSize={14} color='gray.500' mt={1} noOfLines={2}>
             {description}
           </Text>
         )}

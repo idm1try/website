@@ -20,7 +20,7 @@ interface SearchInputProps {
 }
 
 const SearchInput = (props: SearchInputProps) => {
-  const { placeholder = 'Search articles', onChange, defaultValue } = props;
+  const { placeholder = 'Search blog', onChange, defaultValue } = props;
 
   const ref = useRef<HTMLInputElement>(null);
   const [setInputRef, inputStatus] = useElementState();

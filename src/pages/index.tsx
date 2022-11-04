@@ -33,7 +33,6 @@ const Blog = () => {
       <Box>
         <Box w='full' mt={8} mb={6}>
           <SearchInput
-            placeholder='Search blog'
             defaultValue={search.defaultValue}
             onChange={value => {
               search.setParams(value);
@@ -115,9 +114,9 @@ const Blog = () => {
             })}
         </SimpleGrid>
       ) : (
-        <Box textAlign='center' my={100}>
-          <Icon as={TbSearch} fontSize='5xl' />
-          <Heading>No results</Heading>
+        <Box textAlign='center' my={100} noOfLines={3}>
+          <Icon as={TbSearch} fontSize='6xl' mb={2} />
+          <Heading>No results for &quot;{search.defaultValue}&quot;</Heading>
         </Box>
       )}
     </PageContainer>
