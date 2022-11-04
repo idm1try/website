@@ -4,7 +4,7 @@ import Image from './Image';
 
 interface AvatarProps {
   src: string;
-  size: number | string;
+  size: number;
   alt: string;
 }
 
