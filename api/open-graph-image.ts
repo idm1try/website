@@ -1,5 +1,5 @@
 import chromium from 'chrome-aws-lambda';
-import { getAbsoluteURL } from 'lib/routerUtils';
+import { getAbsoluteURL } from '../src/lib/routerUtils';
 import { NextApiRequest, NextApiResponse } from 'next';
 import playwright from 'playwright-core';
 

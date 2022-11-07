@@ -13,11 +13,16 @@ const ScreenshotLink = ({ href, children }: ScreenshotLinkProps) => {
   const [isLoading, setIsLoading] = useState(true);
   const [linkScreenshot, setLinkScreenshot] = useState('');
   const bgColor = useColorModeValue('gray.50', 'gray.900');
+  const colorScheme = useColorModeValue('light', 'dark');
 
   const fetchImage = async (url: string) => {
     try {
       setIsHovering(true);
-      const res = await fetch(`/api/screenshot-link?url=${encodeURIComponent(url)}`);
+      const res = await fetch(
+        `https://screenshot.briefkastenhq.com/api/image?url=${encodeURIComponent(
+          url
+        )}&colorScheme=${colorScheme}&skipCookieBannerClick=true`
+      );
       const image = await res.blob();
       setLinkScreenshot(res.status !== 500 && URL.createObjectURL(image));
       setIsLoading(false);
