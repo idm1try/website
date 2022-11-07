@@ -35,7 +35,7 @@ const Page = () => {
           size='4xl'
           w='15ch'
           mb={5}
-          lineHeight='1.1em'
+          lineHeight='1.2em'
           noOfLines={2}
         >
           {title}
