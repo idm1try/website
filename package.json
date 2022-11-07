@@ -4,6 +4,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "next dev",
+    "dev:local": "npx playwright install && vercel dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -19,7 +20,7 @@
     "match-sorter": "^6.3.1",
     "mdx-bundler": "^9.0.1",
     "nanoid": "^4.0.0",
-    "next": "13.0.1",
+    "next": "13.0.2",
     "next-contentlayer": "^0.2.8",
     "next-seo": "^5.14.0",
     "prism-react-renderer": "^1.3.5",
@@ -56,6 +57,7 @@
     "remark-gfm": "^3.0.1",
     "sharp": "^0.31.2",
     "ts-node": "^10.9.1",
-    "typescript": "*"
+    "typescript": "*",
+    "vercel": "^28.4.14"
   }
 }
