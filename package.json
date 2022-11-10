@@ -14,7 +14,7 @@
     "@chakra-ui/react": "^2.3.7",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "contentlayer": "^0.2.9",
+    "contentlayer": "0.2.8",
     "framer-motion": "^7.6.5",
     "ioredis": "^5.2.4",
     "match-sorter": "^6.3.1",
