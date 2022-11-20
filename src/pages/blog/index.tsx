@@ -2,7 +2,6 @@ import LastPostCard from '@/components/LastPostCard';
 import Layout from '@/components/Layout';
 import PostCard from '@/components/PostCard';
 import SearchPosts from '@/components/SearchPosts';
-import TagCheckbox from '@/components/TagCheckbox';
 import usePostSearch from '@/hooks/usePostSearch';
 import { getAllPosts } from '@/lib/mdx/api';
 import Post from '@/types/post';
