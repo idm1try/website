@@ -1,125 +1,42 @@
-import {
-  Box,
-  Heading,
-  HStack,
-  Icon,
-  Popover,
-  PopoverArrow,
-  PopoverBody,
-  PopoverCloseButton,
-  PopoverContent,
-  PopoverTrigger,
-  SimpleGrid,
-  Tag,
-  Text,
-} from '@chakra-ui/react';
-import Avatar from 'components/Avatar';
-import BlogGridItem from 'components/BlogGridItem';
-import Member from 'components/Member';
-import PageContainer from 'components/PageContainer';
-import SearchInput from 'components/SearchInput';
-import TagCheckboxGroup from 'components/TagCheckboxGroup';
-import { Blog } from 'contentlayer/generated';
-import useBlogSearch from 'hooks/useBlogSearch';
-import { getMember } from 'lib/getAllMembers';
-import NextLink from 'next/link';
-import { TbSearch } from 'react-icons/tb';
+import Layout from '@/components/Layout';
+import ScreenshotLink from '@/components/ScreenshotLink';
+import { TbBrandGithub, TbBrandTwitter, TbMail } from 'react-icons/tb';
 
-const Blog = () => {
-  const search = useBlogSearch();
-
+const ALO = () => {
   return (
-    <PageContainer>
-      <Box>
-        <Box w='full' mt={8} mb={6}>
-          <SearchInput
-            defaultValue={search.defaultValue}
-            onChange={value => {
-              search.setParams(value);
-            }}
-          />
-        </Box>
-        <TagCheckboxGroup
-          data={search.tags}
-          isChecked={item => search.filters.includes(item)}
-          onChange={({ checked, value }) => {
-            if (checked) search.addTag(value);
-            else search.removeTag(value);
-          }}
-        />
-      </Box>
-      {search.results.length !== 0 ? (
-        <SimpleGrid columns={{ base: 1, md: 2 }} gap={6} mt={6}>
-          {search.results
-            .sort(
-              (a: Blog, b: Blog) =>
-                new Date(b.frontMatter.publishedDate.raw).valueOf() -
-                new Date(a.frontMatter.publishedDate.raw).valueOf()
-            )
-            .map(item => {
-              const authorInfo = getMember(item.author);
-
-              return (
-                <Box key={item._id} mb={6}>
-                  <BlogGridItem
-                    slug={item.slug}
-                    title={item.title}
-                    image={item.image}
-                    description={item.description}
-                  >
-                    {item.tags?.map(tag => (
-                      <NextLink href={`/?filter=${tag}`} key={tag}>
-                        <Tag
-                          fontWeight='bold'
-                          mt={2}
-                          colorScheme='teal'
-                          mr={1}
-                          _hover={{ color: 'teal.500' }}
-                        >
-                          {tag}
-                        </Tag>
-                      </NextLink>
-                    ))}
-                    <HStack mt={2}>
-                      <Box>
-                        <Popover isLazy trigger='hover' id='author-info' placement='top'>
-                          <PopoverTrigger>
-                            <Box>
-                              <Avatar src={authorInfo.avatarUrl} size={36} alt={authorInfo.name} />
-                            </Box>
-                          </PopoverTrigger>
-                          <PopoverContent maxW={{ base: 240, sm: 320 }} rounded='lg' p={1}>
-                            <PopoverArrow />
-                            <PopoverCloseButton />
-                            <PopoverBody>
-                              <Member member={authorInfo} />
-                            </PopoverBody>
-                          </PopoverContent>
-                        </Popover>
-                      </Box>
-                      <Box color='gray.500' cursor='pointer'>
-                        <Text fontWeight='bold' fontSize='sm'>
-                          {item.author}
-                        </Text>
-                        <Text fontSize='xs' color='gray.500'>
-                          {item.frontMatter.publishedDate.text} &bull;{' '}
-                          {item.frontMatter.readingTime.text}
-                        </Text>
-                      </Box>
-                    </HStack>
-                  </BlogGridItem>
-                </Box>
-              );
-            })}
-        </SimpleGrid>
-      ) : (
-        <Box textAlign='center' my={100} noOfLines={3}>
-          <Icon as={TbSearch} fontSize='6xl' mb={2} />
-          <Heading>No results for &quot;{search.defaultValue}&quot;</Heading>
-        </Box>
-      )}
-    </PageContainer>
+    <Layout>
+      <div className='relative z-10 my-16 flex max-w-7xl flex-col items-start text-left lg:my-[20vh] lg:flex-row lg:items-center lg:justify-between'>
+        <div className='mb-8 animate-fade_in_up_10 pl-2 text-6xl font-bold tracking-tight text-rosewater-200 dark:text-pink-100 lg:pl-0 lg:pr-8'>
+          idm1try
+        </div>
+        <div className='relative w-full p-2 text-left text-xl leading-8 lg:w-11/12 lg:pl-10'>
+          <div>
+            Hi! My name&apos;s Dmitry. I&apos;m a beginner front-end developer and based in
+            Neftekamsk, Russia.
+          </div>
+          <div className='mt-2 font-bold underline decoration-surface2-100 decoration-4 underline-offset-4 transition-colors duration-500 hover:decoration-flamingo-200'>
+            Links
+          </div>
+          <ul className='mt-2'>
+            <li>
+              <TbBrandGithub className='mr-1 inline-block text-mauve-200 dark:text-mauve-100' />{' '}
+              <ScreenshotLink href='https://github.com/idm1try'>@idm1try</ScreenshotLink>
+            </li>
+            <li>
+              <TbBrandTwitter className='mr-1 inline-block text-mauve-200 dark:text-mauve-100' />{' '}
+              <ScreenshotLink href='https://twitter.com/idm1try'>@idm1try</ScreenshotLink>
+            </li>
+            <li>
+              <TbMail className='mr-1 inline-block text-mauve-200 dark:text-mauve-100' />{' '}
+              <a className='border-underline-grow' href='mailto:admin@idm1try.ru'>
+                admin@idm1try.ru
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </Layout>
   );
 };
 
-export default Blog;
+export default ALO;

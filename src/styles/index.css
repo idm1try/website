@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.border-underline-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  transition-property: color;
+  transition-duration: 0.5s;
+}
+
+.border-underline-grow:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  max-height: 9px;
+  width: 100%;
+  background: theme('colors.pink.200');
+  border-radius: 3px;
+  transform: scaleY(0.4);
+  transition-property: max-height, transform;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .border-underline-grow:hover:before,
+  .border-underline-grow:focus:before,
+  .border-underline-grow:active:before {
+    transform: scaleY(1);
+    max-height: 100%;
+    transition-timing-function: cubic-bezier(0.98, -0.4, 0.32, 1.6);
+  }
+}
+
+ul a {
+  display: inline-block;
+  transform: perspective(1px) translateZ(0);
+  position: relative;
+  overflow: hidden;
+}
+
+ul a:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: theme('colors.pink.200');
+  border-radius: 3px;
+  height: 5px;
+  transition-property: right;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.28, -0.4, 2.32, 1.6);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  ul a:hover:before,
+  ul a:focus:before,
+  ul a:active:before {
+    right: 0;
+  }
+}

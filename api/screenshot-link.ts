@@ -18,7 +18,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   });
 
   const url = req.query.url as string;
+  const colorScheme = req.query.colorScheme as 'light' | 'dark' | 'no-preference' | null;
 
+  await page.emulateMedia({ colorScheme });
   await page.goto(url);
 
   const data = await page.screenshot({

@@ -6,7 +6,6 @@ export interface User {
 }
 
 export interface Comment {
-  id: string;
   created_at: number;
   url: string;
   text: string;

@@ -13,5 +13,6 @@ module.exports = {
   ignorePatterns: ['.next/*', 'node_modules/*'],
   rules: {
     'prettier/prettier': 'error',
+    '@typescript-eslint/no-explicit-any': 'off',
   },
 };

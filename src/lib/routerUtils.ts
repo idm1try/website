@@ -15,9 +15,3 @@ export function removeQuery(router: NextRouter, key: string) {
   delete newQuery[key];
   router.replace({ pathname, query: newQuery }, undefined, { scroll: false });
 }
-
-export function getAbsoluteURL(path: string) {
-  const baseURL =
-    process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://blog.idm1try.ru';
-  return baseURL + path;
-}

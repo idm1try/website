@@ -1,23 +1,29 @@
-import { AbsoluteCenter, Box, Link, Spinner, useColorModeValue } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
 import { ReactNode, useState } from 'react';
-import Image from './Image';
+import Image from 'next/image';
+import Spinner from './Spinner';
 
-export interface ScreenshotLinkProps {
+type ScreenshotLinkProps = {
   href: string;
   children: ReactNode;
-}
+  className?: string;
+};
 
-const ScreenshotLink = ({ href, children }: ScreenshotLinkProps) => {
+const ScreenshotLink = ({ href, children, className = '' }: ScreenshotLinkProps) => {
   const [isHovering, setIsHovering] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const [linkScreenshot, setLinkScreenshot] = useState('');
-  const bgColor = useColorModeValue('gray.50', 'gray.900');
 
   const fetchImage = async (url: string) => {
+    let colorScheme: 'light' | 'dark' = 'light';
+    if (typeof document !== 'undefined') {
+      colorScheme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    }
     try {
+      setIsLoading(true);
       setIsHovering(true);
-      const res = await fetch(`/api/screenshot-link?url=${encodeURIComponent(url)}`);
+      const res = await fetch(
+        `/api/screenshot-link?url=${encodeURIComponent(url)}&colorScheme=${colorScheme}`
+      );
       const image = await res.blob();
       setLinkScreenshot(res.status !== 500 && URL.createObjectURL(image));
       setIsLoading(false);
@@ -28,80 +34,47 @@ const ScreenshotLink = ({ href, children }: ScreenshotLinkProps) => {
 
   return (
     <span>
-      <Box
-        pos='relative'
-        display='inline-block'
+      <div
+        className={`relative inline-block ${className}`}
         onMouseOver={() => fetchImage(href)}
         onMouseOut={() => setIsHovering(false)}
         onFocus={() => fetchImage(href)}
         onBlur={() => setIsHovering(false)}
       >
         {isHovering && (
-          <motion.div
-            initial={{ opacity: 0, x: 0, y: '3.2rem' }}
-            animate={{ opacity: 1, x: 0, y: '2.0rem' }}
-            transition={{ duration: 0.4, ease: 'easeInOut' }}
-            style={{ position: 'absolute' }}
-          >
+          <div className='animate-fade_in_up_10'>
             {isLoading ? (
-              <Box
-                pos='absolute'
-                pointerEvents='none'
-                display='block'
-                zIndex={9}
-                bgColor={bgColor}
-                height={124}
-                width={52}
-                shadow='lg'
-                bottom='2.0rem'
-                rounded='lg'
-              >
-                <AbsoluteCenter>
-                  <Spinner color='accent' size='lg' thickness='4px' />
-                </AbsoluteCenter>
-              </Box>
+              <div className='pointer-events-none absolute bottom-2 z-10 block h-[105px] w-44 rounded-lg bg-mantle-200 dark:bg-mantle-100'>
+                <Spinner className='mx-auto mt-8' />
+              </div>
             ) : (
-              <Box>
-                {linkScreenshot ? (
-                  <Image
-                    src={linkScreenshot}
-                    height={180}
-                    width={300}
-                    alt='Link preview'
-                    rounded='lg'
-                    pointerEvents='none'
-                    pos='absolute'
-                    bottom='2.0rem'
-                    zIndex={9}
-                    display='block'
-                    h={124}
-                    w={52}
-                    shadow='lg'
-                  />
-                ) : (
-                  <Box
-                    pos='absolute'
-                    pointerEvents='none'
-                    display='block'
-                    zIndex={9}
-                    bgColor={bgColor}
-                    height={124}
-                    width={52}
-                    shadow='lg'
-                    bottom='2.0rem'
-                    rounded='lg'
-                  >
-                    <AbsoluteCenter color='accent' fontWeight='bold'>
+              <div>
+                {!linkScreenshot ? (
+                  <div className='pointer-events-none absolute bottom-2 z-10 block h-[105px] w-44 rounded-lg bg-mantle-200 dark:bg-mantle-100'>
+                    <div className='mt-10 text-center text-lg font-bold text-pink-200 dark:text-pink-100'>
                       Error or not found
-                    </AbsoluteCenter>
-                  </Box>
+                    </div>
+                  </div>
+                ) : (
+                  <div className='absolute bottom-2 z-10 block w-44 lg:block'>
+                    <Image
+                      src={linkScreenshot}
+                      height={180}
+                      width={300}
+                      unoptimized
+                      alt='Link preview'
+                      className='rounded-md'
+                    />
+                  </div>
                 )}
-              </Box>
+              </div>
             )}
-          </motion.div>
+          </div>
         )}
-        <Link href={href}>{children}</Link>
-      </Box>
+        <a href={href} className='border-underline-grow mb-1 pb-0.5 transition-all'>
+          {children}
+        </a>
+      </div>
     </span>
   );
 };

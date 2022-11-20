@@ -1,5 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import { Comment } from 'lib/comment/types';
+import { Comment } from '@/lib/comment/types';
 import { FormEvent, useEffect, useState } from 'react';
 import useSWR from 'swr';
 

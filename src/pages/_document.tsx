@@ -1,15 +1,32 @@
-import { ColorModeScript } from '@chakra-ui/react';
-import { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-const Document = () => (
-  <Html lang='en'>
-    <Head />
-    <body>
-      <ColorModeScript initialColorMode='dark' />
-      <Main />
-      <NextScript />
-    </body>
-  </Html>
-);
+class MyDocument extends Document {
+  render() {
+    return (
+      <Html lang='en'>
+        <Head>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                  if (localStorage.theme === "dark" || (!("theme" in localStorage) &&
+                  window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+                    document.documentElement.classList.add("dark")
+                    document.documentElement.style.setProperty("color-scheme", "dark")
+                  } else {
+                    document.documentElement.classList.remove("dark")
+                    document.documentElement.style.setProperty("color-scheme", "light")
+                  }
+          `,
+            }}
+          />
+        </Head>
+        <body className='break-words bg-base-200 text-text-200 transition-colors duration-500 dark:bg-base-100 dark:text-text-100'>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
+}
 
-export default Document;
+export default MyDocument;

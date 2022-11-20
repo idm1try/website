@@ -1,10 +1,7 @@
 import { matchSorter, MatchSorterOptions } from 'match-sorter';
+import Post from '@/types/post';
 
-export default function search<T extends Record<string, unknown>>(
-  items: T[],
-  keys: string[],
-  searchString: string
-) {
+export default function search(items: Post[], keys: string[], searchString: string) {
   const searches = new Set(searchString.split(' '));
 
   const options: MatchSorterOptions = {
@@ -24,7 +21,7 @@ export default function search<T extends Record<string, unknown>>(
   const allResults = matchSorter(items, searchString, options);
 
   if (searches.size < 2) {
-    return allResults as T[];
+    return allResults as Post[];
   }
 
   const [firstWord, ...restWords] = Array.from(searches.values());
@@ -37,9 +34,8 @@ export default function search<T extends Record<string, unknown>>(
   }
 
   const results = [...allResults, ...wordResults].filter(
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (item, index, self) => index === self.findIndex(t => (t as any).title === (item as any).title)
   );
 
-  return results as T[];
+  return results as Post[];
 }

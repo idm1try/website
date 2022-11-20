@@ -1,4 +1,3 @@
-import { nanoid } from 'nanoid';
 import { NextApiRequest, NextApiResponse } from 'next';
 import getUser from './getUser';
 import redis from './redis';
@@ -23,7 +22,6 @@ export default async function createComments(req: NextApiRequest, res: NextApiRe
     const { name, picture, sub, email } = user;
 
     const comment: Comment = {
-      id: nanoid(),
       created_at: Date.now(),
       url,
       text,
