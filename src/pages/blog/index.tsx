@@ -44,7 +44,7 @@ const Blog = ({ allPosts }: { allPosts: Post[] }) => {
       ) : (
         <div>
           {allPosts.length === 0 ? (
-            <div className='text-center text-4xl font-bold'>No posts</div>
+            <div className='mt-10 mb-20 text-center text-4xl font-bold'>No posts</div>
           ) : (
             <div className='text-center line-clamp-2'>
               <TbSearch

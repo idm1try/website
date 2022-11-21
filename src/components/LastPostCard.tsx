@@ -24,7 +24,7 @@ const LastPostCard = ({ post }: LastPostCardProps) => {
   return (
     <div className='mb-10 animate-fade_in rounded-lg bg-mantle-200 p-6 ring-peach-200 ring-offset-4 ring-offset-base-200 duration-300 hover:ring-2 dark:bg-mantle-100 dark:ring-peach-100 dark:ring-offset-base-100'>
       <div className='mb-5'>
-        <CoverImage title={title} cover={cover} slug={slug} />
+        <CoverImage title={title} cover={cover} slug={slug} width={1000} height={800} />
       </div>
       <div>
         <Link
@@ -41,7 +41,7 @@ const LastPostCard = ({ post }: LastPostCardProps) => {
         {tags.map(tag => (
           <span
             key={tag}
-            className='mt-2 mr-2 inline-block rounded-lg bg-crust-200 px-4 py-2 text-sm font-medium text-pink-200 dark:bg-crust-100 dark:text-pink-100'
+            className='mt-2 mr-2 inline-block rounded-lg bg-crust-200 px-4 py-2 text-sm font-medium uppercase text-pink-200 dark:bg-crust-100 dark:text-pink-100'
           >
             {tag}
           </span>

@@ -7,9 +7,11 @@ interface CoverImageProps {
   title: string;
   cover: string;
   slug?: string;
+  width?: number;
+  height?: number;
 }
 
-const CoverImage = ({ title, cover = '', slug }: CoverImageProps) => {
+const CoverImage = ({ title, cover = '', slug, width, height }: CoverImageProps) => {
   const [imageImport, setImage] = useState('');
   const loadImage = (imgur: string) => {
     if (!imgur) {
@@ -23,12 +25,14 @@ const CoverImage = ({ title, cover = '', slug }: CoverImageProps) => {
 
   const imageComponent = !imageImport ? (
     <div className='my-[59px] py-4'>
-      <Spinner className='m-auto' />
+      <Spinner className='m-auto' size={50} />
     </div>
   ) : (
     <Image
       src={imageImport}
       alt={`Cover Image for ${title}`}
+      width={width}
+      height={height}
       placeholder='blur'
       className={
         slug
@@ -62,6 +66,8 @@ const CoverImage = ({ title, cover = '', slug }: CoverImageProps) => {
           <img
             alt={slug}
             src={`/posts/${cover}`}
+            width={width}
+            height={height}
             className='mx-auto rounded-lg object-cover ring-mauve-200 ring-offset-4 ring-offset-base-200 duration-300 group-hover:ring-2 dark:ring-mauve-100 dark:ring-offset-base-100'
             loading='eager'
           />

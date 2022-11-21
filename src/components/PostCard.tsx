@@ -29,7 +29,7 @@ const PostCard = ({ post }: PostCardProps) => {
       <div>
         <Link
           href={`/blog/${slug ?? ''}`}
-          className='text-2xl font-bold transition-colors duration-300 active:text-pink-200/80 group-hover:text-pink-200 dark:active:text-pink-100/80 dark:group-hover:text-pink-100'
+          className='text-2xl font-bold transition-colors duration-300 line-clamp-2 active:text-pink-200/80 group-hover:text-pink-200 dark:active:text-pink-100/80 dark:group-hover:text-pink-100'
         >
           {title}
         </Link>
@@ -45,7 +45,7 @@ const PostCard = ({ post }: PostCardProps) => {
         {tags.map(tag => (
           <span
             key={tag}
-            className='mt-2 mr-2 inline-block rounded-lg bg-mantle-200 px-4 py-2 text-sm font-medium text-pink-200 dark:bg-mantle-100 dark:text-pink-100'
+            className='mt-2 mr-2 inline-block rounded-lg bg-mantle-200 px-4 py-2 text-sm font-medium uppercase text-pink-200 dark:bg-mantle-100 dark:text-pink-100'
           >
             {tag}
           </span>
