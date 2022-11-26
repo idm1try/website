@@ -1,6 +1,6 @@
-import { useState } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import Spinner from './Spinner';
 
 interface CoverImageProps {
@@ -9,23 +9,36 @@ interface CoverImageProps {
   slug?: string;
   width?: number;
   height?: number;
+  loading?: 'lazy' | 'eager';
+  priority?: boolean;
 }
 
-const CoverImage = ({ title, cover = '', slug, width, height }: CoverImageProps) => {
+const CoverImage = ({
+  title,
+  cover = '',
+  slug,
+  width,
+  height,
+  loading,
+  priority,
+}: CoverImageProps) => {
   const [imageImport, setImage] = useState('');
-  const loadImage = (imgur: string) => {
-    if (!imgur) {
+  const loadImage = (img: string) => {
+    if (!img) {
       return false;
     }
-    import(`../../public/posts/${imgur}`).then(image => {
+    import(`../../public/posts/${img}`).then(image => {
       setImage(image);
     });
   };
-  loadImage(cover);
+
+  useEffect(() => {
+    loadImage(cover);
+  });
 
   const imageComponent = !imageImport ? (
-    <div className='my-[59px] py-4'>
-      <Spinner className='m-auto' size={50} />
+    <div className='rounded-lg bg-mantle-200 py-14 dark:bg-mantle-100'>
+      <Spinner className='mx-auto' size={50} />
     </div>
   ) : (
     <Image
@@ -34,6 +47,8 @@ const CoverImage = ({ title, cover = '', slug, width, height }: CoverImageProps)
       width={width}
       height={height}
       placeholder='blur'
+      loading={loading ?? 'lazy'}
+      priority={priority}
       className={
         slug
           ? 'max-h-96 rounded-lg object-cover ring-mauve-200 ring-offset-4 ring-offset-base-200 duration-300 group-hover:ring-2 dark:ring-mauve-100 dark:ring-offset-base-100'

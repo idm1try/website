@@ -1,25 +1,23 @@
 import useSearchParams from '@/hooks/useSearchParams';
 import search from '@/lib/matchSorter';
-import { useMemo } from 'react';
 import Post from '@/types/post';
+import { useMemo } from 'react';
 
-export function getPostTags(data: any) {
-  const values = data.flatMap((blog: Post) => blog.tags);
-  return Array.from(new Set(values.filter((values: string) => values)));
+export function getTags(data: Post[]) {
+  const values = data.flatMap(value => value.tags);
+  return Array.from(new Set(values.filter(values => values)));
 }
 
-export default function usePostSearch(posts: any) {
+export default function useSearch(items: Post[]) {
   const { setParams, searchString, addFilter, removeFilter, filters } = useSearchParams();
 
   const results = useMemo(() => {
-    return search(posts, ['title', 'description', 'tags', 'host'], searchString);
-  }, [searchString, posts]);
+    return search(items, ['title', 'description', 'tags', 'host'], searchString);
+  }, [searchString, items]);
 
   const resultsByTags = useMemo(() => {
     if (filters.length === 0) return results;
-    return results.filter((result: any) =>
-      result.tags?.some((cat: string) => filters.includes(cat))
-    );
+    return results.filter(result => result.tags?.some((cat: string) => filters.includes(cat)));
   }, [results, filters]);
 
   return {
@@ -29,8 +27,8 @@ export default function usePostSearch(posts: any) {
     addTag: addFilter,
     removeTag: removeFilter,
     defaultValue: searchString || '',
-    tags: getPostTags(results),
-    allTags: getPostTags(posts),
+    tags: getTags(results),
+    allTags: getTags(items),
     filters,
     hasFilter: filters.length > 0,
     hasQuery: searchString !== '',

@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/pages/**/*.{jsx,tsx}', './src/components/**/*.{jsx,tsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -109,6 +110,79 @@ module.exports = {
           200: '#dce0e8',
         },
       },
+      typography: theme => ({
+        DEFAULT: {
+          css: {
+            a: {
+              color: theme('colors.text.200'),
+              textDecoration: 'none',
+              fontWeight: '400',
+              overflowWrap: 'anywhere',
+            },
+            'ul > li::marker': {
+              color: theme('colors.pink.200'),
+            },
+            'ol > li::before': { color: theme('colors.pink.200') },
+            'ol > li::marker': { color: theme('colors.pink.200') },
+            hr: { borderColor: theme('colors.surface1.200') },
+            blockquote: {
+              color: theme('colors.subtext0.200'),
+              borderLeftColor: theme('colors.pink.200'),
+            },
+            h1: { color: theme('colors.text.200') },
+            h2: { color: theme('colors.text.200') },
+            h3: { color: theme('colors.text.200') },
+            h4: { color: theme('colors.text.200') },
+            code: { color: theme('colors.pink.200') },
+            'a code': { color: theme('colors.pink.200') },
+            pre: {
+              backgroundColor: theme('colors.mantle.100'),
+            },
+            'pre code': {
+              color: theme('colors.subtext0.100'),
+              backgroundColor: theme('colors.mantle.100'),
+            },
+            thead: { borderBottomColor: theme('colors.surface1.200') },
+            th: {
+              color: theme('colors.text.200'),
+              borderColor: theme('colors.surface1.200'),
+            },
+            'tbody tr': { borderBottomColor: theme('colors.surface1.200') },
+            img: {
+              borderRadius: '0.5rem',
+            },
+          },
+        },
+        dark: {
+          css: {
+            a: {
+              color: theme('colors.text.100'),
+              textDecoration: 'none',
+              fontWeight: '400',
+            },
+            strong: { color: theme('colors.gray.100') },
+            'ul > li::marker': {
+              color: theme('colors.pink.100'),
+            },
+            'ol > li::before': { color: theme('colors.pink.100') },
+            'ol > li::marker': { color: theme('colors.pink.100') },
+            hr: { borderColor: theme('colors.surface1.100') },
+            blockquote: {
+              color: theme('colors.subtext0.100'),
+              borderLeftColor: theme('colors.pink.100'),
+              fontStyle: 'normal',
+            },
+            h1: { color: theme('colors.text.100') },
+            h2: { color: theme('colors.text.100') },
+            h3: { color: theme('colors.text.100') },
+            h4: { color: theme('colors.text.100') },
+            code: { color: theme('colors.pink.100') },
+            thead: { borderBottomColor: theme('colors.surface1.100') },
+            th: { color: theme('colors.text.100') },
+            'tbody tr': { borderBottomColor: theme('colors.surface1.100') },
+          },
+        },
+      }),
       animation: {
         fade_in: 'fade_in 1000ms forwards',
         fade_in_up: 'fade_in_up 550ms cubic-bezier(0.68, -0.6, 0.32, 1.6) forwards',

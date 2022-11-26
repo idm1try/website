@@ -4,9 +4,9 @@ import playwright from 'playwright-core';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const browser = await playwright.chromium.launch({
+    args: chromium.args,
     executablePath:
       process.env.NODE_ENV !== 'development' ? await chromium.executablePath : undefined,
-    args: [...chromium.args, '--hide-scrollbars', '--disable-web-security'],
     headless: process.env.NODE_ENV !== 'development' ? chromium.headless : true,
   });
 
@@ -22,6 +22,19 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   await page.emulateMedia({ colorScheme });
   await page.goto(url);
+
+  // wait for animations complete
+  if (req?.query?.url.includes('https://twitter.com')) {
+    await page.waitForTimeout(1000);
+  }
+
+  if (req?.query?.url.includes('https://idm1try.ru')) {
+    await page.waitForTimeout(1000);
+  }
+
+  if (req?.query?.url.includes('http://localhost:3000')) {
+    await page.waitForTimeout(1000);
+  }
 
   const data = await page.screenshot({
     type: 'png',

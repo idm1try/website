@@ -12,6 +12,13 @@ interface Post {
     time: number;
     words: number;
   };
+  headings: [
+    {
+      level: string | number;
+      text: string;
+      id: string;
+    }
+  ];
 }
 
 export default Post;

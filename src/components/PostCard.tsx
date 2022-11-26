@@ -1,24 +1,8 @@
+import Post from '@/types/post';
 import Link from 'next/link';
 import CoverImage from './CoverImage';
 
-interface PostCardProps {
-  post: {
-    title: string;
-    date: string;
-    excerpt: string;
-    slug: string;
-    tags: string[];
-    cover: string;
-    time: {
-      text: string;
-      minutes: number;
-      time: number;
-      words: number;
-    };
-  };
-}
-
-const PostCard = ({ post }: PostCardProps) => {
+const PostCard = ({ post }: { post: Post }) => {
   const { title, date, excerpt, slug, tags, time, cover } = post;
 
   return (
@@ -38,14 +22,14 @@ const PostCard = ({ post }: PostCardProps) => {
         </div>
       </div>
       <div
-        className='prose-md dark:prose-dark prose prose-pink mt-2 text-subtext0-200 line-clamp-2 dark:text-subtext0-100'
+        className='prose-md prose mt-2 text-subtext0-200 line-clamp-2 dark:text-subtext0-100 dark:prose-dark'
         dangerouslySetInnerHTML={{ __html: excerpt }}
       />
       <div className='mt-2'>
         {tags.map(tag => (
           <span
             key={tag}
-            className='mt-2 mr-2 inline-block rounded-lg bg-mantle-200 px-4 py-2 text-sm font-medium uppercase text-pink-200 dark:bg-mantle-100 dark:text-pink-100'
+            className='mt-2 mr-2 inline-block rounded-lg bg-mantle-200 px-4 py-2 text-sm font-medium text-pink-200 dark:bg-mantle-100 dark:text-pink-100'
           >
             {tag}
           </span>

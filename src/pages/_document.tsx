@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Document, { Head, Html, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
   render() {
@@ -20,7 +20,7 @@ class MyDocument extends Document {
             }}
           />
         </Head>
-        <body className='break-words bg-base-200 text-text-200 transition-colors duration-500 dark:bg-base-100 dark:text-text-100'>
+        <body className='break-words bg-base-200 text-text-200 transition-colors duration-300 dark:bg-base-100 dark:text-text-100'>
           <Main />
           <NextScript />
         </body>

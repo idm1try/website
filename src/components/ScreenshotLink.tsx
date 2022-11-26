@@ -1,12 +1,12 @@
-import { ReactNode, useState } from 'react';
 import Image from 'next/image';
+import { ReactNode, useState } from 'react';
 import Spinner from './Spinner';
 
-type ScreenshotLinkProps = {
+export interface ScreenshotLinkProps {
   href: string;
   children: ReactNode;
   className?: string;
-};
+}
 
 const ScreenshotLink = ({ href, children, className = '' }: ScreenshotLinkProps) => {
   const [isHovering, setIsHovering] = useState(false);
@@ -21,9 +21,7 @@ const ScreenshotLink = ({ href, children, className = '' }: ScreenshotLinkProps)
     try {
       setIsLoading(true);
       setIsHovering(true);
-      const res = await fetch(
-        `/api/screenshot-link?url=${encodeURIComponent(url)}&colorScheme=${colorScheme}`
-      );
+      const res = await fetch(`/api/img?url=${encodeURIComponent(url)}&colorScheme=${colorScheme}`);
       const image = await res.blob();
       setLinkScreenshot(res.status !== 500 && URL.createObjectURL(image));
       setIsLoading(false);
@@ -56,14 +54,13 @@ const ScreenshotLink = ({ href, children, className = '' }: ScreenshotLinkProps)
                     </div>
                   </div>
                 ) : (
-                  <div className='absolute bottom-2 z-10 block w-44 lg:block'>
+                  <div className='absolute bottom-2 z-10 block w-44'>
                     <Image
                       src={linkScreenshot}
                       height={180}
                       width={300}
-                      unoptimized
                       alt='Link preview'
-                      className='rounded-md'
+                      className='rounded-lg'
                     />
                   </div>
                 )}

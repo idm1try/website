@@ -2,15 +2,16 @@ import LastPostCard from '@/components/LastPostCard';
 import Layout from '@/components/Layout';
 import PostCard from '@/components/PostCard';
 import SearchPosts from '@/components/SearchPosts';
-import usePostSearch from '@/hooks/usePostSearch';
+import TagCheckbox from '@/components/TagCheckbox';
+import useSearch from '@/hooks/useSearch';
 import { getAllPosts } from '@/lib/mdx/api';
 import Post from '@/types/post';
 import { TbSearch } from 'react-icons/tb';
 
 const Blog = ({ allPosts }: { allPosts: Post[] }) => {
-  const search = usePostSearch(allPosts);
+  const search = useSearch(allPosts);
 
-  const lastPost: Post = search.results.sort((post1: Post, post2: Post) =>
+  const lastPost = search.results.sort((post1: Post, post2: Post) =>
     post1.date > post2.date ? -1 : 1
   )[0];
 
@@ -21,7 +22,7 @@ const Blog = ({ allPosts }: { allPosts: Post[] }) => {
   return (
     <Layout>
       <h1 className='animate-fade_in_up_10 text-6xl font-bold tracking-tight'>blog.</h1>
-      {allPosts.length !== 0 && (
+      {allPosts?.length !== 0 && (
         <div>
           <SearchPosts
             className='my-12'
@@ -30,9 +31,24 @@ const Blog = ({ allPosts }: { allPosts: Post[] }) => {
               search.setParams(value);
             }}
           />
+          <div className='mb-12'>
+            {search.tags.sort().map(item => (
+              <TagCheckbox
+                key={item}
+                checked={search.filters.includes(item)}
+                value={item}
+                onChange={e => {
+                  if (e.target.checked) search.addTag(item);
+                  else search.removeTag(item);
+                }}
+              >
+                {item}
+              </TagCheckbox>
+            ))}
+          </div>
         </div>
       )}
-      {search.results.length !== 0 ? (
+      {search?.results?.length !== 0 ? (
         <div>
           <LastPostCard post={lastPost} />
           <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
@@ -43,7 +59,7 @@ const Blog = ({ allPosts }: { allPosts: Post[] }) => {
         </div>
       ) : (
         <div>
-          {allPosts.length === 0 ? (
+          {allPosts?.length === 0 ? (
             <div className='mt-10 mb-20 text-center text-4xl font-bold'>No posts</div>
           ) : (
             <div className='text-center line-clamp-2'>

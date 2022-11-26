@@ -12,8 +12,8 @@ export function getTableOfContents(mdxContent: string) {
       const headingLink = slugger.slug(headingText, false);
 
       return {
-        text: headingText,
         id: headingLink,
+        text: headingText,
         level: headingType,
       };
     });

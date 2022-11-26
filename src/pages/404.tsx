@@ -11,7 +11,7 @@ const NotFound = () => (
       <p className='my-5 text-xl font-medium'>Oops, not found</p>
     </div>
     <Link href='/'>
-      <button className='mt-3 rounded-lg bg-pink-200 py-2 px-4 font-bold text-base-200 transition-colors duration-500 hover:bg-pink-200/80 active:bg-pink-200/60 dark:bg-pink-100 dark:text-base-100 dark:hover:bg-pink-100/80 dark:active:bg-pink-100/60'>
+      <button className='mt-3 select-none rounded-lg bg-pink-200 py-2 px-4 font-bold text-base-200 transition-colors duration-500 hover:bg-flamingo-200 active:bg-rosewater-200 dark:bg-pink-100 dark:text-base-100 dark:hover:bg-flamingo-100 dark:active:bg-rosewater-100'>
         <TbHome className='mb-1 inline-block' /> Go to home
       </button>
     </Link>
