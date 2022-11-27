@@ -12,7 +12,7 @@ const TableOfContent = ({ headings }: TableOfContentProps) => (
   <nav
     aria-labelledby='toc-title'
     className={
-      headings.length !== 0
+      headings.length > 1
         ? 'fixed top-24 right-0 hidden max-h-96 w-[27ch] flex-shrink-0 animate-fade_in self-start overflow-y-auto overscroll-contain p-8 2xl:block'
         : 'hidden'
     }

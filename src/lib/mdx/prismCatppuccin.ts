@@ -28,7 +28,7 @@ const prismTheme: PrismTheme = {
       },
     },
     {
-      types: ['number', 'constant', 'changed', 'namespace', 'class-name'],
+      types: ['number', 'constant', 'changed', 'namespace', 'class-name', 'boolean'],
       style: {
         color: 'rgb(250, 179, 135)',
       },
@@ -91,7 +91,14 @@ const prismTheme: PrismTheme = {
     {
       types: ['comment'],
       style: {
+        color: '#585b70',
         fontStyle: 'italic',
+      },
+    },
+    {
+      types: ['property', 'property-access'],
+      style: {
+        color: '#94e2d5',
       },
     },
   ],

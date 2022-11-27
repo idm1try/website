@@ -10,7 +10,7 @@ const CodeBlock = (props: any) => {
   const rawCode = children.trim();
 
   return (
-    <div className='relative rounded-lg bg-mantle-100 p-1.5'>
+    <div className='relative my-8 rounded-lg bg-mantle-100 p-1.5'>
       <Highlight codeString={rawCode} language={language} theme={prismTheme} metastring={ln} />
       <button
         className='absolute top-4 right-4 rounded-lg bg-crust-100 p-2 text-pink-100 transition-all duration-300 hover:bg-surface0-100 active:bg-surface1-100'

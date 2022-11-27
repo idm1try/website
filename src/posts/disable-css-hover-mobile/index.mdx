@@ -1,0 +1,34 @@
+---
+title: 'Disable css hover effects for mobile devices'
+date: '2022-11-27'
+tags: ['css', 'tailwindcss', 'web']
+cover: 'disable-css-hover-mobile.png'
+---
+
+Touch devices not have cursors like desktops, display a hover state whenever you touch the element,
+they keep on displaying hover state even you are not touching the element anymore
+
+## Vanilla CSS
+
+Wrap hover styles with `@media (hover: hover) and (pointer: fine)`
+
+```css
+@media (hover: hover) and (pointer: fine) {
+  .example:hover {
+    /* ... */
+  }
+}
+```
+
+## TailwindCSS
+
+Tailwind can automatically remove hover effects for mobile devices. Add this to your
+`tailwind.config.js`
+
+```javascript
+module.exports = {
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
+};
+```
