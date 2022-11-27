@@ -84,8 +84,6 @@ const Post = ({ source, frontMatter, slug }: Props) => {
                 <CoverImage
                   title={frontMatter.title}
                   cover={frontMatter.cover}
-                  width={970}
-                  height={600}
                   loading='eager'
                   priority
                 />

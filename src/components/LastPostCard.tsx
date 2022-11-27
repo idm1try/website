@@ -8,15 +8,7 @@ const LastPostCard = ({ post }: { post: Post }) => {
   return (
     <div className='mb-10 animate-fade_in rounded-lg bg-mantle-200 p-6 ring-peach-200 ring-offset-4 ring-offset-base-200 duration-300 hover:ring-2 dark:bg-mantle-100 dark:ring-peach-100 dark:ring-offset-base-100'>
       <div className='mb-5'>
-        <CoverImage
-          title={title}
-          cover={cover}
-          slug={slug}
-          width={960}
-          height={598}
-          loading='eager'
-          priority
-        />
+        <CoverImage title={title} cover={cover} slug={slug} loading='eager' priority />
       </div>
       <div>
         <Link
