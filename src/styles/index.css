@@ -73,12 +73,14 @@
   content: '';
 }
 
-.prose h1:has(.icon.icon-link):hover .icon.icon-link:before,
-.prose h2:has(.icon.icon-link):hover .icon.icon-link:before,
-.prose h3:has(.icon.icon-link):hover .icon.icon-link:before,
-.prose h4:has(.icon.icon-link):hover .icon.icon-link:before {
-  opacity: 0.25;
-  transition: all 250ms ease-in-out;
+@media (hover: hover) and (pointer: fine) {
+  .prose h1:has(.icon.icon-link):hover .icon.icon-link:before,
+  .prose h2:has(.icon.icon-link):hover .icon.icon-link:before,
+  .prose h3:has(.icon.icon-link):hover .icon.icon-link:before,
+  .prose h4:has(.icon.icon-link):hover .icon.icon-link:before {
+    opacity: 0.25;
+    transition: all 250ms ease-in-out;
+  }
 }
 
 .prose .icon.icon-link:before {
