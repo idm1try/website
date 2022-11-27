@@ -23,7 +23,7 @@ const ScreenshotLink = ({ href, children, className = '' }: ScreenshotLinkProps)
       setIsHovering(true);
       const res = await fetch(`/api/img?url=${encodeURIComponent(url)}&colorScheme=${colorScheme}`);
       const image = await res.blob();
-      setLinkScreenshot(res.status !== 500 && URL.createObjectURL(image));
+      setLinkScreenshot(res.status === 200 && URL.createObjectURL(image));
       setIsLoading(false);
     } catch (e) {
       console.error('Error fetching screenshot image', e);

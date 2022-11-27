@@ -37,10 +37,7 @@ const Blog = ({ allPosts }: { allPosts: Post[] }) => {
                 key={item}
                 checked={search.filters.includes(item)}
                 value={item}
-                onChange={e => {
-                  if (e.target.checked) search.addTag(item);
-                  else search.removeTag(item);
-                }}
+                onChange={e => (e.target.checked ? search.addTag(item) : search.removeTag(item))}
               >
                 {item}
               </TagCheckbox>
