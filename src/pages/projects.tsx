@@ -2,12 +2,13 @@ import Layout from '@/components/Layout';
 import ProjectCard from '@/components/ProjectCard';
 import Search from '@/components/Search';
 import TagCheckbox from '@/components/TagCheckbox';
-import projectsData from '@/data/projects.json';
+import projectData from '@/data/projects.json';
 import useSearch from '@/hooks/useSearch';
+import { Projects } from '@/types/projects';
 import { TbSearch } from 'react-icons/tb';
 
-const Projects = () => {
-  const search = useSearch(projectsData);
+const Projects = ({ projects }: Projects) => {
+  const search = useSearch(projects);
 
   return (
     <Layout>
@@ -53,3 +54,11 @@ const Projects = () => {
 };
 
 export default Projects;
+
+export const getStaticProps = async () => {
+  return {
+    props: {
+      projects: projectData,
+    },
+  };
+};
