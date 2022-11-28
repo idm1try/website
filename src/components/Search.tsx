@@ -1,16 +1,16 @@
-interface SearchPostsProps {
+interface SearchProps {
   className?: string;
   defaultValue?: string;
   onChange?(value: string): void;
 }
 
-const SearchPosts = ({ onChange, defaultValue, className }: SearchPostsProps) => {
+const Search = ({ onChange, defaultValue, className }: SearchProps) => {
   return (
     <div>
       <input
         defaultValue={defaultValue}
-        placeholder='Search posts'
-        aria-label='search-posts'
+        placeholder='Search'
+        aria-label='Search'
         onChange={event => {
           onChange(event.target.value);
         }}
@@ -21,4 +21,4 @@ const SearchPosts = ({ onChange, defaultValue, className }: SearchPostsProps) =>
   );
 };
 
-export default SearchPosts;
+export default Search;

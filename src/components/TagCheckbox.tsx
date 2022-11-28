@@ -22,7 +22,7 @@ const TagCheckbox = ({ value, children, onChange, checked }: TagCheckboxProps) =
         value={value}
         checked={checked}
         onChange={onChange}
-        className='hidden'
+        className='sr-only'
       />
     </label>
   );

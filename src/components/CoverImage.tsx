@@ -27,7 +27,7 @@ const CoverImage = ({
     if (!img) {
       return false;
     }
-    import(`../../public/posts/${img}`).then(image => {
+    import(`../../public/assets/posts/${img}`).then(image => {
       setImage(image);
     });
   };
@@ -49,11 +49,7 @@ const CoverImage = ({
       placeholder='blur'
       loading={loading ?? 'lazy'}
       priority={priority}
-      className={
-        slug
-          ? 'max-h-96 rounded-lg object-cover ring-mauve-200 ring-offset-4 ring-offset-base-200 duration-300 group-hover:ring-2 dark:ring-mauve-100 dark:ring-offset-base-100'
-          : 'rounded-lg bg-blend-overlay'
-      }
+      className={slug ? 'max-h-96 rounded-lg object-cover' : 'rounded-lg bg-blend-overlay'}
     />
   );
 
@@ -80,7 +76,7 @@ const CoverImage = ({
           {/* eslint-disable @next/next/no-img-element */}
           <img
             alt={slug}
-            src={`/posts/${cover}`}
+            src={`/assets/posts/${cover}`}
             width={width}
             height={height}
             className='mx-auto rounded-lg object-cover ring-mauve-200 ring-offset-4 ring-offset-base-200 duration-300 group-hover:ring-2 dark:ring-mauve-100 dark:ring-offset-base-100'

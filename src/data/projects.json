@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Weather",
+    "url": "https://weather.idm1try.ru",
+    "image": "weather.png",
+    "desc": "Simple weather app, uses OpenWeatherMap API",
+    "tags": ["react", "next", "tailwind"]
+  },
+  {
+    "name": "IP info",
+    "url": "https://ip.idm1try.ru",
+    "image": "ipinfo.png",
+    "desc": "IP info with detecting and search ip address",
+    "tags": ["react", "next", "tailwind"]
+  },
+  {
+    "name": "Links",
+    "url": "https://links.idm1try.ru",
+    "image": "links.png",
+    "desc": "Simple links card",
+    "tags": ["react", "next", "tailwind"]
+  },
+  {
+    "name": "Snake",
+    "url": "https://snake.idm1try.ru",
+    "image": "snake.png",
+    "desc": "Browser snake game",
+    "tags": ["react", "next", "tailwind"]
+  },
+  {
+    "name": "Todo",
+    "url": "https://todo.idm1try.ru",
+    "image": "todo.png",
+    "desc": "Todo app with synchronization",
+    "tags": ["react", "next", "chakra-ui"]
+  }
+]

@@ -1,7 +1,7 @@
 import LastPostCard from '@/components/LastPostCard';
 import Layout from '@/components/Layout';
 import PostCard from '@/components/PostCard';
-import SearchPosts from '@/components/SearchPosts';
+import Search from '@/components/Search';
 import TagCheckbox from '@/components/TagCheckbox';
 import useSearch from '@/hooks/useSearch';
 import { getAllPosts } from '@/lib/mdx/api';
@@ -24,7 +24,7 @@ const Blog = ({ allPosts }: { allPosts: Post[] }) => {
       <h1 className='animate-fade_in_up_10 text-6xl font-bold tracking-tight'>blog.</h1>
       {allPosts?.length !== 0 && (
         <div>
-          <SearchPosts
+          <Search
             className='my-12'
             defaultValue={search.defaultValue}
             onChange={value => {
@@ -32,14 +32,14 @@ const Blog = ({ allPosts }: { allPosts: Post[] }) => {
             }}
           />
           <div className='mb-12'>
-            {search.tags.sort().map(item => (
+            {search.tags.sort().map(tag => (
               <TagCheckbox
-                key={item}
-                checked={search.filters.includes(item)}
-                value={item}
-                onChange={e => (e.target.checked ? search.addTag(item) : search.removeTag(item))}
+                key={tag}
+                checked={search.filters.includes(tag)}
+                value={tag}
+                onChange={e => (e.target.checked ? search.addTag(tag) : search.removeTag(tag))}
               >
-                {item}
+                {tag}
               </TagCheckbox>
             ))}
           </div>

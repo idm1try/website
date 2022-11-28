@@ -1,7 +1,8 @@
-import { matchSorter, MatchSorterOptions } from 'match-sorter';
 import Post from '@/types/post';
+import { Project } from '@/types/projects';
+import { matchSorter, MatchSorterOptions } from 'match-sorter';
 
-export default function search(items: Post[], keys: string[], searchString: string) {
+export default function search(items: Post[] | Project[], keys: string[], searchString: string) {
   const searches = new Set(searchString.split(' '));
 
   const options: MatchSorterOptions = {

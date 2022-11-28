@@ -7,7 +7,7 @@ const PostCard = ({ post }: { post: Post }) => {
 
   return (
     <div className='group mb-6'>
-      <div className='mb-4'>
+      <div className='mb-4 rounded-lg ring-mauve-200 ring-offset-4 ring-offset-base-200 duration-300 group-hover:ring-2 dark:ring-mauve-100 dark:ring-offset-base-100'>
         <CoverImage title={title} cover={cover} slug={slug} />
       </div>
       <div>
