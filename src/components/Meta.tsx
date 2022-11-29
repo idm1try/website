@@ -23,9 +23,10 @@ const Meta = () => {
         <meta property='og:image' content={fullImageURL} />
         <meta property='profile:username' content='idm1try' />
         <meta name='twitter:image' content={fullImageURL} />
-        <meta name='twitter:card' content='summary' />
+        <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:title' content='idm1try' />
         <meta name='twitter:site' content='@idm1try' />
+        <meta name='twitter:creator' content='@idm1try' />
         <meta name='darkreader-lock' />
         <title>idm1try</title>
       </Head>
