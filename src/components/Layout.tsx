@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { ReactNode } from 'react';
 import Footer from './Footer';
 import GoToTopButton from './GoToTopButton';
@@ -8,6 +9,7 @@ const Layout = ({ children, className }: { children: ReactNode; className?: stri
   return (
     <div className={`mx-auto max-w-5xl px-8 selection:bg-rosewater-200 ${className}`}>
       <Meta />
+      <Analytics />
       <div>
         <Navbar />
         <main>{children}</main>
