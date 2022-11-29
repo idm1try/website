@@ -50,7 +50,7 @@ const ScreenshotLink = ({ href, children, className = '' }: ScreenshotLinkProps)
                 {!linkScreenshot ? (
                   <div className='pointer-events-none absolute bottom-2 z-10 block h-[105px] w-44 rounded-lg bg-mantle-200 dark:bg-mantle-100'>
                     <div className='mt-10 text-center text-lg font-bold text-pink-200 dark:text-pink-100'>
-                      Error or not found
+                      Error
                     </div>
                   </div>
                 ) : (
