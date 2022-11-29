@@ -62,9 +62,10 @@ const Post = ({ source, frontMatter, slug }: Props) => {
           <meta property='article:author' content='idm1try' />
           <meta property='article:tag' content={frontMatter.tags.join(',')} />
 
-          <meta name='twitter:card' content='summary' />
+          <meta name='twitter:card' content='summary_large_image' />
           <meta name='twitter:title' content={`${frontMatter.title} | idm1try`} />
           <meta name='twitter:site' content='@idm1try' />
+          <meta name='twitter:creator' content='@idm1try' />
           <meta name='twitter:description' content={frontMatter.excerpt} />
           <meta name='twitter:image:alt' content={frontMatter.title} />
         </Head>
