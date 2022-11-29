@@ -10,7 +10,7 @@ const GoToTopButton = () => {
         <button
           aria-label='Scroll to top'
           onClick={() => scrollTo({ y: 0 })}
-          className='fixed bottom-8 right-8 animate-fade_in_up rounded-lg bg-pink-200 p-3 font-bold text-base-200 transition-colors duration-300 hover:bg-flamingo-200 active:bg-rosewater-200 dark:bg-pink-100 dark:text-base-100 dark:hover:bg-flamingo-100 dark:active:bg-rosewater-100'
+          className='fixed bottom-8 right-8 animate-fade_in_up rounded-lg bg-mantle-200 p-3 font-bold text-pink-200 transition-colors duration-300 hover:bg-surface0-200 active:bg-surface1-200 dark:bg-mantle-100 dark:text-pink-100 dark:hover:bg-surface0-100 dark:active:bg-surface1-100'
         >
           <IoArrowUp />
         </button>
