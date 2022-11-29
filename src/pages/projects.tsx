@@ -5,6 +5,7 @@ import TagCheckbox from '@/components/TagCheckbox';
 import projectData from '@/data/projects.json';
 import useSearch from '@/hooks/useSearch';
 import { Projects } from '@/types/projects';
+import Head from 'next/head';
 import { TbSearch } from 'react-icons/tb';
 
 const Projects = ({ projects }: Projects) => {
@@ -12,6 +13,11 @@ const Projects = ({ projects }: Projects) => {
 
   return (
     <Layout>
+      <Head>
+        <title>projects | idm1try</title>
+        <meta property='og:title' content='projects | idm1try' />
+        <meta name='twitter:title' content='projects | idm1try' />
+      </Head>
       <h1 className='animate-fade_in_up_10 text-6xl font-bold tracking-tight'>projects.</h1>
       <div>
         <Search

@@ -6,6 +6,7 @@ import TagCheckbox from '@/components/TagCheckbox';
 import useSearch from '@/hooks/useSearch';
 import { getAllPosts } from '@/lib/mdx/api';
 import Post from '@/types/post';
+import Head from 'next/head';
 import { TbSearch } from 'react-icons/tb';
 
 const Blog = ({ allPosts }: { allPosts: Post[] }) => {
@@ -21,6 +22,11 @@ const Blog = ({ allPosts }: { allPosts: Post[] }) => {
 
   return (
     <Layout>
+      <Head>
+        <title>blog | idm1try</title>
+        <meta property='og:title' content='blog | idm1try' />
+        <meta name='twitter:title' content='blog | idm1try' />
+      </Head>
       <h1 className='animate-fade_in_up_10 text-6xl font-bold tracking-tight'>blog.</h1>
       {allPosts?.length !== 0 && (
         <div>

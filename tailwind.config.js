@@ -119,6 +119,7 @@ module.exports = {
               fontWeight: '400',
               overflowWrap: 'anywhere',
             },
+            strong: { color: theme('colors.text.200') },
             'ul > li::marker': {
               color: theme('colors.pink.200'),
             },
@@ -160,7 +161,7 @@ module.exports = {
               textDecoration: 'none',
               fontWeight: '400',
             },
-            strong: { color: theme('colors.gray.100') },
+            strong: { color: theme('colors.text.100') },
             'ul > li::marker': {
               color: theme('colors.pink.100'),
             },

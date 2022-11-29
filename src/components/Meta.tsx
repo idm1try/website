@@ -19,7 +19,7 @@ const Meta = () => {
         <meta property='og:type' content='profile' />
         <meta property='og:title' content='idm1try' />
         <meta property='og:description' content='Frontend Developer' />
-        <meta property='og:url' content={`https://idm1try.ru/${router.pathname}`} />
+        <meta property='og:url' content={`https://idm1try.ru${router.asPath}`} />
         <meta property='og:image' content={fullImageURL} />
         <meta property='profile:username' content='idm1try' />
         <meta name='twitter:image' content={fullImageURL} />
