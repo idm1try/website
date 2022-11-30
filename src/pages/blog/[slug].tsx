@@ -1,8 +1,8 @@
 import CoverImage from '@/components/CoverImage';
 import Layout from '@/components/Layout';
-import CodeBlock from '@/components/mdx/CodeBlock';
 import ScreenshotLink from '@/components/ScreenshotLink';
 import TableOfContent from '@/components/TableOfContents';
+import theme from '@/data/theme.json';
 import { getTableOfContents } from '@/lib/getTableOfContents';
 import { postFilePaths, POSTS_PATH } from '@/lib/mdx/mdxUtils';
 import Post from '@/types/post';
@@ -14,17 +14,15 @@ import dynamic from 'next/dynamic';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
 import path from 'path';
-import { AnchorHTMLAttributes } from 'react';
 import readingTime from 'reading-time';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
 const components = {
-  pre: (props: HTMLPreElement) => <CodeBlock {...props} />,
-  a: (props: AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <a className='border-underline-grow mb-1' {...props} />
-  ),
+  pre: ({ ...props }) => <pre className='px-0' {...props} />,
+  a: ({ ...props }) => <a className='border-underline-grow mb-1' {...props} />,
   ScreenshotLink: ScreenshotLink,
 };
 
@@ -123,6 +121,23 @@ export async function getStaticProps({ params }: Params) {
       remarkPlugins: [remarkGfm],
       rehypePlugins: [
         rehypeSlug,
+        [
+          rehypePrettyCode,
+          {
+            theme: theme,
+            onVisitLine(node: any) {
+              if (node.children.length === 0) {
+                node.children = [{ type: 'text', value: ' ' }];
+              }
+            },
+            onVisitHighlightedLine(node: any) {
+              node.properties.className.push('line--highlighted');
+            },
+            onVisitHighlightedWord(node: any) {
+              node.properties.className = ['word--highlighted'];
+            },
+          },
+        ],
         [
           rehypeAutolinkHeadings,
           {

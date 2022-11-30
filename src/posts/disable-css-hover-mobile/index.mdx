@@ -22,10 +22,9 @@ Wrap hover styles with `@media (hover: hover) and (pointer: fine)`
 
 ## TailwindCSS
 
-Tailwind can automatically remove hover effects for mobile devices. Add this to your
-`tailwind.config.js`
+Tailwind can automatically remove hover effects for mobile devices. With this setting
 
-```javascript
+```javascript title="tailwind.config.js"
 module.exports = {
   future: {
     hoverOnlyWhenSupported: true,
