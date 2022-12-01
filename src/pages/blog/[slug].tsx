@@ -21,7 +21,6 @@ import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
 const components = {
-  pre: ({ ...props }) => <pre className='px-0' {...props} />,
   a: ({ ...props }) => <a className='border-underline-grow mb-1' {...props} />,
   ScreenshotLink: ScreenshotLink,
 };
