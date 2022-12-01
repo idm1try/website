@@ -41,7 +41,7 @@ interface Props {
   slug: string;
 }
 
-const Post = ({ source, frontMatter, slug }: Props) => {
+const Post = ({ source, frontMatter }: Props) => {
   if (!frontMatter?.title) {
     return <ErrorPage statusCode={404} />;
   }
@@ -54,16 +54,10 @@ const Post = ({ source, frontMatter, slug }: Props) => {
           <title>{`${frontMatter.title} | idm1try`}</title>
           <meta property='og:type' content='article' />
           <meta property='og:title' content={`${frontMatter.title} | idm1try`} />
-          <meta property='og:url' content={`https://idm1try.ru/blog/${slug}`} />
-          <meta property='og:description' content={frontMatter.excerpt ?? ''} />
           <meta property='article:author' content='idm1try' />
           <meta property='article:tag' content={frontMatter.tags.join(',')} />
 
-          <meta name='twitter:card' content='summary_large_image' />
           <meta name='twitter:title' content={`${frontMatter.title} | idm1try`} />
-          <meta name='twitter:site' content='@idm1try' />
-          <meta name='twitter:creator' content='@idm1try' />
-          <meta name='twitter:description' content={frontMatter.excerpt} />
           <meta name='twitter:image:alt' content={frontMatter.title} />
         </Head>
         <article className='mt-12'>
@@ -155,7 +149,6 @@ export async function getStaticProps({ params }: Params) {
     props: {
       source: mdxSource,
       frontMatter: data,
-      slug: params.slug,
     },
   };
 }
