@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { ReactNode, useState } from 'react';
-import Spinner from './Spinner';
+import { CgSpinner } from 'react-icons/cg';
 
 export interface ScreenshotLinkProps {
   href: string;
@@ -42,8 +42,15 @@ const ScreenshotLink = ({ href, children, className = '' }: ScreenshotLinkProps)
         {isHovering && (
           <div className='animate-fade_in_up_10'>
             {isLoading ? (
-              <div className='pointer-events-none absolute bottom-2 z-10 block h-[105px] w-44 rounded-lg bg-mantle-200 dark:bg-mantle-100'>
-                <Spinner className='mx-auto mt-8' />
+              <div
+                className='pointer-events-none absolute bottom-2 z-10 block h-[105px] w-44 rounded-lg bg-mantle-200 dark:bg-mantle-100'
+                aria-label='Loading...'
+                role='status'
+              >
+                <CgSpinner
+                  className='mx-auto mt-8 animate-spin text-pink-200 dark:text-pink-100'
+                  size={40}
+                />
               </div>
             ) : (
               <div>
