@@ -1,14 +1,25 @@
 import Post from '@/types/post';
+import Image from 'next/image';
 import Link from 'next/link';
-import CoverImage from './CoverImage';
 
-const PostCard = ({ post }: { post: Post }) => {
+const PostCard = ({ post, index }: { post: Post; index: number }) => {
   const { title, date, excerpt, slug, tags, time, cover } = post;
 
   return (
     <div className='group mb-6'>
       <div className='mb-4 rounded-lg ring-mauve-200 ring-offset-4 ring-offset-base-200 duration-300 group-hover:ring-2 dark:ring-mauve-100 dark:ring-offset-base-100'>
-        <CoverImage title={title} cover={cover} slug={slug} />
+        {cover && (
+          <Link href={`/blog/${slug}`} aria-label={title} tabIndex={-1}>
+            <Image
+              src={`/assets/posts/${cover}`}
+              alt={`${title} Image`}
+              className='rounded-lg bg-mantle-200 object-cover dark:bg-mantle-100'
+              width={700}
+              height={400}
+              priority={index <= 1}
+            />
+          </Link>
+        )}
       </div>
       <div>
         <Link

@@ -42,8 +42,8 @@ const Projects = ({ projects }: Projects) => {
       </div>
       {search?.results?.length !== 0 ? (
         <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
-          {search?.results?.map((project: any) => (
-            <ProjectCard key={project.name} project={project} />
+          {search?.results?.map((project: any, index: number) => (
+            <ProjectCard key={project.name} project={project} index={index} />
           ))}
         </div>
       ) : (

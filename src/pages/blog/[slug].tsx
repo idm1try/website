@@ -1,4 +1,3 @@
-import CoverImage from '@/components/CoverImage';
 import Layout from '@/components/Layout';
 import ScreenshotLink from '@/components/ScreenshotLink';
 import TableOfContent from '@/components/TableOfContents';
@@ -13,6 +12,7 @@ import { serialize } from 'next-mdx-remote/serialize';
 import dynamic from 'next/dynamic';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
+import Image from 'next/image';
 import path from 'path';
 import readingTime from 'reading-time';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
@@ -73,11 +73,14 @@ const Post = ({ source, frontMatter }: Props) => {
             </div>
             {frontMatter.cover && (
               <div className='mb-16 sm:mx-0'>
-                <CoverImage
-                  title={frontMatter.title}
-                  cover={frontMatter.cover}
+                <Image
+                  src={`/assets/posts/${frontMatter.cover}`}
+                  alt={`${frontMatter.title} Image`}
+                  width={960}
+                  height={600}
                   loading='eager'
                   priority
+                  className='rounded-lg bg-mantle-200 object-cover dark:bg-mantle-100'
                 />
               </div>
             )}

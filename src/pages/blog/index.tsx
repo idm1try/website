@@ -55,8 +55,8 @@ const Blog = ({ allPosts }: { allPosts: Post[] }) => {
         <div>
           <LastPostCard post={lastPost} />
           <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
-            {morePosts.map((post: Post) => (
-              <PostCard key={post.slug} post={post} />
+            {morePosts.map((post: Post, index: number) => (
+              <PostCard key={post.slug} post={post} index={index} />
             ))}
           </div>
         </div>

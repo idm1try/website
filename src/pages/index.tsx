@@ -16,10 +16,7 @@ const Home = () => (
           </ScreenshotLink>
           , Russia.
         </div>
-        <div className='mt-2 font-bold underline decoration-surface2-200 decoration-4 underline-offset-4 transition-colors duration-500 hover:decoration-pink-200 dark:decoration-surface2-100 dark:hover:decoration-pink-200'>
-          Links
-        </div>
-        <ul className='mt-2'>
+        <ul className='mt-4'>
           <li>
             <TbBrandGithub className='mr-1 inline-block text-mauve-200 dark:text-mauve-100' />{' '}
             <ScreenshotLink href='https://github.com/idm1try'>@idm1try</ScreenshotLink>

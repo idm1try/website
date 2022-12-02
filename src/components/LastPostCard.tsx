@@ -1,7 +1,6 @@
 import Post from '@/types/post';
 import Image from 'next/image';
 import Link from 'next/link';
-import CoverImage from './CoverImage';
 
 const LastPostCard = ({ post }: { post: Post }) => {
   const { title, date, slug, tags, time, cover } = post;
@@ -9,7 +8,19 @@ const LastPostCard = ({ post }: { post: Post }) => {
   return (
     <div className='mb-10 animate-fade_in rounded-lg bg-mantle-200 p-6 ring-peach-200 ring-offset-4 ring-offset-base-200 duration-300 hover:ring-2 dark:bg-mantle-100 dark:ring-peach-100 dark:ring-offset-base-100'>
       <div className='mb-5'>
-        <CoverImage title={title} cover={cover} slug={slug} loading='eager' priority />
+        {cover && (
+          <Link href={`/blog/${slug}`} aria-label={title} tabIndex={-1}>
+            <Image
+              src={`/assets/posts/${cover}`}
+              alt={`${title} Image`}
+              className='max-h-96 rounded-lg bg-crust-200 object-cover dark:bg-crust-100'
+              width={920}
+              height={500}
+              loading='eager'
+              priority
+            />
+          </Link>
+        )}
       </div>
       <div>
         <Link

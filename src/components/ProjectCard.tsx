@@ -1,50 +1,20 @@
 import { Project } from '@/types/projects';
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import Spinner from './Spinner';
 
-interface StaticImageData {
-  src: string;
-  height: number;
-  width: number;
-}
-
-interface StaticRequire {
-  default: StaticImageData;
-}
-
-type StaticImport = StaticRequire | StaticImageData;
-
-const ProjectCard = ({ project }: { project: Project }) => {
+const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
   const { name, url, desc, image, tags } = project;
-  const [imageImport, setImage] = useState<StaticImport>();
-
-  const loadImage = (img: string) => {
-    import(`../../public/assets/projects/${img}`).then(image => {
-      setImage(image);
-    });
-  };
-
-  useEffect(() => {
-    if (image) {
-      loadImage(image);
-    }
-  }, [image]);
-
   return (
     <div className='group mb-6'>
       <div className='mb-4 rounded-lg ring-mauve-200 ring-offset-4 ring-offset-base-200 duration-300 group-hover:ring-2 dark:ring-mauve-100 dark:ring-offset-base-100'>
-        {!imageImport ? (
-          <div className='rounded-lg bg-mantle-200 py-14 dark:bg-mantle-100'>
-            <Spinner className='mx-auto' size={50} />
-          </div>
-        ) : (
+        {image && (
           <a href={url}>
             <Image
-              src={imageImport}
+              src={`/assets/projects/${image}`}
               alt={`${name} Image`}
-              placeholder='blur'
-              className='rounded-lg object-cover'
+              className='rounded-lg bg-mantle-200 dark:bg-mantle-100'
+              width={700}
+              height={400}
+              priority={index <= 1}
             />
           </a>
         )}
