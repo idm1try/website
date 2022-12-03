@@ -20,7 +20,7 @@ class MyDocument extends Document {
             }}
           />
         </Head>
-        <body className='break-words bg-base-200 text-text-200 transition-colors duration-300 dark:bg-base-100 dark:text-text-100'>
+        <body className='break-words bg-base-200 text-text-200 antialiased transition-colors duration-300 dark:bg-base-100 dark:text-text-100'>
           <Main />
           <NextScript />
         </body>
