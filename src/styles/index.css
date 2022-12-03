@@ -83,12 +83,6 @@
   }
 }
 
-.prose .icon.icon-link:before {
-  content: '#';
-  opacity: 0;
-  position: absolute;
-}
-
 .prose input[type='checkbox'] {
   position: relative;
 }

@@ -15,12 +15,43 @@ import Head from 'next/head';
 import Image from 'next/image';
 import path from 'path';
 import readingTime from 'reading-time';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeSlug from 'rehype-slug';
 import remarkGfm from 'remark-gfm';
 
 const components = {
+  h1: ({ ...props }) => (
+    <a href={`#${props.id}`}>
+      <h1
+        className='decoration-surface2-200 underline-offset-4 hover:underline dark:decoration-surface1-100'
+        {...props}
+      />
+    </a>
+  ),
+  h2: ({ ...props }) => (
+    <a href={`#${props.id}`}>
+      <h2
+        className='decoration-surface2-200 underline-offset-4 hover:underline dark:decoration-surface1-100'
+        {...props}
+      />
+    </a>
+  ),
+  h3: ({ ...props }) => (
+    <a href={`#${props.id}`}>
+      <h3
+        className='decoration-surface2-200 underline-offset-4 hover:underline dark:decoration-surface1-100'
+        {...props}
+      />
+    </a>
+  ),
+  h4: ({ ...props }) => (
+    <a href={`#${props.id}`}>
+      <h4
+        className='decoration-surface2-200 underline-offset-4 hover:underline dark:decoration-surface1-100'
+        {...props}
+      />
+    </a>
+  ),
   a: ({ ...props }) => <a className='border-underline-grow mb-1' {...props} />,
   ScreenshotLink: ScreenshotLink,
 };
@@ -131,15 +162,6 @@ export async function getStaticProps({ params }: Params) {
             },
             onVisitHighlightedWord(node: any) {
               node.properties.className = ['word--highlighted'];
-            },
-          },
-        ],
-        [
-          rehypeAutolinkHeadings,
-          {
-            behavior: 'append',
-            properties: {
-              className: ['ml-2 text-surface2-200 group-hover:opacity-100 dark:text-surface2-100'],
             },
           },
         ],
