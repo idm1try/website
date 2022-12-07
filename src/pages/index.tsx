@@ -23,7 +23,7 @@ const Home = () => {
             <li>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
-                className='mr-2 inline-block text-mauve-200 dark:text-mauve-100'
+                className='mr-2 mb-1 inline-block text-mauve-200 dark:text-mauve-100'
                 width='1em'
                 height='1em'
                 viewBox='0 0 24 24'
@@ -43,7 +43,7 @@ const Home = () => {
             <li>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
-                className='mr-2 inline-block text-mauve-200 dark:text-mauve-100'
+                className='mr-2 mb-1 inline-block text-mauve-200 dark:text-mauve-100'
                 width='1em'
                 height='1em'
                 viewBox='0 0 24 24'
@@ -63,7 +63,7 @@ const Home = () => {
             <li>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
-                className='mr-2 inline-block text-mauve-200 dark:text-mauve-100'
+                className='mr-2 mb-1 inline-block text-mauve-200 dark:text-mauve-100'
                 width='1em'
                 height='1em'
                 viewBox='0 0 24 24'
@@ -87,7 +87,7 @@ const Home = () => {
             <li>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
-                className='mr-2 inline-block text-mauve-200 dark:text-mauve-100'
+                className='mr-2 mb-1 inline-block text-mauve-200 dark:text-mauve-100'
                 width='1em'
                 height='1em'
                 viewBox='0 0 24 24'
