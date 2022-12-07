@@ -35,7 +35,6 @@ const components = {
     </a>
   ),
   a: ({ ...props }) => <a className='border-underline-grow mt-0' {...props} />,
-  ScreenshotLink: ScreenshotLink,
 }
 
 const Mdx = ({ code }: { code: string }) => {

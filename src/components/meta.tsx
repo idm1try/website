@@ -6,7 +6,7 @@ const Meta = () => {
   const searchParams = new URLSearchParams()
   searchParams.set('url', `https://idm1try.ru${router.asPath}`)
   searchParams.set('colorScheme', 'dark')
-  const fullImageURL = `https://idm1try.ru/api/img?${searchParams.toString()}`
+  const fullImageURL = `https://screenshot.idm1try.ru/api/image?${searchParams.toString()}`
 
   return (
     <Head>
