@@ -1,13 +1,18 @@
-import { ChangeEventHandler, ReactNode } from 'react';
+import { ChangeEventHandler, ReactNode } from 'react'
 
 interface TagCheckboxProps {
-  value: string;
-  children: ReactNode;
-  onChange: ChangeEventHandler<HTMLInputElement>;
-  checked: boolean;
+  value: string
+  children: ReactNode
+  onChange: ChangeEventHandler<HTMLInputElement>
+  checked: boolean
 }
 
-const TagCheckbox = ({ value, children, onChange, checked }: TagCheckboxProps) => {
+const TagCheckbox = ({
+  value,
+  children,
+  onChange,
+  checked,
+}: TagCheckboxProps) => {
   return (
     <label
       className={`mb-4 mr-4 inline-block cursor-pointer select-none rounded-lg px-4 py-2 font-medium ring-mauve-200 ring-offset-4 ring-offset-base-200 transition-all duration-300 hover:ring-2 dark:ring-mauve-100 dark:ring-offset-base-100 ${
@@ -25,7 +30,7 @@ const TagCheckbox = ({ value, children, onChange, checked }: TagCheckboxProps) =
         className='sr-only'
       />
     </label>
-  );
-};
+  )
+}
 
-export default TagCheckbox;
+export default TagCheckbox

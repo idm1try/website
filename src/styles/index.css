@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
 .border-underline-grow {
   display: inline-block;
   vertical-align: middle;
@@ -10,6 +14,7 @@
   position: relative;
   transition-property: color;
   transition-duration: 0.5s;
+  @apply mb-1 pb-0.5;
 }
 
 .border-underline-grow:before {
@@ -54,7 +59,7 @@
   bottom: 0;
   background: theme('colors.pink.200');
   border-radius: 3px;
-  height: 5px;
+  height: 4px;
   transition-property: right;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.28, -0.4, 2.32, 1.6);
@@ -71,16 +76,6 @@
 .prose blockquote p:first-of-type::after,
 .prose blockquote p:first-of-type::before {
   content: '';
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .prose h1:has(.icon.icon-link):hover .icon.icon-link:before,
-  .prose h2:has(.icon.icon-link):hover .icon.icon-link:before,
-  .prose h3:has(.icon.icon-link):hover .icon.icon-link:before,
-  .prose h4:has(.icon.icon-link):hover .icon.icon-link:before {
-    opacity: 0.25;
-    transition: all 250ms ease-in-out;
-  }
 }
 
 .prose input[type='checkbox'] {

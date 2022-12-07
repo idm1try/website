@@ -1,49 +1,45 @@
-import LastPostCard from '@/components/LastPostCard';
-import Layout from '@/components/Layout';
-import PostCard from '@/components/PostCard';
-import Search from '@/components/Search';
-import TagCheckbox from '@/components/TagCheckbox';
-import useSearch from '@/hooks/useSearch';
-import { getAllPosts } from '@/lib/mdx/api';
-import Post from '@/types/post';
-import Head from 'next/head';
-import { TbSearch } from 'react-icons/tb';
+import LastPostCard from '@/components/last-post-card'
+import PostCard from '@/components/post-card'
+import Search from '@/components/search'
+import TagCheckbox from '@/components/tag-checkbox'
+import useSearch from '@/hooks/use-search'
+import { allPosts, Post } from 'contentlayer/generated'
+import Head from 'next/head'
 
-const Blog = ({ allPosts }: { allPosts: Post[] }) => {
-  const search = useSearch(allPosts);
-
-  const lastPost = search.results.sort((post1: Post, post2: Post) =>
+const Blog = () => {
+  const search = useSearch(allPosts)
+  const sortedPosts = search.results.sort((post1: Post, post2: Post) =>
     post1.date > post2.date ? -1 : 1
-  )[0];
-
-  const morePosts = search.results
-    .sort((post1: Post, post2: Post) => (post1.date > post2.date ? -1 : 1))
-    .slice(1);
+  )
 
   return (
-    <Layout>
+    <div>
       <Head>
         <title>blog | idm1try</title>
         <meta property='og:title' content='blog | idm1try' />
         <meta name='twitter:title' content='blog | idm1try' />
       </Head>
-      <h1 className='animate-fade_in_up_10 text-6xl font-bold tracking-tight'>blog.</h1>
+      <h1 className='animate-fade_in_up_10 text-6xl font-bold tracking-tight'>
+        blog.
+      </h1>
       {allPosts?.length !== 0 && (
         <div>
           <Search
-            className='my-12'
+            className='mt-12 mb-10'
             defaultValue={search.defaultValue}
             onChange={value => {
-              search.setParams(value);
+              search.setParams(value)
             }}
           />
-          <div className='mb-12'>
+          <div className='mb-6'>
             {search.tags.sort().map(tag => (
               <TagCheckbox
                 key={tag}
                 checked={search.filters.includes(tag)}
                 value={tag}
-                onChange={e => (e.target.checked ? search.addTag(tag) : search.removeTag(tag))}
+                onChange={e =>
+                  e.target.checked ? search.addTag(tag) : search.removeTag(tag)
+                }
               >
                 {tag}
               </TagCheckbox>
@@ -51,49 +47,22 @@ const Blog = ({ allPosts }: { allPosts: Post[] }) => {
           </div>
         </div>
       )}
-      {search?.results?.length !== 0 ? (
+      {sortedPosts.length ? (
         <div>
-          <LastPostCard post={lastPost} />
+          <LastPostCard post={sortedPosts[0]} />
           <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
-            {morePosts.map((post: Post, index: number) => (
+            {sortedPosts.slice(1).map((post: Post, index: number) => (
               <PostCard key={post.slug} post={post} index={index} />
             ))}
           </div>
         </div>
       ) : (
-        <div>
-          {allPosts?.length === 0 ? (
-            <div className='mt-10 mb-20 text-center text-4xl font-bold'>No posts</div>
-          ) : (
-            <div className='text-center line-clamp-2'>
-              <TbSearch
-                className='mx-auto animate-fade_in_up text-pink-200 dark:text-pink-100'
-                size={80}
-              />
-              <div className='my-3 text-2xl font-bold'>No results</div>
-            </div>
-          )}
+        <div className='my-20 text-center text-4xl font-bold'>
+          No posts found
         </div>
       )}
-    </Layout>
-  );
-};
+    </div>
+  )
+}
 
-export default Blog;
-
-export const getStaticProps = async () => {
-  const allPosts = await getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'cover',
-    'excerpt',
-    'tags',
-    'time',
-  ]);
-
-  return {
-    props: { allPosts },
-  };
-};
+export default Blog

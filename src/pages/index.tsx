@@ -1,40 +1,114 @@
-import Layout from '@/components/Layout';
-import ScreenshotLink from '@/components/ScreenshotLink';
-import { TbBrandGithub, TbBrandTwitter, TbMail } from 'react-icons/tb';
+import ScreenshotLink from '@/components/screenshot-link'
+import dynamic from 'next/dynamic'
 
-const Home = () => (
-  <Layout>
-    <div className='relative z-10 my-16 flex max-w-7xl flex-col items-start text-left lg:my-[20vh] lg:flex-row lg:items-center lg:justify-between'>
-      <div className='mb-8 animate-fade_in_up_10 pl-2 text-6xl font-bold tracking-tight text-pink-200 dark:text-pink-100 lg:pl-0 lg:pr-8'>
-        idm1try
-      </div>
-      <div className='relative w-full p-2 text-left text-xl leading-8 lg:w-11/12 lg:pl-10'>
-        <div>
-          Hi! My name&apos;s Dmitry. I&apos;m a beginner front-end developer and based in{' '}
-          <ScreenshotLink href='https://en.wikipedia.org/wiki/Neftekamsk'>
-            Neftekamsk
-          </ScreenshotLink>
-          , Russia.
+const Time = dynamic(import('../components/time'), { ssr: false })
+
+const Home = () => {
+  return (
+    <div>
+      <div className='relative my-16 flex max-w-7xl flex-col items-start text-left lg:my-[20vh] lg:flex-row lg:items-center lg:justify-between'>
+        <div className='mb-8 animate-fade_in_up_10 pl-2 text-6xl font-bold tracking-tight text-pink-200 dark:text-pink-100 lg:pl-0 lg:pr-8'>
+          idm1try
         </div>
-        <ul className='mt-4'>
-          <li>
-            <TbBrandGithub className='mr-1 inline-block text-mauve-200 dark:text-mauve-100' />{' '}
-            <ScreenshotLink href='https://github.com/idm1try'>@idm1try</ScreenshotLink>
-          </li>
-          <li>
-            <TbBrandTwitter className='mr-1 inline-block text-mauve-200 dark:text-mauve-100' />{' '}
-            <ScreenshotLink href='https://twitter.com/idm1try'>@idm1try</ScreenshotLink>
-          </li>
-          <li>
-            <TbMail className='mr-1 inline-block text-mauve-200 dark:text-mauve-100' />{' '}
-            <a className='border-underline-grow' href='mailto:admin@idm1try.ru'>
-              admin@idm1try.ru
-            </a>
-          </li>
-        </ul>
+        <div className='relative w-full p-2 text-left text-xl leading-8 lg:w-11/12 lg:pl-10'>
+          <div>
+            Hi! My name&apos;s Dmitry. I&apos;m a beginner front-end developer
+            based in{' '}
+            <ScreenshotLink href='https://en.wikipedia.org/wiki/Neftekamsk'>
+              Neftekamsk
+            </ScreenshotLink>
+            , Russia.
+          </div>
+          <ul className='mt-4'>
+            <li>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='mr-2 inline-block text-mauve-200 dark:text-mauve-100'
+                width='1em'
+                height='1em'
+                viewBox='0 0 24 24'
+                strokeWidth={2}
+                stroke='currentColor'
+                fill='none'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                <path d='M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5' />
+              </svg>
+              <ScreenshotLink href='https://github.com/idm1try'>
+                @idm1try
+              </ScreenshotLink>
+            </li>
+            <li>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='mr-2 inline-block text-mauve-200 dark:text-mauve-100'
+                width='1em'
+                height='1em'
+                viewBox='0 0 24 24'
+                strokeWidth={2}
+                stroke='currentColor'
+                fill='none'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                <path d='M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z' />
+              </svg>
+              <ScreenshotLink href='https://twitter.com/idm1try'>
+                @idm1try
+              </ScreenshotLink>
+            </li>
+            <li>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='mr-2 inline-block text-mauve-200 dark:text-mauve-100'
+                width='1em'
+                height='1em'
+                viewBox='0 0 24 24'
+                strokeWidth={2}
+                stroke='currentColor'
+                fill='none'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                <rect x={3} y={5} width={18} height={14} rx={2} />
+                <polyline points='3 7 12 13 21 7' />
+              </svg>
+              <a
+                className='border-underline-grow'
+                href='mailto:admin@idm1try.ru'
+              >
+                admin@idm1try.ru
+              </a>
+            </li>
+            <li>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                className='mr-2 inline-block text-mauve-200 dark:text-mauve-100'
+                width='1em'
+                height='1em'
+                viewBox='0 0 24 24'
+                strokeWidth={2}
+                stroke='currentColor'
+                fill='none'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+              >
+                <path stroke='none' d='M0 0h24v24H0z' fill='none' />
+                <circle cx={12} cy={12} r={9} />
+                <path d='M12 12h3.5' />
+                <path d='M12 7v5' />
+              </svg>
+              <Time />
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </Layout>
-);
+  )
+}
 
-export default Home;
+export default Home

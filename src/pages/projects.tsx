@@ -1,70 +1,68 @@
-import Layout from '@/components/Layout';
-import ProjectCard from '@/components/ProjectCard';
-import Search from '@/components/Search';
-import TagCheckbox from '@/components/TagCheckbox';
-import projectData from '@/data/projects.json';
-import useSearch from '@/hooks/useSearch';
-import { Projects } from '@/types/projects';
-import Head from 'next/head';
-import { TbSearch } from 'react-icons/tb';
+import ProjectCard from '@/components/project-card'
+import Search from '@/components/search'
+import TagCheckbox from '@/components/tag-checkbox'
+import projectData from '@/data/projects.json'
+import useSearch from '@/hooks/use-search'
+import { Project as ProjectProps } from '@/lib/project'
+import Head from 'next/head'
 
-const Projects = ({ projects }: Projects) => {
-  const search = useSearch(projects);
+export const getStaticProps = () => {
+  return {
+    props: {
+      projects: projectData,
+    },
+  }
+}
+
+const Projects = ({ projects }: { projects: ProjectProps[] }) => {
+  const search = useSearch(projects)
 
   return (
-    <Layout>
+    <div>
       <Head>
         <title>projects | idm1try</title>
         <meta property='og:title' content='projects | idm1try' />
         <meta name='twitter:title' content='projects | idm1try' />
       </Head>
-      <h1 className='animate-fade_in_up_10 text-6xl font-bold tracking-tight'>projects.</h1>
+      <h1 className='animate-fade_in_up_10 text-6xl font-bold tracking-tight'>
+        projects.
+      </h1>
       <div>
         <Search
-          className='my-12'
+          className='mt-12 mb-10'
           defaultValue={search.defaultValue}
           onChange={value => {
-            search.setParams(value);
+            search.setParams(value)
           }}
         />
-        <div className='mb-12'>
+        <div className='mb-6'>
           {search.tags.sort().map(tag => (
             <TagCheckbox
               key={tag}
               checked={search.filters.includes(tag)}
               value={tag}
-              onChange={e => (e.target.checked ? search.addTag(tag) : search.removeTag(tag))}
+              onChange={e =>
+                e.target.checked ? search.addTag(tag) : search.removeTag(tag)
+              }
             >
               {tag}
             </TagCheckbox>
           ))}
         </div>
       </div>
-      {search?.results?.length !== 0 ? (
+      {search.results.length ? (
         <div className='grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
-          {search?.results?.map((project: any, index: number) => (
+          {search.results.map((project: any, index: number) => (
             <ProjectCard key={project.name} project={project} index={index} />
           ))}
         </div>
       ) : (
-        <div className='text-center line-clamp-2'>
-          <TbSearch
-            className='mx-auto animate-fade_in_up text-pink-200 dark:text-pink-100'
-            size={80}
-          />
-          <div className='my-3 text-2xl font-bold'>No results</div>
+        <div className='my-12 text-center text-4xl font-bold'>
+          No projects found
         </div>
       )}
-    </Layout>
-  );
-};
+    </div>
+  )
+}
 
-export default Projects;
-
-export const getStaticProps = async () => {
-  return {
-    props: {
-      projects: projectData,
-    },
-  };
-};
+export default Projects

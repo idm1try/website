@@ -1,5 +1,5 @@
 /* eslint-disable-next-line @typescript-eslint/no-var-requires */
-const { fontFamily } = require('tailwindcss/defaultTheme');
+const { fontFamily } = require('tailwindcss/defaultTheme')
 
 /* @type {import('tailwindcss').Config} */
 module.exports = {
@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)', ...fontFamily.sans],
+        mono: ['var(--font-fira-code)', ...fontFamily.mono],
       },
       colors: {
         rosewater: {
@@ -192,9 +193,12 @@ module.exports = {
       }),
       animation: {
         fade_in: 'fade_in 1000ms forwards',
-        fade_in_up: 'fade_in_up 550ms cubic-bezier(0.68, -0.6, 0.32, 1.6) forwards',
-        fade_in_up_10: 'fade_in_up_10 750ms cubic-bezier(0.68, -0.6, 0.32, 2.2) forwards',
-        fade_in_up_down: 'fade_in_up_down 1400ms cubic-bezier(0.68, -0.6, 0.32, 1.6) forwards',
+        fade_in_up:
+          'fade_in_up 550ms cubic-bezier(0.68, -0.6, 0.32, 1.6) forwards',
+        fade_in_up_10:
+          'fade_in_up_10 750ms cubic-bezier(0.68, -0.6, 0.32, 2.2) forwards',
+        fade_in_up_down:
+          'fade_in_up_down 1400ms cubic-bezier(0.68, -0.6, 0.32, 1.6) forwards',
       },
       keyframes: {
         fade_in: {
@@ -246,8 +250,11 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/line-clamp'), require('@tailwindcss/typography')],
+  plugins: [
+    require('@tailwindcss/line-clamp'),
+    require('@tailwindcss/typography'),
+  ],
   future: {
     hoverOnlyWhenSupported: true,
   },
-};
+}
