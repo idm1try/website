@@ -288,10 +288,10 @@ const CommandMenu = () => {
           className={cn('fixed inset-0 z-10', 'overflow-y-auto p-4 pt-[20vh]')}
         >
           <Transition.Child
-            enter='duration-100 ease-out'
+            enter='duration-150 ease-out'
             enterFrom='opacity-0'
             enterTo='opacity-100'
-            leave='duration-100 ease-in'
+            leave='duration-150 ease-in'
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
           >
@@ -303,10 +303,10 @@ const CommandMenu = () => {
           </Transition.Child>
 
           <Transition.Child
-            enter='duration-100 ease-out'
+            enter='duration-150 ease-out'
             enterFrom='opacity-0 scale-95'
             enterTo='opacity-100 scale-100'
-            leave='duration-100 ease-in'
+            leave='duration-150 ease-in'
             leaveFrom='opacity-100 scale-100'
             leaveTo='opacity-0 scale-95'
             className='mx-auto max-w-2xl'
