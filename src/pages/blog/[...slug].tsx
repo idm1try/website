@@ -2,9 +2,10 @@ import { allPosts, Post } from '.contentlayer/generated'
 import Mdx from '@/components/mdx'
 import ReadProgress from '@/components/read-progress'
 import { DashboardTableOfContents } from '@/components/toc'
+import cn from '@/lib/classNames'
 import { getTableOfContents, TableOfContents } from '@/lib/toc'
-import Head from 'next/head'
 import ErrorPage from 'next/error'
+import Head from 'next/head'
 import Image from 'next/image'
 
 export const getStaticPaths = async () => {
@@ -72,7 +73,12 @@ const Post = ({ post, toc }: { post: Post; toc: TableOfContents }) => {
               </div>
             )}
           </div>
-          <div className='prose prose-lg mx-auto max-w-4xl text-text-200 dark:text-text-100 dark:prose-dark'>
+          <div
+            className={cn(
+              'prose prose-lg mx-auto max-w-4xl',
+              'text-text-200 dark:text-text-100 dark:prose-dark'
+            )}
+          >
             <Mdx code={post.body.code} />
           </div>
         </article>

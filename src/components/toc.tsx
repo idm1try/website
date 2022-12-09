@@ -1,3 +1,4 @@
+import cn from '@/lib/classNames'
 import { TableOfContents } from '@/lib/toc'
 import { useEffect, useMemo, useState } from 'react'
 
@@ -79,11 +80,12 @@ function Tree({ tree, level = 1, activeItem }: TreeProps) {
           <li key={index} className='mt-0 pt-2'>
             <a
               href={item.url}
-              className={`inline-block transition-all duration-300 line-clamp-1 ${
+              className={cn(
+                'inline-block transition-all duration-300 line-clamp-1',
                 item.url === `#${activeItem}`
                   ? 'font-bold text-pink-200 hover:text-flamingo-200 dark:text-pink-100 dark:hover:text-flamingo-100'
                   : 'text-surface2-200 hover:text-text-200 dark:text-surface2-100 dark:hover:text-text-100'
-              }`}
+              )}
             >
               {item.title}
             </a>

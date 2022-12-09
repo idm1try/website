@@ -1,33 +1,30 @@
+import CommandMenu from '@/components/command-menu'
 import Meta from '@/components/meta'
-import Navbar from '@/components/navbar'
 import '@/styles/index.css'
-import { Fira_Code, Inter } from '@next/font/google'
+import { Inter } from '@next/font/google'
 import { Analytics } from '@vercel/analytics/react'
+import { ThemeProvider } from 'next-themes'
 import { AppProps } from 'next/app'
 
-const fontSans = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-})
-
-const fontMono = Fira_Code({
-  subsets: ['latin'],
-  variable: '--font-fira-code',
-})
+const fontSans = Inter()
 
 const Website = ({ Component, pageProps, router }: AppProps) => (
-  <div
-    className={`mx-auto max-w-5xl px-8 pb-12 font-sans selection:bg-rosewater-200 ${fontSans.variable} ${fontMono.variable}`}
-  >
-    <Meta />
-    <Analytics />
-    <div>
-      <Navbar />
-      <main>
-        <Component {...pageProps} key={router.route} />
-      </main>
+  <ThemeProvider attribute='class'>
+    <div
+      className={`mx-auto max-w-5xl px-6 pb-12 selection:bg-rosewater-200 ${fontSans.className}`}
+    >
+      <Meta />
+      <Analytics />
+      <div>
+        <div className='sticky top-6 z-[5]'>
+          <CommandMenu />
+        </div>
+        <main className='pt-12'>
+          <Component {...pageProps} key={router.route} />
+        </main>
+      </div>
     </div>
-  </div>
+  </ThemeProvider>
 )
 
 export default Website

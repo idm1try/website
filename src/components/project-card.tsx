@@ -1,3 +1,4 @@
+import cn from '@/lib/classNames'
 import { Project } from '@/lib/project'
 import Image from 'next/image'
 
@@ -13,7 +14,13 @@ const ProjectCard = ({
   return (
     <div className='group mb-6'>
       <a href={url}>
-        <div className='mb-4 rounded-lg ring-mauve-200 ring-offset-4 ring-offset-base-200 duration-300 group-hover:ring-2 dark:ring-mauve-100 dark:ring-offset-base-100'>
+        <div
+          className={cn(
+            'mb-4 rounded-lg ring-mauve-200 ring-offset-4',
+            'dark:ring-mauve-100 dark:ring-offset-base-100',
+            'ring-offset-base-200 duration-300 group-hover:ring-2'
+          )}
+        >
           {image && (
             <Image
               src={`/assets/projects/${image}`}
@@ -26,7 +33,13 @@ const ProjectCard = ({
           )}
         </div>
         <div>
-          <span className='text-2xl font-bold transition-colors duration-300 line-clamp-2 active:text-pink-200/80 group-hover:text-pink-200 dark:active:text-pink-100/80 dark:group-hover:text-pink-100'>
+          <span
+            className={cn(
+              'text-2xl font-bold transition-colors duration-300',
+              'dark:active:text-pink-100/80 dark:group-hover:text-pink-100',
+              'line-clamp-2 active:text-pink-200/80 group-hover:text-pink-200'
+            )}
+          >
             {name}
           </span>
         </div>

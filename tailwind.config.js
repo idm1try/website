@@ -8,8 +8,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-inter)', ...fontFamily.sans],
-        mono: ['var(--font-fira-code)', ...fontFamily.mono],
+        sans: ['Inter', ...fontFamily.sans],
       },
       colors: {
         rosewater: {

@@ -1,7 +1,11 @@
 {
   "name": "idm1try",
-  "author": "idm1try <admin@idm1try.ru> (https://idm1try.ru)",
   "license": "MIT",
+  "author": {
+    "name": "Dmitry Savchenko",
+    "email": "admin@idm1try.ru",
+    "url": "https://idm1try.ru"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,36 +13,33 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.4",
     "@next/font": "13.0.6",
     "@vercel/analytics": "^0.1.5",
     "contentlayer": "^0.2.9",
-    "match-sorter": "^6.3.1",
     "next": "13.0.6",
     "next-contentlayer": "^0.2.9",
+    "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "shiki": "^0.11.1"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^17.3.0",
-    "@commitlint/types": "^17.0.0",
     "@tailwindcss/line-clamp": "^0.4.2",
     "@tailwindcss/typography": "^0.5.8",
     "@types/node": "18.7.9",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "@types/sharp": "^0.31.0",
-    "@typescript-eslint/eslint-plugin": "^5.45.1",
-    "@typescript-eslint/parser": "^5.45.1",
+    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "@typescript-eslint/parser": "^5.46.0",
     "autoprefixer": "^10.4.13",
-    "commitlint": "^17.3.0",
     "eslint-config-next": "^13.0.6",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "husky": "^8.0.2",
     "mdast-util-toc": "^6.1.0",
     "postcss": "^8.4.19",
-    "prettier": "^2.8.0",
+    "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "reading-time": "^1.5.0",
     "rehype-pretty-code": "^0.5.1",
@@ -47,7 +48,7 @@
     "remark-gfm": "^3.0.1",
     "sharp": "^0.31.2",
     "tailwindcss": "^3.2.4",
-    "typescript": "*",
+    "typescript": "^4.9.4",
     "unist-util-visit": "^4.1.1"
   }
 }

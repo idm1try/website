@@ -43,36 +43,6 @@
   }
 }
 
-.navbar a {
-  display: inline-block;
-  transform: perspective(1px) translateZ(0);
-  position: relative;
-  overflow: hidden;
-}
-
-.navbar a:before {
-  content: '';
-  position: absolute;
-  z-index: -1;
-  left: 0;
-  right: 100%;
-  bottom: 0;
-  background: theme('colors.pink.200');
-  border-radius: 3px;
-  height: 4px;
-  transition-property: right;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.28, -0.4, 2.32, 1.6);
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .navbar a:hover:before,
-  .navbar a:focus:before,
-  .navbar a:active:before {
-    right: 0;
-  }
-}
-
 .prose blockquote p:first-of-type::after,
 .prose blockquote p:first-of-type::before {
   content: '';
@@ -154,9 +124,9 @@ html.dark .prose input[type='checkbox']:checked:after {
 }
 
 [data-rehype-pretty-code-title] {
-  @apply px-4 py-2 font-medium text-pink-200 dark:text-pink-100;
+  @apply inline-flex rounded-lg bg-mantle-200 px-4 py-2 text-sm font-medium text-pink-200 dark:bg-mantle-100 dark:text-pink-100;
 }
 
 [data-rehype-pretty-code-title] + pre {
-  @apply mt-0;
+  @apply -mt-2;
 }
