@@ -74,7 +74,7 @@ const CommandMenu = () => {
   const highlightRef = useRef<HTMLDivElement>(null)
 
   const cardStyle =
-    'px-2 py-3 cursor-pointer relative flex items-center gap-2 text-base rounded-xl transition-colors duration-300'
+    'px-2 py-3 cursor-pointer relative flex items-center gap-2 rounded-xl transition-colors duration-300'
 
   const placeholder = useMemo(() => {
     if (highlightedTab) {
