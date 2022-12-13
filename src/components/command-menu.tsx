@@ -255,11 +255,12 @@ const CommandMenu = () => {
           onClick={() => setIsOpen(!isOpen)}
           aria-label='Command Menu'
           className={cn(
-            'rounded-lg bg-mantle-200 dark:bg-mantle-100',
-            'p-2 text-subtext0-200 dark:text-subtext0-100',
-            'hover:text-text-200 dark:hover:text-text-100',
             'active:text-pink-200 dark:active:text-pink-100',
-            'transition-colors duration-300'
+            'hover:text-text-200 dark:hover:text-text-100',
+            'p-2 text-subtext0-200 dark:text-subtext0-100',
+            'rounded-lg bg-mantle-200 dark:bg-mantle-100',
+            'border-crust-200 dark:border-crust-100',
+            'border transition-colors duration-300'
           )}
         >
           <svg
@@ -313,11 +314,9 @@ const CommandMenu = () => {
           >
             <div
               className={cn(
-                'relative',
-                'rounded-lg shadow-2xl',
                 'ring-1 ring-crust-200 dark:ring-crust-100',
-                'bg-mantle-200 dark:bg-mantle-100',
-                'flex flex-col'
+                'relative flex flex-col rounded-lg shadow-2xl',
+                'bg-mantle-200 dark:bg-mantle-100'
               )}
             >
               <Dialog.Title
@@ -329,10 +328,9 @@ const CommandMenu = () => {
                 <input
                   autoComplete='off'
                   className={cn(
-                    'w-full bg-transparent p-4',
-                    'outline-none focus:ring-0',
-                    'text-subtext0-200 dark:text-subtext0-100',
-                    'placeholder:text-surface2-200 dark:placeholder:text-surface2-100'
+                    'placeholder:text-surface2-200 dark:placeholder:text-surface2-100',
+                    'w-full bg-transparent p-4 outline-none focus:ring-0',
+                    'text-subtext0-200 dark:text-subtext0-100'
                   )}
                   placeholder={placeholder}
                   aria-label='What do you need?'

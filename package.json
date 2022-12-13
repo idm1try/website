@@ -31,14 +31,14 @@
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "@types/sharp": "^0.31.0",
-    "@typescript-eslint/eslint-plugin": "^5.46.0",
-    "@typescript-eslint/parser": "^5.46.0",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
     "autoprefixer": "^10.4.13",
     "eslint-config-next": "^13.0.6",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "mdast-util-toc": "^6.1.0",
-    "postcss": "^8.4.19",
+    "postcss": "^8.4.20",
     "prettier": "^2.8.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "reading-time": "^1.5.0",
@@ -57,7 +57,9 @@
     "jsxSingleQuote": true,
     "proseWrap": "always",
     "semi": false,
-    "plugins": ["prettier-plugin-tailwindcss"]
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
   },
   "eslintConfig": {
     "parser": "@typescript-eslint/parser",
