@@ -121,9 +121,6 @@ module.exports = {
           css: {
             a: {
               color: theme('colors.text.200'),
-              textDecoration: 'none',
-              fontWeight: '400',
-              overflowWrap: 'anywhere',
             },
             strong: { color: theme('colors.text.200') },
             'ul > li::marker': {
@@ -164,8 +161,6 @@ module.exports = {
           css: {
             a: {
               color: theme('colors.text.100'),
-              textDecoration: 'none',
-              fontWeight: '400',
             },
             strong: { color: theme('colors.text.100') },
             'ul > li::marker': {

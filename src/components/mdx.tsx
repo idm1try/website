@@ -1,6 +1,7 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from 'next/image'
 import ScreenshotLink from './screenshot-link'
+import cn from '@/lib/classNames'
 
 const components = {
   img: ({ ...props }) => (
@@ -14,38 +15,50 @@ const components = {
     />
   ),
   h1: ({ ...props }) => (
-    <a href={`#${props.id}`}>
+    <a href={`#${props.id}`} className='no-underline'>
       <h1
-        className='scroll-mt-16 decoration-surface2-200 underline-offset-4 hover:underline dark:decoration-surface1-100'
+        className={cn(
+          'scroll-mt-16 decoration-surface2-200 decoration-[3px]',
+          'underline-offset-[5px] hover:underline dark:decoration-surface1-100'
+        )}
         {...props}
       />
     </a>
   ),
   h2: ({ ...props }) => (
-    <a href={`#${props.id}`}>
+    <a href={`#${props.id}`} className='no-underline'>
       <h2
-        className='scroll-mt-16 decoration-surface2-200 underline-offset-4 hover:underline dark:decoration-surface1-100'
+        className={cn(
+          'scroll-mt-16 decoration-surface2-200 decoration-[3px]',
+          'underline-offset-[5px] hover:underline dark:decoration-surface1-100'
+        )}
         {...props}
       />
     </a>
   ),
   h3: ({ ...props }) => (
-    <a href={`#${props.id}`}>
+    <a href={`#${props.id}`} className='no-underline'>
       <h3
-        className='scroll-mt-16 decoration-surface2-200 underline-offset-4 hover:underline dark:decoration-surface1-100'
+        className={cn(
+          'scroll-mt-16 decoration-surface2-200 decoration-[3px]',
+          'underline-offset-[5px] hover:underline dark:decoration-surface1-100'
+        )}
         {...props}
       />
     </a>
   ),
   h4: ({ ...props }) => (
-    <a href={`#${props.id}`}>
+    <a href={`#${props.id}`} className='no-underline'>
       <h4
-        className='scroll-mt-16 decoration-surface2-200 underline-offset-4 hover:underline dark:decoration-surface1-100'
+        className={cn(
+          'scroll-mt-16 decoration-surface2-200 decoration-[3px]',
+          'underline-offset-[5px] hover:underline dark:decoration-surface1-100'
+        )}
         {...props}
       />
     </a>
   ),
-  a: ({ ...props }) => <a className='border-underline-grow mt-0' {...props} />,
+  a: ({ ...props }) => <a {...props} className='underlined' />,
   ScreenshotLink,
 }
 

@@ -6,41 +6,8 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.border-underline-grow {
-  display: inline-block;
-  vertical-align: middle;
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  position: relative;
-  transition-property: color;
-  transition-duration: 0.5s;
-  @apply mb-1 pb-0.5;
-}
-
-.border-underline-grow:before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  z-index: -1;
-  height: 100%;
-  max-height: 9px;
-  width: 100%;
-  background: theme('colors.pink.200');
-  border-radius: 3px;
-  transform: scaleY(0.4);
-  transition-property: max-height, transform;
-  transition-duration: 0.5s;
-  transition-timing-function: ease-out;
-}
-
-@media (hover: hover) and (pointer: fine) {
-  .border-underline-grow:hover:before,
-  .border-underline-grow:focus:before,
-  .border-underline-grow:active:before {
-    transform: scaleY(1);
-    max-height: 100%;
-    transition-timing-function: cubic-bezier(0.98, -0.4, 0.32, 1.6);
-  }
+.underlined {
+  @apply underline decoration-surface2-200 decoration-[3px] underline-offset-[5px] transition-colors duration-300 hover:decoration-pink-200 dark:decoration-surface1-100 dark:hover:decoration-pink-100;
 }
 
 .prose blockquote p:first-of-type::after,

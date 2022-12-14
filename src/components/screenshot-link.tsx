@@ -52,7 +52,7 @@ const ScreenshotLink = ({ href, children }: ScreenshotLinkProps) => {
             />
           </div>
         )}
-        <a href={href} className='border-underline-grow'>
+        <a href={href} className='underlined'>
           {children}
         </a>
       </div>
