@@ -60,17 +60,15 @@ const Post = ({ post, toc }: { post: Post; toc: TableOfContents }) => {
               </span>
             </div>
             {post.image && (
-              <div className='mb-16 sm:mx-0'>
-                <Image
-                  src={`/assets/posts/${post.image}`}
-                  alt={`${post.title} Image`}
-                  width={960}
-                  height={600}
-                  loading='eager'
-                  priority
-                  className='rounded-lg bg-mantle-200 object-cover dark:bg-mantle-100'
-                />
-              </div>
+              <Image
+                src={`/assets/posts/${post.image}`}
+                alt={`${post.title} Image`}
+                width={960}
+                height={600}
+                loading='eager'
+                priority
+                className='mb-16 w-full rounded-lg bg-mantle-200 object-cover dark:bg-mantle-100'
+              />
             )}
           </div>
           <div

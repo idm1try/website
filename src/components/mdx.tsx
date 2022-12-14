@@ -1,6 +1,17 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
+import Image from 'next/image'
 
 const components = {
+  img: ({ ...props }) => (
+    <Image
+      src={props.src}
+      alt={props.alt}
+      width={900}
+      height={600}
+      className='mx-auto'
+      {...props}
+    />
+  ),
   h1: ({ ...props }) => (
     <a href={`#${props.id}`}>
       <h1
