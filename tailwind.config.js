@@ -121,6 +121,7 @@ module.exports = {
           css: {
             a: {
               color: theme('colors.text.200'),
+              fontWeight: '400',
             },
             strong: { color: theme('colors.text.200') },
             'ul > li::marker': {
