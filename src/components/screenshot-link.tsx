@@ -42,7 +42,7 @@ const ScreenshotLink = ({ href, children }: ScreenshotLinkProps) => {
         onBlur={() => setIsHovering(false)}
       >
         {isHovering && linkScreenshot && (
-          <div className='pointer-events-none absolute bottom-12 z-10 w-44 animate-fade_in_up_10'>
+          <div className='pointer-events-none absolute bottom-8 z-10 w-44 animate-fade_in_up_10'>
             <Image
               src={linkScreenshot}
               height={380}
