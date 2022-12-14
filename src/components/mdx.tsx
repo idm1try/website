@@ -1,5 +1,6 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from 'next/image'
+import ScreenshotLink from './screenshot-link'
 
 const components = {
   img: ({ ...props }) => (
@@ -45,6 +46,7 @@ const components = {
     </a>
   ),
   a: ({ ...props }) => <a className='border-underline-grow mt-0' {...props} />,
+  ScreenshotLink,
 }
 
 const Mdx = ({ code }: { code: string }) => {
