@@ -1,10 +1,17 @@
 import LastPostCard from '@/components/last-post-card'
 import PostCard from '@/components/post-card'
+import cn from '@/lib/classNames'
 import { allPosts, Post } from 'contentlayer/generated'
 import Head from 'next/head'
+import { useState } from 'react'
 
 const Blog = () => {
-  const sortedPosts = allPosts.sort((post1: Post, post2: Post) =>
+  const [searchValue, setSearchValue] = useState('')
+  const filteredPosts = allPosts.filter(post => {
+    const searchContent = post.title + post.tags.join(' ')
+    return searchContent.toLowerCase().includes(searchValue.toLowerCase())
+  })
+  const sortedPosts = filteredPosts.sort((post1: Post, post2: Post) =>
     post1.date > post2.date ? -1 : 1
   )
 
@@ -18,6 +25,19 @@ const Blog = () => {
       <h1 className='mb-12 animate-fade_in_up_10 text-6xl font-bold tracking-tight'>
         blog.
       </h1>
+      <input
+        onChange={e => setSearchValue(e.target.value)}
+        placeholder='Search by title or tag'
+        className={cn(
+          'transition-all duration-300',
+          'ring-offset-4 ring-offset-base-200',
+          'py-2 px-4 outline-none ring-mauve-200',
+          'mb-12 w-full rounded-lg bg-mantle-200',
+          'placeholder:text-surface2-200 hover:ring-2',
+          'focus:ring-2 dark:bg-mantle-100 dark:ring-mauve-100',
+          'dark:ring-offset-base-100 dark:placeholder:text-surface2-100'
+        )}
+      />
       {sortedPosts.length ? (
         <div>
           <LastPostCard post={sortedPosts[0]} />
