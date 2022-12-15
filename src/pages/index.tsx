@@ -57,7 +57,7 @@ const Home = () => {
             </ScreenshotLink>
             , Russia.
           </div>
-          <ul className='mt-4'>
+          <ul className='mt-4 space-y-1.5'>
             <li>
               <svg
                 xmlns='http://www.w3.org/2000/svg'
