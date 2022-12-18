@@ -30,7 +30,7 @@ export const getStaticProps = async ({
 }
 
 const Post = ({ post, toc }: { post: Post; toc: TableOfContents }) => {
-  if (!post) <ErrorPage statusCode={404} />
+  if (!post) return <ErrorPage statusCode={404} />
 
   return (
     <div>
