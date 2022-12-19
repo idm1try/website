@@ -27,7 +27,7 @@ const Blog = () => {
       </h1>
       <input
         onChange={e => setSearchValue(e.target.value)}
-        placeholder='Search by title or tag'
+        placeholder='Search posts'
         className={cn(
           'transition-all duration-300',
           'ring-offset-4 ring-offset-base-200',

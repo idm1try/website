@@ -16,7 +16,7 @@ export const getStaticProps = () => {
 const Projects = ({ projects }: { projects: ProjectProps[] }) => {
   const [searchValue, setSearchValue] = useState('')
   const filteredProjects = projects.filter(project => {
-    const searchContent = project.name + project.tags.join(' ')
+    const searchContent = project.name + project.desc + project.tags.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
   })
 
@@ -32,7 +32,7 @@ const Projects = ({ projects }: { projects: ProjectProps[] }) => {
       </h1>
       <input
         onChange={e => setSearchValue(e.target.value)}
-        placeholder='Search by title or tag'
+        placeholder='Search projects'
         className={cn(
           'transition-all duration-300',
           'ring-offset-4 ring-offset-base-200',
