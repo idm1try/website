@@ -156,6 +156,8 @@ module.exports = {
             img: {
               borderRadius: '0.5rem',
             },
+            'blockquote p:first-of-type::before': false,
+            'blockquote p:last-of-type::after': false,
           },
         },
         dark: {

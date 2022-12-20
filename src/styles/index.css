@@ -10,54 +10,6 @@
   @apply underline decoration-surface2-200 decoration-[3px] underline-offset-[5px] transition-colors duration-300 hover:decoration-pink-200 dark:decoration-surface1-100 dark:hover:decoration-pink-100;
 }
 
-.prose blockquote p:first-of-type::after,
-.prose blockquote p:first-of-type::before {
-  content: '';
-}
-
-.prose input[type='checkbox'] {
-  position: relative;
-}
-
-.prose input[type='checkbox']:before {
-  content: '';
-  position: absolute;
-  width: 14px;
-  height: 14px;
-  border-radius: theme('borderRadius.sm');
-  background-color: theme('colors.surface0.200');
-}
-
-.prose input[type='checkbox']:checked:before {
-  background-color: theme('colors.pink.200');
-}
-
-.prose input[type='checkbox']:checked:after {
-  content: '';
-  display: block;
-  width: 5px;
-  height: 10px;
-  border: solid;
-  border-color: theme('colors.base.200');
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-  position: absolute;
-  top: 1px;
-  left: 0.3rem;
-}
-
-html.dark .prose input[type='checkbox']:before {
-  background-color: theme('colors.surface0.100');
-}
-
-html.dark .prose input[type='checkbox']:checked:before {
-  background-color: theme('colors.pink.100');
-}
-
-html.dark .prose input[type='checkbox']:checked:after {
-  border-color: theme('colors.base.100');
-}
-
 [data-rehype-pretty-code-fragment] code {
   display: grid;
   counter-reset: line;
