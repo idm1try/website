@@ -7,7 +7,6 @@ import readingTime from 'reading-time'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
-import theme from './src/data/theme.json'
 
 const computedFields: ComputedFields = {
   slug: {
@@ -26,7 +25,7 @@ const computedFields: ComputedFields = {
 
 export const Post = defineDocumentType(() => ({
   name: 'Post',
-  filePathPattern: `blog/**/*.mdx`,
+  filePathPattern: `writing/**/*.mdx`,
   contentType: 'mdx',
   fields: {
     title: {
@@ -36,13 +35,6 @@ export const Post = defineDocumentType(() => ({
     date: {
       type: 'date',
       required: true,
-    },
-    image: {
-      type: 'string',
-    },
-    tags: {
-      type: 'list',
-      of: { type: 'string' },
     },
   },
   computedFields,
@@ -58,7 +50,7 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: theme,
+          theme: 'github-dark',
           onVisitLine(node: any) {
             if (node.children.length === 0) {
               node.children = [{ type: 'text', value: ' ' }]

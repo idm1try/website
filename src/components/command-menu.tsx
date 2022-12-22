@@ -25,8 +25,8 @@ const Navigation: Action[] = [
     section: 'Navigation',
   },
   {
-    name: 'Blog',
-    href: '/blog',
+    name: 'Writing',
+    href: '/writing',
     section: 'Navigation',
   },
   {
@@ -36,7 +36,7 @@ const Navigation: Action[] = [
   },
   {
     name: 'Uses',
-    href: '/blog/uses',
+    href: '/writing/uses',
     section: 'Navigation',
   },
 ]
@@ -255,12 +255,13 @@ const CommandMenu = () => {
           onClick={() => setIsOpen(!isOpen)}
           aria-label='Command Menu'
           className={cn(
-            'active:text-pink-200 dark:active:text-pink-100',
-            'hover:text-text-200 dark:hover:text-text-100',
-            'p-2 text-subtext0-200 dark:text-subtext0-100',
-            'rounded-lg bg-mantle-200 dark:bg-mantle-100',
-            'border-crust-200 dark:border-crust-100',
-            'border transition-colors duration-300'
+            'rounded-lg border border-neutral-400',
+            'border-opacity-30 bg-white px-2 py-2 ',
+            'text-neutral-700 shadow-sm hover:border-opacity-50',
+            'transition-all duration-300 hover:text-neutral-900',
+            'dark:border-neutral-500 dark:border-opacity-30',
+            'hover:shadow-sm dark:bg-neutral-900 dark:text-neutral-300',
+            'dark:hover:border-opacity-50 dark:hover:text-white'
           )}
         >
           <svg
@@ -296,11 +297,7 @@ const CommandMenu = () => {
             leaveFrom='opacity-100'
             leaveTo='opacity-0'
           >
-            <Dialog.Overlay
-              className={cn(
-                'fixed inset-0 bg-mantle-200/75 dark:bg-mantle-100/75'
-              )}
-            />
+            <Dialog.Overlay className='fixed inset-0 bg-neutral-50/75 dark:bg-black/75' />
           </Transition.Child>
 
           <Transition.Child
@@ -314,23 +311,22 @@ const CommandMenu = () => {
           >
             <div
               className={cn(
-                'ring-1 ring-crust-200 dark:ring-crust-100',
+                'ring-1 ring-black/10 dark:ring-neutral-700/50',
                 'relative flex flex-col rounded-lg shadow-2xl',
-                'bg-mantle-200 dark:bg-mantle-100'
+                'bg-neutral-50 dark:bg-neutral-900'
               )}
             >
               <Dialog.Title
                 className={cn(
-                  'border-crust-200 dark:border-crust-100',
+                  'border-black/10 dark:border-neutral-700/50',
                   searchResults.length ? 'border-b' : ''
                 )}
               >
                 <input
                   autoComplete='off'
                   className={cn(
-                    'placeholder:text-surface2-200 dark:placeholder:text-surface2-100',
-                    'w-full bg-transparent p-4 outline-none focus:ring-0',
-                    'text-subtext0-200 dark:text-subtext0-100'
+                    'placeholder:text-neutral-600 dark:placeholder:text-neutral-400',
+                    'w-full bg-transparent p-4 outline-none focus:ring-0'
                   )}
                   placeholder={placeholder}
                   aria-label='What do you need?'
@@ -348,7 +344,7 @@ const CommandMenu = () => {
                       'relative',
                       'mx-3 mt-3 mb-3.5',
                       'max-h-[32vh] overflow-auto',
-                      'text-subtext0-200 dark:text-subtext0-100'
+                      'text-neutral-600 dark:text-neutral-200'
                     )}
                   >
                     <div
@@ -364,7 +360,7 @@ const CommandMenu = () => {
                     >
                       <div
                         className={cn(
-                          'h-full w-full rounded-xl bg-surface0-200/60  dark:bg-surface0-100/40',
+                          'h-full w-full rounded-xl bg-neutral-200/40 dark:bg-neutral-800/75',
                           highlightedTab ? 'opacity-100' : 'opacity-0',
                           'transition-opacity duration-300'
                         )}
@@ -376,7 +372,7 @@ const CommandMenu = () => {
                         return (
                           <span
                             key={index}
-                            className='text-sm text-surface2-200 dark:text-surface2-100'
+                            className='text-sm text-neutral-600 dark:text-neutral-400'
                           >
                             {result}
                           </span>
@@ -389,7 +385,7 @@ const CommandMenu = () => {
                             className={cn(
                               cardStyle,
                               result.name === highlightedTab?.textContent
-                                ? 'text-text-200 dark:text-text-100'
+                                ? 'text-neutral-900 dark:text-neutral-100'
                                 : ''
                             )}
                             onMouseOver={handleMouseOver as MouseEventHandler}
@@ -424,7 +420,7 @@ const CommandMenu = () => {
                             className={cn(
                               cardStyle,
                               result.name === highlightedTab?.textContent
-                                ? 'text-text-200 dark:text-text-100'
+                                ? 'text-neutral-900 dark:text-neutral-100'
                                 : ''
                             )}
                             onMouseOver={handleMouseOver as MouseEventHandler}

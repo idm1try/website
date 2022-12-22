@@ -1,6 +1,5 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from 'next/image'
-import ScreenshotLink from './screenshot-link'
 import cn from '@/lib/classNames'
 
 const components = {
@@ -18,8 +17,8 @@ const components = {
     <a href={`#${props.id}`} className='no-underline'>
       <h1
         className={cn(
-          'scroll-mt-16 decoration-surface2-200 decoration-[3px]',
-          'underline-offset-[5px] hover:underline dark:decoration-surface1-100'
+          'scroll-mt-16 decoration-neutral-300 decoration-2',
+          'underline-offset-4 hover:underline dark:decoration-neutral-700'
         )}
         {...props}
       />
@@ -29,8 +28,8 @@ const components = {
     <a href={`#${props.id}`} className='no-underline'>
       <h2
         className={cn(
-          'scroll-mt-16 decoration-surface2-200 decoration-[3px]',
-          'underline-offset-[5px] hover:underline dark:decoration-surface1-100'
+          'scroll-mt-16 decoration-neutral-300 decoration-2',
+          'underline-offset-4 hover:underline dark:decoration-neutral-700'
         )}
         {...props}
       />
@@ -40,8 +39,8 @@ const components = {
     <a href={`#${props.id}`} className='no-underline'>
       <h3
         className={cn(
-          'scroll-mt-16 decoration-surface2-200 decoration-[3px]',
-          'underline-offset-[5px] hover:underline dark:decoration-surface1-100'
+          'scroll-mt-16 decoration-neutral-300 decoration-2',
+          'underline-offset-4 hover:underline dark:decoration-neutral-700'
         )}
         {...props}
       />
@@ -51,15 +50,14 @@ const components = {
     <a href={`#${props.id}`} className='no-underline'>
       <h4
         className={cn(
-          'scroll-mt-16 decoration-surface2-200 decoration-[3px]',
-          'underline-offset-[5px] hover:underline dark:decoration-surface1-100'
+          'scroll-mt-16 decoration-neutral-300 decoration-2',
+          'underline-offset-4 hover:underline dark:decoration-neutral-700'
         )}
         {...props}
       />
     </a>
   ),
   a: ({ ...props }) => <a {...props} className='underlined' />,
-  ScreenshotLink,
 }
 
 const Mdx = ({ code }: { code: string }) => {
