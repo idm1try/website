@@ -46,7 +46,12 @@ const Post = ({ post }: { post: Post }) => {
             className='mb-7 animate-in text-neutral-600 dark:text-neutral-400'
             style={{ '--index': 1 } as React.CSSProperties}
           >
-            {new Date(post.date).toDateString()} / {post.time.text}
+            {new Date(post.date).toLocaleString('en-US', {
+              month: 'short',
+              day: '2-digit',
+              year: 'numeric',
+            })}{' '}
+            / {post.time.text}
           </div>
         </div>
         <div
