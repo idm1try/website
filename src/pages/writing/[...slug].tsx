@@ -38,6 +38,14 @@ const Post = ({ post }: { post: Post }) => {
 
         <meta name='twitter:title' content={`${post.title} | idm1try`} />
         <meta name='twitter:image:alt' content={post.title} />
+        <meta
+          property='og:image'
+          content={`https://idm1try.ru/api/og?heading=${post.title}&date=${post.date}&readtime=${post.time.text}`}
+        />
+        <meta
+          name='twitter:image'
+          content={`https://idm1try.ru/api/og?heading=${post.title}&date=${post.date}&readtime=${post.time.text}`}
+        />
       </Head>
       <article>
         <div>

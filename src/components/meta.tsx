@@ -3,10 +3,6 @@ import { useRouter } from 'next/router'
 
 const Meta = () => {
   const router = useRouter()
-  const searchParams = new URLSearchParams()
-  searchParams.set('url', `https://idm1try.ru${router.asPath}`)
-  searchParams.set('colorScheme', 'dark')
-  const fullImageURL = `https://screenshot.idm1try.ru/api/image?${searchParams.toString()}`
 
   return (
     <Head>
@@ -24,9 +20,15 @@ const Meta = () => {
       <meta property='og:title' content='idm1try' />
       <meta property='og:description' content='Frontend Developer' />
       <meta property='og:url' content={`https://idm1try.ru${router.asPath}`} />
-      <meta property='og:image' content={fullImageURL} />
       <meta property='profile:username' content='idm1try' />
-      <meta name='twitter:image' content={fullImageURL} />
+      <meta
+        property='og:image'
+        content='https://idm1try.ru/api/og?heading=idm1try&desc=Frontend+Developer'
+      />
+      <meta
+        name='twitter:image'
+        content='https://idm1try.ru/api/og?heading=idm1try&desc=Frontend+Developer'
+      />
       <meta name='twitter:card' content='summary_large_image' />
       <meta name='twitter:title' content='idm1try' />
       <meta name='twitter:site' content='@idm1try' />

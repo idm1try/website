@@ -13,6 +13,14 @@ const Writing = () => {
         <title>Writing | idm1try</title>
         <meta property='og:title' content='Writing | idm1try' />
         <meta name='twitter:title' content='Writing | idm1try' />
+        <meta
+          property='og:image'
+          content='https://idm1try.ru/api/og?heading=Writing'
+        />
+        <meta
+          name='twitter:image'
+          content='https://idm1try.ru/api/og?heading=Writing'
+        />
       </Head>
       <h1 className='mb-7 animate-in text-4xl font-bold'>Writing</h1>
       <ul

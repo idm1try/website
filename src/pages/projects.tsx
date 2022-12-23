@@ -17,6 +17,14 @@ const Projects = ({ projects }: { projects: ProjectProps[] }) => (
       <title>projects | idm1try</title>
       <meta property='og:title' content='projects | idm1try' />
       <meta name='twitter:title' content='projects | idm1try' />
+      <meta
+        property='og:image'
+        content='https://idm1try.ru/api/og?heading=Projects'
+      />
+      <meta
+        name='twitter:image'
+        content='https://idm1try.ru/api/og?heading=Projects'
+      />
     </Head>
     <h1 className='mb-7 animate-in text-4xl font-bold'>Projects</h1>
     <ul
