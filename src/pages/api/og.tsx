@@ -51,17 +51,19 @@ export default async function handler(req: NextRequest) {
             >
               {values.desc}
             </div>
-            <div
-              tw='text-neutral-400 text-2xl flex'
-              style={{ fontFamily: 'Inter', fontWeight: 'normal' }}
-            >
-              {new Date(values.date).toLocaleString('en-US', {
-                month: 'short',
-                day: '2-digit',
-                year: 'numeric',
-              })}{' '}
-              / {values.readtime}
-            </div>
+            {values.date && (
+              <div
+                tw='text-neutral-400 text-2xl flex'
+                style={{ fontFamily: 'Inter', fontWeight: 'normal' }}
+              >
+                {new Date(values.date).toLocaleString('en-US', {
+                  month: 'short',
+                  day: '2-digit',
+                  year: 'numeric',
+                })}{' '}
+                / {values.readtime}
+              </div>
+            )}
           </div>
           <div
             tw='flex items-center w-full justify-between text-neutral-400 text-xl'
