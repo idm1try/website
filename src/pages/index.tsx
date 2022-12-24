@@ -35,7 +35,7 @@ const Home = () => {
         className='mb-5 animate-in text-neutral-600 dark:text-neutral-400'
         style={{ '--index': 1 } as React.CSSProperties}
       >
-        {mounted && time} / Neftekamsk, Russia
+        {mounted && time} / Neftekamsk, Russia / Merry Christmas!
       </p>
       <div
         className='animate-in space-y-5'
