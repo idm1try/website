@@ -6,7 +6,7 @@ const Meta = () => {
 
   return (
     <Head>
-      <meta name='msapplication-TileColor' content='#1e1e2e' />
+      <meta name='msapplication-TileColor' content='#171717' />
       <meta name='theme-color' content='#171717' />
       <meta name='description' content='Frontend Developer' />
       <link rel='icon' type='image/png' sizes='96x96' href='/favicon.png' />
