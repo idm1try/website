@@ -23,10 +23,5 @@
     "name": "Links",
     "url": "https://links.idm1try.ru",
     "desc": "Simple links card"
-  },
-  {
-    "name": "Todo",
-    "url": "https://todo.idm1try.ru",
-    "desc": "Todo app with synchronization"
   }
 ]
