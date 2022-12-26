@@ -44,17 +44,6 @@ const Home = () => {
         <p>Hi there! I&apos;m Dmitry, a frontend developer</p>
         <p>Interested in TypeScript and React</p>
         <p>I&apos;m passionate about minimalism and simplicity</p>
-        <div className='space-x-4'>
-          <a className='underlined' href='https://github.com/idm1try'>
-            GitHub
-          </a>
-          <a className='underlined' href='https://twitter.com/idm1try'>
-            Twitter
-          </a>
-          <a className='underlined' href='mailto:admin@idm1try.ru'>
-            Mail
-          </a>
-        </div>
       </div>
     </div>
   )

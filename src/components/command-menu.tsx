@@ -15,8 +15,36 @@ interface Action {
   name: string
   keywords?: string
   href?: string
-  section: 'Navigation' | 'Themes'
+  perform?: () => void
+  section: 'Navigation' | 'Socials' | 'Themes'
 }
+
+const Socials: Action[] = [
+  {
+    name: 'GitHub',
+    keywords: 'github',
+    perform: () => {
+      window.open('https://github.com/idm1try')
+    },
+    section: 'Socials',
+  },
+  {
+    name: 'Twitter',
+    keywords: 'twitter',
+    perform: () => {
+      window.open('https://twitter.com/idm1try')
+    },
+    section: 'Socials',
+  },
+  {
+    name: 'Mail',
+    keywords: 'mail',
+    perform: () => {
+      window.open('mailto:admin@idm1try.ru')
+    },
+    section: 'Socials',
+  },
+]
 
 const Navigation: Action[] = [
   {
@@ -64,7 +92,7 @@ const CommandMenu = () => {
   const { resolvedTheme, setTheme } = useTheme()
   const router = useRouter()
 
-  const [results] = useState(Navigation.concat(Themes))
+  const [results] = useState(Navigation.concat(Socials).concat(Themes))
   const [input, setInput] = useState('')
 
   const [highlightedTab, setHighlightedTab] = useState<HTMLElement | null>(null)
@@ -256,27 +284,15 @@ const CommandMenu = () => {
           aria-label='Command Menu'
           className={cn(
             'rounded-lg border border-neutral-400',
-            'border-opacity-30 bg-white px-2 py-2 ',
+            'border-opacity-30 bg-white px-2 py-2 text-2xl',
             'text-neutral-700 shadow-sm hover:border-opacity-50',
             'transition-all duration-300 hover:text-neutral-900',
-            'dark:border-neutral-500 dark:border-opacity-30',
+            'leading-none dark:border-neutral-500 dark:border-opacity-30',
             'hover:shadow-sm dark:bg-neutral-900 dark:text-neutral-300',
             'dark:hover:border-opacity-50 dark:hover:text-white'
           )}
         >
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            width='24'
-            height='24'
-            viewBox='0 0 24 24'
-            fill='none'
-            stroke='currentColor'
-            strokeWidth='2'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-          >
-            <path d='M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z' />
-          </svg>
+          ⌘
         </button>
       </div>
       <Transition
@@ -287,7 +303,7 @@ const CommandMenu = () => {
       >
         <Dialog
           onClose={setIsOpen}
-          className={cn('fixed inset-0 z-10', 'overflow-y-auto p-4 pt-[20vh]')}
+          className='fixed inset-0 z-10 overflow-y-auto p-4 pt-[20vh]'
         >
           <Transition.Child
             enter='duration-150 ease-out'
@@ -341,10 +357,9 @@ const CommandMenu = () => {
                   <ul
                     ref={parentRef}
                     className={cn(
-                      'relative',
-                      'mx-3 mt-3 mb-3.5',
+                      'relative m-3',
                       'max-h-[32vh] overflow-auto',
-                      'text-neutral-600 dark:text-neutral-200'
+                      'text-neutral-600 dark:text-neutral-300'
                     )}
                   >
                     <div
@@ -409,6 +424,94 @@ const CommandMenu = () => {
                               <line x1='5' y1='12' x2='19' y2='12' />
                               <polyline points='12 5 19 12 12 19' />
                             </svg>
+                            <a>{result.name}</a>
+                          </li>
+                        )
+                      }
+                      if (result.section === 'Socials') {
+                        return (
+                          <li
+                            key={index}
+                            className={cn(
+                              cardStyle,
+                              result.name === highlightedTab?.textContent
+                                ? 'text-neutral-900 dark:text-neutral-100'
+                                : ''
+                            )}
+                            onMouseOver={handleMouseOver as MouseEventHandler}
+                            onMouseLeave={() => setIsHoveredFromNull(false)}
+                            onClick={() => {
+                              result.perform?.()
+                              setIsOpen(false)
+                            }}
+                          >
+                            {result.keywords === 'twitter' && (
+                              <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                width='20'
+                                height='20'
+                                viewBox='0 0 24 24'
+                                stroke-width='2'
+                                stroke='currentColor'
+                                fill='none'
+                                strokeLinecap='round'
+                                strokeLinejoin='round'
+                              >
+                                <path
+                                  stroke='none'
+                                  d='M0 0h24v24H0z'
+                                  fill='none'
+                                />
+                                <path d='M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z' />
+                              </svg>
+                            )}
+                            {result.keywords === 'github' && (
+                              <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                width='20'
+                                height='20'
+                                viewBox='0 0 24 24'
+                                stroke-width='2'
+                                stroke='currentColor'
+                                fill='none'
+                                strokeLinecap='round'
+                                strokeLinejoin='round'
+                              >
+                                <path
+                                  stroke='none'
+                                  d='M0 0h24v24H0z'
+                                  fill='none'
+                                />
+                                <path d='M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5' />
+                              </svg>
+                            )}
+                            {result.keywords === 'mail' && (
+                              <svg
+                                xmlns='http://www.w3.org/2000/svg'
+                                width='20'
+                                height='20'
+                                viewBox='0 0 24 24'
+                                stroke-width='2'
+                                stroke='currentColor'
+                                fill='none'
+                                strokeLinecap='round'
+                                strokeLinejoin='round'
+                              >
+                                <path
+                                  stroke='none'
+                                  d='M0 0h24v24H0z'
+                                  fill='none'
+                                />
+                                <rect
+                                  x='3'
+                                  y='5'
+                                  width='18'
+                                  height='14'
+                                  rx='2'
+                                />
+                                <polyline points='3 7 12 13 21 7' />
+                              </svg>
+                            )}
                             <a>{result.name}</a>
                           </li>
                         )

@@ -19,7 +19,7 @@ const Website = ({ Component, pageProps, router }: AppProps) => (
       <Meta />
       <Analytics />
       <div>
-        <div className='mt-6'>
+        <div className='sticky top-6 z-10'>
           <CommandMenu />
         </div>
         <main className='pt-16'>
