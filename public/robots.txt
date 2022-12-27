@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://idm1try.ru/sitemap.xml
