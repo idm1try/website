@@ -56,9 +56,24 @@
 }
 
 [data-rehype-pretty-code-title] {
-  @apply inline-flex rounded-lg bg-neutral-800 px-4 pt-2 pb-4 text-sm font-medium text-neutral-100;
+  @apply relative inline-flex rounded-t-lg bg-neutral-800 px-4 pt-2 pb-1 text-sm font-medium text-neutral-100;
+}
+
+[data-rehype-pretty-code-title]:after {
+  content: '';
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  background-color: transparent;
+  border-bottom: 10px solid theme('colors.neutral.800');
+  border-left: 10px solid theme('colors.neutral.800');
+  border-bottom-left-radius: 17px;
+  right: -10px;
+  bottom: -10px;
+  clip-path: inset(0 0 10px 10px);
 }
 
 [data-rehype-pretty-code-title] + pre {
-  @apply -mt-3;
+  @apply mt-0 rounded-tl-none;
 }
