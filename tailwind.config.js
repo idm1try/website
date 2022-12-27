@@ -8,7 +8,7 @@ module.exports = {
         DEFAULT: {
           css: {
             img: {
-              borderRadius: '0.5rem',
+              borderRadius: theme('borderRadius.lg'),
             },
             pre: {
               backgroundColor: theme('colors.neutral.800'),
@@ -16,13 +16,6 @@ module.exports = {
             'pre code': {
               backgroundColor: theme('colors.neutral.800'),
             },
-            blockquote: {
-              borderLeft: 'none',
-              fontStyle: 'normal',
-              fontWeight: '400',
-            },
-            'blockquote p:first-of-type::before': false,
-            'blockquote p:last-of-type::after': false,
           },
         },
       }),

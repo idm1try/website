@@ -1,7 +1,12 @@
 import projectData from '@/data/projects.json'
-import { Project, Project as ProjectProps } from '@/lib/project'
 import Head from 'next/head'
 import Link from 'next/link'
+
+interface ProjectProps {
+  name: string
+  url: string
+  desc: string
+}
 
 export const getStaticProps = () => {
   return {
@@ -31,7 +36,7 @@ const Projects = ({ projects }: { projects: ProjectProps[] }) => (
       className='animated-list animate-in'
       style={{ '--index': 1 } as React.CSSProperties}
     >
-      {projects.map((project: Project) => (
+      {projects.map((project: ProjectProps) => (
         <li key={project.name} className='transition-all duration-300'>
           <Link
             href={project.url}

@@ -7,7 +7,7 @@ const components = {
     <Image
       src={props.src}
       alt={props.alt}
-      width={900}
+      width={700}
       height={600}
       className='mx-auto'
       {...props}
