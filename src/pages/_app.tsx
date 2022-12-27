@@ -18,14 +18,10 @@ const Website = ({ Component, pageProps, router }: AppProps) => (
     <div className='mx-auto max-w-3xl px-6 pb-20 selection:bg-neutral-200 dark:selection:bg-neutral-700'>
       <Meta />
       <Analytics />
-      <div>
-        <div className='sticky top-6 z-10'>
-          <CommandMenu />
-        </div>
-        <main className='pt-16'>
-          <Component {...pageProps} key={router.route} />
-        </main>
-      </div>
+      <CommandMenu />
+      <main className='pt-16'>
+        <Component {...pageProps} key={router.route} />
+      </main>
     </div>
   </ThemeProvider>
 )

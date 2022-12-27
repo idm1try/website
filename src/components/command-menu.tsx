@@ -278,7 +278,7 @@ const CommandMenu = () => {
 
   return (
     <>
-      <div>
+      <div className='sticky top-6 z-10'>
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label='Command Menu'
