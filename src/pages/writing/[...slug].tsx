@@ -35,7 +35,7 @@ const Post = ({ post }: { post: Post }) => {
         <meta property='og:type' content='article' />
         <meta property='og:title' content={`${post.title} | idm1try`} />
         <meta property='article:author' content='idm1try' />
-
+        <meta property='article:published_time' content={post.date} />
         <meta name='twitter:title' content={`${post.title} | idm1try`} />
         <meta name='twitter:image:alt' content={post.title} />
         <meta

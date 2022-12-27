@@ -6,8 +6,16 @@ const Meta = () => {
 
   return (
     <Head>
-      <meta name='msapplication-TileColor' content='#171717' />
-      <meta name='theme-color' content='#171717' />
+      <meta
+        name='theme-color'
+        content='#171717'
+        media='(prefers-color-scheme: dark)'
+      />
+      <meta
+        name='theme-color'
+        content='#fafafa'
+        media='(prefers-color-scheme: light)'
+      />
       <meta name='description' content='Frontend Developer' />
       <link rel='icon' type='image/png' sizes='96x96' href='/favicon.png' />
       <link
@@ -15,12 +23,14 @@ const Meta = () => {
         sizes='180x180'
         href='apple-touch-icon.png'
       />
-
-      <meta property='og:type' content='profile' />
+      <meta name='robots' content='follow, index' />
+      <meta property='og:type' content='website' />
       <meta property='og:title' content='idm1try' />
+      <meta property='og:site_name' content='idm1try' />
       <meta property='og:description' content='Frontend Developer' />
+      <meta property='og:locale' content='en_US' />
       <meta property='og:url' content={`https://idm1try.ru${router.asPath}`} />
-      <meta property='profile:username' content='idm1try' />
+      <link rel='canonical' href={`https://idm1try.ru${router.asPath}`} />
       <meta
         property='og:image'
         content='https://idm1try.ru/api/og?heading=idm1try&desc=Frontend+Developer'
