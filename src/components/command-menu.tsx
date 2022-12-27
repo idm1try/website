@@ -284,15 +284,27 @@ const CommandMenu = () => {
           aria-label='Command Menu'
           className={cn(
             'rounded-lg border border-neutral-400',
-            'border-opacity-30 bg-white px-2 py-2 text-2xl',
+            'border-opacity-30 bg-white px-2 py-2',
             'text-neutral-700 shadow-sm hover:border-opacity-50',
             'transition-all duration-300 hover:text-neutral-900',
-            'leading-none dark:border-neutral-500 dark:border-opacity-30',
+            'dark:border-neutral-500 dark:border-opacity-30',
             'hover:shadow-sm dark:bg-neutral-900 dark:text-neutral-300',
             'dark:hover:border-opacity-50 dark:hover:text-white'
           )}
         >
-          ⌘
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='24'
+            height='24'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            strokeWidth='2'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+          >
+            <path d='M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z' />
+          </svg>
         </button>
       </div>
       <Transition
