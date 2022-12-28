@@ -40,7 +40,7 @@ const Socials: Action[] = [
     name: 'Mail',
     keywords: 'mail',
     perform: () => {
-      window.open('mailto:admin@idm1try.ru')
+      window.open('mailto:me@idm1try.ru')
     },
     section: 'Socials',
   },
