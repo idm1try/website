@@ -53,15 +53,14 @@ export default async function handler(req: NextRequest) {
             </div>
             {values.date && (
               <div
-                tw='text-neutral-400 text-2xl flex'
+                tw='text-neutral-400 text-2xl'
                 style={{ fontFamily: 'Inter', fontWeight: 'normal' }}
               >
                 {new Date(values.date).toLocaleString('en-US', {
-                  month: 'short',
-                  day: '2-digit',
+                  month: 'numeric',
+                  day: 'numeric',
                   year: 'numeric',
-                })}{' '}
-                / {values.readtime}
+                })}
               </div>
             )}
           </div>

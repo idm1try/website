@@ -35,8 +35,8 @@ const Writing = () => {
             >
               <span className='text-neutral-600 dark:text-neutral-400 md:w-28'>
                 {new Date(post.date).toLocaleString('en-US', {
-                  month: 'short',
-                  day: '2-digit',
+                  month: 'numeric',
+                  day: 'numeric',
                   year: 'numeric',
                 })}
               </span>

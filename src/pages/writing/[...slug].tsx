@@ -40,26 +40,25 @@ const Post = ({ post }: { post: Post }) => {
         <meta name='twitter:image:alt' content={post.title} />
         <meta
           property='og:image'
-          content={`https://idm1try.ru/api/og?heading=${post.title}&date=${post.date}&readtime=${post.time.text}`}
+          content={`https://idm1try.ru/api/og?heading=${post.title}&date=${post.date}`}
         />
         <meta
           name='twitter:image'
-          content={`https://idm1try.ru/api/og?heading=${post.title}&date=${post.date}&readtime=${post.time.text}`}
+          content={`https://idm1try.ru/api/og?heading=${post.title}&date=${post.date}`}
         />
       </Head>
       <article>
         <div>
-          <h1 className='mb-3 animate-in text-4xl font-bold'>{post.title}</h1>
+          <h1 className='mb-5 animate-in text-4xl font-bold'>{post.title}</h1>
           <div
-            className='mb-7 animate-in text-neutral-600 dark:text-neutral-400'
+            className='mb-5 animate-in text-neutral-600 dark:text-neutral-400'
             style={{ '--index': 1 } as React.CSSProperties}
           >
             {new Date(post.date).toLocaleString('en-US', {
-              month: 'short',
-              day: '2-digit',
+              month: 'numeric',
+              day: 'numeric',
               year: 'numeric',
-            })}{' '}
-            / {post.time.text}
+            })}
           </div>
         </div>
         <div

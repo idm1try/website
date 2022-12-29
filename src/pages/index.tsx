@@ -8,7 +8,6 @@ const Home = () => {
       hour: 'numeric',
       minute: 'numeric',
       second: 'numeric',
-      hourCycle: 'h23',
     })
   )
 
@@ -20,7 +19,6 @@ const Home = () => {
           hour: 'numeric',
           minute: 'numeric',
           second: 'numeric',
-          hourCycle: 'h23',
         })
       )
     }, 1000)

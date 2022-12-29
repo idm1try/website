@@ -3,7 +3,6 @@ import {
   defineDocumentType,
   makeSource,
 } from 'contentlayer/source-files'
-import readingTime from 'reading-time'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
@@ -16,10 +15,6 @@ const computedFields: ComputedFields = {
   slugAsParams: {
     type: 'string',
     resolve: doc => doc._raw.flattenedPath.split('/').slice(1).join('/'),
-  },
-  time: {
-    type: 'json',
-    resolve: doc => readingTime(doc.body.raw),
   },
 }
 
