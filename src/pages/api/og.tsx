@@ -64,12 +64,6 @@ export default async function handler(req: NextRequest) {
               </div>
             )}
           </div>
-          <div
-            tw='flex items-center w-full justify-between text-neutral-400 text-xl'
-            style={{ fontFamily: 'Inter', fontWeight: 'normal' }}
-          >
-            idm1try.ru
-          </div>
         </div>
       ),
       {
