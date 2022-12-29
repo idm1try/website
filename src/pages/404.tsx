@@ -5,7 +5,7 @@ import React from 'react'
 const NotFound = () => (
   <>
     <Head>
-      <title>Page Not Found | idm1try</title>
+      <title>Page not found | idm1try</title>
     </Head>
     <div>
       <h1 className='mb-5 animate-in text-4xl font-bold'>404</h1>
@@ -13,7 +13,7 @@ const NotFound = () => (
         className='mb-5 animate-in'
         style={{ '--index': 1 } as React.CSSProperties}
       >
-        Whoops, it looks like the page you were looking for doesn&apos;t exist!
+        Oops! Page not found
       </p>
       <Link
         href='/'
