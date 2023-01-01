@@ -31,11 +31,8 @@ const Projects = ({ projects }: { projects: ProjectProps[] }) => (
         content='https://idm1try.ru/api/og?heading=Projects'
       />
     </Head>
-    <h1 className='mb-7 animate-in text-4xl font-bold'>Projects</h1>
-    <ul
-      className='animated-list animate-in'
-      style={{ '--index': 1 } as React.CSSProperties}
-    >
+    <h1 className='mb-7 text-4xl font-bold'>Projects</h1>
+    <ul className='animated-list'>
       {projects.map((project: ProjectProps) => (
         <li key={project.name} className='transition-all duration-300'>
           <Link

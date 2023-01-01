@@ -29,7 +29,7 @@ const Post = ({ post }: { post: Post }) => {
   if (!post) return <ErrorPage statusCode={404} />
 
   return (
-    <div>
+    <>
       <Head>
         <title>{`${post.title} | idm1try`}</title>
         <meta property='og:type' content='article' />
@@ -49,31 +49,27 @@ const Post = ({ post }: { post: Post }) => {
       </Head>
       <article>
         <div>
-          <h1 className='mb-5 animate-in text-4xl font-bold'>{post.title}</h1>
-          <div
-            className='mb-5 animate-in text-neutral-600 dark:text-neutral-400'
-            style={{ '--index': 1 } as React.CSSProperties}
-          >
+          <h1 className='mb-5 text-4xl font-bold'>{post.title}</h1>
+          <p className='mb-5 text-neutral-600 dark:text-neutral-400'>
             {new Date(post.date).toLocaleString('en-US', {
               month: 'numeric',
               day: 'numeric',
               year: 'numeric',
             })}
-          </div>
+          </p>
         </div>
         <div
           className={cn(
             'prose-md prose prose-neutral dark:prose-invert',
-            'animate-in prose-blockquote:text-neutral-600',
+            'prose-blockquote:text-neutral-600',
             'text-neutral-900 dark:text-neutral-100',
             'dark:prose-blockquote:text-neutral-400'
           )}
-          style={{ '--index': 2 } as React.CSSProperties}
         >
           <Mdx code={post.body.code} />
         </div>
       </article>
-    </div>
+    </>
   )
 }
 

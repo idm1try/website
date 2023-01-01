@@ -22,11 +22,8 @@ const Writing = () => {
           content='https://idm1try.ru/api/og?heading=Writing'
         />
       </Head>
-      <h1 className='mb-7 animate-in text-4xl font-bold'>Writing</h1>
-      <ul
-        className='animated-list animate-in'
-        style={{ '--index': 1 } as React.CSSProperties}
-      >
+      <h1 className='mb-7 text-4xl font-bold'>Writing</h1>
+      <ul className='animated-list'>
         {sortedPosts.map((post: Post) => (
           <li key={post._id} className='transition-all duration-300'>
             <Link
