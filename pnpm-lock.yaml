@@ -3,7 +3,6 @@ lockfileVersion: 5.4
 specifiers:
   '@headlessui/react': ^1.7.7
   '@next/font': ^13.1.1
-  '@tailwindcss/line-clamp': ^0.4.2
   '@tailwindcss/typography': ^0.5.8
   '@types/node': 18.7.9
   '@types/react': 18.0.17
@@ -48,7 +47,6 @@ dependencies:
   shiki: 0.11.1
 
 devDependencies:
-  '@tailwindcss/line-clamp': 0.4.2_tailwindcss@3.2.4
   '@tailwindcss/typography': 0.5.8_tailwindcss@3.2.4
   '@types/node': 18.7.9
   '@types/react': 18.0.17
@@ -981,14 +979,6 @@ packages:
     dependencies:
       tslib: 2.4.1
     dev: false
-
-  /@tailwindcss/line-clamp/0.4.2_tailwindcss@3.2.4:
-    resolution: {integrity: sha512-HFzAQuqYCjyy/SX9sLGB1lroPzmcnWv1FHkIpmypte10hptf4oPUfucryMKovZh2u0uiS9U5Ty3GghWfEJGwVw==}
-    peerDependencies:
-      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
-    dependencies:
-      tailwindcss: 3.2.4_postcss@8.4.20
-    dev: true
 
   /@tailwindcss/typography/0.5.8_tailwindcss@3.2.4:
     resolution: {integrity: sha512-xGQEp8KXN8Sd8m6R4xYmwxghmswrd0cPnNI2Lc6fmrC3OojysTBJJGSIVwPV56q4t6THFUK3HJ0EaWwpglSxWw==}
