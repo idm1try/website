@@ -16,6 +16,7 @@ const Meta = () => {
         content='#fafafa'
         media='(prefers-color-scheme: light)'
       />
+      <meta name='msapplication-TileColor' content='#171717' />
       <meta name='description' content='Frontend Developer' />
       <link rel='icon' type='image/png' sizes='96x96' href='/favicon.png' />
       <link
@@ -23,6 +24,7 @@ const Meta = () => {
         sizes='180x180'
         href='apple-touch-icon.png'
       />
+      <link href='/site.webmanifest' rel='manifest' />
       <meta name='robots' content='follow, index' />
       <meta property='og:type' content='website' />
       <meta property='og:title' content='idm1try' />
