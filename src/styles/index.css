@@ -64,7 +64,7 @@
   background-color: transparent;
   border-bottom: 10px solid theme('colors.neutral.800');
   border-left: 10px solid theme('colors.neutral.800');
-  border-bottom-left-radius: 17px;
+  border-bottom-left-radius: 20px;
   right: -10px;
   bottom: -10px;
   clip-path: inset(0 0 10px 10px);
