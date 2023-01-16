@@ -60,7 +60,7 @@ const Post = ({ post }: { post: Post }) => {
         </div>
         <div
           className={cn(
-            'prose-md prose prose-neutral dark:prose-invert',
+            'prose prose-neutral dark:prose-invert',
             'prose-blockquote:text-neutral-600',
             'text-neutral-900 dark:text-neutral-100',
             'dark:prose-blockquote:text-neutral-400'

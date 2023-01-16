@@ -18,10 +18,5 @@
     "name": "Snake",
     "url": "https://snake.idm1try.ru",
     "desc": "Browser snake game"
-  },
-  {
-    "name": "Links",
-    "url": "https://links.idm1try.ru",
-    "desc": "Simple links card"
   }
 ]

@@ -17,13 +17,15 @@
     "@next/font": "^13.1.2",
     "@vercel/analytics": "^0.1.8",
     "@vercel/og": "^0.0.25",
+    "clsx": "^1.2.1",
     "contentlayer": "^0.2.9",
     "next": "^13.1.2",
     "next-contentlayer": "^0.2.9",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "shiki": "^0.11.1"
+    "shiki": "^0.11.1",
+    "tailwind-merge": "^1.8.1"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
@@ -31,15 +33,12 @@
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "@types/sharp": "^0.31.1",
-    "@typescript-eslint/eslint-plugin": "^5.48.1",
-    "@typescript-eslint/parser": "^5.48.1",
     "autoprefixer": "^10.4.13",
+    "esbuild": "^0.15.18",
     "eslint-config-next": "^13.1.2",
-    "eslint-config-prettier": "^8.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-tailwindcss": "^3.8.0",
     "postcss": "^8.4.21",
     "prettier": "^2.8.3",
-    "prettier-plugin-tailwindcss": "^0.1.13",
     "rehype-pretty-code": "^0.5.1",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^3.0.1",
@@ -52,26 +51,22 @@
     "singleQuote": true,
     "jsxSingleQuote": true,
     "proseWrap": "always",
-    "semi": false,
-    "plugins": [
-      "prettier-plugin-tailwindcss"
-    ]
+    "semi": false
   },
   "eslintConfig": {
-    "parser": "@typescript-eslint/parser",
     "plugins": [
-      "@typescript-eslint",
-      "prettier"
+      "tailwindcss"
     ],
     "extends": [
-      "eslint:recommended",
-      "plugin:@typescript-eslint/recommended",
       "next",
-      "prettier"
+      "plugin:tailwindcss/recommended"
     ],
-    "rules": {
-      "prettier/prettier": "error",
-      "@typescript-eslint/no-explicit-any": "off"
+    "settings": {
+      "tailwindcss": {
+        "callees": [
+          "cn"
+        ]
+      }
     }
   }
 }

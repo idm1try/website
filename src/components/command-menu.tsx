@@ -283,13 +283,12 @@ const CommandMenu = () => {
           onClick={() => setIsOpen(!isOpen)}
           aria-label='Command Menu'
           className={cn(
-            'rounded-lg border border-neutral-400',
-            'border-opacity-30 bg-white px-2 py-2',
-            'text-neutral-700 shadow-sm hover:border-opacity-50',
-            'transition-all duration-300 hover:text-neutral-900',
-            'dark:border-neutral-500 dark:border-opacity-30',
+            'rounded-lg border border-neutral-400/30',
+            'bg-white p-2 text-neutral-700 shadow-sm',
+            'transition-all duration-300 hover:text-neutral-900/50',
+            'dark:border-neutral-500/30',
             'hover:shadow-sm dark:bg-neutral-900 dark:text-neutral-300',
-            'dark:hover:border-opacity-50 dark:hover:text-white'
+            'dark:hover:border-neutral-500/50 dark:hover:text-white'
           )}
         >
           <svg
