@@ -7,7 +7,7 @@
 }
 
 .underlined {
-  @apply underline decoration-neutral-300 decoration-2 underline-offset-4 transition-colors duration-300 hover:decoration-neutral-400 dark:decoration-neutral-700 dark:hover:decoration-neutral-500;
+  @apply underline decoration-neutral-300 decoration-2 underline-offset-4 transition-colors duration-300 hover:decoration-neutral-400 dark:active:decoration-neutral-400 active:decoration-neutral-500 dark:decoration-neutral-700 dark:hover:decoration-neutral-500;
 }
 
 @media (hover: hover) and (pointer: fine) {

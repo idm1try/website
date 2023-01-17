@@ -1,6 +1,5 @@
 import { allPosts, Post } from '.contentlayer/generated'
 import Mdx from '@/components/mdx'
-import cn from '@/lib/classNames'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import React from 'react'
@@ -58,14 +57,7 @@ const Post = ({ post }: { post: Post }) => {
             })}
           </p>
         </div>
-        <div
-          className={cn(
-            'prose prose-neutral dark:prose-invert',
-            'prose-blockquote:text-neutral-600',
-            'text-neutral-900 dark:text-neutral-100',
-            'dark:prose-blockquote:text-neutral-400'
-          )}
-        >
+        <div className='prose prose-neutral text-neutral-900 prose-blockquote:text-neutral-600 dark:prose-invert dark:text-neutral-100 dark:prose-blockquote:text-neutral-400'>
           <Mdx code={post.body.code} />
         </div>
       </article>

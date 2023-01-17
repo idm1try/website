@@ -9,7 +9,6 @@ import React, {
 import { Dialog, Transition } from '@headlessui/react'
 import { useTheme } from 'next-themes'
 import { useRouter } from 'next/router'
-import cn from '@/lib/classNames'
 
 interface Action {
   name: string
@@ -282,14 +281,7 @@ const CommandMenu = () => {
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label='Command Menu'
-          className={cn(
-            'rounded-lg border border-neutral-400/30',
-            'bg-white p-2 text-neutral-700 shadow-sm',
-            'transition-all duration-300 hover:text-neutral-900/50',
-            'dark:border-neutral-500/30',
-            'hover:shadow-sm dark:bg-neutral-900 dark:text-neutral-300',
-            'dark:hover:border-neutral-500/50 dark:hover:text-white'
-          )}
+          className='rounded-lg border border-neutral-400/30 bg-white p-2 text-neutral-700 shadow-sm transition-all duration-300 hover:text-neutral-900/50 hover:shadow-sm dark:border-neutral-500/30 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:border-neutral-500/50 dark:hover:text-white'
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -336,25 +328,15 @@ const CommandMenu = () => {
             leaveTo='opacity-0 scale-95'
             className='mx-auto max-w-2xl'
           >
-            <div
-              className={cn(
-                'ring-1 ring-black/10 dark:ring-neutral-700/50',
-                'relative flex flex-col rounded-lg shadow-2xl',
-                'bg-neutral-50 dark:bg-neutral-900'
-              )}
-            >
+            <div className='relative flex flex-col rounded-lg bg-neutral-50 shadow-2xl ring-1 ring-black/10 dark:bg-neutral-900 dark:ring-neutral-700/50'>
               <Dialog.Title
-                className={cn(
-                  'border-black/10 dark:border-neutral-700/50',
+                className={`border-black/10 dark:border-neutral-700/50 ${
                   searchResults.length ? 'border-b' : ''
-                )}
+                }`}
               >
                 <input
                   autoComplete='off'
-                  className={cn(
-                    'placeholder:text-neutral-600 dark:placeholder:text-neutral-400',
-                    'w-full bg-transparent p-4 outline-none focus:ring-0'
-                  )}
+                  className='w-full bg-transparent p-4 outline-none placeholder:text-neutral-600 focus:ring-0 dark:placeholder:text-neutral-400'
                   placeholder={placeholder}
                   aria-label='What do you need?'
                   value={input}
@@ -367,29 +349,21 @@ const CommandMenu = () => {
                 {searchResults.length > 0 && (
                   <ul
                     ref={parentRef}
-                    className={cn(
-                      'relative m-3',
-                      'max-h-[32vh] overflow-auto',
-                      'text-neutral-600 dark:text-neutral-300'
-                    )}
+                    className='relative m-3 max-h-[32vh] overflow-auto text-neutral-600 dark:text-neutral-300'
                   >
                     <div
                       ref={highlightRef}
-                      className={cn(
-                        'absolute block h-12 w-full',
-                        'duration-200',
+                      className={`absolute block h-12 w-full duration-200 ${
                         isHoveredFromNull
                           ? 'transition-none'
                           : 'transition-transform'
-                      )}
+                      }`}
                       style={{ transform }}
                     >
                       <div
-                        className={cn(
-                          'h-full w-full rounded-xl bg-neutral-200/40 dark:bg-neutral-800/75',
-                          highlightedTab ? 'opacity-100' : 'opacity-0',
-                          'transition-opacity duration-300'
-                        )}
+                        className={`h-full w-full rounded-xl bg-neutral-200/40 transition-opacity duration-300 dark:bg-neutral-800/75 ${
+                          highlightedTab ? 'opacity-100' : 'opacity-0'
+                        }`}
                       />
                     </div>
 
@@ -408,12 +382,7 @@ const CommandMenu = () => {
                         return (
                           <li
                             key={index}
-                            className={cn(
-                              cardStyle,
-                              result.name === highlightedTab?.textContent
-                                ? 'text-neutral-900 dark:text-neutral-100'
-                                : ''
-                            )}
+                            className={cardStyle}
                             onMouseOver={handleMouseOver as MouseEventHandler}
                             onMouseLeave={() => setIsHoveredFromNull(false)}
                             onClick={() => {
@@ -443,12 +412,7 @@ const CommandMenu = () => {
                         return (
                           <li
                             key={index}
-                            className={cn(
-                              cardStyle,
-                              result.name === highlightedTab?.textContent
-                                ? 'text-neutral-900 dark:text-neutral-100'
-                                : ''
-                            )}
+                            className={cardStyle}
                             onMouseOver={handleMouseOver as MouseEventHandler}
                             onMouseLeave={() => setIsHoveredFromNull(false)}
                             onClick={() => {
@@ -531,12 +495,7 @@ const CommandMenu = () => {
                         return (
                           <li
                             key={index}
-                            className={cn(
-                              cardStyle,
-                              result.name === highlightedTab?.textContent
-                                ? 'text-neutral-900 dark:text-neutral-100'
-                                : ''
-                            )}
+                            className={cardStyle}
                             onMouseOver={handleMouseOver as MouseEventHandler}
                             onMouseLeave={() => setIsHoveredFromNull(false)}
                             onClick={() => {

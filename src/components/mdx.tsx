@@ -1,6 +1,5 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from 'next/image'
-import cn from '@/lib/classNames'
 
 const components = {
   img: ({ ...props }) => (
@@ -16,10 +15,7 @@ const components = {
   h1: ({ ...props }) => (
     <a href={`#${props.id}`} className='no-underline'>
       <h1
-        className={cn(
-          'scroll-mt-16 decoration-neutral-300 decoration-2',
-          'underline-offset-4 hover:underline dark:decoration-neutral-700'
-        )}
+        className='scroll-mt-16 decoration-neutral-300 decoration-2 underline-offset-4 transition-colors duration-300 hover:underline active:decoration-neutral-500 dark:decoration-neutral-700 dark:active:decoration-neutral-400'
         {...props}
       />
     </a>
@@ -27,10 +23,7 @@ const components = {
   h2: ({ ...props }) => (
     <a href={`#${props.id}`} className='no-underline'>
       <h2
-        className={cn(
-          'scroll-mt-16 decoration-neutral-300 decoration-2',
-          'underline-offset-4 hover:underline dark:decoration-neutral-700'
-        )}
+        className='scroll-mt-16 decoration-neutral-300 decoration-2 underline-offset-4 transition-colors duration-300 hover:underline active:decoration-neutral-500 dark:decoration-neutral-700 dark:active:decoration-neutral-400'
         {...props}
       />
     </a>
@@ -38,10 +31,7 @@ const components = {
   h3: ({ ...props }) => (
     <a href={`#${props.id}`} className='no-underline'>
       <h3
-        className={cn(
-          'scroll-mt-16 decoration-neutral-300 decoration-2',
-          'underline-offset-4 hover:underline dark:decoration-neutral-700'
-        )}
+        className='scroll-mt-16 decoration-neutral-300 decoration-2 underline-offset-4 transition-colors duration-300 hover:underline active:decoration-neutral-500 dark:decoration-neutral-700 dark:active:decoration-neutral-400'
         {...props}
       />
     </a>
@@ -49,10 +39,7 @@ const components = {
   h4: ({ ...props }) => (
     <a href={`#${props.id}`} className='no-underline'>
       <h4
-        className={cn(
-          'scroll-mt-16 decoration-neutral-300 decoration-2',
-          'underline-offset-4 hover:underline dark:decoration-neutral-700'
-        )}
+        className='scroll-mt-16 decoration-neutral-300 decoration-2 underline-offset-4 transition-colors duration-300 hover:underline active:decoration-neutral-500 dark:decoration-neutral-700 dark:active:decoration-neutral-400'
         {...props}
       />
     </a>
