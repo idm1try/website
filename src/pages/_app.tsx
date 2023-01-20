@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/react'
 import { ThemeProvider } from 'next-themes'
 import { AppProps } from 'next/app'
 
-const inter = Inter({ display: 'swap' })
+const inter = Inter()
 
 const Website = ({ Component, pageProps, router }: AppProps) => (
   <ThemeProvider attribute='class'>
