@@ -1,22 +1,8 @@
-import projectData from '@/data/projects.json'
+import { projectsData } from '@/content/projects'
 import Head from 'next/head'
 import Link from 'next/link'
 
-interface ProjectProps {
-  name: string
-  url: string
-  desc: string
-}
-
-export const getStaticProps = () => {
-  return {
-    props: {
-      projects: projectData,
-    },
-  }
-}
-
-const Projects = ({ projects }: { projects: ProjectProps[] }) => (
+const Projects = () => (
   <div>
     <Head>
       <title>projects | idm1try</title>
@@ -33,7 +19,7 @@ const Projects = ({ projects }: { projects: ProjectProps[] }) => (
     </Head>
     <h1 className='mb-7 text-4xl font-bold'>Projects</h1>
     <ul className='animated-list'>
-      {projects.map((project: ProjectProps) => (
+      {projectsData.map(project => (
         <li key={project.name} className='transition-all duration-300'>
           <Link
             href={project.url}

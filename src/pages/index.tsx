@@ -30,7 +30,7 @@ const Home = () => {
     <div>
       <h1 className='mb-5 text-4xl font-bold'>idm1try</h1>
       <p className='mb-5 text-neutral-600 dark:text-neutral-400'>
-        {mounted && time} / Neftekamsk, Russia / Merry Christmas!
+        {mounted && time} / Neftekamsk, Russia
       </p>
       <div className='space-y-5'>
         <p>Hi there! I&apos;m Dmitry, a frontend developer</p>
