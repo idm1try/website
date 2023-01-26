@@ -3,6 +3,7 @@ import Mdx from '@/components/mdx'
 import ErrorPage from 'next/error'
 import Head from 'next/head'
 import React from 'react'
+import Balancer from 'react-wrap-balancer'
 
 export const getStaticPaths = async () => {
   return {
@@ -48,7 +49,9 @@ const Post = ({ post }: { post: Post }) => {
       </Head>
       <article>
         <div>
-          <h1 className='mb-5 text-4xl font-bold'>{post.title}</h1>
+          <h1 className='mb-5 text-4xl font-bold'>
+            <Balancer>{post.title}</Balancer>
+          </h1>
           <p className='mb-5 text-neutral-600 dark:text-neutral-400'>
             {new Date(post.date).toLocaleString('en-US', {
               month: 'numeric',

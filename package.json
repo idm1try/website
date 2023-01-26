@@ -17,12 +17,14 @@
     "@next/font": "^13.1.5",
     "@vercel/analytics": "^0.1.8",
     "@vercel/og": "^0.0.25",
+    "cmdk": "^0.1.21",
     "contentlayer": "^0.2.9",
     "next": "^13.1.5",
     "next-contentlayer": "^0.2.9",
     "next-themes": "^0.2.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-wrap-balancer": "^0.4.0",
     "shiki": "^0.11.1"
   },
   "devDependencies": {

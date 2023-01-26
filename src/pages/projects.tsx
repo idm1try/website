@@ -1,6 +1,34 @@
-import { projectsData } from '@/content/projects'
 import Head from 'next/head'
 import Link from 'next/link'
+
+interface ProjectProps {
+  name: string
+  url: string
+  desc: string
+}
+
+const projectsData: ProjectProps[] = [
+  {
+    name: 'idm1try.ru',
+    url: '/',
+    desc: 'The website you are looking at',
+  },
+  {
+    name: 'Weather',
+    url: 'https://weather.idm1try.ru',
+    desc: 'Simple weather app, uses OpenWeatherMap API',
+  },
+  {
+    name: 'IP info',
+    url: 'https://ip.idm1try.ru',
+    desc: 'IP info with detecting and search ip address',
+  },
+  {
+    name: 'Snake',
+    url: 'https://snake.idm1try.ru',
+    desc: 'Browser snake game',
+  },
+]
 
 const Projects = () => (
   <div>
