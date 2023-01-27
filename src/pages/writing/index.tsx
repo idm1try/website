@@ -22,13 +22,12 @@ const Writing = () => {
           content='https://idm1try.ru/api/og?heading=Writing'
         />
       </Head>
-      <h1 className='mb-7 text-4xl font-bold'>Writing</h1>
       <ul className='animated-list'>
         {sortedPosts.map((post: Post) => (
           <li key={post._id} className='transition-all duration-300'>
             <Link
               href={post.slug}
-              className='flex flex-col gap-1 py-3 md:flex-row md:gap-9'
+              className='-mx-3 flex flex-col gap-1 rounded-xl p-3 focus:bg-neutral-200/40 focus:outline-none dark:focus:bg-neutral-800/75 md:flex-row md:gap-9'
             >
               <span className='text-neutral-600 dark:text-neutral-400 md:w-28'>
                 {new Date(post.date).toLocaleString('en-US', {

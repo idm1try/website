@@ -45,13 +45,12 @@ const Projects = () => (
         content='https://idm1try.ru/api/og?heading=Projects'
       />
     </Head>
-    <h1 className='mb-7 text-4xl font-bold'>Projects</h1>
     <ul className='animated-list'>
       {projectsData.map(project => (
         <li key={project.name} className='transition-all duration-300'>
           <Link
             href={project.url}
-            className='flex flex-col gap-1 py-3 md:flex-row md:gap-9'
+            className='-mx-3 flex flex-col gap-1 rounded-xl p-3 focus:bg-neutral-200/40 focus:outline-none dark:focus:bg-neutral-800/75 md:flex-row md:gap-9'
           >
             <span className='font-medium md:w-28'>{project.name}</span>
             <span className='text-neutral-600 dark:text-neutral-400'>

@@ -277,11 +277,11 @@ const CommandMenu = () => {
 
   return (
     <>
-      <div className='sticky top-6 z-10'>
+      <div className='sticky top-6 z-10 flex'>
         <button
           onClick={() => setIsOpen(!isOpen)}
           aria-label='Command Menu'
-          className='rounded-lg border border-neutral-400/30 bg-white p-2 text-neutral-700 shadow-sm transition-all duration-300 hover:text-neutral-900/50 hover:shadow-sm dark:border-neutral-500/30 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:border-neutral-500/50 dark:hover:text-white'
+          className='rounded-lg border border-neutral-400/30 bg-white p-2 text-neutral-700 shadow-sm transition-all duration-300 hover:text-neutral-900/50 hover:shadow-sm focus:text-neutral-900/50 focus:shadow-sm focus:outline-none dark:border-neutral-500/30 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:border-neutral-500/50 dark:hover:text-white dark:focus:border-neutral-500/50 dark:focus:text-white'
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -297,6 +297,11 @@ const CommandMenu = () => {
             <path d='M18 3a3 3 0 0 0-3 3v12a3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3H6a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3V6a3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 3 3 0 0 0-3-3z' />
           </svg>
         </button>
+        {router.asPath !== '/' && (
+          <div className='ml-3 rounded-lg border border-neutral-400/30 bg-white p-2 text-neutral-700 shadow-sm dark:border-neutral-500/30 dark:bg-neutral-900 dark:text-neutral-300'>
+            {router.asPath}
+          </div>
+        )}
       </div>
       <Transition
         show={isOpen}
