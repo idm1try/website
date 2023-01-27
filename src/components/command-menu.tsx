@@ -298,7 +298,7 @@ const CommandMenu = () => {
           </svg>
         </button>
         {router.asPath !== '/' && (
-          <div className='ml-3 rounded-lg border border-neutral-400/30 bg-white p-2 text-neutral-700 shadow-sm dark:border-neutral-500/30 dark:bg-neutral-900 dark:text-neutral-300'>
+          <div className='ml-3 truncate rounded-lg border border-neutral-400/30 bg-white p-2 text-neutral-700 shadow-sm dark:border-neutral-500/30 dark:bg-neutral-900 dark:text-neutral-300'>
             {router.asPath}
           </div>
         )}
