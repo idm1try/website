@@ -20,10 +20,31 @@
   }
 }
 
+.prose pre {
+  @apply border border-neutral-800 bg-neutral-900;
+}
+
+.prose pre code {
+  @apply text-neutral-800 dark:text-neutral-200 p-0;
+  border: initial;
+}
+
+.prose .callout > p {
+  margin: 0 !important;
+}
+
+[data-rehype-pretty-code-fragment] pre {
+  @apply px-0;
+}
+
 [data-rehype-pretty-code-fragment] code {
-  display: grid;
+  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black;
   counter-reset: line;
   box-decoration-break: clone;
+}
+
+[data-rehype-pretty-code-fragment] .line {
+  @apply py-1 px-4;
 }
 
 [data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
@@ -33,43 +54,25 @@
   width: 1rem;
   margin-right: 1rem;
   text-align: right;
-}
-
-[data-rehype-pretty-code-fragment] pre {
-  @apply px-0;
-}
-
-[data-rehype-pretty-code-fragment] .line {
-  @apply px-6 py-1;
+  color: gray;
 }
 
 [data-rehype-pretty-code-fragment] .line--highlighted {
-  @apply bg-[#2a2b3c];
+  @apply bg-neutral-800/70;
+}
+
+[data-rehype-pretty-code-fragment] .line-highlighted span {
+  @apply relative;
 }
 
 [data-rehype-pretty-code-fragment] .word--highlighted {
-  @apply rounded-md bg-[#2a2b3c] p-1;
+  @apply rounded-md bg-neutral-800/70 bg-opacity-10 p-1;
 }
 
 [data-rehype-pretty-code-title] {
-  @apply relative inline-flex rounded-t-lg bg-neutral-800 px-4 pt-2 pb-1 text-sm font-medium text-neutral-100;
-}
-
-[data-rehype-pretty-code-title]:after {
-  content: '';
-  display: block;
-  width: 20px;
-  height: 20px;
-  position: absolute;
-  background-color: transparent;
-  border-bottom: 10px solid theme('colors.neutral.800');
-  border-left: 10px solid theme('colors.neutral.800');
-  border-bottom-left-radius: 20px;
-  right: -10px;
-  bottom: -10px;
-  clip-path: inset(0 0 10px 10px);
+  @apply px-4 py-3 font-mono text-xs font-medium border rounded-t-lg text-neutral-200 border-[#333333] bg-[#1c1c1c];
 }
 
 [data-rehype-pretty-code-title] + pre {
-  @apply mt-0 rounded-tl-none;
+  @apply mt-0 rounded-t-none border-t-0;
 }

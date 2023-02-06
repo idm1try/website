@@ -1,27 +1,23 @@
 /* @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./src/**/*.{ts,tsx,mdx,mdx}'],
-  darkMode: 'class',
   theme: {
     extend: {
-      typography: theme => ({
-        DEFAULT: {
+      fontFamily: {
+        sans: ['var(--font-sans)'],
+        mono: ['var(--font-mono)'],
+      },
+      typography: {
+        quoteless: {
           css: {
-            img: {
-              borderRadius: theme('borderRadius.lg'),
-            },
-            pre: {
-              backgroundColor: theme('colors.neutral.800'),
-            },
-            'pre code': {
-              backgroundColor: theme('colors.neutral.800'),
-            },
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:first-of-type::after': { content: 'none' },
           },
         },
-      }),
+      },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography'), require('tailwindcss-animate')],
   future: {
     hoverOnlyWhenSupported: true,
   },

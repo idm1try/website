@@ -1,4 +1,3 @@
-import Head from 'next/head'
 import Link from 'next/link'
 
 interface ProjectProps {
@@ -30,21 +29,21 @@ const projectsData: ProjectProps[] = [
   },
 ]
 
+export const metadata = {
+  title: 'Projects',
+  twitter: {
+    title: 'Projects',
+    images: 'https://idm1try.ru/api/og?heading=Projects',
+  },
+  openGraph: {
+    title: 'Projects',
+    url: 'https://idm1try.ru/projects',
+    images: 'https://idm1try.ru/api/og?heading=Projects',
+  },
+}
+
 const Projects = () => (
-  <div>
-    <Head>
-      <title>projects | idm1try</title>
-      <meta property='og:title' content='projects | idm1try' />
-      <meta name='twitter:title' content='projects | idm1try' />
-      <meta
-        property='og:image'
-        content='https://idm1try.ru/api/og?heading=Projects'
-      />
-      <meta
-        name='twitter:image'
-        content='https://idm1try.ru/api/og?heading=Projects'
-      />
-    </Head>
+  <section>
     <ul className='animated-list'>
       {projectsData.map(project => (
         <li key={project.name} className='transition-all duration-300'>
@@ -60,7 +59,7 @@ const Projects = () => (
         </li>
       ))}
     </ul>
-  </div>
+  </section>
 )
 
 export default Projects

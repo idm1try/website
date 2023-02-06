@@ -2,7 +2,7 @@ import { ImageResponse } from '@vercel/og'
 import { NextRequest } from 'next/server'
 
 export const config = {
-  runtime: 'experimental-edge',
+  runtime: 'edge',
 }
 
 const interRegular = fetch(
@@ -29,40 +29,26 @@ export default async function handler(req: NextRequest) {
     return new ImageResponse(
       (
         <div
-          tw='flex relative flex-col p-20 w-full h-full items-start text-neutral-100'
+          tw='flex relative flex-col px-20 py-30 w-full h-full items-start text-neutral-100'
           style={{
             background: 'linear-gradient(56deg, #171717, #262626, #404040)',
           }}
         >
-          <div tw='flex flex-col flex-1 py-10'>
-            <div
-              tw='flex leading-[1.1] text-[80px] mb-12'
-              style={{
-                fontFamily: 'Inter',
-                fontWeight: 'bolder',
-                fontSize,
-              }}
-            >
-              {heading}
-            </div>
-            <div
-              tw='text-neutral-400 text-2xl'
-              style={{ fontFamily: 'Inter', fontWeight: 'normal' }}
-            >
-              {values.desc}
-            </div>
-            {values.date && (
-              <div
-                tw='text-neutral-400 text-2xl'
-                style={{ fontFamily: 'Inter', fontWeight: 'normal' }}
-              >
-                {new Date(values.date).toLocaleString('en-US', {
-                  month: 'numeric',
-                  day: 'numeric',
-                  year: 'numeric',
-                })}
-              </div>
-            )}
+          <div
+            tw='flex leading-[1.1] text-[80px] mb-12'
+            style={{
+              fontFamily: 'Inter',
+              fontWeight: 'bolder',
+              fontSize,
+            }}
+          >
+            {heading}
+          </div>
+          <div
+            tw='text-neutral-400 text-3xl'
+            style={{ fontFamily: 'Inter', fontWeight: 'normal' }}
+          >
+            {values.desc}
           </div>
         </div>
       ),

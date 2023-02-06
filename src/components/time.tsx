@@ -1,6 +1,8 @@
-import React, { useEffect, useState } from 'react'
+'use client'
 
-const Home = () => {
+import { useState, useEffect } from 'react'
+
+const Time = () => {
   const [mounted, setMounted] = useState(false)
   const [time, setTime] = useState(
     new Date().toLocaleString('en-US', {
@@ -27,18 +29,10 @@ const Home = () => {
   useEffect(() => setMounted(true), [])
 
   return (
-    <div>
-      <h1 className='mb-5 text-4xl font-bold'>idm1try</h1>
-      <p className='mb-5 text-neutral-600 dark:text-neutral-400'>
-        {mounted && time} / Neftekamsk, Russia
-      </p>
-      <div className='space-y-5'>
-        <p>Hi there! I&apos;m Dmitry, a frontend developer</p>
-        <p>Interested in TypeScript and React</p>
-        <p>I&apos;m passionate about minimalism and simplicity</p>
-      </div>
-    </div>
+    <p className='mb-5 text-neutral-600 dark:text-neutral-400'>
+      {mounted && time}
+    </p>
   )
 }
 
-export default Home
+export default Time

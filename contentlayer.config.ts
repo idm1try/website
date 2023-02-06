@@ -10,17 +10,13 @@ import remarkGfm from 'remark-gfm'
 const computedFields: ComputedFields = {
   slug: {
     type: 'string',
-    resolve: doc => `/${doc._raw.flattenedPath}`,
-  },
-  slugAsParams: {
-    type: 'string',
-    resolve: doc => doc._raw.flattenedPath.split('/').slice(1).join('/'),
+    resolve: doc => doc._raw.flattenedPath,
   },
 }
 
-export const Post = defineDocumentType(() => ({
-  name: 'Post',
-  filePathPattern: `writing/**/*.mdx`,
+export const Writing = defineDocumentType(() => ({
+  name: 'Writing',
+  filePathPattern: `**/*.mdx`,
   contentType: 'mdx',
   fields: {
     title: {
@@ -37,7 +33,7 @@ export const Post = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: './src/content',
-  documentTypes: [Post],
+  documentTypes: [Writing],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [
@@ -45,7 +41,7 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: 'github-dark',
+          theme: 'one-dark-pro',
           onVisitLine(node: any) {
             if (node.children.length === 0) {
               node.children = [{ type: 'text', value: ' ' }]

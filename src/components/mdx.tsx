@@ -1,5 +1,6 @@
 import { useMDXComponent } from 'next-contentlayer/hooks'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const components = {
   img: ({ ...props }) => (
@@ -8,7 +9,7 @@ const components = {
       alt={props.alt}
       width={700}
       height={600}
-      className='mx-auto'
+      className='mx-auto rounded-lg'
       {...props}
     />
   ),
@@ -44,13 +45,46 @@ const components = {
       />
     </a>
   ),
-  a: ({ ...props }) => <a {...props} className='underlined' />,
+  a: ({ ...props }) => {
+    const href = props.href
+
+    if (href.startsWith('/')) {
+      return (
+        <Link href={href} className='underlined' {...props}>
+          {props.children}
+        </Link>
+      )
+    }
+
+    if (href.startsWith('#')) {
+      return <a {...props} className='underlined' />
+    }
+
+    return (
+      <a
+        target='_blank'
+        rel='noopener noreferrer'
+        className='underlined'
+        {...props}
+      />
+    )
+  },
+  Callout: ({ ...props }) => (
+    <div className='my-8 flex rounded-lg border border-neutral-200 bg-neutral-100 p-4 dark:border-neutral-800 dark:bg-neutral-900'>
+      <div className='mr-4 flex w-4 items-center'>{props.emoji}</div>
+      <div className='callout w-full'>{props.children}</div>
+    </div>
+  ),
 }
 
 const Mdx = ({ code }: { code: string }) => {
   const Component = useMDXComponent(code)
 
-  return <Component components={components} />
+  return (
+    <div className='prose prose-neutral text-neutral-900 prose-blockquote:text-neutral-600 dark:prose-invert dark:text-neutral-100 dark:prose-blockquote:text-neutral-400'>
+      <Component components={components} />
+    </div>
+  )
 }
 
 export default Mdx
