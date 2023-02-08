@@ -11,6 +11,7 @@ export const metadata = {
     default: 'idm1try',
     template: '%s | idm1try',
   },
+  themeColor: '#111010',
   description: 'Frontend Developer',
   robots: {
     index: true,
@@ -51,6 +52,7 @@ export const metadata = {
   icons: {
     icon: '/favicon.png',
     apple: 'apple-touch-icon.png',
+    other: [{ rel: 'manifest', url: '/site.webmanifest' }],
   },
   other: {
     'msapplication-TileColor': '#111010',
