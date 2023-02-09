@@ -18,7 +18,7 @@ const Navbar = () => {
     <nav className='sticky top-6 z-10'>
       <Menu.Root>
         <Menu.Trigger asChild>
-          <button className='group inline-flex truncate rounded-lg border border-neutral-400/30 bg-white p-2 font-medium capitalize text-neutral-700 shadow-sm transition-colors duration-300 hover:text-neutral-900/50 focus:text-neutral-900/50 focus:shadow-sm focus:outline-none dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:border-neutral-500/50 dark:hover:text-white dark:focus:border-neutral-500/50 dark:focus:text-white'>
+          <button className='group inline-flex truncate rounded-lg border border-neutral-400/30 bg-white p-2 font-medium capitalize text-neutral-700 shadow-sm outline-none transition-colors duration-300 hover:text-neutral-900/50 focus:text-neutral-900/50 focus:shadow-sm dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:border-neutral-500/50 dark:hover:text-white dark:focus:border-neutral-500/50 dark:focus:text-white'>
             {page ?? 'Home'}
             <svg
               xmlns='http://www.w3.org/2000/svg'
