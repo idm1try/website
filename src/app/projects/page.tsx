@@ -40,6 +40,9 @@ export const metadata = {
     url: 'https://idm1try.ru/projects',
     images: 'https://idm1try.ru/api/og?heading=Projects',
   },
+  alternates: {
+    canonical: 'https://idm1try.ru/projects',
+  },
 }
 
 const Projects = () => (

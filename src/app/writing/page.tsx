@@ -12,6 +12,9 @@ export const metadata = {
     url: 'https://idm1try.ru/writing',
     images: 'https://idm1try.ru/api/og?heading=Writing',
   },
+  alternates: {
+    canonical: 'https://idm1try.ru/writing',
+  },
 }
 
 const Writing = () => (

@@ -54,8 +54,10 @@ export const metadata = {
     apple: 'apple-touch-icon.png',
     other: [{ rel: 'manifest', url: '/site.webmanifest' }],
   },
+  alternates: {
+    canonical: 'https://idm1try.ru/',
+  },
   other: {
-    'msapplication-TileColor': '#111010',
     'darkreader-lock': '',
   },
 }

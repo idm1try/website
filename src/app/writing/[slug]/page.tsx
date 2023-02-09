@@ -27,15 +27,14 @@ export async function generateMetadata({ params }: Props) {
       type: 'article',
       publishedTime,
       url: `https://idm1try.ru/writing/${slug}`,
-      images: [
-        {
-          url: `https://idm1try.ru/api/og?title=${title}`,
-        },
-      ],
+      images: [{ url: `https://idm1try.ru/api/og?title=${title}` }],
     },
     twitter: {
       title,
       images: `https://idm1try.ru/api/og?title=${title}`,
+    },
+    alternates: {
+      canonical: `https://idm1try.ru/writing/${slug}`,
     },
   }
 }
