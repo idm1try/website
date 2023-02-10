@@ -70,7 +70,7 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`scroll-smooth bg-neutral-50 text-neutral-900 antialiased selection:bg-neutral-200 dark:bg-[#111010] dark:text-neutral-100 dark:selection:bg-neutral-700 ${fontSans.variable} ${fontMono.variable}`}
+      className={`scroll-smooth bg-neutral-50 font-sans text-neutral-900 antialiased selection:bg-neutral-200 dark:bg-[#111010] dark:text-neutral-100 dark:selection:bg-neutral-700 ${fontSans.variable} ${fontMono.variable}`}
     >
       <head />
       <body>
