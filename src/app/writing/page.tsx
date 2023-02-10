@@ -21,9 +21,7 @@ const Writing = () => (
   <section>
     <ul className='animated-list'>
       {allWritings
-        .sort((writingA: WritingProps, writingB: WritingProps) =>
-          writingA.date > writingB.date ? -1 : 1
-        )
+        .sort((a: WritingProps, b: WritingProps) => (a.date > b.date ? -1 : 1))
         .map(writing => (
           <li key={writing._id} className='transition-all duration-300'>
             <Link
