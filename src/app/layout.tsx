@@ -1,5 +1,5 @@
 import './global.css'
-import AnalyticsWrapper from '../components/analytics-provider'
+import { AnalyticsProvider } from '../components/analytics-provider'
 import { Fira_Code, Inter } from '@next/font/google'
 import Navbar from '@/components/navbar'
 
@@ -78,7 +78,7 @@ export default function RootLayout({
           <Navbar />
           <main className='pt-16'>
             {children}
-            <AnalyticsWrapper />
+            <AnalyticsProvider />
           </main>
         </div>
       </body>
