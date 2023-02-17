@@ -81,7 +81,7 @@ const Mdx = ({ code }: { code: string }) => {
   const Component = useMDXComponent(code)
 
   return (
-    <div className='prose prose-neutral text-neutral-900 prose-blockquote:text-neutral-600 dark:prose-invert dark:text-neutral-100 dark:prose-blockquote:text-neutral-400'>
+    <div className='prose prose-neutral text-neutral-900 dark:prose-invert prose-blockquote:text-neutral-600 dark:text-neutral-100 dark:prose-blockquote:text-neutral-400'>
       <Component components={components} />
     </div>
   )
