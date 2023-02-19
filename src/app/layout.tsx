@@ -1,5 +1,5 @@
 import './global.css'
-import { Fira_Code, Inter } from '@next/font/google'
+import { Fira_Code, Inter } from 'next/font/google'
 import Navbar from '@/components/navbar'
 import { Analytics } from '@vercel/analytics/react'
 
