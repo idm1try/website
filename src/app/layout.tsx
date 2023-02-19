@@ -1,7 +1,7 @@
 import './global.css'
-import { AnalyticsProvider } from '../components/analytics-provider'
 import { Fira_Code, Inter } from '@next/font/google'
 import Navbar from '@/components/navbar'
+import { Analytics } from '@vercel/analytics/react'
 
 const fontSans = Inter({ variable: '--font-sans' })
 const fontMono = Fira_Code({ variable: '--font-mono' })
@@ -77,7 +77,7 @@ export default function RootLayout({
           <Navbar />
           <main className='pt-16'>
             {children}
-            <AnalyticsProvider />
+            <Analytics />
           </main>
         </div>
       </body>
