@@ -52,11 +52,11 @@ export const metadata = {
   icons: {
     icon: '/favicon.png',
     apple: 'apple-touch-icon.png',
-    other: [{ rel: 'manifest', url: '/site.webmanifest' }],
   },
   alternates: {
     canonical: 'https://idm1try.ru/',
   },
+  manifest: '/site.webmanifest',
   other: {
     'darkreader-lock': '',
   },
