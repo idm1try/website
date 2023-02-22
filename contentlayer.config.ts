@@ -6,6 +6,8 @@ import {
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
+import { getHighlighter, loadTheme } from 'shiki'
+import path from 'path'
 
 const computedFields: ComputedFields = {
   slug: {
@@ -41,7 +43,12 @@ export default makeSource({
       [
         rehypePrettyCode,
         {
-          theme: 'one-dark-pro',
+          getHighlighter: async () => {
+            const theme = await loadTheme(
+              path.join(process.cwd(), 'src/vscode-theme.json')
+            )
+            return await getHighlighter({ theme })
+          },
           onVisitLine(node: any) {
             if (node.children.length === 0) {
               node.children = [{ type: 'text', value: ' ' }]
