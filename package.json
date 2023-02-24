@@ -56,13 +56,6 @@
     ],
     "extends": [
       "plugin:tailwindcss/recommended"
-    ],
-    "settings": {
-      "tailwindcss": {
-        "callees": [
-          "cn"
-        ]
-      }
-    }
+    ]
   }
 }
