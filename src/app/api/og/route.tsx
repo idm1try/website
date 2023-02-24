@@ -1,19 +1,18 @@
 import { ImageResponse } from '@vercel/og'
-import { NextRequest } from 'next/server'
 
 export const config = {
   runtime: 'edge',
 }
 
 const interRegular = fetch(
-  new URL('../../../public/fonts/Inter-Regular.ttf', import.meta.url)
+  new URL('../../../../public/fonts/Inter-Regular.ttf', import.meta.url)
 ).then(res => res.arrayBuffer())
 
 const interBold = fetch(
-  new URL('../../../public/fonts/Inter-Bold.ttf', import.meta.url)
+  new URL('../../../../public/fonts/Inter-Bold.ttf', import.meta.url)
 ).then(res => res.arrayBuffer())
 
-export default async function handler(req: NextRequest) {
+export async function GET(req: Request) {
   try {
     const fontRegular = await interRegular
     const fontBold = await interBold
