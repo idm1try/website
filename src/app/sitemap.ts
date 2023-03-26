@@ -7,7 +7,7 @@ export default async function sitemap() {
   }))
 
   const routes = ['', '/writing'].map(route => ({
-    url: `https://leerob.io${route}`,
+    url: `https://idm1try.ru${route}`,
     lastModified: new Date().toISOString().split('T')[0],
   }))
 
