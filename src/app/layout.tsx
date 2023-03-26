@@ -3,8 +3,8 @@ import { Fira_Code, Inter } from 'next/font/google'
 import Navbar from '@/components/navbar'
 import { Analytics } from '@vercel/analytics/react'
 
-const fontSans = Inter({ variable: '--font-sans' })
-const fontMono = Fira_Code({ variable: '--font-mono' })
+const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
+const fontMono = Fira_Code({ variable: '--font-mono', subsets: ['latin'] })
 
 export const metadata = {
   title: {
