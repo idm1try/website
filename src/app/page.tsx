@@ -23,11 +23,6 @@ const projectsData: ProjectProps[] = [
     url: 'https://ip.idm1try.ru',
     desc: 'IP info with detecting and search ip address',
   },
-  {
-    name: 'Snake',
-    url: 'https://snake.idm1try.ru',
-    desc: 'Browser snake game',
-  },
 ]
 
 const Home = () => (
