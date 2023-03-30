@@ -32,9 +32,6 @@
     "@types/sharp": "^0.31.1",
     "autoprefixer": "^10.4.14",
     "esbuild": "^0.15.18",
-    "eslint": "^8.37.0",
-    "eslint-config-next": "13.2.5-canary.20",
-    "eslint-plugin-tailwindcss": "^3.10.1",
     "postcss": "^8.4.21",
     "prettier": "^2.8.7",
     "rehype-pretty-code": "^0.5.1",
@@ -51,14 +48,5 @@
     "jsxSingleQuote": true,
     "proseWrap": "always",
     "semi": false
-  },
-  "eslintConfig": {
-    "plugins": [
-      "tailwindcss"
-    ],
-    "extends": [
-      "next",
-      "plugin:tailwindcss/recommended"
-    ]
   }
 }
