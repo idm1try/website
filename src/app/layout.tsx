@@ -2,6 +2,7 @@ import './global.css'
 import { Fira_Code, Inter } from 'next/font/google'
 import Navbar from '@/components/navbar'
 import { Analytics } from '@vercel/analytics/react'
+import { cn } from '@/lib/utils'
 
 const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
 const fontMono = Fira_Code({ variable: '--font-mono', subsets: ['latin'] })
@@ -70,7 +71,13 @@ export default function RootLayout({
   return (
     <html
       lang='en'
-      className={`scroll-smooth bg-neutral-50 font-sans text-neutral-900 antialiased selection:bg-neutral-200 dark:bg-[#111010] dark:text-neutral-100 dark:selection:bg-neutral-700 ${fontSans.variable} ${fontMono.variable}`}
+      className={cn(
+        'scroll-smooth bg-neutral-50 font-sans text-neutral-900',
+        'antialiased selection:bg-neutral-200 dark:bg-[#111010]',
+        'dark:text-neutral-100 dark:selection:bg-neutral-700',
+        fontSans.variable,
+        fontMono.variable
+      )}
     >
       <body>
         <div className='mx-auto max-w-3xl px-6 pb-20'>

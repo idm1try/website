@@ -1,4 +1,5 @@
 import Time from '@/components/time'
+import { cn } from '@/lib/utils'
 import Link from 'next/link'
 
 interface ProjectProps {
@@ -42,7 +43,11 @@ const Home = () => (
           <li key={project.name} className='transition-all duration-300'>
             <Link
               href={project.url}
-              className='-mx-3 flex flex-col gap-1 rounded-xl p-3 focus:bg-neutral-200/40 focus:outline-none dark:focus:bg-neutral-800/75 md:flex-row md:gap-9'
+              className={cn(
+                '-mx-3 flex flex-col gap-1 rounded-xl',
+                'p-3 focus:bg-neutral-200/40 focus:outline-none',
+                'dark:focus:bg-neutral-800/75 md:flex-row md:gap-9'
+              )}
             >
               <span className='font-medium md:w-28'>{project.name}</span>
               <span className='text-neutral-600 dark:text-neutral-400'>

@@ -2,6 +2,7 @@
 
 import { useRouter, useSelectedLayoutSegment } from 'next/navigation'
 import * as Menu from '@radix-ui/react-dropdown-menu'
+import { cn } from '@/lib/utils'
 
 const Navbar = () => {
   const router = useRouter()
@@ -11,7 +12,18 @@ const Navbar = () => {
     <nav className='sticky top-6 z-10'>
       <Menu.Root>
         <Menu.Trigger asChild>
-          <button className='group inline-flex truncate rounded-lg border border-neutral-400/30 bg-white p-2 font-medium capitalize text-neutral-700 shadow-sm outline-none transition-colors duration-300 hover:text-neutral-900/50 focus:text-neutral-900/50 focus:shadow-sm dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300 dark:hover:border-neutral-500/50 dark:hover:text-white dark:focus:border-neutral-500/50 dark:focus:text-white'>
+          <button
+            className={cn(
+              'group inline-flex truncate rounded-lg',
+              'border border-neutral-400/30 bg-white p-2',
+              'font-medium capitalize text-neutral-700 shadow-sm',
+              'outline-none transition-colors duration-300',
+              'hover:text-neutral-900/50 focus:text-neutral-900/50',
+              'focus:shadow-sm dark:border-neutral-800 dark:bg-neutral-900',
+              'dark:text-neutral-300 dark:hover:border-neutral-500/50',
+              'dark:hover:text-white dark:focus:border-neutral-500/50 dark:focus:text-white'
+            )}
+          >
             {page ?? 'Home'}
             <ArrowIcon />
           </button>
@@ -20,7 +32,14 @@ const Navbar = () => {
           <Menu.Content
             align='start'
             sideOffset={6}
-            className='z-50 min-w-[8rem] overflow-hidden rounded-lg border border-neutral-400/30 bg-white p-1 text-neutral-700 shadow-md animate-in data-[side=bottom]:slide-in-from-top-2 data-[side=top]:slide-in-from-bottom-2 dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300'
+            className={cn(
+              'z-50 min-w-[8rem] overflow-hidden rounded-lg',
+              'border border-neutral-400/30 bg-white p-1',
+              'text-neutral-700 shadow-md animate-in',
+              'data-[side=bottom]:slide-in-from-top-2',
+              'data-[side=top]:slide-in-from-bottom-2',
+              'dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300'
+            )}
           >
             <Menu.Group>
               <MenuItem onSelect={() => router.push('/')}>
@@ -64,7 +83,13 @@ const Navbar = () => {
 
 const MenuItem = ({ ...props }) => (
   <Menu.Item
-    className='relative flex cursor-default select-none items-center rounded-lg py-1.5 px-2 text-sm font-medium outline-none focus:bg-neutral-200/40 active:bg-neutral-200/40 data-[disabled]:pointer-events-none data-[disabled]:opacity-50 dark:focus:bg-neutral-800/75 dark:active:bg-neutral-800/75'
+    className={cn(
+      'relative flex cursor-default select-none',
+      'items-center rounded-lg py-1.5 px-2 text-sm',
+      'font-medium outline-none focus:bg-neutral-200/40',
+      'active:bg-neutral-200/40 data-[disabled]:pointer-events-none',
+      'data-[disabled]:opacity-50 dark:focus:bg-neutral-800/75 dark:active:bg-neutral-800/75'
+    )}
     {...props}
   />
 )

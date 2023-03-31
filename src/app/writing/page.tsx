@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import { allWritings, Writing as WritingProps } from 'contentlayer/generated'
 import Link from 'next/link'
 
@@ -26,7 +27,11 @@ const Writing = () => (
           <li key={writing._id} className='transition-all duration-300'>
             <Link
               href={`writing/${writing.slug}`}
-              className='-mx-3 flex flex-col gap-1 rounded-xl p-3 focus:bg-neutral-200/40 focus:outline-none dark:focus:bg-neutral-800/75 md:flex-row md:gap-9'
+              className={cn(
+                '-mx-3 flex flex-col gap-1 lounded-xl',
+                'p-3 focus:bg-neutral-200/40 focus:outline-none',
+                'dark:focus:bg-neutral-800/75 md:flex-row md:gap-9'
+              )}
             >
               <span className='text-neutral-600 dark:text-neutral-400 md:w-28'>
                 {new Date(writing.date).toLocaleString('en-US', {
