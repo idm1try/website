@@ -28,7 +28,7 @@ const Writing = () => (
             <Link
               href={`writing/${writing.slug}`}
               className={cn(
-                '-mx-3 flex flex-col gap-1 lounded-xl',
+                '-mx-3 flex flex-col gap-1 rounded-xl',
                 'p-3 focus:bg-neutral-200/40 focus:outline-none',
                 'dark:focus:bg-neutral-800/75 md:flex-row md:gap-9'
               )}

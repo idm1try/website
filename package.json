@@ -17,7 +17,7 @@
     "@vercel/og": "^0.0.25",
     "clsx": "^1.2.1",
     "contentlayer": "^0.2.9",
-    "next": "13.2.5-canary.22",
+    "next": "13.2.5-canary.29",
     "next-contentlayer": "^0.2.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
