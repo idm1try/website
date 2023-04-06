@@ -4,10 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const headingStyle = cn(
-  'scroll-mt-16 decoration-neutral-300 decoration-2',
+  'scroll-mt-16 decoration-surface2 decoration-2',
   'underline-offset-4 transition-colors duration-300',
-  'hover:underline active:decoration-neutral-500',
-  'dark:decoration-neutral-700 dark:active:decoration-neutral-400'
+  'hover:underline active:decoration-surface0'
 )
 
 const components = {
@@ -17,7 +16,7 @@ const components = {
       alt={props.alt}
       width={700}
       height={600}
-      className='mx-auto rounded-lg'
+      className='mx-auto rounded-lg border-crust border'
       {...props}
     />
   ),
@@ -69,8 +68,7 @@ const components = {
     <div
       className={cn(
         'my-8 flex rounded-lg border',
-        'border-neutral-200 bg-neutral-100 p-4',
-        'dark:border-neutral-800 dark:bg-neutral-900'
+        'border-crust bg-mantle p-4'
       )}
     >
       <div className='mr-4 flex w-4 items-center'>{props.emoji}</div>
@@ -85,9 +83,12 @@ const Mdx = ({ code }: { code: string }) => {
   return (
     <div
       className={cn(
-        'prose prose-neutral text-neutral-900 dark:prose-invert',
-        'prose-blockquote:text-neutral-600 dark:text-neutral-100',
-        'dark:prose-blockquote:text-neutral-400'
+        'text-text prose dark:prose-invert',
+        'prose-a:text-text prose-p:text-text',
+        'prose-h1:text-text prose-h2:text-text',
+        'prose-h3:text-text prose-h4:text-text',
+        'prose-code:text-text prose-strong:text-text',
+        'prose-hr:border-surface0 prose-th:text-text'
       )}
     >
       <Component components={components} />

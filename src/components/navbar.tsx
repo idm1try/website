@@ -15,13 +15,10 @@ const Navbar = () => {
           <button
             className={cn(
               'group inline-flex truncate rounded-lg',
-              'border border-neutral-400/30 bg-white p-2',
-              'font-medium capitalize text-neutral-700 shadow-sm',
+              'border border-crust bg-mantle p-2',
+              'font-medium capitalize text-subtext0 shadow-sm',
               'outline-none transition-colors duration-300',
-              'hover:text-neutral-900/50 focus:text-neutral-900/50',
-              'focus:shadow-sm dark:border-neutral-800 dark:bg-neutral-900',
-              'dark:text-neutral-300 dark:hover:border-neutral-500/50',
-              'dark:hover:text-white dark:focus:border-neutral-500/50 dark:focus:text-white'
+              'hover:text-subtext1 focus:ring-2 ring-surface1 ring-offset-2 ring-offset-base'
             )}
           >
             {page ?? 'Home'}
@@ -34,11 +31,10 @@ const Navbar = () => {
             sideOffset={6}
             className={cn(
               'z-50 min-w-[8rem] overflow-hidden rounded-lg',
-              'border border-neutral-400/30 bg-white p-1',
-              'text-neutral-700 shadow-md animate-in',
+              'border border-crust bg-mantle p-1',
+              'text-subtext0 shadow-md animate-in',
               'data-[side=bottom]:slide-in-from-top-2',
-              'data-[side=top]:slide-in-from-bottom-2',
-              'dark:border-neutral-800 dark:bg-neutral-900 dark:text-neutral-300'
+              'data-[side=top]:slide-in-from-bottom-2'
             )}
           >
             <Menu.Group>
@@ -55,7 +51,7 @@ const Navbar = () => {
                 <span>Uses</span>
               </MenuItem>
             </Menu.Group>
-            <Menu.Separator className='-mx-1 my-1 h-px bg-neutral-400/30 dark:bg-neutral-800' />
+            <Menu.Separator className='-mx-1 my-1 h-px bg-crust' />
             <Menu.Group>
               <MenuItem
                 onSelect={() => window.open('https://github.com/idm1try')}
@@ -86,9 +82,9 @@ const MenuItem = ({ ...props }) => (
     className={cn(
       'relative flex cursor-default select-none',
       'items-center rounded-lg py-1.5 px-2 text-sm',
-      'font-medium outline-none focus:bg-neutral-200/40',
-      'active:bg-neutral-200/40 data-[disabled]:pointer-events-none',
-      'data-[disabled]:opacity-50 dark:focus:bg-neutral-800/75 dark:active:bg-neutral-800/75'
+      'font-medium outline-none focus:bg-surface0',
+      'active:bg-surface1 data-[disabled]:pointer-events-none',
+      'data-[disabled]:opacity-50'
     )}
     {...props}
   />

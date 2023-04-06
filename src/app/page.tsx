@@ -45,14 +45,12 @@ const Home = () => (
               href={project.url}
               className={cn(
                 '-mx-3 flex flex-col gap-1 rounded-xl',
-                'p-3 focus:bg-neutral-200/40 focus:outline-none',
-                'dark:focus:bg-neutral-800/75 md:flex-row md:gap-9'
+                'p-3 focus:ring-2 ring-surface1',
+                'md:flex-row md:gap-9 focus:outline-none'
               )}
             >
               <span className='font-medium md:w-28'>{project.name}</span>
-              <span className='text-neutral-600 dark:text-neutral-400'>
-                {project.desc}
-              </span>
+              <span className='text-overlay0'>{project.desc}</span>
             </Link>
           </li>
         ))}

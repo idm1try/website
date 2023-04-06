@@ -7,7 +7,7 @@
 }
 
 .underlined {
-  @apply underline decoration-neutral-300 decoration-2 underline-offset-4 transition-colors duration-300 hover:decoration-neutral-400 dark:active:decoration-neutral-400 active:decoration-neutral-500 dark:decoration-neutral-700 dark:hover:decoration-neutral-500;
+  @apply underline decoration-surface2 decoration-2 underline-offset-4 transition-colors duration-300 hover:decoration-surface1 active:decoration-surface0;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -20,12 +20,20 @@
   }
 }
 
+.prose blockquote p:first-of-type::before {
+  content: 'none';
+}
+
+.prose blockquote p:first-of-type::after {
+  content: 'none';
+}
+
 .prose pre {
-  @apply border border-neutral-800 bg-neutral-900;
+  @apply border border-crust bg-mantle mocha;
 }
 
 .prose pre code {
-  @apply text-neutral-800 dark:text-neutral-200 p-0;
+  @apply text-subtext0 p-0;
   border: initial;
 }
 
@@ -58,7 +66,7 @@
 }
 
 [data-rehype-pretty-code-fragment] .line--highlighted {
-  @apply bg-neutral-800/70;
+  @apply bg-surface0/60;
 }
 
 [data-rehype-pretty-code-fragment] .line-highlighted span {
@@ -66,11 +74,11 @@
 }
 
 [data-rehype-pretty-code-fragment] .word--highlighted {
-  @apply rounded-md bg-neutral-800/70 bg-opacity-10 p-1;
+  @apply rounded-md bg-surface0/60 bg-opacity-10 p-1;
 }
 
 [data-rehype-pretty-code-title] {
-  @apply px-4 py-3 font-mono text-xs font-medium border rounded-t-lg text-neutral-200 border-[#333333] bg-[#1c1c1c];
+  @apply mocha px-4 py-3 font-mono text-xs font-medium border rounded-t-lg text-subtext0 border-crust bg-crust;
 }
 
 [data-rehype-pretty-code-title] + pre {

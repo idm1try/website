@@ -51,7 +51,7 @@ const Writing = async ({ params }: Props) => {
         <h1 className='mb-5 text-4xl font-bold'>
           <Balancer>{writing.title}</Balancer>
         </h1>
-        <p className='mb-5 text-neutral-600 dark:text-neutral-400'>
+        <p className='mb-5 text-overlay0'>
           {new Date(writing.date).toLocaleString('en-US', {
             month: 'numeric',
             day: 'numeric',
