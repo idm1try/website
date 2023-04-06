@@ -18,7 +18,8 @@ const Navbar = () => {
               'border border-crust bg-mantle p-2',
               'font-medium capitalize text-subtext0 shadow-sm',
               'outline-none transition-colors duration-300',
-              'hover:text-subtext1 focus:ring-2 ring-surface1 ring-offset-2 ring-offset-base'
+              'hover:text-subtext1 focus:ring-2 ring-surface1',
+              'ring-offset-2 ring-offset-base'
             )}
           >
             {page ?? 'Home'}
