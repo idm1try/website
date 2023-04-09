@@ -1,4 +1,0 @@
-User-Agent: *
-
-Host: https://idm1tyr.ru
-Sitemap: https://idm1try.ru/sitemap.xml
