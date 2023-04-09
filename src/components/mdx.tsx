@@ -6,7 +6,7 @@ import Link from 'next/link'
 const headingStyle = cn(
   'scroll-mt-16 decoration-surface2 decoration-2',
   'underline-offset-4 transition-colors duration-300',
-  'hover:underline active:decoration-surface0'
+  'hover:underline active:decoration-surface0',
 )
 
 const components = {
@@ -68,7 +68,7 @@ const components = {
     <div
       className={cn(
         'my-8 flex rounded-lg border',
-        'border-crust bg-mantle p-4'
+        'border-crust bg-mantle p-4',
       )}
     >
       <div className='mr-4 flex w-4 items-center'>{props.emoji}</div>
@@ -88,7 +88,7 @@ const Mdx = ({ code }: { code: string }) => {
         'prose-h1:text-text prose-h2:text-text',
         'prose-h3:text-text prose-h4:text-text',
         'prose-code:text-text prose-strong:text-text',
-        'prose-hr:border-surface0 prose-th:text-text'
+        'prose-hr:border-surface0 prose-th:text-text',
       )}
     >
       <Component components={components} />

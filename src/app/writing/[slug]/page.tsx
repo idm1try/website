@@ -1,8 +1,8 @@
-import { allWritings } from 'contentlayer/generated'
 import Mdx from '@/components/mdx'
+import { allWritings } from 'contentlayer/generated'
+import { notFound } from 'next/navigation'
 import React from 'react'
 import Balancer from 'react-wrap-balancer'
-import { notFound } from 'next/navigation'
 
 interface Props {
   params: {

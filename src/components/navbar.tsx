@@ -1,8 +1,8 @@
 'use client'
 
-import { useRouter, useSelectedLayoutSegment } from 'next/navigation'
-import * as Menu from '@radix-ui/react-dropdown-menu'
 import { cn } from '@/lib/utils'
+import * as Menu from '@radix-ui/react-dropdown-menu'
+import { useRouter, useSelectedLayoutSegment } from 'next/navigation'
 
 const Navbar = () => {
   const router = useRouter()
@@ -19,7 +19,7 @@ const Navbar = () => {
               'font-medium capitalize text-subtext0 shadow-sm',
               'outline-none transition-colors duration-300',
               'hover:text-subtext1 focus:ring-2 ring-surface1',
-              'ring-offset-2 ring-offset-base'
+              'ring-offset-2 ring-offset-base',
             )}
           >
             {page ?? 'Home'}
@@ -35,7 +35,7 @@ const Navbar = () => {
               'border border-crust bg-mantle p-1',
               'text-subtext0 shadow-md animate-in',
               'data-[side=bottom]:slide-in-from-top-2',
-              'data-[side=top]:slide-in-from-bottom-2'
+              'data-[side=top]:slide-in-from-bottom-2',
             )}
           >
             <Menu.Group>
@@ -85,7 +85,7 @@ const MenuItem = ({ ...props }) => (
       'items-center rounded-lg py-1.5 px-2 text-sm',
       'font-medium outline-none focus:bg-surface0',
       'active:bg-surface1 data-[disabled]:pointer-events-none',
-      'data-[disabled]:opacity-50'
+      'data-[disabled]:opacity-50',
     )}
     {...props}
   />

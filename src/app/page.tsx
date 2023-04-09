@@ -46,7 +46,7 @@ const Home = () => (
               className={cn(
                 '-mx-3 flex flex-col gap-1 rounded-xl',
                 'p-3 focus:ring-2 ring-surface1',
-                'md:flex-row md:gap-9 focus:outline-none'
+                'md:flex-row md:gap-9 focus:outline-none',
               )}
             >
               <span className='font-medium md:w-28'>{project.name}</span>

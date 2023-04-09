@@ -1,8 +1,8 @@
 import './global.css'
-import { Fira_Code, Inter } from 'next/font/google'
 import Navbar from '@/components/navbar'
-import { Analytics } from '@vercel/analytics/react'
 import { cn } from '@/lib/utils'
+import { Analytics } from '@vercel/analytics/react'
+import { Fira_Code, Inter } from 'next/font/google'
 
 const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
 const fontMono = Fira_Code({ variable: '--font-mono', subsets: ['latin'] })
@@ -34,8 +34,7 @@ export const metadata = {
     creator: '@idm1try',
     card: 'summary_large_image',
     description: 'Frontend Developer',
-    images:
-      'https://idm1try.ru/api/og?heading=idm1try&desc=Frontend%20Developer',
+    images: 'https://idm1try.ru/api/og?heading=idm1try&desc=Frontend%20Developer',
   },
   openGraph: {
     title: {
@@ -47,8 +46,7 @@ export const metadata = {
     locale: 'en-US',
     type: 'website',
     url: 'https://idm1try.ru/',
-    images:
-      'https://idm1try.ru/api/og?heading=idm1try&desc=Frontend%20Developer',
+    images: 'https://idm1try.ru/api/og?heading=idm1try&desc=Frontend%20Developer',
   },
   icons: {
     icon: '/favicon.png',
@@ -75,7 +73,7 @@ export default function RootLayout({
         'scroll-smooth font-sans text-text bg-base',
         'antialiased selection:bg-surface1 dark:mocha',
         fontSans.variable,
-        fontMono.variable
+        fontMono.variable,
       )}
     >
       <body>

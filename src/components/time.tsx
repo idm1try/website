@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const Time = () => {
   const [mounted, setMounted] = useState(false)
@@ -10,7 +10,7 @@ const Time = () => {
       hour: 'numeric',
       minute: 'numeric',
       second: 'numeric',
-    })
+    }),
   )
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const Time = () => {
           hour: 'numeric',
           minute: 'numeric',
           second: 'numeric',
-        })
+        }),
       )
     }, 1000)
   })

@@ -1,13 +1,9 @@
-import {
-  ComputedFields,
-  defineDocumentType,
-  makeSource,
-} from 'contentlayer/source-files'
+import { ComputedFields, defineDocumentType, makeSource } from 'contentlayer/source-files'
+import path from 'path'
 import rehypePrettyCode from 'rehype-pretty-code'
 import rehypeSlug from 'rehype-slug'
 import remarkGfm from 'remark-gfm'
 import { getHighlighter, loadTheme } from 'shiki'
-import path from 'path'
 
 const computedFields: ComputedFields = {
   slug: {
@@ -18,7 +14,7 @@ const computedFields: ComputedFields = {
 
 export const Writing = defineDocumentType(() => ({
   name: 'Writing',
-  filePathPattern: `**/*.mdx`,
+  filePathPattern: `**/*.md`,
   contentType: 'mdx',
   fields: {
     title: {
@@ -45,7 +41,7 @@ export default makeSource({
         {
           getHighlighter: async () => {
             const theme = await loadTheme(
-              path.join(process.cwd(), 'src/vscode-theme.json')
+              path.join(process.cwd(), 'src/vscode-theme.json'),
             )
             return await getHighlighter({ theme })
           },

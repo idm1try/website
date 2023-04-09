@@ -5,11 +5,11 @@ export const config = {
 }
 
 const interRegular = fetch(
-  new URL('../../../../public/fonts/Inter-Regular.ttf', import.meta.url)
+  new URL('../../../../public/fonts/Inter-Regular.ttf', import.meta.url),
 ).then(res => res.arrayBuffer())
 
 const interBold = fetch(
-  new URL('../../../../public/fonts/Inter-Bold.ttf', import.meta.url)
+  new URL('../../../../public/fonts/Inter-Bold.ttf', import.meta.url),
 ).then(res => res.arrayBuffer())
 
 export async function GET(req: Request) {
@@ -19,10 +19,9 @@ export async function GET(req: Request) {
 
     const url = new URL(req.url)
     const values = Object.fromEntries(url.searchParams)
-    const heading =
-      values.heading.length > 140
-        ? `${values.heading.substring(0, 140)}...`
-        : values.heading
+    const heading = values.heading.length > 140
+      ? `${values.heading.substring(0, 140)}...`
+      : values.heading
     const fontSize = heading.length > 100 ? '70px' : '100px'
 
     return new ImageResponse(
@@ -68,7 +67,7 @@ export async function GET(req: Request) {
             style: 'normal',
           },
         ],
-      }
+      },
     )
   } catch (error) {
     return new Response(`Failed to generate image`, {
