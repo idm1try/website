@@ -7,8 +7,7 @@ date: '2022-11-29'
 
 ## Desktop Apps
 
-- [Warp](https://warp.dev)
-- [Arc](https://arc.net)
+- [WezTerm](https://wezfurlong.org/wezterm)
 - [Raycast](https://www.raycast.com)
 
 ## CLIs
