@@ -12,7 +12,7 @@ export const metadata = {
     default: 'idm1try',
     template: '%s | idm1try',
   },
-  themeColor: '#111010',
+  themeColor: '#1e1e2e',
   description: 'Frontend Developer',
   robots: {
     index: true,
