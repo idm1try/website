@@ -25,7 +25,7 @@ const Home = () => (
         </li>
         <li>
           <MailIcon />
-          <a className='underlined' href='mailto:me@idm1try.ru'>me@idm1try.ru</a>
+          <a className='underlined' href='mailto:idm1try@icloud.com'>me@idm1try.ru</a>
         </li>
       </ul>
 
