@@ -1,8 +1,9 @@
 import './global.css'
 import { cn } from '@/lib/utils'
 import { Analytics } from '@vercel/analytics/react'
-import { Fira_Code } from 'next/font/google'
+import { Fira_Code, Inter } from 'next/font/google'
 
+const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
 const fontMono = Fira_Code({ variable: '--font-mono', subsets: ['latin'] })
 
 export const metadata = {
@@ -68,8 +69,9 @@ export default function RootLayout({
     <html
       lang='en'
       className={cn(
-        'scroll-smooth font-mono text-text bg-base',
-        'antialiased selection:bg-surface1 dark:mocha',
+        'scroll-smooth font-sans text-text bg-base',
+        'antialiased selection:bg-surface1 dark:mocha font-medium',
+        fontSans.variable,
         fontMono.variable,
       )}
     >
