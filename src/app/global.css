@@ -7,7 +7,7 @@
 }
 
 .underlined {
-  @apply underline decoration-surface2 decoration-2 underline-offset-4 transition-colors duration-300 hover:decoration-surface1 active:decoration-surface0;
+  @apply underline decoration-surface2 decoration-2 underline-offset-4 transition-colors duration-300 hover:decoration-pink active:decoration-mauve;
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -20,67 +20,3 @@
   }
 }
 
-.prose blockquote p:first-of-type::before {
-  content: 'none';
-}
-
-.prose blockquote p:first-of-type::after {
-  content: 'none';
-}
-
-.prose pre {
-  @apply border border-crust bg-mantle mocha;
-}
-
-.prose pre code {
-  @apply text-subtext0 p-0;
-  border: initial;
-}
-
-.prose .callout > p {
-  margin: 0 !important;
-}
-
-[data-rehype-pretty-code-fragment] pre {
-  @apply px-0;
-}
-
-[data-rehype-pretty-code-fragment] code {
-  @apply grid min-w-full break-words rounded-none border-0 bg-transparent p-0 text-sm text-black;
-  counter-reset: line;
-  box-decoration-break: clone;
-}
-
-[data-rehype-pretty-code-fragment] .line {
-  @apply py-1 px-4;
-}
-
-[data-rehype-pretty-code-fragment] [data-line-numbers] > .line::before {
-  counter-increment: line;
-  content: counter(line);
-  display: inline-block;
-  width: 1rem;
-  margin-right: 1rem;
-  text-align: right;
-  color: gray;
-}
-
-[data-rehype-pretty-code-fragment] .line--highlighted {
-  @apply bg-surface0/60;
-}
-
-[data-rehype-pretty-code-fragment] .line-highlighted span {
-  @apply relative;
-}
-
-[data-rehype-pretty-code-fragment] .word--highlighted {
-  @apply rounded-md bg-surface0/60 bg-opacity-10 p-1;
-}
-
-[data-rehype-pretty-code-title] {
-  @apply mocha px-4 py-3 font-mono text-xs font-medium border rounded-t-lg text-subtext0 border-crust bg-crust;
-}
-
-[data-rehype-pretty-code-title] + pre {
-  @apply mt-0 rounded-t-none border-t-0;
-}

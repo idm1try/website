@@ -1,5 +1,4 @@
 import './global.css'
-import Navbar from '@/components/navbar'
 import { cn } from '@/lib/utils'
 import { Analytics } from '@vercel/analytics/react'
 import { Fira_Code, Inter } from 'next/font/google'
@@ -71,14 +70,13 @@ export default function RootLayout({
       lang='en'
       className={cn(
         'scroll-smooth font-sans text-text bg-base',
-        'antialiased selection:bg-surface1 dark:mocha',
+        'antialiased selection:bg-surface1 dark:mocha font-medium',
         fontSans.variable,
         fontMono.variable,
       )}
     >
       <body>
         <div className='mx-auto max-w-3xl px-6 pb-20'>
-          <Navbar />
           <main className='pt-16'>
             {children}
             <Analytics />
