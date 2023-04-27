@@ -1,10 +1,10 @@
-import './global.css'
 import { cn } from '@/lib/utils'
 import { Analytics } from '@vercel/analytics/react'
-import { Fira_Code, Inter } from 'next/font/google'
+import { Inter, Pacifico } from 'next/font/google'
+import './global.css'
 
 const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
-const fontMono = Fira_Code({ variable: '--font-mono', subsets: ['latin'] })
+const fontPacifico = Pacifico({ variable: '--font-pacifico', subsets: ['latin'], weight: '400' })
 
 export const metadata = {
   title: {
@@ -72,7 +72,7 @@ export default function RootLayout({
         'scroll-smooth font-sans text-text bg-base',
         'antialiased selection:bg-surface1 dark:mocha font-medium',
         fontSans.variable,
-        fontMono.variable,
+        fontPacifico.variable,
       )}
     >
       <body>
