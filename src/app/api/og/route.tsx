@@ -1,8 +1,6 @@
 import { ImageResponse } from '@vercel/og'
 
-export const config = {
-  runtime: 'edge',
-}
+export const runtime = 'edge'
 
 const interRegular = fetch(
   new URL('../../../../public/fonts/Inter-Regular.ttf', import.meta.url),
