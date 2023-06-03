@@ -7,6 +7,7 @@ const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
 const fontPacifico = Pacifico({ variable: '--font-pacifico', subsets: ['latin'], weight: '400' })
 
 export const metadata = {
+  metadataBase: new URL('https://idm1try.ru'),
   title: {
     default: 'idm1try',
     template: '%s | idm1try',
@@ -33,7 +34,7 @@ export const metadata = {
     creator: '@idm1try',
     card: 'summary_large_image',
     description: 'Frontend Developer',
-    images: 'https://idm1try.ru/api/og?heading=idm1try&desc=Frontend%20Developer',
+    images: '/api/og?heading=idm1try&desc=Frontend%20Developer',
   },
   openGraph: {
     title: {
@@ -45,7 +46,7 @@ export const metadata = {
     locale: 'en-US',
     type: 'website',
     url: 'https://idm1try.ru/',
-    images: 'https://idm1try.ru/api/og?heading=idm1try&desc=Frontend%20Developer',
+    images: '/api/og?heading=idm1try&desc=Frontend%20Developer',
   },
   icons: {
     icon: '/favicon.png',
