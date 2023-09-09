@@ -25,10 +25,9 @@ export async function GET(req: Request) {
     return new ImageResponse(
       (
         <div
-          tw='flex relative flex-col px-20 py-30 w-full h-full items-start'
+          tw='flex relative flex-col px-20 py-30 w-full h-full items-start text-neutral-100'
           style={{
-            color: '#cdd6f4',
-            background: 'linear-gradient(56deg, #11111b, #181825, #1e1e2e)',
+            background: 'linear-gradient(56deg, #171717, #262626, #404040)',
           }}
         >
           <div
@@ -42,8 +41,8 @@ export async function GET(req: Request) {
             {heading}
           </div>
           <div
-            tw='text-3xl'
-            style={{ fontFamily: 'Inter', fontWeight: 'normal', color: '#6c7086' }}
+            tw='text-3xl text-neutral-400'
+            style={{ fontFamily: 'Inter', fontWeight: 'normal' }}
           >
             {values.desc}
           </div>

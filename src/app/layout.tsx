@@ -1,13 +1,11 @@
 import { cn } from '@/lib/utils'
-import { Analytics } from '@vercel/analytics/react'
-import { Inter, Pacifico } from 'next/font/google'
+import { Inter } from 'next/font/google'
 import './global.css'
 
 const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
-const fontPacifico = Pacifico({ variable: '--font-pacifico', subsets: ['latin'], weight: '400' })
 
 export const metadata = {
-  metadataBase: new URL('https://idm1try.ru'),
+  metadataBase: new URL('https://idm1try.vercel.app'),
   title: {
     default: 'idm1try',
     template: '%s | idm1try',
@@ -45,7 +43,7 @@ export const metadata = {
     siteName: 'idm1try',
     locale: 'en-US',
     type: 'website',
-    url: 'https://idm1try.ru/',
+    url: 'https://idm1try.vercel.app/',
     images: '/api/og?heading=idm1try&desc=Frontend%20Developer',
   },
   icons: {
@@ -53,7 +51,7 @@ export const metadata = {
     apple: 'apple-touch-icon.png',
   },
   alternates: {
-    canonical: 'https://idm1try.ru/',
+    canonical: 'https://idm1try.vercel.app/',
   },
   manifest: '/site.webmanifest',
   other: {
@@ -70,17 +68,16 @@ export default function RootLayout({
     <html
       lang='en'
       className={cn(
-        'scroll-smooth font-sans text-text bg-base',
-        'antialiased selection:bg-surface1 dark:mocha font-medium',
+        'scroll-smooth font-sans text-neutral-900 dark:text-neutral-100',
+        'antialiased selection:bg-neutral-200 dark:selection:bg-neutral-200 font-medium',
+        'bg-neutral-50 dark:bg-[#111010]',
         fontSans.variable,
-        fontPacifico.variable,
       )}
     >
       <body>
         <div className='mx-auto max-w-3xl px-6 pb-20'>
           <main className='pt-16'>
             {children}
-            <Analytics />
           </main>
         </div>
       </body>

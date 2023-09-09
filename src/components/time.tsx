@@ -28,7 +28,7 @@ const Time = () => {
 
   useEffect(() => setMounted(true), [])
 
-  return <p className='mb-5 text-overlay0'>{mounted && time}</p>
+  return <p className='mb-5 text-neutral-600 dark:text-neutral-400'>{mounted && time}</p>
 }
 
 export default Time

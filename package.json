@@ -4,7 +4,7 @@
   "author": {
     "name": "Dmitry Savchenko",
     "email": "idm1try@icloud.com",
-    "url": "https://idm1try.ru"
+    "url": "https://idm1try.vercel.app"
   },
   "scripts": {
     "dev": "next dev",
@@ -12,31 +12,21 @@
     "start": "next start"
   },
   "dependencies": {
-    "@catppuccin/tailwindcss": "^0.1.6",
-    "@vercel/analytics": "^0.1.11",
     "@vercel/og": "^0.0.25",
     "clsx": "^1.2.1",
-    "next": "13.4.6",
+    "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-wrap-balancer": "^0.4.1",
     "shiki": "^0.11.1",
-    "tailwind-merge": "^1.13.2"
+    "tailwind-merge": "^1.14.0"
   },
   "devDependencies": {
     "@types/node": "18.7.9",
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
-    "@types/sharp": "^0.31.1",
-    "autoprefixer": "^10.4.14",
-    "esbuild": "^0.15.18",
-    "postcss": "^8.4.24",
-    "rehype-pretty-code": "^0.5.1",
-    "rehype-slug": "^5.1.0",
-    "remark-gfm": "^3.0.1",
-    "sharp": "^0.31.3",
-    "tailwindcss": "^3.3.2",
-    "tailwindcss-animate": "^1.0.6",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3",
     "typescript": "^4.9.5"
   }
 }
