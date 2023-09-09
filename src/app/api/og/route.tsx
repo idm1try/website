@@ -2,17 +2,12 @@ import { ImageResponse } from '@vercel/og'
 
 export const runtime = 'edge'
 
-const interRegular = fetch(
-  new URL('../../../../public/fonts/Inter-Regular.ttf', import.meta.url),
-).then(res => res.arrayBuffer())
-
 const interBold = fetch(
   new URL('../../../../public/fonts/Inter-Bold.ttf', import.meta.url),
 ).then(res => res.arrayBuffer())
 
 export async function GET(req: Request) {
   try {
-    const fontRegular = await interRegular
     const fontBold = await interBold
 
     const url = new URL(req.url)
@@ -42,7 +37,7 @@ export async function GET(req: Request) {
           </div>
           <div
             tw='text-3xl text-neutral-400'
-            style={{ fontFamily: 'Inter', fontWeight: 'normal' }}
+            style={{ fontFamily: 'Inter', fontWeight: 'bolder' }}
           >
             {values.desc}
           </div>
@@ -52,12 +47,6 @@ export async function GET(req: Request) {
         width: 1200,
         height: 630,
         fonts: [
-          {
-            name: 'Inter',
-            data: fontRegular,
-            weight: 400,
-            style: 'normal',
-          },
           {
             name: 'Inter',
             data: fontBold,
