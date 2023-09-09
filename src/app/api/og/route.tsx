@@ -27,7 +27,7 @@ export async function GET(req: Request) {
         <div
           tw='flex relative flex-col px-20 py-30 w-full h-full items-start text-neutral-100'
           style={{
-            background: 'linear-gradient(56deg, #171717, #262626, #404040)',
+            background: '#111010',
           }}
         >
           <div
