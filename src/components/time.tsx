@@ -10,6 +10,7 @@ const Time = () => {
       hour: 'numeric',
       minute: 'numeric',
       second: 'numeric',
+      hourCycle: 'h23',
     }),
   )
 
@@ -21,6 +22,7 @@ const Time = () => {
           hour: 'numeric',
           minute: 'numeric',
           second: 'numeric',
+          hourCycle: 'h23',
         }),
       )
     }, 1000)

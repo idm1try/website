@@ -4,13 +4,19 @@ import './global.css'
 
 const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
 
+export const viewport = {
+  themeColor: '#111010',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: 1,
+}
+
 export const metadata = {
   metadataBase: new URL('https://idm1try.vercel.app'),
   title: {
     default: 'idm1try',
     template: '%s | idm1try',
   },
-  themeColor: '#111010',
   description: 'Frontend Developer',
   robots: {
     index: true,
