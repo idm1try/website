@@ -1,18 +1,17 @@
-const { fontFamily } = require('tailwindcss/defaultTheme')
+import type { Config } from 'tailwindcss'
+import { fontFamily } from 'tailwindcss/defaultTheme'
 
-/* @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: ['./src/**/*.{ts,tsx,mdx,mdx}'],
   theme: {
     extend: {
       colors: {},
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
-        pacifico: ['var(--font-pacifico)', ...fontFamily.sans],
       },
     },
   },
   future: {
     hoverOnlyWhenSupported: true,
   },
-}
+} satisfies Config

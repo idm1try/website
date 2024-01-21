@@ -5,6 +5,6 @@ export default function robots() {
         userAgent: '*',
       },
     ],
-    host: 'https://idm1tyr.ru',
+    host: 'https://idm1try.vercel.app',
   }
 }
