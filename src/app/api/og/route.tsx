@@ -20,9 +20,9 @@ export async function GET(req: Request) {
     return new ImageResponse(
       (
         <div
-          tw='flex relative flex-col px-20 py-30 w-full h-full items-start text-neutral-100'
+          tw='flex relative flex-col px-20 py-30 w-full h-full items-start text-white'
           style={{
-            background: '#111010',
+            background: '#161616',
           }}
         >
           <div
@@ -36,7 +36,7 @@ export async function GET(req: Request) {
             {heading}
           </div>
           <div
-            tw='text-3xl text-neutral-400'
+            tw='text-3xl text-[#7a7a7a]'
             style={{ fontFamily: 'Inter', fontWeight: 'bolder' }}
           >
             {values.desc}

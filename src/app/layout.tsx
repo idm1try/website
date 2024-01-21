@@ -5,7 +5,7 @@ import './global.css'
 const fontSans = Inter({ variable: '--font-sans', subsets: ['latin'] })
 
 export const viewport = {
-  themeColor: '#111010',
+  themeColor: '#161616',
   initialScale: 1,
   maximumScale: 1,
   userScalable: 1,
