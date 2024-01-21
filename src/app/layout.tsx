@@ -74,9 +74,8 @@ export default function RootLayout({
     <html
       lang='en'
       className={cn(
-        'scroll-smooth font-sans text-neutral-900 dark:text-neutral-100',
-        'antialiased selection:bg-neutral-200 dark:selection:bg-neutral-200 font-medium',
-        'bg-neutral-50 dark:bg-[#111010]',
+        'scroll-smooth font-sans text-text bg-base',
+        'antialiased selection:bg-surface1',
         fontSans.variable,
       )}
     >
