@@ -8,7 +8,7 @@ const Home = () => (
     <div className='space-y-5'>
       <div className='space-x-3'>
         <a className='underlined' href='https://github.com/idm1try'>GitHub</a>
-        <a className='underlined' href='https://mastodon.social/@idm1try' rel='me'>Mastodon</a>
+        <a className='underlined' href='https://social.treehouse.systems/@idm1try' rel='me'>Mastodon</a>
         <a className='underlined' href='mailto:idm1try@icloud.com'>Mail</a>
       </div>
       <p>

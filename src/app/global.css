@@ -55,7 +55,7 @@
 }
 
 .underlined {
- @apply underline decoration-surface2 decoration-2 underline-offset-4 transition-colors duration-300 hover:decoration-overlay2 active:decoration-mauve;
+ @apply underline decoration-surface2 decoration-2 underline-offset-4 transition-colors duration-300 hover:decoration-overlay2 active:decoration-overlay1;
 }
 
 @media (hover: hover) and (pointer: fine) {
