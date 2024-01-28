@@ -2,10 +2,12 @@ import Time from '@/components/time'
 
 const Home = () => (
   <section>
-    <h1 className='mb-2 text-xl font-bold'>idm1try</h1>
-    <p className='text-overlay0 mb-5'>frontend developer</p>
-    <Time />
-
+    <div>
+      <h1 className='mb-2 text-xl font-bold'>idm1try</h1>
+      <div className='text-overlay0 mb-2 flex space-x-2'>
+        <span>frontend developer</span> <span>-</span> <Time />
+      </div>
+    </div>
     <ul className='animated-list grid grid-cols-1 sm:grid-cols-2'>
       <li className='transition-all duration-300'>
         <div className='flex py-3 flex-col gap-1'>
