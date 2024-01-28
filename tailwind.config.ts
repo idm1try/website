@@ -28,7 +28,7 @@ export default {
         crust: 'rgb(var(--crust))',
       },
       fontFamily: {
-        sans: ['var(--font-sans)', ...fontFamily.sans],
+        sans: ['var(--font-cartographcf)', ...fontFamily.sans],
       },
     },
   },
