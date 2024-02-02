@@ -4,7 +4,7 @@
   "author": {
     "name": "Dmitry Savchenko",
     "email": "idm1try@icloud.com",
-    "url": "https://idm1try.vercel.app"
+    "url": "https://idm1try.dev"
   },
   "scripts": {
     "dev": "next dev --turbo",

@@ -62,6 +62,7 @@
   .animated-list li {
     @apply transition-all duration-300
   }
+
   .animated-list:hover li {
     @apply opacity-50
   }
