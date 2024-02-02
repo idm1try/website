@@ -9,7 +9,7 @@ const Home = () => (
       </div>
     </div>
     <ul className='animated-list grid grid-cols-1 sm:grid-cols-2'>
-      <li className='transition-all duration-300'>
+      <li>
         <div className='flex py-3 flex-col gap-1'>
           <span className='text-overlay0'>
             GitHub
@@ -17,7 +17,7 @@ const Home = () => (
           <a className='underlined' href='https://github.com/idm1try'>idm1try</a>
         </div>
       </li>
-      <li className='transition-all duration-300'>
+      <li>
         <div className='flex py-3 flex-col gap-1'>
           <span className='text-overlay0'>
             Mastodon
@@ -27,7 +27,7 @@ const Home = () => (
           </a>
         </div>
       </li>
-      <li className='transition-all duration-300'>
+      <li>
         <div className='flex py-3 flex-col gap-1'>
           <span className='text-overlay0'>
             Mail
@@ -35,7 +35,7 @@ const Home = () => (
           <a className='underlined' href='mailto:idm1try@icloud.com'>idm1try@icloud.com</a>
         </div>
       </li>
-      <li className='transition-all duration-300'>
+      <li>
         <div className='flex py-3 flex-col gap-1'>
           <span className='text-overlay0'>
             XMPP

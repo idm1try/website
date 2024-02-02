@@ -59,12 +59,15 @@
 }
 
 @media (hover: hover) and (pointer: fine) {
+  .animated-list li {
+    @apply transition-all duration-300
+  }
   .animated-list:hover li {
-    opacity: 0.5;
+    @apply opacity-50
   }
 
   .animated-list:hover li:hover {
-    opacity: 1;
+    @apply opacity-100
   }
 }
 

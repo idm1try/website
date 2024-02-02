@@ -3,7 +3,7 @@ import { cn } from '@/lib/utils'
 import { Metadata, Viewport } from 'next'
 import localFont from 'next/font/local'
 
-const cartographCF = localFont({
+const cartographcf = localFont({
   variable: '--font-cartographcf',
   src: [
     {
@@ -18,32 +18,32 @@ const cartographCF = localFont({
     },
     {
       path: '../../public/fonts/CartographCF-Bold.woff2',
-      weight: '600',
+      weight: '700',
       style: 'normal',
     },
     {
       path: '../../public/fonts/CartographCF-BoldItalic.woff2',
-      weight: '600',
+      weight: '700',
       style: 'italic',
     },
     {
       path: '../../public/fonts/CartographCF-ExtraBold.woff2',
-      weight: '700',
+      weight: '800',
       style: 'normal',
     },
     {
       path: '../../public/fonts/CartographCF-ExtraBoldItalic.woff2',
-      weight: '700',
+      weight: '800',
       style: 'italic',
     },
     {
       path: '../../public/fonts/CartographCF-Heavy.woff2',
-      weight: '800',
+      weight: '900',
       style: 'normal',
     },
     {
       path: '../../public/fonts/CartographCF-HeavyItalic.woff2',
-      weight: '800',
+      weight: '900',
       style: 'italic',
     },
   ],
@@ -57,7 +57,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://idm1try.vercel.app'),
+  metadataBase: new URL('https://idm1try.dev'),
   title: {
     default: 'idm1try',
     template: '%s | idm1try',
@@ -94,7 +94,7 @@ export const metadata: Metadata = {
     siteName: 'idm1try',
     locale: 'en-US',
     type: 'website',
-    url: 'https://idm1try.vercel.app/',
+    url: 'https://idm1try.dev/',
     images: '/api/og?heading=idm1try&desc=Frontend%20Developer',
   },
   icons: {
@@ -102,7 +102,7 @@ export const metadata: Metadata = {
     apple: 'apple-touch-icon.png',
   },
   alternates: {
-    canonical: 'https://idm1try.vercel.app/',
+    canonical: 'https://idm1try.dev/',
   },
   manifest: '/site.webmanifest',
   other: {
@@ -120,8 +120,8 @@ export default function RootLayout({
       lang='en'
       className={cn(
         'scroll-smooth font-sans text-text bg-base',
-        'antialiased selection:bg-surface1',
-        cartographCF.variable,
+        'antialiased selection:bg-surface1 leading-relaxed',
+        cartographcf.variable,
       )}
     >
       <body>
