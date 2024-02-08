@@ -2,20 +2,19 @@ import { ImageResponse } from 'next/og'
 
 export const runtime = 'edge'
 
-const interBold = fetch(
-  new URL('../../../../public/fonts/Inter-Bold.ttf', import.meta.url),
+const cartographcf = fetch(
+  new URL('../../../../public/fonts/CartographCF-Heavy.otf', import.meta.url),
 ).then(res => res.arrayBuffer())
 
 export async function GET(req: Request) {
   try {
-    const fontBold = await interBold
+    const fontBold = await cartographcf
 
     const url = new URL(req.url)
     const values = Object.fromEntries(url.searchParams)
     const heading = values.heading.length > 140
       ? `${values.heading.substring(0, 140)}...`
       : values.heading
-    const fontSize = heading.length > 100 ? '70px' : '100px'
 
     return new ImageResponse(
       (
@@ -26,18 +25,17 @@ export async function GET(req: Request) {
           }}
         >
           <div
-            tw='flex leading-[1.1] text-[80px] mb-12'
+            tw='flex leading-[1] text-[70px] mb-12'
             style={{
-              fontFamily: 'Inter',
-              fontWeight: 'bolder',
-              fontSize,
+              fontFamily: 'Cartograph CF',
+              fontWeight: '800',
             }}
           >
             {heading}
           </div>
           <div
             tw='text-3xl text-[#7a7a7a]'
-            style={{ fontFamily: 'Inter', fontWeight: 'bolder' }}
+            style={{ fontFamily: 'Cartograph CF', fontWeight: '800' }}
           >
             {values.desc}
           </div>
@@ -48,9 +46,9 @@ export async function GET(req: Request) {
         height: 630,
         fonts: [
           {
-            name: 'Inter',
+            name: 'Cartograph CF',
             data: fontBold,
-            weight: 700,
+            weight: 900,
             style: 'normal',
           },
         ],
