@@ -25,7 +25,7 @@ export async function GET(req: Request) {
           }}
         >
           <div
-            tw={`flex leading-[0.9] text-${heading.length >= 15 ? '8xl' : '9xl'} mb-12`}
+            tw={`flex leading-[0.9] text-${heading.length >= 15 ? '7xl' : '9xl'} mb-12`}
             style={{
               fontFamily: 'Cartograph CF',
               fontWeight: '800',
