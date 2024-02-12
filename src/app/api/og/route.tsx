@@ -19,7 +19,7 @@ export async function GET(req: Request) {
     return new ImageResponse(
       (
         <div
-          tw='flex relative flex-col px-20 py-30 w-full h-full text-white'
+          tw='flex relative flex-col px-30 py-30 w-full h-full text-white'
           style={{
             background: '#161616',
           }}
@@ -34,7 +34,7 @@ export async function GET(req: Request) {
             {heading}
           </div>
           <div
-            tw='text-3xl text-[#7a7a7a]'
+            tw='text-4xl text-[#7a7a7a]'
             style={{ fontFamily: 'Cartograph CF', fontWeight: '800' }}
           >
             {values.desc}
