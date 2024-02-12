@@ -19,13 +19,13 @@ export async function GET(req: Request) {
     return new ImageResponse(
       (
         <div
-          tw='flex relative flex-col px-20 py-30 w-full h-full items-start text-white'
+          tw='flex relative flex-col px-20 py-30 w-full h-full text-white'
           style={{
             background: '#161616',
           }}
         >
           <div
-            tw='flex leading-[1] text-[70px] mb-12'
+            tw={`flex leading-[0.9] text-${heading.length >= 15 ? '8xl' : '9xl'} mb-12`}
             style={{
               fontFamily: 'Cartograph CF',
               fontWeight: '800',
