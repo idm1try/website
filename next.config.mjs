@@ -4,7 +4,6 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    ppr: true,
     useLightningcss: true,
   },
 }
