@@ -12,39 +12,9 @@ const cartographcf = localFont({
       style: 'normal',
     },
     {
-      path: '../../public/fonts/CartographCF-RegularItalic.woff2',
-      weight: '400',
-      style: 'italic',
-    },
-    {
-      path: '../../public/fonts/CartographCF-Bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/CartographCF-BoldItalic.woff2',
-      weight: '700',
-      style: 'italic',
-    },
-    {
       path: '../../public/fonts/CartographCF-ExtraBold.woff2',
       weight: '800',
       style: 'normal',
-    },
-    {
-      path: '../../public/fonts/CartographCF-ExtraBoldItalic.woff2',
-      weight: '800',
-      style: 'italic',
-    },
-    {
-      path: '../../public/fonts/CartographCF-Heavy.woff2',
-      weight: '900',
-      style: 'normal',
-    },
-    {
-      path: '../../public/fonts/CartographCF-HeavyItalic.woff2',
-      weight: '900',
-      style: 'italic',
     },
   ],
 })
@@ -53,7 +23,6 @@ export const viewport: Viewport = {
   themeColor: '#161616',
   initialScale: 1,
   maximumScale: 1,
-  userScalable: true,
 }
 
 export const metadata: Metadata = {
