@@ -12,7 +12,7 @@ const Home = () => (
       <li>
         <div className='flex py-3 flex-col gap-1'>
           <span className='text-overlay0'>
-            GitHub
+            github
           </span>
           <a className='underlined' href='https://github.com/idm1try'>idm1try</a>
         </div>
@@ -20,7 +20,7 @@ const Home = () => (
       <li>
         <div className='flex py-3 flex-col gap-1'>
           <span className='text-overlay0'>
-            Mastodon
+            mastodon
           </span>
           <a className='underlined' href='https://social.treehouse.systems/@idm1try' rel='me'>
             @idm1try@treehouse.systems
@@ -30,7 +30,7 @@ const Home = () => (
       <li>
         <div className='flex py-3 flex-col gap-1'>
           <span className='text-overlay0'>
-            Mail
+            mail
           </span>
           <a className='underlined' href='mailto:idm1try@icloud.com'>idm1try@icloud.com</a>
         </div>
@@ -38,7 +38,7 @@ const Home = () => (
       <li>
         <div className='flex py-3 flex-col gap-1'>
           <span className='text-overlay0'>
-            XMPP
+            xmpp
           </span>
           <span>
             idm1try@5222.de
