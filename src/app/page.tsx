@@ -4,8 +4,8 @@ const Home = () => (
   <section>
     <div>
       <h1 className='mb-2 text-xl font-bold'>idm1try</h1>
-      <div className='text-overlay0 mb-2 flex space-x-2'>
-        <span>frontend developer</span> <span>-</span> <Time />
+      <div className='text-overlay0 mb-5 flex space-x-2'>
+        <span>they/them</span> <span>-</span> <Time />
       </div>
     </div>
     <ul className='animated-list grid grid-cols-1 sm:grid-cols-2'>

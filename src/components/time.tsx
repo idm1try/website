@@ -9,7 +9,6 @@ const Time = () => {
       timeZone: 'Asia/Yekaterinburg',
       hour: 'numeric',
       minute: 'numeric',
-      second: 'numeric',
       hourCycle: 'h23',
     }),
   )
@@ -21,7 +20,6 @@ const Time = () => {
           timeZone: 'Asia/Yekaterinburg',
           hour: 'numeric',
           minute: 'numeric',
-          second: 'numeric',
           hourCycle: 'h23',
         }),
       )
@@ -30,7 +28,7 @@ const Time = () => {
 
   useEffect(() => setMounted(true), [])
 
-  return <span className='mb-5 text-overlay0'>{mounted && time}</span>
+  return <span className='text-overlay0'>{mounted && <>{time}, russia</>}</span>
 }
 
 export default Time

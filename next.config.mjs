@@ -3,9 +3,6 @@
  */
 const nextConfig = {
   reactStrictMode: true,
-  experimental: {
-    useLightningcss: true,
-  },
 }
 
 export default nextConfig
